@@ -1,17 +1,21 @@
 ### HTML 매뉴얼 스스로 작성해보기 
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Page Title</title>
-</head>
-<body>
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
-</body>
-</html>
-```
+- HTML의 기본 형태
+
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <h1>This is a Heading</h1>
+        <p>This is a paragraph.</p>
+    </body>
+    </html>
+    ```
+
+    * 상세 설명
 
 - The `<!DOCTYPE html>` declaration defines that this document is an HTML5 document
     - `<!DOCTYPE html>`은 해당 문서가 html5 문서라는 정의를 선언한다
