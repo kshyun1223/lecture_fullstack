@@ -32,8 +32,8 @@
   - The `<body>` element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
     - `<body>` 요소는 문서의 몸체를 정의한다, 그리고 모든 시각적 내용 제목, 문단, 이미지, 링크, 표, 리스트, 기타등등과 같은 것들을 위한 컨테이너다.
 
-  - The <h1> element defines a large heading
-    - <h1> 요소는 큰 제목을 정의한다
+  - The `<h1>` element defines a large heading
+    - `<h1>` 요소는 큰 제목을 정의한다
 
-  - The <p> element defines a paragraph
-    - <p> 요소는 단락(절)을 정의한다
+  - The `<p>` element defines a paragraph
+    - `<p>` 요소는 단락(절)을 정의한다
