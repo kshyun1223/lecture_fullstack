@@ -41,5 +41,7 @@
 - 경량화 및 강력한 동기화를 위해서 데이터 취급은 어느 쪽이 유리한가? 
   - 데이터를 서버에 저장할 것인가?
   - 아니면 클라우드 연동 기능을 제공할 것인가?
-- 필요한 기능: 구문 강조(syntax highlighting), to-do list
+- 필요한 기능
+  - 구문 강조(syntax highlighting)
+  - to-do list
 
