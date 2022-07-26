@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset */
+    body {margin:0; padding:0; box-sizing:border-box;}
+    ul {margin:0; padding:0; list-style-type: none;}
+    body > div {
+      width: 100vw;
+      min-height:100vh;
+      background-color: #333;
+    }
+    /* header */
+    body > div > header {
+      width:inherit;
+      height: 10vh;
+      background-color: #222;
+    }
+    body > div > header > nav > ul > li { 
+      width: 200px;
+      background-color: #aaa;
+      display: inline-block;
+    }
+    /* main */
+    body > div > main {
+      height: 50vh;
+      background-color: #ccc;
+    }
+    body > div > main > section {
+      width:90vw;
+      height:30vh;
+      border:1px dashed #000;
+      padding:20px;
+      display:inline-block;
+    }
+    body > div > main > section > aside {
+      width: 30vw;
+      height: inherit;
+      background-color: #fff;
+    }
+    body > div > main > section > article {
+      width: 30vw;
+      height: inherit;
+      background-color: salmon
+    }
+    /* footer */
+    body > div > footer {
+      height:20vh;
+      background-color: cadetblue;
+    }
+</style>
+</head>
+<body> 
+  <div>
+    <header>
+        <nav>
+          <ul>
+            <li>manu-1</li>
+            <li>manu-2</li>
+            <li>manu-3</li>
+            <li>manu-4</li>
+            <li>manu-5</li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+      <section>
+        <aside>this is aside</aside>
+        <article>this is article</article>
+      </section>
+    </main>
+    <footer>footer</footer>
+  </div>
+</body>
+</html>
+
+<!-- 태그 계층구조
+0. body
+1. div
+2. header, main, footer
+3. nav(> ul > li), section
+4. aside, article -->
+
+<!-- 이 예제의 스타일링 경향
+# reset, header, main, footer로 대분류
+# ul 태그는 직접 사용하지 않고 nav 태그에 넣어놓음 -->
