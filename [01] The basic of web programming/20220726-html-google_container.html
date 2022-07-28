@@ -6,48 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    /* 위치 파악용 임시 외곽선
-    .header-left-center,
-    .header-right,
-    .main-top-logo,
-    .main-mid-1-search,
-    .main-mid-2-bookmark-1,
-    .main-mid-2-bookmark-2,
-    .footer-left-mid,
-    .footer-right {
-      border: 1px solid pink;
-    } */
-    
     /* reset */
     body {margin:0; padding:0; box-sizing:border-box;}
 
-    /* header {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      margin-bottom: 100px      
-    } */
-    /* footer {
-      display: grid;
-      grid-template-columns: 6.5fr 1fr;
-      margin-top: 100px  
-    } */
-   
-
-
-    /* 가운데 정렬 : 테이블 방식*/
+    /* 좌우정렬 */
     main {
-      display: table; 
-      margin-left: auto; 
-      margin-right: auto;
+      display: flex;
+      justify-content: center;
+      align-items: start;
     }
-    .main-top-logo {
-      display: table; 
-      margin-left: auto; 
-      margin-right: auto;
-      margin-bottom: 1vh;
-    }
+    /* justify-content: start, center, space-between, space-around, space-evenly
+    align-items: stretch, center, start, end */
 
-    /* 가운데 정렬 : 플렉스 방식 */
+
+
+    /* 좌우정렬: 플렉스 방식 */
     /* main {
       display: flex;
       justify-content: center;
@@ -58,8 +31,7 @@
     } */
 
     /* 북마크 꾸러미 그리드 */
-    .main-3-bookmark {
-      border: 1px solid red;
+    .body-main-grid {
       display: grid;
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(5, 1fr);
@@ -67,34 +39,23 @@
   </style>
 </head>
 <body>
-  <header>
-    <a href="https://mail.google.com/mail/?tab=rm&ogbl">
-      <button>Gmail</button>
-    </a> 
-    <a href="https://www.google.co.kr/imghp?hl=ko&tab=ri&ogbl">
-      <button>이미지</button>
-    </a> 
-    <a href="https://www.google.co.kr/intl/ko/about/products?tab=rh">
-      <button>Google앱</button>
-    </a> 
-    <a href="https://mail.google.com/mail/?tab=rm&ogbl">
-      <button>Gmail계정</button>
-    </a> 
+  <!-- 헤더 -->
+  <header> 
+    <input type=button value="Gmail" onclick="alert('Gmail')" />
+    <input type=button value="이미지" onclick="alert('이미지')" />
+    <input type=button value="Google앱" onclick="alert('Google앱')" />
+    <input type=button value="Google계정" onclick="alert('Google계정')" />
   </header>
+  <!-- 메인 -->
   <main>
-    <span class="main-1-logo"> <!-- 로고 -->
-      <a href="https://google.com/">
-        <button style="padding-block:50px; padding-inline:100px;">google</button>
-    </span>
-    <div class="main-2-search"> <!-- 검색기능 --> 
-      <form method=get action="http://www.google.co.kr/search">
-        <table background-color="#FFFFFF">
-          <input type=text size=25 maxlength=255 value="" /> <!-- 검색 입력 창 -->
-          <input type=submit value="Google 검색" /> <!-- 검색 버튼 -->
-        </table>
-      </form>
+    <input style="padding-block:50px; padding-inline:100px;" type="button" value="Google" onclick="alert('구글 로고')"> <!-- 로고 --> 
+    <div class="main-mid-search"> <!-- 검색 --> 
+      <table background-color="#FFFFFF">
+        <input type=text size=25 maxlength=255 value="" onchange="alert('검색창')" />
+        <input type=button value="Google 검색" onclick="alert('검색버튼')" />
+      </table>
     </div>
-    <div class="main-3-bookmark"> <!-- 바로가기 -->
+    <div class="main-bottom-bookmark"> <!-- 바로가기 -->
       <input type="button" value="북마크" onclick="alert('bookmark')">
       <input type="button" value="북마크" onclick="alert('bookmark')">
       <input type="button" value="북마크" onclick="alert('bookmark')">
