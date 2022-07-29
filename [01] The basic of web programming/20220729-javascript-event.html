@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    div {
+      width: 50vw;
+      min-width:500px;
+      max-width:1000px;
+      height: 50vw;
+      min-height:500px;
+      max-height:1000px;
+      background-color: coral;
+      border: 1px solid black;
+      /* min-max 수치를 사용. 반응형. */
+    }
+  </style>
+</head>
+<body>
+  <div id="element"></div> <!-- element라는 id를 선언 -->
+  <button id="trigger">clcik here!</button> <!-- trigger라는 id를 선언하고 버튼에 할당 -->
+  <script>
+    const element = document.getElementById("element"); //element 변수는 element라는 id에 의해 요소를 호출
+    const trigger = document.getElementById("trigger"); //trigger 변수는 trigger라는 id에 의해 요소를 호출
+    let colorBox = ["salmon", "orenge", "red", "cadetblue", "brown"]; //colorBox 변수의 매개변수는 5개의 색상으로 이루어진 배열
+    let count = 0; //count 변수의 초기값은 0
+    trigger.addEventListener('click', function () { //trigger 변수는 click 이벤트가 발생할 때마다 아래의 메서드를 호출
+      element.style.backgroundColor = colorBox[count]; //colorBox 배열을 하나씩 출력
+      count++; //count 변수의 값을 1 증가시킴
+      console.log('hello'); // hello라는 로그를 출력
+      if(count >= colorBox.length) { //colorBox 배열의 수보다 count 변수의 값이 크거나 같으면 
+        count = 0; //count 변수의 값을 초기화
+      }
+    })
+  </script>
+</body>
+</html>
