@@ -8,7 +8,7 @@
 function first(tagName, parent, tagContent ="") { //first 함수의 매개변수는 tagName, parent, tagContent
   tagName = typeof tagName === 'string' ? tagName : console.error(`${tagName} parameter must be a string`); //tagName의 타입을 문자열로 선언, 일치하지 않을 경우 경고메시지 출력
   let setElem = document.createElement(tagName);//setElem 변수는 tagName 변수에 의해 요소를 생성
-  setElem.innerHTHML = tagContent; //setElem은 tagContent의 HTML 요소를 가져옴
+  setElem.innerHTHML = tagContent; //setElem에 tagContent의 HTML 요소를 가져옴
   parent.appendChild(setElem); //setElem을 가져와서 parent의 마지막 부분에 붙임
 }
 
