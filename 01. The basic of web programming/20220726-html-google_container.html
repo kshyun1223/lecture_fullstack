@@ -6,35 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    /* reset */
+    /* 리셋 */
     body {margin:0; padding:0; box-sizing:border-box;}
-
-    /* 좌우정렬 */
+    /* 임시 구분선 */
+    /* header, main, footer {border: 1px solid gray;} */
+    /* 구글 로고 */
+    main > input {
+      padding-block:50px; 
+      padding-inline:100px;
+    }
+    /* 헤더 */
+    header {
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom: 15vh;
+    }
+    /* 메인 */
     main {
-      display: flex;
-      justify-content: center;
-      align-items: start;
+      display:flex;
+      align-items:center;
+      flex-direction:column;
+    } 
+    main > *{
+      margin: 10px;
     }
-    /* justify-content: start, center, space-between, space-around, space-evenly
-    align-items: stretch, center, start, end */
-
-
-
-    /* 좌우정렬: 플렉스 방식 */
-    /* main {
-      display: flex;
-      justify-content: center;
-    }
-    .main-top-logo{
-      display: flex;
-      justify-content: center;
-    } */
-
-    /* 북마크 꾸러미 그리드 */
-    .body-main-grid {
-      display: grid;
+    /* 바로가기 */
+    main > div:nth-child(3) {
+      display: grid;   
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(5, 1fr);
+    }
+    main > div:nth-child(3) > input {
+      margin: 2px;
+    }
+    /* 푸터 */
+    footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 20vh;
     }
   </style>
 </head>
@@ -48,14 +58,14 @@
   </header>
   <!-- 메인 -->
   <main>
-    <input style="padding-block:50px; padding-inline:100px;" type="button" value="Google" onclick="alert('구글 로고')"> <!-- 로고 --> 
-    <div class="main-mid-search"> <!-- 검색 --> 
-      <table background-color="#FFFFFF">
+    <input type="button" value="Google" onclick="alert('구글 로고')"> <!-- 로고 --> 
+    <div> <!-- 검색 --> 
+      <table>
         <input type=text size=25 maxlength=255 value="" onchange="alert('검색창')" />
         <input type=button value="Google 검색" onclick="alert('검색버튼')" />
       </table>
     </div>
-    <div class="main-bottom-bookmark"> <!-- 바로가기 -->
+    <div> <!-- 바로가기 -->
       <input type="button" value="북마크" onclick="alert('bookmark')">
       <input type="button" value="북마크" onclick="alert('bookmark')">
       <input type="button" value="북마크" onclick="alert('bookmark')">
@@ -73,8 +83,3 @@
   </footer>
 </body>
 </html>
-
-<!-- 1. 구글 로고, 검색 기능, 북마크 꾸러미라는 세 컨테이너를 가운데정렬 하고, 
-2. 구글 로고는 다시 다른 두 요소들의 가운데로 정렬. 
-3. 가운데의 가운데로 맞추기 위해 재지정이 필요한 것으로 보인다.
-4. 테이블 속성과 플렉스 속성을 사용하여 각각 해보았다. -->
