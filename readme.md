@@ -2,6 +2,3 @@
 ### 사용 언어
 - HTML
 - CSS
-  - SCSS
-- JavaScript
-- 계속 추가 중...
