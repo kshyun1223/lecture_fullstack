@@ -1,9 +1,9 @@
-@charset "UTF-8";
+// 공통 부분 변수
+$common-font-100: 100%;
 
-/* 공통 부분
-------------------------------- */
+/* 공통 부분 */
 html {
-    font-size: 100%;
+    font-size: $common-font-100;
 }
 body{
     font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, "Apple SD Gothic Neo", sans-serif;
