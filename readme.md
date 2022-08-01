@@ -5,5 +5,5 @@
   - SCSS
 
 ### 필기노트
-- [일자별](https://github.com/kshyun1223/lecture_fullstack/tree/master/00.%20Lecture%20note%20-%20by%20date)
-- [주제별](https://github.com/kshyun1223/lecture_fullstack/tree/master/00.%20Lecture%20note%20-%20by%20topic)
+- [일자별](https://github.com/kshyun1223/lecture_fullstack/tree/master/00.Lecture_note-by_date)
+- [주제별](https://github.com/kshyun1223/lecture_fullstack/tree/master/00.Lecture_note-by_topic)
