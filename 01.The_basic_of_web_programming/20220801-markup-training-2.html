@@ -6,35 +6,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 <style>
-header > div:nth-child(1) {
-  border: 1px solid gray;
-  width: 150px;
-  height: 120px;
-}
-header > div:nth-child(2) {
-  border: 1px solid gray;
-  width: 250px;
-  height: 120px;
-}
-header > div:nth-child(3) {
-  border: 1px solid gray;
-  width: 150px;
-  height: 120px;
-}
-header { 
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-}
+  /* 리셋 */
+  * {margin:0; padding:0; box-sizing: border-box;}  
+
+  /* 메인 */
+  #root { 
+    border: 1px solid gray;
+    width: 620px;
+    height: 300px;
+    position:absolute;
+    top:35vw;
+    right:37vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 왼쪽 */
+  header > div:nth-child(1) {
+    border:1px solid gray;
+    width:200px;
+    height:120px;
+    position:absolute;
+    right:23vw;
+    bottom:13vh;
+  }
+  /* 중간 */
+  header > div:nth-child(2) {
+    border: 1px solid gray;
+    width: 250px;
+    height: 420px;
+    position:relative;
+    left:1vw;
+  }
+  /* 오른쪽 */
+  header > div:nth-child(3) {
+    border: 1px solid gray;
+    width: 200px;
+    height: 90px;
+    position: absolute;
+    bottom: 13vh;
+    right: 4vw;
+  }
+  /* 아래꺼 */
+  footer {
+    border: 1px solid gray;
+    width: 200px;
+    height: 120px;
+    position: absolute;
+    top: 12.8vh;
+    left: 25vw;
+    /* position:absolute;
+    top:448px;
+    right:240px; */
+  }
 </style>
 </head>
 <body>
-  <header>
-    <div></div><!-- 1 -->
-    <div></div><!-- 2 -->
-    <div></div><!-- 3 -->
-  </header>
-  <main></main><!-- 4 -->
-  <footer></footer><!-- 5 -->
+  <div id="root"><!-- 4 -->
+    <header>
+      <div></div><!-- 1 -->
+      <div></div><!-- 2 -->
+      <div></div><!-- 3 -->
+    </header>
+    <footer></footer><!-- 5 -->
+  </div>
 </body>
 </html>
+
+<!-- 포지션 앱솔루트 탑 라이트 -->
