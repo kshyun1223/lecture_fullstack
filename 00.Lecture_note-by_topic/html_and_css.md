@@ -1,4 +1,4 @@
-﻿# HTML + CSS
+﻿# HTML and CSS
 ### 루트요소(root element)
 <html> 엘리먼트는 HTML 문서의 루트(최상단 요소)를 나타내며, "루트 요소"라고도 한다. 모든 다른 엘리먼트는 <html> 요소의 자식이어야 한다.
   
