@@ -5,73 +5,114 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-<style>
-  /* 리셋 */
-  * {margin:0; padding:0; box-sizing: border-box;}  
+  <style>
+    /* 레이아웃, 화면 전체? */
+    body {
+      width:100vw;
+      height:100vh;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* 안쪽 검정 선 */
+    nav {
+      width:70vw;
+      height:70vh;
+      border: 3px solid #000;
+      position: absolute;
+    }
+    /* 바깥쪽 검정 선 */
+    body > div {
+      width:80vw;
+      height:80vh;
+      border: 1px solid #000;
 
-  /* 메인 */
-  #root { 
-    border: 1px solid gray;
-    width: 620px;
-    height: 300px;
-    position:absolute;
-    top:35vw;
-    right:37vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* 구획, 삼총사? */
+    body > div > div {
+      width:30vw;
+      height:80vh;
+      border: 1px solid #000;
+    }
+    /* 첫번째 네모 */
+    body > div > div:nth-child(1) {
+      background-color: salmon;
+    }
+    /* 두번째 네모 가운데 */
+    body > div > div:nth-child(2) {
+      background-color: salmon;
+    }
+    /* 두번째 네모 윗쪽 */
+    body > div > div:nth-child(2) >div:nth-child(1) {
+      width:inherit;
+      height:50%;
+      background-color: chocolate;
 
-  /* 왼쪽 */
-  header > div:nth-child(1) {
-    border:1px solid gray;
-    width:200px;
-    height:120px;
-    position:absolute;
-    right:23vw;
-    bottom:13vh;
-  }
-  /* 중간 */
-  header > div:nth-child(2) {
-    border: 1px solid gray;
-    width: 250px;
-    height: 420px;
-    position:relative;
-    left:1vw;
-  }
-  /* 오른쪽 */
-  header > div:nth-child(3) {
-    border: 1px solid gray;
-    width: 200px;
-    height: 90px;
-    position: absolute;
-    bottom: 13vh;
-    right: 4vw;
-  }
-  /* 아래꺼 */
-  footer {
-    border: 1px solid gray;
-    width: 200px;
-    height: 120px;
-    position: absolute;
-    top: 12.8vh;
-    left: 25vw;
-    /* position:absolute;
-    top:448px;
-    right:240px; */
-  }
-</style>
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* 작은 박스들 */
+    body > div > div:nth-child(2) >div:nth-child(1) > div {
+      width:50px;
+      height:50px;
+      margin:10px;
+      background-color: #fff;
+    }
+    /* 두번째 네모 아래쪽 */
+    body > div > div:nth-child(2) >div:nth-child(2) {
+      width:inherit;
+      height:47.2%;
+      background-color: crimson;
+    }
+    /* 첫번째 검정 */
+    body > div > div:nth-child(1) > div {
+      width:inherit;
+      height:10%;
+      background-color: #333;
+    }
+    /* 세번째 네모 */
+    body > div > div:nth-child(3) {
+      background-color: cadetblue;
+      display:flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    /* 두번째 검정 */
+    body > div > div:nth-child(3) > div {
+      width:inherit;
+      height:10%;
+      background-color: #333;
+    }
+  </style>
 </head>
 <body>
-  <div id="root"><!-- 4 -->
-    <header>
-      <div></div><!-- 1 -->
-      <div></div><!-- 2 -->
-      <div></div><!-- 3 -->
-    </header>
-    <footer></footer><!-- 5 -->
+  <nav>네비게이션</nav>
+  <div>
+    <div><!-- 연어 -->
+      <div>검정1</div>
+    </div>
+    <div>
+      <div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+      <!-- 빨강 -->
+      <div>
+        <h1>hello</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, aspernatur. Consequuntur, hic. Fuga, nemo. Mollitia id iure atque! Ea, dolores!</p>
+      </div>
+    </div>
+    <!-- 청록 -->
+    <div>
+      <div>검정2</div>
+    </div>
   </div>
 </body>
-</html>
-
-<!-- 포지션 앱솔루트 탑 라이트 -->
+</html> 
