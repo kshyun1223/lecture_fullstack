@@ -30,6 +30,7 @@ PC버전보다 모바일버전을 보다 중요시해야 한다는 웹디자인�
 
 ### 축(Axis)
 웹 브라우저의 영점(0, 0) 좌표는 브라우저 좌측 최상단에 있다. 따라서 y 축 값은 항상 마이너스라고 할 수 있다. 그리고 렌더링은 “좌표를 결정하는 행위.”라고 할 수 있다.
+
 ### Flexbox(Flexible box layout module)
 
 ### Grid(CSS grid layout)
@@ -126,3 +127,6 @@ CSS로 컴파일되는 스크립트 언어이다. CSS는 불필요한 선택자(
   }
 }
 ```
+
+### HTML 파일에 외부 스타일시트를 호출하는 방법
+- `<link href="FileName.css" rel="stylesheet">`

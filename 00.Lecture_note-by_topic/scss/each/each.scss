@@ -10,7 +10,7 @@
 *{margin:0; padding:0; box-sizing: border-box;}
 
 
-$colors : (#111, #222, #333, #444, #555); //colors 변수의 매개변수는 5개 색상으로 이루어진 배열
+$colors : (#111, #222, #333, #444, #555); //colors 변수의 값은 5개 색상으로 이루어진 배열
 ul {
   $index : 0; // 인덱스 값은 0부터 시작
   @each $color-value in $colors { //@each는 SCSS의 반복문, colors 배열의 색상 값을 반복한다
