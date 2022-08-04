@@ -1,0 +1,22 @@
+/*
+  work : 본 .scss 파일은 임의의 기본형 html에 연결되어있다.
+  1. 마크업 구조
+  ul>li{menu-$}*5
+  구조로 골격을 갖추었다.
+  2. 아래의 scss 작성이 의미하는 바는 무엇이 될지 직관적으로 추측해보기 
+*/
+
+// 리셋
+*{margin:0; padding:0; box-sizing: border-box;}
+
+
+$colors : (#111, #222, #333, #444, #555); //colors 변수의 매개변수는 5개 색상으로 이루어진 배열
+ul {
+  $index : 0; // 인덱스 값은 0부터 시작
+  @each $color-value in $colors { //@each는 SCSS의 반복문, colors 배열의 색상 값을 반복한다
+    & > li:nth-child(#{$index + 1}) { //&는 부모선택자를 자동으로 지정하는 기호, li태그 중 인덱스 값 더하기 1에 해당하는 순서선택자를 호출한다
+      background-color: $color-value; //불러온 색상값을 배경색으로 할당
+      $index:$index + 1; //매번 인덱스 값을 직전 값에 1을 더하여 새롭게 지정
+    }
+  }
+}

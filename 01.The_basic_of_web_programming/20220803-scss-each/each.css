@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*
+  work : 본 .scss 파일은 임의의 기본형 html에 연결되어있다.
+  1. 마크업 구조
+  ul>li{menu-$}*5
+  구조로 골격을 갖추었다.
+  2. 아래의 scss 작성이 의미하는 바는 무엇이 될지 직관적으로 추측해보기 
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul > li:nth-child(1) {
+  background-color: #111;
+}
+ul > li:nth-child(2) {
+  background-color: #222;
+}
+ul > li:nth-child(3) {
+  background-color: #333;
+}
+ul > li:nth-child(4) {
+  background-color: #444;
+}
+ul > li:nth-child(5) {
+  background-color: #555;
+}/*# sourceMappingURL=each.css.map */
