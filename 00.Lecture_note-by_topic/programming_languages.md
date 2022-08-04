@@ -8,9 +8,8 @@
 ### 아이템(item)
 개별 항목 또는 단위, 특히 목록, 모음 또는 집합의 일부인 항목. 장바구니의 항목, 가방의 항목 등과 같이 사물이 논리적으로 독립적일 때 주로 쓰임.
 ### 상속(inheritance)
-기존 클래스에서 새 클래스가 생성되는 기능 또는 프로세스. 
-
-부모(parent), 형제(siblings), 자식(children)
+- 기존 클래스에서 새 클래스가 생성되는 기능 또는 프로세스. 
+- 부모(parent), 형제(siblings), 자식(children)
 ### 호출(callback)
 콜애프터 함수(call-after function)라고도 부른다. 다른 코드의 인수로서 넘겨주는 실행 가능한 코드를 말한다.
 ### 명령형 프로그래밍(Imperative Programming)
