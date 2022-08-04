@@ -1,0 +1,72 @@
+* {margin:0; padding:0; box-sizing: border-box;}
+
+@mixin flex-set($justify-content, $align-items, $flex-direction:row) {
+  display:flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
+
+@mixin width-and-height($width, $height) {
+  width:$width;
+  height:$height;
+}
+
+
+
+
+* {transition:1s;}
+// 마법의 스프가루 transition 
+
+#root {
+  @include width-and-height(100vw,100vh);
+  @include flex-set(center, center, column);
+
+  & > article {
+
+    @include width-and-height(100vw,50vh);
+    background-color: #333;
+  }
+
+  & > section {
+    @include width-and-height(100vw,50vh);
+    @include flex-set(flex-start, center, column);
+    padding:calc(5vw/2);
+    border: 1px solid salmon;
+  }
+  // mobile device
+  @media (max-width: 768px) {
+
+  }
+  // tablet device
+  @media (min-width: 769px) and  (max-width:1024px) {
+    & > article {
+      @include width-and-height(90vw,40vh);
+    }
+  }
+  // desktop device
+  @media (min-width: 1025px) {
+    & > article {
+      @include width-and-height(100vw,100vh);
+      background-color: #333;
+      position:relative;
+    }
+
+    & > section {
+      position:absolute;
+      color:#ccc;
+      @include flex-set(center, center, row);
+
+      & > h1 {
+        font-size: 3rem;
+      }
+      & > p {
+        width:50vw;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* common 공통 스타일 : 융통성 */
+
+    #root {
+      width:100vw;
+      height:100vh;
+    }
+
+
+    @media (max-width: 768px) {
+      #root {
+        background-color: #333;
+      }
+    }
+
+    @media (min-width: 769px)  and (max-width: 1024px) {
+      #root {
+        background-color: salmon;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      #root {
+        background-color: cadetblue;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
