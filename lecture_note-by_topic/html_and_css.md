@@ -115,7 +115,7 @@ CSS로 컴파일되는 스크립트 언어이다. CSS는 불필요한 선택자(
 
 ### 미디어쿼리
 ```css
-@media (가로폭 - min, max 지정 가능) {
+@media (min-width or max-width) {
   #root {
     속성:값;
     속성:값;
