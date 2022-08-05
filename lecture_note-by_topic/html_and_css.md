@@ -31,10 +31,6 @@ PC버전보다 모바일버전을 보다 중요시해야 한다는 웹디자인�
 ### 축(Axis)
 웹 브라우저의 영점(0, 0) 좌표는 브라우저 좌측 최상단에 있다. 따라서 y 축 값은 항상 마이너스라고 할 수 있다. 그리고 렌더링은 “좌표를 결정하는 행위.”라고 할 수 있다.
 
-### Flexbox(Flexible box layout module)
-
-### Grid(CSS grid layout)
-
 ### SASS(Syntactically Awesome Style Sheets) & SCSS(Sassy CSS)
 CSS로 컴파일되는 스크립트 언어이다. CSS는 불필요한 선택자(Selector)가 존재하고, 연산 기능에 한계가 있으며, 구문(Statement)이 없다는 문제점이 있고, SASS와 SCSS는 이를 해결하기 위해 고안되었다. SCSS가 SASS보다 최신의 기술이며 구문적으로 좀더 세련된 모습을 가지고 있다.
 
@@ -65,7 +61,7 @@ CSS로 컴파일되는 스크립트 언어이다. CSS는 불필요한 선택자(
 - 부모 태그로부터 상속을 받지 않는 속성: margin, padding, border 등 레이아웃을 정의하는 속성
 - inherit 값: 본래 상속을 받지 않는 속성이라도 임의의 값 대신 inherit이라는 명령어를 값으로 입력하면 부모태그의 해당 속성을 상속받을 수 있다
 
-## Flex 속성
+### Flexbox(Flexible box layout module)
 - justify-content: 좌우 정렬
     - flex-start: 요소들을 컨테이너의 왼쪽으로 정렬
     - flex-end: 요소들을 컨테이너의 오른쪽으로 정렬
@@ -98,7 +94,7 @@ CSS로 컴파일되는 스크립트 언어이다. CSS는 불필요한 선택자(
     - space-around: 여러 줄 주위에 동일한 간격
     - stretch값: 여러 줄들을 컨테이너에 맞도록 늘림
 
-### position 속성의 값
+### position
 - static: position 속성은 값을 임의로 지정하지 않으면 static이라는 user agent(기본값)이 주어진다. 요소를 일반적인 문서 흐름에 따라 배치한다.
 - absolute: 요소를 일반적인 문서 흐름에 따르지 않고 가장 가까운 조상 요소를 따르게 한다
     - 형제관계를 무시한다: 겹치는 것이 가능하다 -> 나중에 작성된 요소가 위로 가는 성향
@@ -110,7 +106,7 @@ CSS로 컴파일되는 스크립트 언어이다. CSS는 불필요한 선택자(
 - fixed: 요소를 일반적인 문서 흐름에 따르지 않고 초기 컨테이닝 블록을 기준으로 배치한다 (무조건 브라우저 기준)
 - sticky: 원래 자리에 있을 때는 relative로 작동하지만, 사용자가 스크롤을 움직여서 화면 밖으로 밀려나면 fixed로 바뀐다
 
-### Grid 속성
+### Grid(CSS grid layout)
 - 종류
     - grid-template-rows: 행(가로)의 배치
     - grid-template-column: 열(세로)의 배치

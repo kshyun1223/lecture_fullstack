@@ -21,4 +21,4 @@ $direction-value : column;
   @include flex-setting($justify-value, $align-value);
 }
 //변수 두 개를 할당함
-//주의: 변수와 매개변수 개념을 혼동하지 않아야 함 -> 자바스크립트랑 파이썬이랑 똑같음 ㅠㅠ
+//주의: 변수와 매개변수 개념을 혼동하지 않아야 함 -> 자바스크립트나 파이썬이랑 똑같음 ㅠㅠ
