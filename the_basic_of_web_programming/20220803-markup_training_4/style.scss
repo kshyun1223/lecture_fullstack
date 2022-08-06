@@ -1,0 +1,72 @@
+// 디폴트
+* {margin:0; padding:0; box-sizing: border-box;}
+
+//flex 모음
+@mixin flex-set($-jusco, $-alit, $-fledi:row) {
+  display:flex;
+  justify-content: $-jusco;
+  align-items: $-alit;
+  flex-direction: $-fledi;
+}
+
+//폭과 높이
+@mixin width-height($width, $height) {
+  width:$width;
+  height:$height;
+}
+
+//지연효과 1초
+* {transition:1s;}
+
+// 기본값
+#root {
+  @include width-height(100vw,100vh);
+  @include flex-set(center, center, column);
+  
+  & > article { // 그림
+    @include width-height(100vw,50vh);
+    background-color: #333;
+  }
+  
+  & > section { // 글
+    @include width-height(100vw,50vh);
+    @include flex-set(flex-start, center, column);
+    padding:2.5vw;
+    border: 1px solid salmon;
+  }
+
+  // 모바일
+  @media (max-width: 768px) { 
+    //mobile first
+  }
+
+  // 태블릿
+  @media (min-width: 769px) and (max-width:1024px) {
+    & > article {
+      @include width-height(90vw,40vh); // 그림 비율을 축소
+    }
+  }
+
+  // PC
+  @media (min-width: 1025px) {
+    & > article {
+      @include width-height(100vw,100vh); // 그림을 화면 전체로 확대
+      background-color: #333;
+      position:relative;
+    }
+
+    & > section {
+      position:absolute;
+      color:#ccc; // 검은 배경에 맞게 흰 글씨로 변경
+      @include flex-set(center, center, row); // <h1>과 <p>를 가로로 정렬
+
+      & > h1 {
+        font-size: 3rem; // 확대
+      }
+
+      & > p {
+        width:50vw; // 지나치게 커지지 않게 비율을 낮춤
+      }
+    }
+  }
+}

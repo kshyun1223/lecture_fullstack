@@ -9,3 +9,72 @@ ul {
   list-style-type: none;
 }
 
+// flex 함수
+@mixin flex-set($-jusco, $-alit, $-fledi:row) {
+  display: flex;
+  justify-content: $-jusco;
+  align-items: $-alit;
+  flex-direction: $-fledi;
+}
+
+// 색상 변수 
+$col-1:#333;
+$col-2:#ccc;
+$col-3:#222;
+$col-4:#111;
+$col-5:#fff;
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: $col-1;
+  color: $col-2;
+
+  // header
+  &>header {
+    width: inherit;
+    height: 5vh;
+    background-color: $col-3;
+    padding: 1vw;
+    @include flex-set(flex-end, center);
+
+
+    &>ul {
+      width: 40vw;
+      height: 40vh;
+      padding: 1vw;
+
+      position:absolute; // 부모 태그인 header를 무시하고 포지셔닝
+      top:1vw;
+
+
+      background-color: $col-5;
+      @include flex-set(flex-start, center, column);
+
+      & > li {
+        color:$col-1;
+        height:6vh;
+        font-size:2rem;
+      }
+    }
+  }
+
+  // main
+  &>main {
+    width: inherit;
+    height: 95vh;
+    background-color: $col-4;
+    @include flex-set(flex-start, flex-end);
+
+    padding:5vw;
+
+    &>section {
+      &>h1 {
+        font-size:10rem;
+      }
+      &>p {
+        width:50vw;
+      }
+    }
+  }
+}
