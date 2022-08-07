@@ -5,54 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script type="javascript/javascript" src = "script.js" ></script>
-  <style>
-    /* 리셋 */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+  <link href="style.css" rel="stylesheet">
+  <script type="javascript/javascript" src = "./script.js" ></script>
+  <script>
+    function StartStop(self) {
+      if(self.value === '시작') {
+        self.value = '정지';
+      } else {
+        self.value = '시작';
+      }
     }
-    ul {
-      list-style-type: none;
-    }
-    /* 레이아웃 */
-    #root {
-      border: 1px solid black;
-      width: auto;
-      height: auto;
-    }
-    /* 타이머 */
-    #root > div > {
-      margin: 5px 0 10px 0; 
-      font-size: 16px; 
-      color: black; 
-      border: 1px solid black; 
-      text-align: center; 
-      padding: 10px; 
-      font-weight: bold;
-    }
-    h1,#timer {
-      display: inline-block;
-    }
-  </style>
+  </script>
 </head>
 <body>
-  <div id="root">
-    <header>
-      <h1>기지개 타이머</h1>
-    </header>
-    <main>
-      <div> <!-- 이미지 -->
-        <img src="img/You_are_not_a_sinner_yet.jpg" alt="You_are_not_a_sinner_yet">
-      </div>  
-      <div> <!-- 타이머 -->
-        <div> <!-- 시작 정지 버튼 -->
-          <input id="start_stop" type="button" value="시작" onclick="StartStop();">
-        </div>
-        <!-- 숫자 표시창 -->
-        <div id="timer">분 초</div>
-    </main>
+  <div id="root"><!--레이아웃-->
+    <h1>기지개 타이머</h1> <!--제목-->
+    <img src="./You_are_not_a_sinner_yet.jpg" alt="You_are_not_a_sinner_yet"> <!--짤-->
+    <div>
+      <input id="button" type="button" value="시작" onclick="StartStop(this);"><!--버튼-->
+      <div id="timer"></div><!--표시창 -->
+    </div>
   </div>
 </body>
 </html>

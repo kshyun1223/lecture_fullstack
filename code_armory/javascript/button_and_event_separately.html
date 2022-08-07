@@ -18,17 +18,12 @@
       /* min-max 수치를 사용. 반응형. */
     }
   </style>
-</head>
-<body>
-  <!-- Id를 스타일링에 사용하면 안되는 이유는 JavaScript에서 호출용으로 쓰이기 때문이다 -->
-  <div id="element"></div> <!-- div 태그에 element라는 id를 할당 -->
-  <button id="trigger">clcik here!</button> <!-- buttom 태그에 trigger라는 id를 할당 -->
   <script>
-    const element = document.getElementById("element"); //변수 element는 element라는 id에 의해 요소를 호출
-    const trigger = document.getElementById("trigger"); //변수 trigger는 trigger라는 id에 의해 요소를 호출
-    let colorBox = ["salmon", "orenge", "red", "cadetblue", "brown"]; //colorBox 변수의 매개변수는 5개의 색상으로 이루어진 배열
+    const element = document.getElementById("element"); 
+    const trigger = document.getElementById("trigger");
+    let colorBox = ["salmon", "orenge", "red", "cadetblue", "brown"];
     let count = 0; //count 변수의 초기값은 0
-    trigger.addEventListener('click', function () { //trigger 변수는 click 이벤트가 발생할 때마다 아래의 메서드를 호출
+    trigger.addEventListener('click', function () { //trigger 변수는 click 이벤트가 발생할 때마다 아래 메서드를 호출
       element.style.backgroundColor = colorBox[count]; //colorBox 배열을 하나씩 출력
       count++; //count 변수의 값을 1 증가시킴
       console.log('hello'); // hello라는 로그를 출력
@@ -36,6 +31,13 @@
         count = 0; //count 변수의 값을 초기화
       }
     })
+    // Id를 스타일링에 사용하면 안되는 이유는 JavaScript에서 호출용으로 쓰이기 때문이다
+    //element, trigger: 변수 & Id 
+    //colorBox: 배열
   </script>
+</head>
+<body>
+  <div id="element"></div> <!-- div 태그에 element라는 id를 할당 -->
+  <button id="trigger">clcik here!</button> <!-- button 태그에 trigger라는 id를 할당 -->
 </body>
 </html>
