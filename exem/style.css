@@ -51,50 +51,22 @@ ul {
 }
 #root > main > section:nth-child(1) > div:nth-child(1) {
   background-color: #19CE60;
-  width: 243px;
-  height: 52px;
-  left: 304px;
-  top: 305px;
 }
-#root > main > section:nth-child(1) > div :nth-child(2) {
+#root > main > section:nth-child(1) > div:nth-child(2) {
   background-color: #DAE1E6;
-  width: 243px;
-  height: 52px;
-  left: 547px;
-  top: 305px;
 }
-#root > main > section:nth-child(1) > div :nth-child(3) {
+#root > main > section:nth-child(1) > div:nth-child(3) {
   background-color: #F7F9FA;
-  width: 486px;
-  height: 228px;
-  left: 304px;
-  top: 357px;
 }
-#root > main > section :nth-child(2) > article :nth-child(1) {
+#root > main > section:nth-child(2) > article:nth-child(1) {
   background-color: #19CE60;
-  width: 486px;
-  height: 60px;
-  left: 304px;
-  top: 629px;
 }
-#root > main > section :nth-child(2) > article :nth-child(2) {
+#root > main > section:nth-child(2) > article:nth-child(2) {
   background-color: #F7F9FA;
-  width: 486px;
-  height: 60px;
-  left: 304px;
-  top: 724px;
 }
-#root > main > section :nth-child(3) > article :nth-child(1) {
+#root > main > section:nth-child(3) > article:nth-child(1) {
   background-color: #F7F9FA;
-  width: 486px;
-  height: 385px;
-  left: 304px;
-  top: 828px;
 }
-#root > main > section :nth-child(3) > article :nth-child(2) {
+#root > main > section:nth-child(3) > article:nth-child(2) {
   background-color: #F7F9FA;
-  width: 486px;
-  height: 230px;
-  left: 304px;
-  top: 1077px;
 }/*# sourceMappingURL=style.css.map */

@@ -62,80 +62,58 @@ ul {list-style-type: none;}
         // ID 로그인
         & > div:nth-child(1) {
           background-color: #19CE60;
-          width: 243px;
-          height: 52px;
-          left: 304px;
-          top: 305px;
+
           
           // @include flex-set($-jusco, $-alit, $-fledi);
         }
 
         // 일회용 번호
-        & > div :nth-child(2) {
+        & > div:nth-child(2) {
           background-color: #DAE1E6;
-          width: 243px;
-          height: 52px;
-          left: 547px;
-          top: 305px;
+
           
           // @include flex-set($-jusco, $-alit, $-fledi);
         }
         // 폼양식
-        & > div :nth-child(3) {
+        & > div:nth-child(3) {
           background-color: #F7F9FA;
-          width: 486px;
-          height: 228px;
-          left: 304px;
-          top: 357px;
+
           
           // @include flex-set($-jusco, $-alit, $-fledi);
         }
       }
 
       // 콘텐츠
-      & > section :nth-child(2) {
+      & > section:nth-child(2) {
         // 증시
-        & > article :nth-child(1) {
+        & > article:nth-child(1) {
           background-color: #19CE60;
-          width: 486px;
-          height: 60px;
-          left: 304px;
-          top: 629px;
+
           
           // @include flex-set($-jusco, $-alit, $-fledi)
         }
         // 날씨
-        & > article :nth-child(2) {
+        & > article:nth-child(2) {
           background-color: #F7F9FA;
-          width: 486px;
-          height: 60px;
-          left: 304px;
-          top: 724px;
+
           
           // @include flex-set($-jusco, $-alit, $-fledi)
         }
       }
 
       // 뉴스&하단메뉴
-      & > section :nth-child(3) {
+      & > section:nth-child(3) {
         // 뉴스
-        & > article :nth-child(1) {
+        & > article:nth-child(1) {
           background-color: #F7F9FA;
-          width: 486px;
-          height: 385px;
-          left: 304px;
-          top: 828px;
-          
+
           // @include flex-set($-jusco, $-alit, $-fledi)
         }
 
         // 하단메뉴
-        & > article :nth-child(2) {
+        & > article:nth-child(2) {
           background-color: #F7F9FA;
-          width: 486px;
-          height: 230px;
-          left: 304px;
-          top: 1077px;
+
           
           // @include flex-set($-jusco, $-alit, $-fledi)
         }  
