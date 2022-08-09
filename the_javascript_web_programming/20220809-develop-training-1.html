@@ -23,6 +23,12 @@
       margin-top: 10px;
     }
   </style>
+</head>
+<body>
+  <div id="root">
+    <div id="contents"></div>
+    <button id="trigger">ㅇㅅㅇ</button>
+  </div>
   <script>
     let contents = document.getElementById("contents");
     let trigger = document.getElementById("trigger");
@@ -38,11 +44,5 @@
     trigger.addEventListener('click', function () {
       contents.textContent = puppy.name + "는" + puppy.feature;});
   </script>
-</head>
-<body>
-  <div id="root">
-    <div id="contents"></div>
-    <button id="trigger">ㅇㅅㅇ</button>
-  </div>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <link href="style.css" rel="stylesheet">
   <script type="javascript/javascript" src = "./script.js" ></script>
   <script>
-    function StartStop(self) {
+    function startStop(self) {
       if(self.value === '시작') {
         self.value = '정지';
       } else {
@@ -23,7 +23,7 @@
     <img src="./You_are_not_a_sinner_yet.jpg" alt="You_are_not_a_sinner_yet"> <!--짤-->
     <div>
       <!--버튼-->
-      <input id="button" type="button" value="시작" onclick="StartStop(this);">
+      <input id="button" type="button" value="시작" onclick="startStop(this);">
 
       <!--정지버튼 - 임시-->
       <input id="stopButton" type="button" value="정지">
