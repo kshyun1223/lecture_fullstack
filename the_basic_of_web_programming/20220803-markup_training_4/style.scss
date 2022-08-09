@@ -58,7 +58,7 @@
     & > section {
       position:absolute;
       color:#ccc; // 검은 배경에 맞게 흰 글씨로 변경
-      @include flex-set(center, center, row); // <h1>과 <p>를 가로로 정렬
+      @include flex-set(center, center); // <h1>과 <p>를 가로로 정렬
 
       & > h1 {
         font-size: 3rem; // 확대

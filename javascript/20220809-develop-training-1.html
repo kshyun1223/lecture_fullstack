@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding: 0; box-sizing: border-box;}
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+    }
+    #contents {
+      width: 300px;
+      height: 700px;
+      background-color: rgba(200,200,200, 0.8);
+    }
+    #trigger {
+      width: 300px;
+      height: 200px;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    let contents = document.getElementById("contents");
+    let trigger = document.getElementById("trigger");
+
+    let puppy = {
+      age:8,
+      name:"댕댕이",
+      now:"졸림",
+      want:"밥",
+      thinking:"집에가구시퍼ㅠ",
+      feature:"커엽습니다"
+    }
+    trigger.addEventListener('click', function () {
+      contents.textContent = puppy.name + "는" + puppy.feature;});
+  </script>
+</head>
+<body>
+  <div id="root">
+    <div id="contents"></div>
+    <button id="trigger">ㅇㅅㅇ</button>
+  </div>
+</body>
+</html>

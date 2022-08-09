@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let puppy = {
+      age:8,
+      name:"댕댕이",
+      now:"졸림",
+      want:"밥",
+      thinking:"집에가구시퍼ㅠ"
+    }
+    console.log(puppy.thinking)
+
+    function adult($age) { //조건문을 함수에 집어넣었다 (선언)
+      if($age > 19) {
+        console.log('당신은 성인입니다.');
+      } else {
+        console.log('당신은 아직 성인이 아닙니다.');
+      } //조건문으로 연령 구분 알고리즘을 만들었다
+    }
+
+    adult(puppy.age); //함수 할당
+
+  </script>
+</body>
+</html>

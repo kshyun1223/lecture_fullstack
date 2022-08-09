@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#root * {
+  border: 1px solid gray;
+}
+
+#root {
+  width: 100vw;
+  height: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#root > aside {
+  background-color: #19CE60;
+  width: 10vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+#root > main {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+#root > main > header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#root > main > header > div :nth-child(1) {
+  background-color: #19CE60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#root > main > header > div :nth-child(2) {
+  background-color: #19CE60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#root > main > section :nth-child(1) > div :nth-child(1) {
+  background-color: #19CE60;
+  width: 243px;
+  height: 52px;
+  left: 304px;
+  top: 305px;
+}
+#root > main > section :nth-child(1) > div :nth-child(2) {
+  background-color: #DAE1E6;
+  width: 243px;
+  height: 52px;
+  left: 547px;
+  top: 305px;
+}
+#root > main > section :nth-child(1) > div :nth-child(3) {
+  background-color: #F7F9FA;
+  width: 486px;
+  height: 228px;
+  left: 304px;
+  top: 357px;
+}
+#root > main > section :nth-child(2) > article :nth-child(1) {
+  background-color: #19CE60;
+  width: 486px;
+  height: 60px;
+  left: 304px;
+  top: 629px;
+}
+#root > main > section :nth-child(2) > article :nth-child(2) {
+  background-color: #F7F9FA;
+  width: 486px;
+  height: 60px;
+  left: 304px;
+  top: 724px;
+}
+#root > main > section :nth-child(3) > article :nth-child(1) {
+  background-color: #F7F9FA;
+  width: 486px;
+  height: 385px;
+  left: 304px;
+  top: 828px;
+}
+#root > main > section :nth-child(3) > article :nth-child(2) {
+  background-color: #F7F9FA;
+  width: 486px;
+  height: 230px;
+  left: 304px;
+  top: 1077px;
+}/*# sourceMappingURL=style.css.map */

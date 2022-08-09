@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- <script>
+    let root = document.getElementById("root");
+    let col = "cadetblue";
+    // 변수를 선언하여 코드량을 대폭 줄였다
+    root.addEventListener('onkeydown', function() {
+      if(root.style.backgroundColor === col) {
+        root.style.backgroundColor = "salmon";
+      } else {
+        root.style.backgroundColor = col;
+      }
+    }); 
+    </script> -->
+  <script>
+    let root = document.getElementById("root");
+    console.dir(root);
+  </script>
+
+  <!-- 객체(변수) 만들어보기 -->
+  <script>
+  // 커피콩
+  // 물
+  // 테이크아웃
+  // 우유
+  // 얼음
+  // 만드는 사람의 마음
+  let coffeItem = {
+    bean: "커피콩",
+    water: "물",
+    takeout: "테이크아웃잔",
+    milk: "우유",
+    ice: "얼음",
+    maker: "정성"
+  }
+  </script>
+</body>
+</html>
