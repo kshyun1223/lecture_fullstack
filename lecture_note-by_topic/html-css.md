@@ -70,7 +70,7 @@ CSS로 컴파일되는 스크립트 언어이다. CSS는 불필요한 선택자(
 - inherit 값: 본래 상속을 받지 않는 속성이라도 임의의 값 대신 inherit이라는 명령어를 값으로 입력하면 부모태그의 해당 속성을 상속받을 수 있다
 
 ### Flexbox(Flexible box layout module)
-- flex의 하위속성으로 특성 클래스만을 개별적으로 선택할 수 있다
+- 어떤 요소를 제어하고싶은 경우 그 요소의 부모요소에 flex를 적용해야 한다
 - justify-content: 좌우 정렬
     - flex-start: 요소들을 컨테이너의 왼쪽으로 정렬
     - flex-end: 요소들을 컨테이너의 오른쪽으로 정렬

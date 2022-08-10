@@ -6,7 +6,7 @@ $col-4:#19CE60;
 $col-5:#DAE1E6;
 
 //flex-set
-@mixin flex-set($-jusco, $-alit, $-fledi:row) {
+@mixin flex-set($jusco, $alit, $fledi:row) {
   display:flex;
   justify-content: $-jusco;
   align-items: $-alit;
@@ -25,98 +25,104 @@ ul {list-style-type: none;}
 //임시구분선
 #root * {
   border: 1px solid gray;
+  // display: flex;
 }
 
 // 공통
 #root {
-  @include width-height(100vw,100);
+  @include width-height(100vw,100vh);
   @include flex-set(center, center, row);
 
-    // aside
-    & > aside {
-      background-color: #19CE60;
-      @include width-height(10vw,100vh);
-      @include flex-set(flex-start, center, column);
-    } 
-    //main
-    & > main {
-      @include width-height(90vw,90vh);
-      @include flex-set(space-around, center, column);
-      margin-top:10vh;
+  // aside
+  & > aside {
+    background-color: #19CE60;
+    @include width-height(10vw,100vh);
+    @include flex-set(flex-start, center, );
+  } 
+  //main
+  & > main {
+    @include width-height(90vw,80vh);
+    @include flex-set(flex-start, center, );
 
-      // 로고
-      & > header {
+    // 로고
+    & > header {
+      margin-top: 20vh;
+      display: flex;
+      @include flex-set(center, center);
+
+      // waver
+      & > div:nth-child(1) {
         background-color: #19CE60;
-        // waver
-        & > div:nth-child(1) {
-          @include width-height(500px, 500px);
-        } 
-        // happy
-        & > div:nth-child(2) {
-          @include width-height(500px, 500px);
-        } 
+        @include width-height(10vw, 4vh);
+      } 
+      // happy
+      & > div:nth-child(2) {
+        background-color: #19CE60;
+        @include width-height(5vw, 2vh);
+        position:relative;
+        left:3vw;
+      } 
+    }
+
+    // 로그인
+    & > section:nth-child(1) {
+      @include flex-set(center, center, column);
+      margin-top: 20vh;
+
+      // ID 로그인
+      & > div:nth-child(1) {
+        background-color: #19CE60;
+        @include width-height(10vw, 4vh);
       }
 
-      // 로그인
-      & > section:nth-child(1) {
-        // ID 로그인
-        & > div:nth-child(1) {
-          background-color: #19CE60;
+      // 일회용 번호
+      & > div:nth-child(2) {
+        background-color: #DAE1E6;
+        @include width-height(10vw, 4vh);
 
-          
-          // @include flex-set($-jusco, $-alit, $-fledi);
-        }
-
-        // 일회용 번호
-        & > div:nth-child(2) {
-          background-color: #DAE1E6;
-
-          
-          // @include flex-set($-jusco, $-alit, $-fledi);
-        }
-        // 폼양식
-        & > div:nth-child(3) {
-          background-color: #F7F9FA;
-
-          
-          // @include flex-set($-jusco, $-alit, $-fledi);
-        }
+        
       }
-
-      // 콘텐츠
-      & > section:nth-child(2) {
-        // 증시
-        & > article:nth-child(1) {
-          background-color: #19CE60;
-
-          
-          // @include flex-set($-jusco, $-alit, $-fledi)
-        }
-        // 날씨
-        & > article:nth-child(2) {
-          background-color: #F7F9FA;
-
-          
-          // @include flex-set($-jusco, $-alit, $-fledi)
-        }
-      }
-
-      // 뉴스&하단메뉴
-      & > section:nth-child(3) {
-        // 뉴스
-        & > article:nth-child(1) {
-          background-color: #F7F9FA;
-
-          // @include flex-set($-jusco, $-alit, $-fledi)
-        }
-
-        // 하단메뉴
-        & > article:nth-child(2) {
-          background-color: #F7F9FA;
-
-          
-          // @include flex-set($-jusco, $-alit, $-fledi)
-        }  
+      // 폼양식
+      & > div:nth-child(3) {
+        background-color: #F7F9FA;
+        @include width-height(10vw, 4vh);
       }
     }
+
+    // 콘텐츠
+    & > section:nth-child(2) {
+      // 증시
+      & > article:nth-child(1) {
+        background-color: #19CE60;
+        @include width-height(10vw, 4vh);
+
+        
+      }
+      // 날씨
+      & > article:nth-child(2) {
+        background-color: #F7F9FA;
+        @include width-height(10vw, 4vh);
+
+        
+      }
+    }
+
+    // 뉴스&하단메뉴
+    & > section:nth-child(3) {
+      // 뉴스
+      & > article:nth-child(1) {
+        background-color: #F7F9FA;
+        @include width-height(10vw, 4vh);
+
+      }
+
+      // 하단메뉴
+      & > article:nth-child(2) {
+        background-color: #F7F9FA;
+        @include width-height(10vw, 4vh);
+
+        
+      }  
+    }
   }
+}
