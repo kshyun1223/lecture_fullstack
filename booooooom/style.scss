@@ -6,7 +6,7 @@ $col-4:#19CE60;
 $col-5:#DAE1E6;
 
 //flex-set
-@mixin flex-set($jusco, $alit, $fledi:row) {
+@mixin flex-set($-jusco, $-alit, $-fledi:row) {
   display:flex;
   justify-content: $-jusco;
   align-items: $-alit;
@@ -25,31 +25,29 @@ ul {list-style-type: none;}
 //임시구분선
 #root * {
   border: 1px solid gray;
-  // display: flex;
 }
 
 // 공통
 #root {
   @include width-height(100vw,100vh);
-  @include flex-set(center, center, row);
+  @include flex-set(center, center);
 
   // aside
   & > aside {
     background-color: #19CE60;
     @include width-height(10vw,100vh);
-    @include flex-set(flex-start, center, );
+    @include flex-set(flex-start, center, column);
   } 
   //main
   & > main {
     @include width-height(90vw,80vh);
-    @include flex-set(flex-start, center, );
+    margin-top:20vh;
+    @include flex-set(flex-start, center, column);
 
     // 로고
     & > header {
-      margin-top: 20vh;
-      display: flex;
       @include flex-set(center, center);
-
+      @include width-height(100vw, 4vh);
       // waver
       & > div:nth-child(1) {
         background-color: #19CE60;
@@ -67,7 +65,10 @@ ul {list-style-type: none;}
     // 로그인
     & > section:nth-child(1) {
       @include flex-set(center, center, column);
-      margin-top: 20vh;
+      @include width-height(100vw, 4vh);
+      padding-top: 40px;
+
+      
 
       // ID 로그인
       & > div:nth-child(1) {
