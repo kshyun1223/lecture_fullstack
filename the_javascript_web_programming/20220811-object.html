@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+let studentList = [
+  "강예훈",
+  "김성현",
+  "류주완",
+  "마근원",
+  "문예찬",
+  "박종인",
+  "박재형",
+  "송형주",
+  "양상희",
+  "원두진",
+  "유민호",
+  "이상호",
+  "이소영",
+  "이은수",
+  "정동욱",
+  "정윤환",
+  "정정원",
+  "지영빈",
+  "한용준",
+  "황초영",
+  "김근수",
+  "김승현",
+  "김지애",
+  "전형민",
+  "정연주",
+  "이아연",
+  "최화연",
+  "한가람"
+];
+
+
+
+  console.dir(window.document.body.children[0].children[0].children[0]);
+  for(let index = 0; index < studentList.length; index++) {
+    let liTag = window.document.createElement('li');
+    liTag.textContent = studentList[index];
+    window.document.body.children[0].children[0].children[0].appendChild(liTag);
+  }
+</script>
+</body>
+</html>

@@ -8,10 +8,6 @@ ul {
   list-style-type: none;
 }
 
-#root * {
-  border: 1px solid gray;
-}
-
 #root {
   width: 100vw;
   height: 100vh;
@@ -29,8 +25,23 @@ ul {
   width: 10vw;
   height: 100vh;
 }
+#root > aside > div {
+  width: 10vw;
+  height: 70vh;
+  border: 1px solid gray;
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root > aside > div > div {
+  border: 1px solid gray;
+  width: 1vw;
+  height: 1vh;
+  margin-top: 10vh;
+}
 #root > main {
-  background-color: rgb(197, 255, 192);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -39,7 +50,6 @@ ul {
   height: 100vh;
 }
 #root > main > header {
-  background-color: rgb(192, 246, 255);
   width: 90vw;
   height: 60vh;
   display: flex;
@@ -48,54 +58,105 @@ ul {
   flex-direction: column;
 }
 #root > main > header > .logo {
-  background-color: rgb(192, 207, 255);
-  width: 21vw;
+  width: 10vw;
   height: 3vh;
   margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid gray;
+}
+#root > main > header > .logo > article {
+  width: 10vw;
+  height: 2vh;
+  position: relative;
+  left: 10vw;
+  border: 1px solid gray;
 }
 #root > main > header > .login {
   background-color: rgb(237, 192, 255);
+  margin-top: 4vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   width: 48vw;
   height: 20vh;
-  margin-top: 4vh;
+  border: 1px solid gray;
 }
 #root > main > header > .login > article {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 48vw;
+}
+#root > main > header > .login > article > div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 24vw;
   height: 4vh;
+  border: 1px solid gray;
+}
+#root > main > header > .login > article > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 24vw;
+  height: 4vh;
+  border: 1px solid gray;
 }
 #root > main > header > .login > article {
-  width: 48vw;
-  height: 16vh;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 #root > main > header > .content {
-  background-color: rgb(255, 192, 192);
   width: 48vw;
   height: 11vh;
   margin-top: 3vh;
-}
-#root > main > footer {
-  background-color: rgb(53, 46, 46);
-  width: 90vw;
-  height: 40vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
+#root > main > header > .content > article {
+  width: 48vw;
+  height: 4vh;
+  border: 1px solid gray;
+}
+#root > main > header > .content > article > article {
+  width: 48vw;
+  height: 4vh;
+  position: relative;
+  top: 4vh;
+  border: 1px solid gray;
+}
+#root > main > footer {
+  width: 90vw;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid gray;
+}
 #root > main > footer > .news {
   background-color: rgb(255, 254, 192);
   width: 48vw;
   height: 28vh;
-  margin-top: 3vh;
+  position: relative;
+  z-index: 2;
 }
 #root > main > footer > .manu {
   background-color: rgb(192, 253, 255);
   width: 48vw;
-  height: 16vh;
-  margin-top: 3vh;
+  height: 17vh;
+  bottom: 5vh;
+  position: relative;
+  z-index: 1;
 }/*# sourceMappingURL=style.css.map */

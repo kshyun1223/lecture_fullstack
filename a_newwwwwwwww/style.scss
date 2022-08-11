@@ -22,14 +22,8 @@ $col-5:#DAE1E6;
 * {margin:0; padding:0; box-sizing: border-box;}
 ul {list-style-type: none;}
 
-//임시구분선
-#root * {
-  border: 1px solid gray;
-}
-
 // 공통
-// 루트
-#root {
+#root { // 루트
   @include width-height(100vw,100vh);
   @include flex-set(center, center);
 
@@ -38,86 +32,116 @@ ul {list-style-type: none;}
     background-color: rgb(255, 228, 192);
     @include flex-set(flex-start, flex-start, column);
     @include width-height(10vw, 100vh);
+    //동그라미 컨테이너
+    & > div {
+      @include width-height(10vw, 70vh);
+      border: 1px solid gray;
+      margin-top: 20vh;
+      @include flex-set(center, center, column);
+      //동그라미 1~5      
+      & > div {
+        border: 1px solid gray;
+        @include width-height(1vw, 1vh);
+        margin-top: 10vh;
+      }
+    }
   }
   //main
   & > main {
-    background-color: rgb(197, 255, 192);
     @include flex-set(flex-start, flex-start, column);
     @include width-height(90vw, 100vh);
     
     //헤더
     & > header {
-      background-color: rgb(192, 246, 255);
       @include width-height(90vw, 60vh);
       @include flex-set(center, center, column);
 
       // 로고
       & > .logo {
-      background-color: rgb(192, 207, 255);
-      @include width-height(21vw, 3vh);
+      @include width-height(10vw, 3vh);
       margin-top:15vh;
-
+      @include flex-set(center, center);
+      border: 1px solid gray;
+        //happy
+        & > article {
+          @include width-height(10vw, 2vh);
+          position:relative;
+          left: 10vw;
+          border: 1px solid gray;
+        }
       }
 
       // 로그인
       & > .login {
         background-color: rgb(237, 192, 255);
-        @include width-height(48vw, 20vh);
         margin-top:4vh;
-          
+        @include flex-set(flex-start, center, column);
+        @include width-height(48vw, 20vh);
+        border: 1px solid gray;
         //상단
         & > article {
           @include flex-set(center, center);
-          @include width-height(48vw, 4vh);
-        }
           //아이디로그인
           & > div:nth-child(1) {
+            @include flex-set(center, center);
+            @include width-height(24vw, 4vh);
+            border: 1px solid gray;
           }
-          
           //일회용 번호
           & > div:nth-child(2) {
-
+            @include flex-set(center, center);
+            @include width-height(24vw, 4vh);
+            border: 1px solid gray;
           }
-
+        }
         //폼양식
         & > article {
-          @include width-height(48vw, 16vh);
-          position:relative;
-
+          @include flex-set(center, center);
         }
       }
 
       // 콘텐츠
       & > .content {
-        background-color: rgb(255, 192, 192);
         @include width-height(48vw, 11vh);
         margin-top:3vh;
+        @include flex-set(flex-start, center, column);
 
         //증시
+        & > article {
+          @include width-height(48vw, 4vh);
+          border: 1px solid gray;
         
-
-        //날씨
+          //날씨
+          & > article {
+            @include width-height(48vw, 4vh);
+            position: relative;
+            top:4vh;
+            border: 1px solid gray;
+         }
+       }
       }
     }
-
     //하단
     & > footer {
-      background-color: rgb(53, 46, 46);
       @include width-height(90vw, 40vh);
-      @include flex-set(flex-start, center, column);
+      @include flex-set(center, center, column);
+      border: 1px solid gray;
 
       // 뉴스
       & > .news {
         background-color: rgb(255, 254, 192);
         @include width-height(48vw, 28vh);
-        margin-top:3vh;
+        position:relative;
+        z-index: 2;
       }
 
       // 하단메뉴
       & > .manu {
         background-color: rgb(192, 253, 255);
-        @include width-height(48vw, 16vh);
-        margin-top:3vh;
+        @include width-height(48vw, 17vh);
+        bottom:5vh;
+        position:relative;
+        z-index: 1;
       }
     }
   }
