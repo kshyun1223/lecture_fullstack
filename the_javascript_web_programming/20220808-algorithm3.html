@@ -13,9 +13,20 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatibus assumenda quia nam deleniti natus ullam quaerat mollitia expedita laborum, ipsam consequatur quisquam in obcaecati perferendis praesentium corrupti? Esse, placeat!
   </p>
   <script>
-    let text = "lorem"
-    let p = window.document.body.children[0];
-    // console.dir(p.outerText);asdfasdfsadfsafd
+
+    // console.log(typeof(p.outerText)); //p 태그의 타입을 검사: 스트링
+    // console.log(p.outerText[0]); //p 태그의 첫글자를 검사: L
+    // console.log(p.outerText.length); //p 태그의 글자수를 검사: 734
+
+    let p = window.document.body.children[0]; //개발자도구로 p 태그의 경로를 확인
+    let count = 0; // 변수 count=0
+    for(let i = 0; i < p.outerText.length; i++) { 
+    //변수 i는 0으로 시작; i는 p 태그의 글자수보다 작다, i를 1씩 더함 
+      if(p.outerText[i] === "e") {
+        count++;
+      }
+    }
+    console.log('count 값은 ' + count + '입니다.');
   </script>
 </body>
 </html>
