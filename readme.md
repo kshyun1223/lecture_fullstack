@@ -3,7 +3,7 @@
 - [웹 프로그래밍 기초](https://github.com/kshyun1223/lecture_fullstack/tree/master/the_basic_of_web_programming)
   - HTML, CSS, SCSS
 
-- [JavaScript 웹 프로그래밍](https://github.com/kshyun1223/lecture_fullstack/tree/master/the_javascript_web_programming)
+- [JavaScript](https://github.com/kshyun1223/lecture_fullstack/tree/master/the_javascript_web_programming)
 
 ### 필기노트
 - [일자별 노트](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_note-by_date)
