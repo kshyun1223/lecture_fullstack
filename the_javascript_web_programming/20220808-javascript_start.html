@@ -8,11 +8,10 @@
 </head>
 <body>
   <script>
-    const merong = document.createElement("div"); 
-    const body = document.querySelector('body');
-    body.appendChild(merong);
-    // 마크업에서 <div>만 작성해도 잘 나타났던 이유는 엔진이 위와 같은 작업을 해주고 있었기 때문
-    // 지금 <div>를 만드는 앱을 작성한 것이다
+    const merong = document.createElement("div"); //div 요소를 생성
+    const body = document.querySelector('body'); //body 요소를 호출
+    body.appendChild(merong); //merong 변수의 값 요소를 body 노드의 마지막 자식으로 붙임
+
     let a = 1;
     let b = 2;
     console.log(a+b);

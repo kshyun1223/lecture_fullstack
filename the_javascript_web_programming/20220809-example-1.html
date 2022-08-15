@@ -7,6 +7,13 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- document 객체  -->
+  <script>
+    let c = "<div>안녕하세요</div>";
+    document.body.innerHTML = c;
+    //문자열 c를 브라우저가 태그로 파싱(parsing) 했다. 보이는 무언가로 렌더링했다.
+  </script> 
+
   <!-- 인라인방식 -->
   <button onclick="alert('화연님메롱');">click</button>
   
@@ -19,31 +26,17 @@
   </script>
 
   <!-- 데이터타입 비교 -->
-  <script>
+  <!-- <script>
     let a = 1;
     let b = "1";
     console.log(a === b);
-  </script> 
+  </script>  -->
 
   <!-- 데이터타입 검사 -->
-  <script>
+  <!-- <script>
     let a = 1;
     let b = "1";
     console.log(typeof(a));
-  </script> 
-
-  <!-- document 객체  -->
-  <script>
-    let c = "<div>안녕하세요</div>";
-    document.body.innerHTML = c;
-  </script> 
-  <!-- 문자열 c를 브라우저가 태그로 파싱(parsing) 했다.
-  -> 보이는 무언가로 렌더링했다.  -->
-
-  <script>
-    let d = "이상호님 메롱";
-    let c = '<div id="root"> <section> + d + </section> </div>';
-    document.body.innerHTML = c;
-  </script>
+  </script> -->
 </body>
 </html>
