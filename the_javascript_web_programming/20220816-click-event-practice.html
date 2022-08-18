@@ -56,6 +56,17 @@
     // 호출메소드?를 제대로 쓰지 않으면 not a function 이 뜸 
     // 조건문에 속성을 입력하고 싶으면 스타일링부터 CSS가 아니라 자바스크립트로 해야 됨
 
+    // 스타일링
+    function flexSet(element, direction="row") {
+      if(typeof direction === "string") {
+        element.style.display = "flex" ;
+        element.style.justifyContent = "center";
+        element.style.alignItems = "center";
+      }
+    }
+
+    
+
     // 입력
     // * {
     //   margin:0; 
