@@ -15,8 +15,9 @@
 
 ### 식별자
 - 식별자의 종류는 상당히 많기 때문에 일일히 외우기보다는 그때그때 확인하는 편이 합리적이다
-- `console.dir()`
-- `console.log()`
+- `console.dir()`: 요소를 JSON과 같은 트리 구조로 출력 하고, DOM 객체의 전체 표현을 보려고 할 때 유용.
+- `console.log()`: 요소를 HTML과 같은 트리 구조로 출력 하고, DOM 요소에 대해 특별한 처리를 제공.
+
 ```javascript
 document.getElementById('root');
 document.getElementsByTagName("li"); //태그명을 기준으로 모두 수집하여 배열로 반환
