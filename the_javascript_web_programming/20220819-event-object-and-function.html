@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script>
+    // html markup: div id=root, ul > li*5
+    const root = document.getElementById("root"); // root 요소 호출
+    const ul = root.children[0]; // ul 경로 지정 
+    const liItems = ul.children; // li 경로 지정: 인덱스 없이 일괄 지정
+    // console.log(liItems.length);
+    const liTextNode = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀"]; // 배열 생성
+    // console.log(ul);
+    for(let i = 0; i < liItems.length; i++) { // 
+      liItems[i].textContent = liTextNode[i];
+      liItems[i].style.width = "100vw";
+      liItems[i].style.height = ( 100 / liItems.length ) + "vh";
+    }
+
+    function menuToggler(container, checkElementString) {
+      if(typeof checkElementString === "string") {
+        if(container.tagName === checkElementString.toUpperCase()) {
+          let isStatus = true;
+          container.addEventListener('click', function (event) {
+            if(isStatus === true) {
+              event.target.style.backgroundColor = "salmon";
+              isStatus = false;
+            } else {
+              event.target.style.backgroundColor = "cadetblue";
+              isStatus = true;
+            }
+          });
+        }
+      }
+    }
+    menuToggler(ul, "ul");
+  </script>
+</body>
+</html>
