@@ -15,9 +15,7 @@
 
 ### 식별자
 - 식별자의 종류는 상당히 많기 때문에 일일히 외우기보다는 그때그때 확인하는 편이 합리적이다
-- `console.dir()`: 요소를 JSON과 같은 트리 구조로 출력 하고, DOM 객체의 전체 표현을 보려고 할 때 유용.
-- `console.log()`: 요소를 HTML과 같은 트리 구조로 출력 하고, DOM 요소에 대해 특별한 처리를 제공.
-
+- `console.dir()` `console.log()`
 ```javascript
 document.getElementById('root');
 document.getElementsByTagName("li"); //태그명을 기준으로 모두 수집하여 배열로 반환
@@ -85,7 +83,7 @@ jongin(container, "cadetblue", "click");
 ```
 
 ### 변수
-- 변수에는 값을 저장할 수 **있다**
+- 변수에는 값을 저장할 수 있다
 ```javascript
 let a = 1; 
 let b = 2; 
@@ -107,7 +105,33 @@ document.body.addEventListener('click',function(){
 });
 ```
 
+1. 함수(function)에 접두사(함수이름 앞부분)로 get이 들어가 있다면
 
+- 어떤 값을 돌려받아 반환하는 함수를 칭한다.
+- 비유 : 어떠한 '값'을 가져왔다.
+- getElementById() : 이미 결정된 값인 '아이디' 데이터를 통해 값(요소)를 반환(return) 받았다.
 
+2. 함수(function)에 접두사(함수이름 앞부분)로 set이 들어가 있다면
+
+- 값을 '변경'하거나 '설정'할 때 사용하는 함수를 칭한다.
+- 비유 : 어떤 값을 다르게 변경했다.
+- setAttribute() : 속성(attribute)를 특정 값으로 '설정'했다.
+- 초기설정(처음설정)인 경우, initialized 약칭 init으로 부르기도 한다.
+
+3. 함수(function)에서 부르는 매개변수(parameter)는
+
+- 함수에 같이 '정의'한 '변수(variable)'을 뜻한다.
+- 사용하는 사람에 따라, '인자'라고 부르기도 한다.
+- 어휘 : "function a는 인자로 a라는 변수와 b라는 변수를 초기화했다."
+
+4. 함수(function)에서 부르는 argument(아규먼트)는
+
+- 함수 호출할때 매개변수 '자리'에 사용하는 '값(value)'를 의미한다.
+- 사용하는 사람에 따라, '인수'라고 부르기도 한다.
+- 어휘 : "function a 호출할 때 인수로 객체 b를 전달해 주세요."
+
+5. 함수(function)에서 칭하는 반환(return)에 대한 정확한 사전적 정의
+
+- 일련의 함수 실행을 통해 리턴키워드로 값을 부여하고 '호출지점'으로 반환하는 명령문
 
 
