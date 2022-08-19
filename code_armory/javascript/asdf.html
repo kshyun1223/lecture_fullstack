@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+</head>	
+<body>
+  <a href="#1" onclick="show('movie');">영화</a>
+  <a href="#1" onclick="show('music');">음악</a>
+
+<div id="movie">
+    <h1>원피스 극장 13기</h1>
+    <p>전설의 해적왕 그가 남긴 마지막 보물을 가지기 위한 젊은이들의 ...</p>
+</div>
+<div id="music" style="display: none;">
+    <h1>복면가왕 - 음악 대장(하현우)</h1>
+    <p>전설의 10연승 ...</p>
+</div>
+<script>
+
+    function show (kind){
+        var music = document.querySelector("#music");
+        var movie = document.querySelector("#movie");
+
+        music.style.display = "none";
+        movie.style.display = "none";
+        
+        document.querySelector("#" + kind).style.display = "block";
+    }
+</script>
+</body>
+</html>
