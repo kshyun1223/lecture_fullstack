@@ -5,97 +5,63 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    * {
-      margin:0; 
-      padding:0; 
-      box-sizing: border-box;
-    }
-    #root > ul {
-      display: flex;
-      flex-direction: row;
-    }
-    #root > ul > li {
-      background-color: aliceblue;
-      height: 15vh;
-      width: 15vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid;
-    }
-  </style>
 </head>
 <body>
-  <div id="root">
-    <ul>
-      <li>피카츄</li>
-      <li>피카츄</li>
-      <li>피카츄</li>
-      <li>피카츄</li>
-      <li>피카츄</li>
-      <li>피카츄</li>
-    </ul>    
-  </div>
+  <div id="root"></div>
 
   <script>
-    // 선생님꺼
-    // let container = document.querySelector("ul");
-    // let isStatue = true;
-    // container.addEventListener('click', function() {
-    //   if(isStatue === true) {
-    //     container.style.flexDirection = 'column';
-    //     isStatue = false;
-    //   } else {
-    //     container.style.flexDirection = 'row';
-    //     isStatue = true;
-    //   }
-    // }) 
-
-    // 내꺼
-    // 호출메소드?를 제대로 쓰지 않으면 not a function 이 뜸 
-    // 조건문에 속성을 입력하고 싶으면 스타일링부터 CSS가 아니라 자바스크립트로 해야 됨
-
     // 스타일링
     function flexSet(element, direction="row") {
-      if(typeof direction === "string") {
-        element.style.display = "flex" ;
-        element.style.justifyContent = "center";
-        element.style.alignItems = "center";
+        if(typeof direction === "string") {
+          element.style.display = "flex" ;
+          element.style.justifyContent = "center";
+          element.style.alignItems = "center";
+        } else {
+          console.log("need to second parameter type check");
+        }
       }
+
+    function widthAndHeight(element, width, height) {
+      element.style.width = width;
+      element.style.height = height;
     }
 
-    
+    // style reset
+    const body = document.body;
+      body.style.padding = 0;
+      body.style.margin = 0;
+      body.style.boxSizing = 'border-box';
 
-    // 입력
-    // * {
-    //   margin:0; 
-    //   padding:0; 
-    //   box-sizing: border-box;
-    // }
-    // #root > ul {
-    //   display: flex;
-    //   flex-direction: row;
-    // }
-    // #root > ul > li {
-    //   background-color: aliceblue;
-    //   height: 15vh;
-    //   width: 15vw;
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    //   border: 1px solid;
-    // }
+    // #root
+    const root = document.getElementById('root');
+
+    // #root > ul
+    const ul = document.createElement("ul");
+      flexSet(ul, "row");
+      root.appendChild(ul);
+
+    // #root > ul > li
+    for(let i=0; i < 5; i++) {
+      const li = document.createElement("li");
+      widthAndHeight(li, "15vw", "15vh");
+      flexSet(li, "row");
+      li.style.backgroundColor = "aliceblue";
+      li.style.border = "1px solid black"
+      li.innerText = "피카츄"
+      ul.appendChild(li);
+    }
 
     // 처리
-    let root = document.getElementById('root').children[0];
-    root.addEventListener('click', function() {
-      if(root.style.flexDirection === 'row'){
-        root.style.flexDirection === 'column';
+    let direction = true;
+    ul.addEventListener('click', function() {
+      if(direction === true) {
+        ul.style.flexDirection = 'column';
+        direction = false;
       } else {
-        root.style.flexDirection === 'row';
+        ul.style.flexDirection = 'row';
+        direction = true;
       }
-    })
+    }) 
   </script>
 </body>
 </html>

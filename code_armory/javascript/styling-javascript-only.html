@@ -24,22 +24,26 @@
         element.style.height = height;
       }
 
+      // style reset
       const body = document.body;
       body.style.padding = 0;
       body.style.margin = 0;
       body.style.boxSizing = 'border-box';
       
+      // root
+      // html markup: <div id="root"></div>
       const root = document.getElementById('root');
       widthAndHeight(root, "100vw", "100vh");
       root.style.backgroundColor = "#333";
-      flexSetting(root, "column");
+      flexSet(root, "column");
       
+      // section
       const section = document.createElement("section");
       widthAndHeight(section, "30vw", "30vh");
       section.style.backgroundColor = "salmon";
-      root.appendchild(section);
+      root.appendChild(section);
       
-      const mainElement = document.quetySelector('section');
+      const mainElement = document.querySelector('section');
       mainElement.addEventListener('click', function() {
         mainElement.style.backgroundColor = "cadetblue";
       })
