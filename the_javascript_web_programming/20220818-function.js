@@ -9,7 +9,6 @@ function hairService(parameter) {
 
 // 함수 호출, 할당 (assignment)
 hairService("양상희");
-console.log('어서오세요' + parameter + '고객님');
 
 // ReferenceError: 참조 에러
 
