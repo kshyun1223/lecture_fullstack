@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 리셋 */
+    * {margin:0; padding:0; box-sizing: border-box;}
+    ul {list-style-type: none;}
+
+    /* 초기 배경 */
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* drawer 버튼 */
+    #drawer {
+      margin-top: 1vh;
+      margin-right: 1vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #drawer div {
+      width: 10vw;
+      height: 0.7vh;
+      margin: 0.7vh;
+      background-color: #787878;
+    }
+
+    /* 메뉴: 없었는데 나타나야 됨 */
+    #root > header {
+      width: 80vw;
+      height:100vh;
+      background-color: #787878;
+      color:#fff;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transition:1s;
+    }
+
+    #root > header > div > div {
+      margin-top:3vmax;
+    }
+
+    /* closer 버튼 */
+    #closer {
+      position: absolute;
+      top:2vh;
+      right:0vw;
+    }
+
+    #closer > div:nth-child(1) {
+      background-color: #D9D9D9;
+      height: 0.7vh;
+      width: 10vw;
+      transform: rotate(45deg);
+      position: absolute;
+    }
+
+    #closer > div:nth-child(2) {
+    background-color: #D9D9D9;
+      height: 0.7vh;
+      width: 10vw;
+      transform: rotate(135deg);
+    }
+
+  </style>
+</head>
+  <div id="root">
+
+    <!-- drawer 버튼 -->
+    <div id="drawer">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- 메뉴: 없었는데 나타나야 됨 -->
+    <header>
+      <!-- closer 버튼 -->
+      <div id="closer">
+        <div></div>
+        <div></div>
+      </div>
+      <!-- 메뉴들 -->
+      <div>
+        <div>menu</div>
+        <div>menu</div>
+        <div>menu</div>
+        <div>menu</div>
+        <div>menu</div>
+        <div>menu</div>
+      </div>
+    </header>
+  </div>
+</body>
+  <script>
+    // #root > header
+    const header = document.querySelector('#root > header')
+      header.style.display = "none";
+
+    // 초기상태는 검정화면에 drawer버튼이 우상단에 있다
+
+    // #drawer: drawer 버튼을 누르면 메뉴가 나타나고 drawer 버튼이 사라진다
+    document.getElementById("drawer").addEventListener('click', function() { // 
+      header.style.display = "";
+      drawer.style.display = "none";
+      });
+    
+    // #closer: closer 버튼을 누르면 메뉴가 사라지고 drawer 버튼이 나타난다
+    document.getElementById("closer").addEventListener('click', function() { 
+      header.style.display = "none";
+      drawer.style.display = "";
+      });
+
+  </script>
+</html>

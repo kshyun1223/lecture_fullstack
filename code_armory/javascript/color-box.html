@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 50vw;
+      min-width:500px;
+      max-width:1000px;
+      height: 50vw;
+      min-height:500px;
+      max-height:1000px;
+      background-color: coral;
+      border: 1px solid black;
+      /* min-max 수치를 사용. 반응형. */
+    }
+  </style>
+  <script>
+    const element = document.getElementById("element"); 
+    const trigger = document.getElementById("trigger");
+    let colorBox = ["salmon", "orenge", "red", "cadetblue", "brown"];
+    let count = 0;
+    trigger.addEventListener('click', function () {
+      element.style.backgroundColor = colorBox[count];
+      count++;
+      console.log('hello');
+      if(count >= colorBox.length) {
+        count = 0;
+      }
+    })
+  </script>
+</head>
+<body>
+  <div id="element"></div>
+  <button id="trigger">clcik here!</button>
+</body>
+</html>
