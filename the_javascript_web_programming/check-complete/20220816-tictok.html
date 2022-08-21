@@ -25,23 +25,23 @@
     <h1>hello</h1>
   </div>
   <script>
-    let tictok = ["tic", "tok"]; //배열을 변수에 담은 게 아니라 변수를 하나만 사용해서 처리하기 위해 배열 형태를 취했다
+    let tictok = ["tic", "tok"]; //textContent
     const root = document.getElementById('root'); 
     const title = root.children[0];
 
     // console.log(title);
-    let isSwich = false; //true;
+    let state = false; //true;
     root.addEventListener('click', function() {
-      if(isSwich === false) { //true) {
-        isSwich = true; //false;
-        // console.log(isSwich);
+      if(state === false) { //true) {
+        state = true; //false;
+        // console.log(state);
         title.textContent = tictok[1]; //[0].toUpperCase();
         title.style.color = "#333";
         root.style.backgroundColor = "salmon";
         title.style.fontSize = '13em';
       } else {
-        isSwich = false; //true;
-        // console.log(isSwich);
+        state = false; //true;
+        // console.log(state);
         title.textContent = tictok[0]; //[1].toUpperCase();
         title.style.color = "salmon";
         root.style.background = "#333";

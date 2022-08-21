@@ -24,7 +24,7 @@
         element.style.height = height;
       }
 
-      // style reset
+      // style reset (body)
       const body = document.body;
       body.style.padding = 0;
       body.style.margin = 0;
@@ -37,7 +37,7 @@
       root.style.backgroundColor = "#333";
       flexSet(root, "column");
       
-      // section
+      // root > section
       const section = document.createElement("section");
       widthAndHeight(section, "30vw", "30vh");
       section.style.backgroundColor = "salmon";

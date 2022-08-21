@@ -23,6 +23,8 @@
     #drawer {
       margin-top: 1vh;
       margin-right: 1vw;
+      display: flex;
+      flex-direction: column;
     }
 
     #drawer div {
@@ -39,13 +41,11 @@
       background-color: #787878;
       color:#fff;
 
-      /* display:flex; */
+      /* display:none; */
       justify-content: center;
       align-items: center;
 
       transition:1s;
-
-      display:none;
     }
 
     #root > header > div > div {
@@ -105,21 +105,37 @@
     </header>
   </div>
   <script>
-    //메모
+    /* style */
+    // #root > header
+    const header = document.querySelector('#root > header')
+      // header.style.width = "80vw";
+      // header.style.height = "100vh";
+      // header.style.backgroundColor = "#787878";
+
+      // header.style.color = "#fff";
+      
+      header.style.display = "none";
+      // header.style.justifyContent = "center";
+      // header.style.alignItems = "center";
+      
+      // header.style.transition = "1s";
+
+    /* 임시 메모: 모든 스타일링을 자바스크립트로 한 것이 아니라 display:none만 따로 설정해주니까 정상작동함 */
+    
+    /* control */
     // 초기상태는 검정화면에 drawer버튼이 우상단에 있다
 
-    // drawer 버튼을 누르면 메뉴가 나타나고 -> display:none 해제 
-    // drawer 버튼이 사라진다 -> display:none 적용
-
-    // closer 버튼을 누르면 메뉴가 사라지고 -> display:none 적용
-    // drawer 버튼이 나타난다 -> display:none 해제
-
-    console.log(root.children[1]);
-
-    drawer.addEventListener('click', function() {
-      // drawer.style.display = 'none';
-      root.children[1].setAttribute('display', 'flex');
-    })
+    // drawer 버튼을 누르면 메뉴가 나타나고 drawer 버튼이 사라진다
+    document.getElementById("drawer").addEventListener('click', function() { // 
+      header.style.display = "flex";
+      drawer.style.display = "none";
+    });
+    
+    // closer 버튼을 누르면 메뉴가 사라지고 drawer 버튼이 나타난다
+    document.getElementById("closer").addEventListener('click', function() { 
+      header.style.display = "none";
+      drawer.style.display = "flex";
+    });
 
   </script>
 </body>
