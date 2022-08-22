@@ -55,6 +55,7 @@ console.log(b); //1
 ### 배열
 ```javascript
 let array = ["indexZero", "indexOne", "indexTwo"];
+array[i];
 ```
 
 ### 객체
@@ -64,6 +65,7 @@ let object = {
   "keyTwo":"valueTwo",
   "keyThree":"valueThree",
 }
+object.keyOne;
 ```
 
 ### 주요 메서드
