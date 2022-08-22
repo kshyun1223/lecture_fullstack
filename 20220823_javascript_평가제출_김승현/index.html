@@ -35,20 +35,21 @@
         element.style.height = height;
       }
 
-      /* 제어 */
+      /* 스타일링 */
       // root 
       // html markup: <div id="root"></div>
       const root = document.getElementById('root');
       widthHeightSetting(root, "100vw", "100vh");
-      root.style.backgroundColor = "#333";
       flexSetting(root, "column");
       
       // root > section
       const section = document.createElement("section");
-      widthHeightSetting(section, "30vw", "30vh");
-      section.style.backgroundColor = "salmon";
+      widthHeightSetting(section, "20vw", "20vh");
+      section.style.backgroundColor = "#333333";
+      section.style.borderRadius = "100%";
       root.appendChild(section);
       
+      /* 제어 */
       const mainElement = document.querySelector('section');
       mainElement.addEventListener('click', function() {
         mainElement.style.backgroundColor = "cadetblue";
