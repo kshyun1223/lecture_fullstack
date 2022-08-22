@@ -64,7 +64,7 @@ let object = {
   "keyOne":"valueOne",
   "keyTwo":"valueTwo",
   "keyThree":"valueThree",
-}
+};
 object.keyOne;
 ```
 
