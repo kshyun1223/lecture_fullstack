@@ -915,25 +915,126 @@
     <li>러브로스</li>
   </ul>
 <script>
-// console.dir(document.children[0].children[1].children[0])
-// console.dir(document.getElementById("pokemonList"));
+// 대상 객체 호출
+const pokemonList = document.getElementById("pokemonList").children;
+  // let anotherGetOne = document.getElementsByTagName('li');
+  // let anotherGetTwo = document.querySelector('#pokemonList').children;
+  // let anotherGetThree = document.querySelectorAll("#pokemonList > li");
+  // let anotherGetFour = document.body.children[0].children;
+// console.dir(pokemonList); // HTMLcollection [] check
+// console.log(pokemonList.length); // 905 check
+
+
 
 // Q_1. "두글자로 포켓몬스터 이름을 작명해야되는데 너무 섞여있어서 찾기가 어렵습니다. 두글자로 된 포켓몬스터들'만' 목록으로 볼수 있을까요?"
-
-// 첫번째인 이상해씨의 글자 수
-// console.log(pokemonList.children[0].textContent.length); 
-
-
+let twoStringPokemon = []; //목록으로 만드는 김에 겸사겸사 마릿수도 체크했다
+let indexCount = 0; //마릿수를 체크한 값을 저장하는 변수
+for(let i = 0; i < pokemonList.length; i++) {
+  if(pokemonList[i].textContent.length === 2) {
+    twoStringPokemon[indexCount] = pokemonList[i].textContent;
+    indexCount = indexCount + 1; //컴퓨터가 체크한 값은 인덱스기 때문에 인간의 기준으로는 +1을 해야 한다
+  }
+}
+console.log(twoStringPokemon);
+console.log('이름이 두글자로 된 포켓몬은 ' + indexCount + "마리 있습니다");
 
 
 
 // Q_2. "세글자로 된 포켓몬스터가 너무 많아서 화가날 지경인데 총 몇개인지 궁금합니다"
+let threeMonsterNameCount = 0; //목록을 안 만들고 마릿수만 체크했다
+for(let i = 0; i < pokemonList.length; i++) {
+  if(pokemonList[i].textContent.length === 3) {
+    threeMonsterNameCount = threeMonsterNameCount + 1; //컴퓨터가 체크한 값은 인덱스기 때문에 인간의 기준으로는 +1을 해야 한다
+  }
+}
+console.log('이름이 세글자로 된 포켓몬은 ' + threeMonsterNameCount + "마리 있습니다"
+);
+
+
 
 // Q_3. "포켓몬스터 이름중에 '고' 로 끝나는 포켓몬스터가 무엇이 얼마나 있는지 궁금합니다"
+let goNameMonsterArray = [];
+let goNameMonsterCount = 0;
+
+for(let i=0; i < pokemonList.length; i++) {
+  let getLastString = pokemonList[i].textContent;
+  // console.log(getLastString[getLastString.length - 1]); === "고") {
+  if(getLastString[getLastString.length - 1] === "고") {
+    goNameMonsterArray[goNameMonsterCount] = pokemonList[i].textContent;
+    goNameMonsterCount++;
+  }
+}
+console.log(goNameMonsterArray);
+// console.log(goNameMonsterCount);
+// console.log('이름이 "고"로 끝나는 포켓몬은 총 ' + goNameMonsterCount + "개 있습니다.");
+// for(let i = 0; i < goNameMonsterArray.length; i++) {
+//   console.log('"고"로 끝나는 ' + (i + 1) + '번째 포켓몬 이름은 " ' + goNameMonsterArray[i] + ' " 입니다.')
+// }
+
+
 
 // Q_4. 프론트엔드 요청 "포켓몬스터 중 300번 몬스터부터 350번 몬스터를 수정해야 하는데 인터넷에 공모를 할 예정입니다. 브라우저에서 볼수 있게끔 카드형식으로 표현해서 몬스터의 번호와 이름이 뜨도록 웹페이지 만들어주세요"
+let setUiTag = document.createElement('ul'); //createElement 메소드를 변수에 담았다
+setUiTag.id = "question-4"; //생성된 ul 태그에 id값 부여
+
+// styling
+setUiTag.style.width = "100vw";
+setUiTag.style.display = "flex";
+setUiTag.style.justifyContent = "center";
+setUiTag.style.alignItems = "center";
+setUiTag.style.flexWrap= "wrap";
+setUiTag.style.listStyleType = "none";
+setUiTag.style.margin = "0px";
+setUiTag.style.padding = "0px";
+setUiTag.style.textAlign= "center";
+
+// 배치
+document.body.appendChild(setUiTag);
+
+for(let i = 0; i< pokemonList.length; i++) {
+  if(i >= 300 && i <=350) {
+    let setLiTag = document.createElement('li');
+    setLiTag.style.width = "300px";
+    setLiTag.style.height = "100px";
+    setLiTag.style.margin = "10px";
+    setLiTag.style.backgroundColor = "#ccc";
+    setLiTag.textContent = i + "번 포켓몬스터 " + pokemonList[i].textContent;
+    setUiTag.appendChild(setLiTag);
+  }
+}
+
+
 
 // Q_5. 백엔드 요청 "포켓몬스터 이름 갯수가 2개 ~ 5개 내외인 것으로 확인은 되지만, 조금더 정확한 데이터를 얻고 싶습니다. 이름 갯수별 총 갯수를 구해주세요." (예 > 두글자 : 23개, 세글자 : 1455개, 6개: 0개)
+
+// 콘솔 사용
+let nameLengthArray = [];
+let nameLengthCount = 0;
+for (let i = 0; i < pokemonList.length; i++) {
+  if(pokemonList[i].textContent.length > nameLengthCount) {
+    nameLengthCount = pokemonList[i].textContent.length;
+  }
+}
+// console.log(nameLengthCount);
+nameLengthArray.length = nameLengthCount;
+// console.log(nameLengthArray);
+for(let i = 0; i < nameLengthArray.length; i++) {
+  nameLengthArray[i] = [];
+}
+// console.log(nameLengthArray);
+for(let i = 0; i< nameLengthArray.length; i++) {
+  let innerIndex = 0;
+  // console.log(nameLengthArray[i])
+  for(let j = 0; j < pokemonList.length; j++) {
+    if(pokemonList[j].textContent.length-1 === i) {
+      nameLengthArray[i][innerIndex] = pokemonList[j].textContent;
+      innerIndex++;
+    }
+  }
+}
+for(let i = 0; i < nameLengthArray.length; i++) {
+  console.log(i+1 + "글자 이름을 가진 포켓몬은 총 " + nameLengthArray[i].length + " 마리 있습니다.");
+}
 </script>
 </body>
 </html>

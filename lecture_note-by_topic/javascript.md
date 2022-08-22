@@ -52,6 +52,20 @@ console.log(a); //2
 console.log(b); //1
 ```
 
+### 배열
+```javascript
+let array = ["indexZero", "indexOne", "indexTwo"];
+```
+
+### 객체
+```javascript
+let object = {
+  "keyOne":"valueOne",
+  "keyTwo":"valueTwo",
+  "keyThree":"valueThree",
+}
+```
+
 ### 주요 메서드
 - 어떠한 값을 돌려받아 반환하는 종류의 메서드는 이름에 get이 들어가 있다
 	- getElementById() : 이미 결정된 값인 '아이디' 데이터를 통해 값(요소)를 돌려받았다

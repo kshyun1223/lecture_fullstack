@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+}
+#root > aside {
+  display: block;
+}
+#root > aside > article > section {
+  display: block;
+}
+#root > aside > article > h1 {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
