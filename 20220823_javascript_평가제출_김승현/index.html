@@ -7,53 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root"></div>
-    <script>
-      /* preset */
-      // defaultSetting
-      let defaultSetting = function() {
-        const body = document.body;
-        body.style.padding = 0;
-        body.style.margin = 0;
-        body.style.boxSizing = 'border-box';
-      }
-
-      // flexSetting
-      let flexSetting = function(element, direction="row") {
-        if(typeof direction === "string") {
-          element.style.display = "flex" ;
-          element.style.justifyContent = "center";
-          element.style.alignItems = "center";
-        } else {
-          console.log("need to second parameter type check");
-        }
-      }
-
-      // widthHeightSetting
-      let widthHeightSetting = function(element, width, height) {
-        element.style.width = width;
-        element.style.height = height;
-      }
-
-      /* root */
-      // html markup <div id="root"></div>
-      const root = document.getElementById('root');
-      widthHeightSetting(root, "100vw", "100vh");
-      flexSetting(root, "column");
-      
-      // root > section
-      const section = document.createElement("section");
-      widthHeightSetting(section, "20vw", "20vh");
-      section.style.backgroundColor = "#333333";
-      section.style.borderRadius = "100%";
-      root.appendChild(section);
-      
-      /* 제어 */
-      const mainElement = document.querySelector('section');
-      mainElement.addEventListener('click', function() {
-        mainElement.style.backgroundColor = "cadetblue";
-      })
-    </script>
-  </div>
+  <script src="/20220823_javascript_평가제출_김승현/script.js"></script>
 </body>
 </html>
