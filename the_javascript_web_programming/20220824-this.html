@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    let doc = {
+      root: document.getElementById("root")
+    }
+
+    doc.root.style.width = "100vw";
+    doc.root.style.height = "100vh";
+    doc.root.style.backgroundColor = "#333";
+
+    doc.root.addEventListener('click', function() {
+      console.log(this);
+      this.style.backgroundColor = "#ff6666";
+      console.log('메롱');
+    });
+    console.log(doc.root);
+  </script>
+</body>
+</html>

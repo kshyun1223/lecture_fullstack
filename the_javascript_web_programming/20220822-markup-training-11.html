@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* * {margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width:100vw;
+      height:100vh;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #title {
+      width:60vw;
+      height:100vh;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #title > div {
+      width:10vw;
+      height:100vh;   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    #title > div:nth-child(1) {
+      background-color: rgb(50, 50, 50);
+    }
+    #title > div:nth-child(2) {
+      background-color: rgb(80, 80, 80);
+    }
+    #title > div:nth-child(3) {
+      background-color: rgb(110, 110, 110);
+
+    }
+    #title > div:nth-child(4) {
+      background-color: rgb(140, 140, 140);
+
+    }
+    #title > div:nth-child(5) {
+      background-color: rgb(170, 170, 170);
+
+    }
+    #title > div:nth-child(6) {
+      background-color: rgb(200, 200, 200);
+
+    }
+    #title > div > h1 {
+      width:100%;
+      line-height: 100vh;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-size: 10rem;
+      font-weight:100;
+      position: relative;
+      right:50px;
+    }
+    #text {
+      width:40vw;
+      height:100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #text > p {
+      border-top: 1px solid black;
+      padding-top:30px;
+      margin:30px;
+    } */
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="title">
+      <div>
+        <h1></h1>
+      </div>
+      <div>
+        <h1>R</h1>
+      </div>
+      <div>
+        <h1>E</h1>
+      </div>
+      <div>
+        <h1>T</h1>
+      </div>
+      <div>
+        <h1>U</h1>
+      </div>
+      <div>
+        <h1>R</h1>
+      </div>
+      <div>
+        <h1>N</h1>
+      </div>
+    </div>
+    <div id="text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, reiciendis. Consequatur facere eligendi, vitae maiores, totam quod est id cumque non maxime quasi nulla voluptatum commodi repellat hic omnis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam tempore a, eius laborum id dicta beatae laudantium nihil aspernatur illum explicabo architecto consectetur molestiae quibusdam, voluptates unde consequatur ratione commodi.</p>
+    </div>
+  <script>
+    /* preset */
+    // flexSetting
+    let flexSetting = function(element, direction="row") {
+      if(typeof direction === "string") {
+        element.style.display = "flex" ;
+        element.style.justifyContent = "center";
+        element.style.alignItems = "center";
+      } else {
+        console.log("need to second parameter type check");
+      }
+    }
+
+    // widthHeightSetting
+    let widthHeightSetting = function(element, width, height) {
+      element.style.width = width;
+      element.style.height = height;
+    }
+
+    // defaultSet
+    let defaultSetting = function() {
+      const body = document.body;
+      body.style.padding = 0;
+      body.style.margin = 0;
+      body.style.boxSizing = 'border-box';
+    }
+
+    let root = document.getElementById('root');
+    let title = document.getElementById('title');
+    let text = document.getElementById('text');
+    console.log(root);
+    console.dir(title);
+    console.log(text);
+
+
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+
+    title.style.width = "60vw";
+    title.style.height = "100vh";
+    title.style.display = "flex";
+    title.style.justifyContent = "center";
+    title.style.alignItems = "center";
+
+
+  </script>
+  </div>
+</body>
+</html>

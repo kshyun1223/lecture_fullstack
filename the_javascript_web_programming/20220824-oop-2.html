@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const domInit = { // 여러개를 식별할 객체를 만들어 분류했다.
+      root: document.getElementById("root")
+    } 
+
+    const domStyling = {
+      size: function(element, widValet, hetghtValue) {
+        element.style.width = widthValue;
+        element.style.height = heightValue;
+      },
+      bgColor: function(element, backgroundColor) {
+        console.log(this); // 여기서 this는 메서드를 묶어놓은 domStyling이라는 객체를 가리키고 있다
+        element.style.backgroundColor = backgroundColor;
+      }
+    }
+    // DOM 스타일링 하는 여러가지 함수를 넣을 예정으로 가정하고, 기억하고 관리하기 쉽도록 하나의 객체에 바인딩하여 메서드로 만들었다.
+
+    domStyling.size(domInit.root, "100vw", "100vh");
+    domStyling.bgColor(domInit.root, "#333");
+    // 메서드를 호출해서 간편하게 스타일링을 완료했다.
+  </script>
+</body>
+</html>
