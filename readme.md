@@ -4,5 +4,5 @@
 2. [JavaScript](https://github.com/kshyun1223/lecture_fullstack/tree/master/the_javascript_web_programming)
 
 ### 필기노트
-- [일자별 노트](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_note-by_date)
+- [일자별 노트](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_note-weekly_summary)
 - [주제별 요약 정리](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_note-by_topic)
