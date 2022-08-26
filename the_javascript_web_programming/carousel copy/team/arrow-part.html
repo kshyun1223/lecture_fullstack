@@ -1,0 +1,23 @@
+//***화살표 동적 생성, 스타일링
+
+const moveArrowL = document.createElement('span');
+const moveArrowR = document.createElement('span');
+domInit.root.append(moveArrowL, moveArrowR);
+
+const moveArrowAll = document.querySelectorAll('#root>span'); 
+//화살표 공통
+  for(let i = 0; i < moveArrowAll.length; i++){
+    moveArrowAll[i].style.position = 'absolute';
+    domStyling.font(moveArrowAll[i], 'none', '3em');
+  }
+
+    //왼쪽 화살표
+    moveArrowL.id = 'arrowL';
+    moveArrowL.textContent = '<';
+    moveArrowL.style.left = '100px'; 
+
+    //오른쪽 화살표
+    moveArrowR.id = 'arrowR';
+    moveArrowR.textContent = '>';
+    moveArrowR.style.right = '100px'; 
+

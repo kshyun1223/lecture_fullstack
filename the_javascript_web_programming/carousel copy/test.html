@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="left">left</button>
+  <button id="right">right</button>
+  <script>
+    let arrayRight= ['5', '6', '7', '8', '9'];
+    arrayRight.shift();
+    arrayRight.push(10);
+    console.log(arrayRight);
+
+    let arrayLeft= ['5', '6', '7', '8', '9'];
+    arrayLeft.unshift(4);
+    arrayLeft.pop();
+    console.log(arrayLeft);
+  </script>
+</body>
+</html>
