@@ -1,0 +1,66 @@
+//선언
+$col-1:#ccc;
+$col-2:#aa7733;
+$col-3:#77ddcc;
+$col-4:#ffccaa;
+
+$po-absolute : absolute;
+$po-relative : relative;
+$po-fixed : fixed;
+
+//리셋
+* {margin:0; padding:0; box-sizing: border-box;}
+
+//할당
+//nesting: 상위 선택자의 반복을 생략하고 마치 HTML과 같이 구조화된 코드를 작성하는 기능
+#root {
+  width:100vw;
+  height:100vh;
+  background-color: $col-1;
+  & > header { /*&=부모선택자*/
+    width:inherit;
+    height:10vh;
+    background-color: $col-2;
+    & > ul {
+      width:50%;
+      height:inherit;
+
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      list-style: none;
+      margin:0;
+      padding:0;
+      color:$col-1;
+    }
+  }
+  & > main { 
+    width:inherit;
+    height:30vh;
+    background-color: $col-3;
+
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+    & > div {
+      width:100px;
+      height:100px;
+      color:$col-1;
+      background-color: $col-2;
+      margin: 10px;
+    }
+  }
+  & > footer {
+    width:inherit;
+    height:50vh;
+    background-color: $col-4;
+  }
+}
+
+// # 태그 계층구조
+// 1계층: root
+// 2계층: header, main, footer
+// 3계층: ul, div

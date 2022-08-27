@@ -15,11 +15,19 @@
 
 ### 주요 메서드
 - 어떠한 값을 돌려받아 반환하는 종류의 메서드는 이름에 get이 들어가 있다
-	- getElementById() : 이미 결정된 값인 '아이디' 데이터를 통해 값(요소)를 돌려받았다
-
 - 값을 '변경'하거나 '설정'하는 종류의 메서드는 이름에 set이 들어가 있다
-	- setAttribute() : 속성(attribute)를 특정 값으로 '설정'했다.
-	- 초기설정(처음설정)인 경우, initialized 약칭 init으로 부르기도 한다.
+
+### 식별자(identifier)
+```javascript
+  let root = document.getElementById("root");
+  let liItems = document.getElementsByTagName("li"); //태그명을 기준으로 모두 수집하여 배열로 반환
+  let section = document.querySelector("#root > section"); //선택자를 query한다 -> CSS 선택자로 노드에 접근
+  let liSelectorAll = document.querySelectorAll("#root > ul > li"); //CSS 선택자로 노드에 접근하여 조건에 부합하는 모든 노드를 반환
+  let article = document.getElementsByClassName("class-attribute"); //클래스를 기준으로 모두 수집하여 배열로 반환
+```
+
+### 속성(property)
+- 특정 노드의 내용을 변경하려면 `textContent` 속성으로 접근해야 한다
 
 ### event object
 - 이벤트는 상당히 빈번하게 만들기 때문에 자바스크립트에 자동화 기능이 내장되어 있다

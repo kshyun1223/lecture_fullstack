@@ -1,0 +1,50 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ccc;
+}
+#root > header { /*&=부모선택자*/
+  width: inherit;
+  height: 10vh;
+  background-color: #aa7733;
+}
+#root > header > ul {
+  width: 50%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #ccc;
+}
+#root > main {
+  width: inherit;
+  height: 30vh;
+  background-color: #77ddcc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#root > main > div {
+  width: 100px;
+  height: 100px;
+  color: #ccc;
+  background-color: #aa7733;
+  margin: 10px;
+}
+#root > footer {
+  width: inherit;
+  height: 50vh;
+  background-color: #ffccaa;
+}/*# sourceMappingURL=nesting.css.map */

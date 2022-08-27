@@ -1,0 +1,105 @@
+    /* preset */
+    // flexSetting
+    let flexSetting = function(element, direction="row") {
+      if(typeof direction === "string") {
+        element.style.display = "flex" ;
+        element.style.justifyContent = "center";
+        element.style.alignItems = "center";
+      } else {
+        console.log("need to second parameter type check");
+      }
+    }
+
+    // widthHeightSetting
+    let widthHeightSetting = function(element, width, height) {
+      element.style.width = width;
+      element.style.height = height;
+    }
+
+    // defaultSetting
+    let defaultSetting = function() {
+      const body = document.body;
+      body.style.padding = 0;
+      body.style.margin = 0;
+      body.style.boxSizing = 'border-box';
+    }
+
+    // textSet
+    let textSet = {
+      "sceneOneText":"click",
+      "sceneTwoText":"if all you have a hammer, everything looks like a nail",
+      "sceneThreeText":"가진것이 망치뿐이면, 모든 것이 못으로 보인다."
+    };
+
+    /* body */
+    const body = document.querySelector("body");
+
+    /* root */
+    const root = document.createElement('root');
+    widthHeightSetting(root, "100vw", "100vh"); //사이즈
+    flexSetting(root,"column"); //플렉스
+    body.appendChild(root);
+    
+    /* #1 */
+    // root > section
+    const sceneOne = document.createElement("section");
+    widthHeightSetting(sceneOne, "20vw"); //사이즈
+    flexSetting(sceneOne,"column"); //플렉스
+    sceneOne.style.backgroundColor = "#333333"; //색상
+    sceneOne.style.borderRadius = "100%"; //원
+    sceneOne.style.aspectRatio = "1/1"; //반응형
+    root.appendChild(sceneOne);
+
+    // root > section > div
+    const div = document.createElement("div");
+    div.textContent = textSet.sceneOneText; //텍스트
+    div.style.color = "#FFFFFF"; //폰트 색상
+    div.style.fontSize = "4vmin"; //폰트 사이즈
+    sceneOne.appendChild(div);
+
+    /* #2 */
+    // root > section
+    const sceneTwo = document.createElement("section");
+    widthHeightSetting(sceneTwo, "100vw", "100vh"); //사이즈
+    flexSetting(sceneTwo,"column"); //플렉스
+    root.appendChild(sceneTwo);
+
+    // root > section > div
+    const divTwo = document.createElement("div");
+    divTwo.textContent = textSet.sceneTwoText; //텍스트
+    divTwo.style.fontSize = "3vmin"; //사이즈
+    sceneTwo.appendChild(divTwo);
+    sceneTwo.style.display = "none"; //초기값
+
+    /* #3 */
+    // root > section
+    const sceneThree = document.createElement("section");
+    widthHeightSetting(sceneThree, "100vw", "100vh"); //사이즈
+    flexSetting(sceneThree,"column"); //플렉스
+    root.appendChild(sceneThree);
+
+    const divThree = document.createElement("div");
+    divThree.textContent = textSet.sceneThreeText; //텍스트
+    divThree.style.fontSize = "3vmin"; //사이즈
+    sceneThree.appendChild(divThree);   
+    sceneThree.style.display = "none"; //초기값
+
+    /* control */
+    // #1: 버튼을 클릭하면 #1이 사라지고 #2가 호출된다
+    sceneOne.addEventListener('click', function() {
+      sceneOne.style.display = "none";
+      sceneTwo.style.display = "flex";
+    });
+
+    // #2: 화면을 클릭하면 #2가 사라지고 #3이 호출된다
+    sceneTwo.addEventListener('click', function() {
+      sceneTwo.style.display = "none";
+      sceneOne.style.display = "none";
+      sceneThree.style.display = "flex";
+    });
+
+    // #3: 화면을 클릭하면 #3이 사라지고 #1이 호출된다
+    sceneThree.addEventListener('click', function() {
+      sceneThree.style.display = "none";
+      sceneOne.style.display = "flex";
+    });
