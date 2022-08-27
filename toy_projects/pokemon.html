@@ -7,7 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <input id = "button" type="button" value = "count">
   <script>
     /* stylePreset */
     const flexSetting = function(element, direction="row") {
@@ -72,22 +71,52 @@
     arrowRight.style.fontSize = '3em';
 
     /* root > container > box > item */
-    let a = 1
-    let itemArray = [a, a+1, a+2, a+3, a+4];
+    let count = 1
+      
+    const itemA = document.createElement('div');
+    box.appendChild(itemA);
+    widthHeightSetting(itemA, "200px", "400px");
+    flexSetting(itemA, "flex", "center", "center", "column");
+    itemA.style.border = "1px solid #333";
+    itemA.textContent = count;
+    itemA.id = count;
 
-    for(i = 0; i< itemArray.length; i++) {
-      const item = document.createElement('div');
-      box.appendChild(item);
-      widthHeightSetting(item, "200px", "400px");
-      flexSetting(item, "flex", "center", "center", "column");
-      item.style.border = "1px solid #333";
-      item.id = itemArray[i];
-      item.textContent = item.id;
-    }
+    const itemB = document.createElement('div');
+    box.appendChild(itemB);
+    widthHeightSetting(itemB, "200px", "400px");
+    flexSetting(itemB, "flex", "center", "center", "column");
+    itemB.style.border = "1px solid #333";
+    itemB.textContent = count+1;
+    itemB.id = count+1;
 
+    const itemC = document.createElement('div');
+    box.appendChild(itemC);
+    widthHeightSetting(itemC, "200px", "400px");
+    flexSetting(itemC, "flex", "center", "center", "column");
+    itemC.style.border = "1px solid #333";
+    itemC.textContent = count+2;
+    itemC.id = count+2;
+
+    const itemD = document.createElement('div');
+    box.appendChild(itemD);
+    widthHeightSetting(itemD, "200px", "400px");
+    flexSetting(itemD, "flex", "center", "center", "column");
+    itemD.style.border = "1px solid #333";
+    itemD.textContent = count+3;
+    itemD.id = count+3;
+
+    const itemE = document.createElement('div');
+    box.appendChild(itemE);
+    widthHeightSetting(itemE, "200px", "400px");
+    flexSetting(itemE, "flex", "center", "center", "column");
+    itemE.style.border = "1px solid #333";
+    itemE.textContent = count+4;
+    itemE.id = count+4;
+
+    arrowRight.addEventListener('click', function(){
+      count=count+1;
+    });
     
-
-
 
     /* 포켓몬 API 
     <div class="img-container">
