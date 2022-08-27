@@ -7,164 +7,100 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root"></div>
+  <input id = "button" type="button" value = "count">
   <script>
-    const stylePreset = {
-      margin : function(element, margin = '0') {
-        element.style.margin = margin;},
-      size : function(element, widthValue, heightValue) {
-        element.style.width = widthValue;
-        element.style.height = heightValue;
-      },
-      color : function(element, color, backgroundColor) {
-        element.style.color = color;
-        element.style.backgroundColor = backgroundColor;
-      },
-      flexBox : function(element, display, justifyContent, alignItems, flexDirection) {
-        element.style.display = display;
-        element.style.justifyContent = justifyContent;
-        element.style.alignItems = alignItems;
-        element.style.flexDirection = flexDirection;        
-      },
-      font : function(element, fontFamily, fontSize) {
-        element.style.fontFamily = fontFamily;
-        element.style.fontSize = fontSize;
-      },
-      border : function(element, border, borderRadius) {
-        element.style.border = border;
-        element.style.borderRadius = borderRadius;
-      },
-      cursor : function(element, cursor) {
-        element.style.cursor = cursor;
-      },
-      text : function(element, textContent) {
-        element.textContent = textContent;
+    /* stylePreset */
+    const flexSetting = function(element, direction="row") {
+      if(typeof direction === "string") {
+        element.style.display = "flex" ;
+        element.style.justifyContent = "center";
+        element.style.alignItems = "center";
+      } else {
+        console.log("need to second parameter type check");
       }
-    }
+    };
 
-    const root = {
-      root : document.getElementById('root'),
-      slideItem : ['포켓몬', '포켓몬', '포켓몬', '포켓몬', '포켓몬'],
-      text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus natoque sed orci, ac eget arcu, velturpis sem. Consequat diam mauriselit diam habitant proin nisi, auguelectus. Laoreet quam ut tristiquecursus ipsum. Proin mauris nisiinteger quam vitae aliquam.",
-      slideNumber : ["No.1","No.2","No.3","No.4","No.5"]
-    }
+    const widthHeightSetting = function(element, width, height) {
+      element.style.width = width;
+      element.style.height = height;
+    };
 
-    console.log(domInit.root);
-    console.log(domInit.slideItem);
-    
-    //body 초기화
-    document.body.style.margin = '0';
+    const defaultSetting = function() {
+      body.style.padding = 0;
+      body.style.margin = 0;
+      body.style.boxSizing = 'border-box';
+    };
 
-    // root 스타일링
-    domStyling.size(domInit.root, "100vw", "100vh");
-    domStyling.flexBox(domInit.root, "flex", "center", "center");
+    /* body */
+    const body = document.body;
+    defaultSetting();
 
+    /* body > root */
+    const root = document.createElement('root');
+    body.appendChild(root);
+    widthHeightSetting(root, "100vw", "100vh");
+    flexSetting(root,"column");
 
-    // container 동적 생성, 스타일링
+    /* root > container */
     const container = document.createElement('div');
-    domInit.root.appendChild(container);
-    container.id = "container";
-
-    domStyling.size(container, "800px", "50vh");
-    domStyling.flexBox(container, "flex", "center", "center", "nowrap");
-    domStyling.border(container, "1px solid #333");
+    root.appendChild(container);
+    widthHeightSetting(container, "800px", "50vh");
+    flexSetting(container, "flex", "center", "center", "nowrap");
+    container.style.border = "1px solid #333";
     container.style.overflow = "hidden";
 
-    // box 동적 생성, 스타일링
+    /* root > container > box */
     const box = document.createElement('div');
     container.appendChild(box);
-    box.id = "box";
+    widthHeightSetting(box, "100%", "50vh");
+    flexSetting(box, "flex", "left", "center", "nowrap");
 
-    domStyling.size(box, "100%", "50vh");
-    domStyling.flexBox(box, "flex", "left", "center", "nowrap");
+    /* root > ArrowLeft */
+    const arrowLeft = document.createElement('span');
+    root.appendChild(arrowLeft);
+    arrowLeft.textContent = '<';
+    arrowLeft.style.left = '100px'; 
+    arrowLeft.style.position = 'absolute';
+    arrowLeft.style.fontSize = '3em';
 
+    /* root > ArrowRight */
+    const arrowRight = document.createElement('span');
+    root.appendChild(arrowRight);
+    arrowRight.textContent = '>';
+    arrowRight.style.right = '100px'; 
+    arrowRight.style.position = 'absolute';
+    arrowRight.style.fontSize = '3em';
 
+    /* root > container > box > item */
+    let a = 1
+    let itemArray = [a, a+1, a+2, a+3, a+4];
 
-    //***화살표 동적 생성, 스타일링
-
-    const moveArrowL = document.createElement('span');
-    const moveArrowR = document.createElement('span');
-    domInit.root.append(moveArrowL, moveArrowR);
-
-    const moveArrowAll = document.querySelectorAll('#root>span'); 
-    //화살표 공통
-      for(let i = 0; i < moveArrowAll.length; i++){
-        moveArrowAll[i].style.position = 'absolute';
-        domStyling.font(moveArrowAll[i], 'none', '3em');
-      }
-
-        //왼쪽 화살표
-        moveArrowL.id = 'arrowL';
-        moveArrowL.textContent = '<';
-        moveArrowL.style.left = '100px'; 
-
-        //오른쪽 화살표
-        moveArrowR.id = 'arrowR';
-        moveArrowR.textContent = '>';
-        moveArrowR.style.right = '100px'; 
-
-    
-
-    // 캐러셀 동적 생성
-    let colorList = ["#FFB6C1", "#FAEB78", "#46B4B4", "#AAEBAA", "#87CEFA"];
-
-    function setCarousel() {
-      for(i = 0; i < domInit.slideItem.length; i++) {
-        carousel = document.createElement('div');
-        domStyling.size(carousel, "200px", "400px");
-        domStyling.flexBox(carousel, "flex", "center", "center", "column");
-        box.appendChild(carousel);
-      }
+    for(i = 0; i< itemArray.length; i++) {
+      const item = document.createElement('div');
+      box.appendChild(item);
+      widthHeightSetting(item, "200px", "400px");
+      flexSetting(item, "flex", "center", "center", "column");
+      item.style.border = "1px solid #333";
+      item.id = itemArray[i];
+      item.textContent = item.id;
     }
-    setCarousel();
-    const carousels = document.querySelectorAll('#box > div');
-    console.dir(carousels);
-
-    function carouselContent() {
-      for(i = 0; i < domInit.slideItem.length; i++) {
-        card = document.createElement('div');
-        title = document.createElement('div');
-        text = document.createElement('div');
-        domStyling.size(card, "200px", "200px");
-        card.style.backgroundColor = colorList[i];
-        domStyling.text(title, domInit.slideItem[i]);
-        domStyling.text(card, domInit.slideNumber[i]);
-        domStyling.size(title, "200px", "50px");
-        domStyling.text(title, domInit.slideItem[i]);
-        domStyling.size(text, "200px", "150px");
-        domStyling.text(text, domInit.text);
-        carousels[i].appendChild(card);
-        carousels[i].appendChild(title);
-        carousels[i].appendChild(text);
-        
-        
-      }
-    }
-    carouselContent();
-    
-    console.log(carousels.length); //5
-    
-    // moving event 
-    let counter = 1; 
-    const carouselSize = carousels[0].clientWidth;
-    box.style.transform = 'translateX(' + (-carouselSize * counter) + 'px)';
-    
-    moveArrowL.addEventListener('click', function(){
-      if(counter >= carousels.length-1) return;
-      box.style.transition = "transform 0.4s ease-in-out";
-      counter++;
-      box.style.transform = 'translateX(' + (-carouselSize * counter) + 'px)';
-      });
-    
-      moveArrowR.addEventListener('click', function(){
-      if(counter <= 0) return;
-      box.style.transition = "transform 0.4s ease-in-out";
-      counter--;
-      box.style.transform = 'translateX(' + (-carouselSize * counter) + 'px)';
-      });
 
     
-    
+
+
+
+    /* 포켓몬 API 
+    <div class="img-container">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"" alt="${name}">
+    </div>
+    <div class="info">
+      <span class="number">#${id}</span>
+      <h3 class="name">${name}</h3>
+      <small class="type">Type: <span>${type}</span> </small>
+    </div> 
+    */
+
+
 
   </script>
 </body>
