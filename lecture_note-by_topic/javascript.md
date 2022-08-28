@@ -146,3 +146,9 @@ function style(containerElement, operateColor, eventType){
 }
 ```
 
+### appendChild
+```javascript
+const merong = document.createElement("div"); //선언
+const body = document.querySelector('body'); //부모 요소를 호출 
+body.appendChild(merong); //할당
+```
