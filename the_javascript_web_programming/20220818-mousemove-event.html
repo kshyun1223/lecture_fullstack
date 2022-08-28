@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    #root {
+      width:100vw;
+      height: 100vh;
+      background-color: #333;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #root > h1 {
+      color:#ccc;
+      font-size:1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1 id="x-position">hello</h1>
+    <h1 id="y-position">bye</h1>
+  </div>
+  <script>
+    const xPosition = document.getElementById('x-position'); // hello
+    const yPositioin = document.getElementById('y-position'); // bye
+
+    console.log(xPosition, yPositioin);
+    
+    // mousemove 이벤트. 이벤트 자체를 매개변수로 삼았다...?
+    window.addEventListener('mousemove', function(event) {
+      // console.log(event.offsetX);
+      // console.log(event.offsetY);
+      xPosition.textContent = event.offsetX; // 해당 객체를 기준으로 한 마우스의 X 좌표
+      yPosition.textContent = event.offsetY; // 해당 객체를 기준으로 한 마우스의 Y 좌표
+    });
+  </script>
+</body>
+</html>

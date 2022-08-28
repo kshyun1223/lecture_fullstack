@@ -14,7 +14,20 @@
     Q-2 옆에서 거드는 프론트엔드 사수 : 이거 HTML로 랜더링 시켜
     Q-3 무엇이든지 통계부터 내는 백엔드 사수 : 이거 API 키 프로퍼티 몇개인지 세어볼래? 
   -->
-
+  <script>
+    let number = 1
+    // const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/` + number;
+    const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/`
+    const request = new XMLHttpRequest();
+      request.open("GET", _BASIC_URL);
+      request.responseType = "json";
+      request.send();
+      request.addEventListener('load', () => {
+        const _POKEMON_API = request.response;
+        // 상수 _POKEMON_API 데이터가 사장놈이 가져온 데이터이다.
+        console.dir(_POKEMON_API);
+      });
+  </script>
   <!-- 
     메모: 콘솔상으로는 1154개의 인덱스(?)가 조회되지만 906번부터는 조회가 되지 않는다. 일일히 손으로 주소를 입력해보지 않고 코딩을 해서 알 수는 없었을까?
 
@@ -30,19 +43,5 @@
     
     추가사항 관련: 근데 10000번대까지 있을 정도면 애초에 범위를 추정할 수가 없었던건데?
   -->
-  <script>
-    let number = 1
-    // const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/` + number;
-    const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/`
-    const request = new XMLHttpRequest();
-      request.open("GET", _BASIC_URL);
-      request.responseType = "json";
-      request.send();
-      request.addEventListener('load', () => {
-        const _POKEMON_API = request.response;
-        // 상수 _POKEMON_API 데이터가 사장놈이 가져온 데이터이다.
-        console.dir(_POKEMON_API);
-      });
-  </script>
 </body>
 </html>

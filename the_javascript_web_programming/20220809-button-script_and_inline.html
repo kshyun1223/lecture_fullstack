@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- document 객체  -->
+  <script>
+    let c = "<div>안녕하세요</div>";
+    document.body.innerHTML = c;
+    //문자열 c를 브라우저가 태그로 파싱(parsing) 했다. 보이는 무언가로 렌더링했다.
+  </script> 
+
+  <!-- 인라인방식 -->
+  <button onclick="alert('화연님메롱');">click</button>
+
+  <!-- 태그방식 -->
+  <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', function() {
+      alert('초영님메롱');
+    })
+  </script>
+
+  <!-- 데이터타입 비교 -->
+  <!-- <script>
+    let a = 1;
+    let b = "1";
+    console.log(a === b);
+  </script>  -->
+
+  <!-- 데이터타입 검사 -->
+  <!-- <script>
+    let a = 1;
+    let b = "1";
+    console.log(typeof(a));
+  </script> -->
+</body>
+</html>

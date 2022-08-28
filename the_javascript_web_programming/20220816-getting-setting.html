@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="title">hello</h1>
+  <script>
+    //조회
+    console.dir(document.getElementById("title"));
+
+    //getting
+    // console.dir(document.getElementById("title").textContent); 
+
+    //setting -> 재할당 -> 이벤트
+    // document.getElementById("title").addEventListener('click', function() { 
+    //   document.getElementById("title").textContent = 'bye'; 
+    //   document.getElementById('title').style.color = 'pink';
+    //   document.getElementById('title').style.fontSize = '3em';
+    //   console.dir(document.getElementById('title').clientWidth);
+    // });
+
+    //변수를 사용해서 리팩토링
+    let title = document.getElementById('title');
+    console.dir(title.textContent);
+    title.addEventListener('click', function() {
+      title.textContent = 'bye';
+      title.style.color = 'pink';
+      console.dir(title.clientWidth);
+      // title.parentNode.style.backgroundColor = "black";
+      title.offsetParent.style.backgroundColor = "black";
+    });
+
+    // 요점
+    // 큰 객체에서 무언가 getting 했다
+    // 관계를 활용해서 무언가 찾고 있다
+    
+  </script>
+</body>
+</html>

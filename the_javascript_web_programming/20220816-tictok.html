@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #root > h1 {
+      font-size: 5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1>hello</h1>
+  </div>
+  <script>
+    let tictok = ["tic", "tok"]; //textContent
+    const root = document.getElementById('root'); 
+    const title = root.children[0];
+
+    // console.log(title);
+    let state = false; //true;
+    root.addEventListener('click', function() {
+      if(state === false) { //true) {
+        state = true; //false;
+        // console.log(state);
+        title.textContent = tictok[1]; //[0].toUpperCase();
+        title.style.color = "#333";
+        root.style.backgroundColor = "salmon";
+        title.style.fontSize = '13em';
+      } else {
+        state = false; //true;
+        // console.log(state);
+        title.textContent = tictok[0]; //[1].toUpperCase();
+        title.style.color = "salmon";
+        root.style.background = "#333";
+        title.style.fontSize = '3em';
+      }
+    });
+  </script>
+</body>
+</html>
