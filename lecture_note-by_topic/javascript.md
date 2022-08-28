@@ -13,6 +13,102 @@
 - window와 document라는 개념만 알면 나머지는 검색하는 것이 합리적이다
 - 자바스크립트 학습이라는 관점에서는 BOM이나 DOM을 능숙하게 제어할 수 있다면 원하는만큼 커스텀할 수 있다
 
+### 연산자
+- 비교연산자
+  - `=` : 대입연산자
+  - `===` : 비교(일치)연산자 -> 일치하면 true
+  - `!==` : 부정연산자 -> 일치하지 않으면 true
+  - `>`, `<` : 큰지 작은지 비교
+  - `>=` : 크거나 같으면 참
+  - `<=` : 작거나 같으면 참
+- `&` (앰퍼샌드)
+  - `&&`: 그리고, and, 논리곱이라는 의미를 가진 연산자
+  - 조건 1과 조건 2가 모두 참이어야 참
+- `|` (버티컬바)
+  - `||` : 혹은, for, 논리합 이라는 의미를 가진 연산자
+  - 조건 1과 조건 2가 둘중 하나라도 참이면 참
+  
+### 변수
+- 변수는 선언과 할당을 따로따로 할 수도 있다. 또한 한번 값이 할당된 변수에 새롭게 값을 할당할 수도 있다. 즉, 변수에 값을 저장할 수가 있다
+```javascript
+let a = 1; 
+let b = 2; 
+
+let memory = b; // 2
+b = a; // 1
+a = memory; // 2
+
+console.log(a); // 2
+console.log(b); // 1
+```
+
+### 배열
+```javascript
+let array = ["indexZero", "indexOne", "indexTwo"];
+array[0]; // indexZero
+```
+
+### 객체
+```javascript
+let object = {
+  "keyOne":"valueOne",
+  "keyTwo":"valueTwo",
+  "keyThree":"valueThree",
+};
+object.keyOne; // valueOne
+```
+
+### for문
+```javascript
+for(let i=1; i < x; i++) { // x=반복 조건
+  /* 반복하여 실행할 내용 */
+}
+```
+
+### if문
+```javascript
+if(/* 조건식 */) {{ 
+  /* 조건식이 true면 실행할 내용 */
+} else {
+  /* 조건식이 false면 실행할 내용 */
+}}
+```
+
+### while문
+```javascript
+while(/* 조건식 */) {
+  /* 조건식이 true인 동안 실행할 내용 */
+}
+```
+
+### 함수의 입구 역할을 하는 매개변수(parameter, 인자)
+```javascript
+/* 선언 */
+function hairService(parameter){
+  console.log('어서오세요' + parameter + '고객님');
+};
+
+/* 호출 */
+hairService('댕댕이'); // 어서오세요 댕댕이 고객님
+```
+- 함수는 매개변수를 통해 재료를 받는다 -> 어떤 재료든 들어올 수 있다 -> 결과물이 무엇이 될지 모른다
+
+### 함수의 출구 역할을 하는 return(반환)
+```javascript
+function insa(parameter) {
+  parameter * 1;
+  return "두진";
+}
+console.log(insa("은호") === "두진"); // true
+```
+- 함수는 반환을 통해 다른 데이터로 바뀐다: 반환이 없으면 실행만 하고 **종료된다**
+  - 반환이 없을 수도 있다: 목적이 실행일 때
+  - 반환이 반드시 필요할 때가 있다: 목적이 가공된 값일 때
+
+### 함수가 제대로 실행되지 않는 경우
+- ReferenceError: 존재하지 않는 변수를 참조했을 때 나타나는 에러
+- undefined: 정의되지 않았다는 의미의 (엄연한) 데이터타입 -> 작성에는 문제가 없고, 값을 제대로 넣어주지 않은 것 뿐이다
+
 ### 내장 메서드의 종류
 - 어떠한 값을 돌려받아 반환하는 종류의 메서드는 이름에 get이 들어가 있다
 - 값을 '변경'하거나 '설정'하는 종류의 메서드는 이름에 set이 들어가 있다
