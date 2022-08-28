@@ -153,7 +153,7 @@ function insa(parameter) {
   parameter * 1;
   return "두진";
 }
-console.log(insa("은호") === "두진");
+console.log(insa("은호") === "두진"); // true
 ```
 - 함수는 반환을 통해 다른 데이터로 바뀐다: 반환이 없으면 실행만 하고 **종료된다**
   - 반환이 없을 수도 있다: 목적이 실행일 때
