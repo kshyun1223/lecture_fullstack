@@ -83,23 +83,23 @@
   - 조건 1과 조건 2가 둘중 하나라도 참이면 참
   
 ### 변수
-- 변수에는 값을 저장할 수 있다
+- 변수는 선언과 할당을 따로따로 할 수도 있다. 또한 한번 값이 할당된 변수에 새롭게 값을 할당할 수도 있다. 즉, 변수에 값을 저장할 수가 있다
 ```javascript
 let a = 1; 
 let b = 2; 
 
-let memory = b; 
-b = a; 
-a = memory;
+let memory = b; // 2
+b = a; // 1
+a = memory; // 2
 
-console.log(a); //2
-console.log(b); //1
+console.log(a); // 2
+console.log(b); // 1
 ```
 
 ### 배열
 ```javascript
 let array = ["indexZero", "indexOne", "indexTwo"];
-array[i];
+array[0]; // indexZero
 ```
 
 ### 객체
@@ -109,29 +109,29 @@ let object = {
   "keyTwo":"valueTwo",
   "keyThree":"valueThree",
 };
-object.keyOne;
+object.keyOne; // valueOne
 ```
 
 ### for문
 ```javascript
 for(let i=1; i < x; i++) { // x=반복 조건
-  // 반복하여 실행할 내용
+  /* 반복하여 실행할 내용 */
 }
 ```
 
 ### if문
 ```javascript
 if(/* 조건식 */) {{ 
-  // 조건식이 true면 실행할 내용
+  /* 조건식이 true면 실행할 내용 */
 } else {
-  // 조건식이 false면 실행할 내용
+  /* 조건식이 false면 실행할 내용 */
 }}
 ```
 
 ### while문
 ```javascript
 while(/* 조건식 */) {
-  // 조건식이 true인 동안 실행할 내용
+  /* 조건식이 true인 동안 실행할 내용 */
 }
 ```
 
