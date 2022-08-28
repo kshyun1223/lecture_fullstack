@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>making</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+  </style>
+</head>
+
+<body>
+  <!-- ★ 디자인 및 구조
+    https://docs.google.com/document/d/1nueyZXfKmh-Rnr0FlL4sNI5scNEO9wldh85XdOzcsNw/edit?usp=sharing
+  -->
+  <!-- 
+★ 구현
+-전체적인 요소들은 js로 제작 및 핸들링 중복 요소들은 for문을 이용하여 제작
+-반응형에 대응하기 위해 요소들의 크기단위는 상대적인 요소 사용(vw,vh)
+-폰트 google font 사용
+-공통적인 css 요소들은 함수와(container,flex,position,font,reset,slider interaction),변수로(color,font family)묶어서 진행
+-.animate 메서드로 장식적인 애니메이션 구현
+-Slider
+1.첫번째 slide 요소에 “active”라는 클래스 부여
+2.버튼 클릭시 “active” 클래스가 부여된 요소는 “active”클래스가 삭제되고 
+다음형제요소에게 “active”가 추가됨.
+3.진행되면서 만약 다음 형제요소가 없으면 처음slide 요소에게 다시 “active” 클래스 부여
+4.slider 함수를 slider버튼 클릭이벤트로 콜백 / 초기화
+6.slider 버튼은 hidden 버튼으로 배치(z-Index로 조정)
+7.slider 버튼을 클릭 횟수를 count라는 변수에 담음 / 만약 count가 2보다 커지면 다시 0으로 초기화 하도록 함
+count 값을 countarr배열의 순서로 사용하여 Sidebar의 Span의 콘텐츠로 사용
+(slide 버튼을 클릭시 span의 내용이 배열 순서대로 바뀜 / count가 0으로 초기화시 배열 첫번째로 다시 내용 변경)
+-->
+
+  <!--
+★ 소감
+JS만으로 문서의 구조를 짜는 것 변수가 많아지기 때문에 헷갈렸음.
+CSS만의 기능을 쓸 수 없어서 불편함(전체선택자 , 가상선택자)
+slider를 구현하면서 비효율적인 코드라는 생각이 들었음. 다시 한번 생각을 해봐야겠음.
+명령형으로 작성을 주로 해서 코드가 너무 길어지기 때문에 가독성이 매우 떨어지는 것 같음. 선언형으로 작성하는 연습을 해야할 것 같음.
+코드를 최대한 짧게 쓸려고 함수를 사용했으나 효과를 모르겠음.
+더 많은 인터렉션을 구현해보고 싶으나 인터넷을 봐도 이해가 안되기 때문에 상식선에서 이해가 되는 코드만 참고했음.
+-->
+
+  <script>
+
+    // HTML element 생성
+    const body = document.body;
+
+    // root
+    let mkroot = document.createElement("div");
+    mkroot.setAttribute("id", "root");
+    body.appendChild(mkroot);
+    let root = body.children[1];
+
+    // main
+    let mkmain = document.createElement("main");
+    root.appendChild(mkmain);
+    let main = root.children[0];
+
+    // section common
+    for (let i = 0; i < 2; i++) {
+      let mksec = document.createElement("section");
+      main.appendChild(mksec);
+    }
+    let sections = [...main.children];
+    let sec1 = main.children[0];
+    let sec2 = main.children[1];
+
+    for (o = 0; o < 2; o++) {
+      let mksec1Div = document.createElement("div");
+      let mksec2Div = document.createElement("div");
+      sec1.appendChild(mksec1Div);
+      sec2.appendChild(mksec2Div);
+    }
+
+    // section1
+    let sec1Div1 = sec1.children[0];
+    let sec1Div2 = sec1.children[1];
+    // sec1div1
+    let mkh2 = document.createElement("h2");
+    sec1Div1.appendChild(mkh2);
+    let sec1Div1h2 = sec1Div1.children[0];
+    sec1Div1h2.textContent = "SLIDER";
+
+    // secion2
+    // sec2div1
+    sec2Div1 = sec2.children[0];
+    let mkbar = document.createElement("div");
+    let mkindex = document.createElement("span");
+    sec2Div1.appendChild(mkbar);
+    sec2Div1.appendChild(mkindex);
+    let sec2Div1bar = sec2Div1.children[0];// side bar
+    let sec2Div1index = sec2Div1.children[1];//side indexCountSpan
+    sec2Div1index.textContent = "Main"//sideindexCountSpan text
+
+    // sec2div1
+    sec2Div2 = sec2.children[1];//slider container
+    sec2Div2.setAttribute("class", "slide-container");
+    let mkwrapper = document.createElement("div");
+    let mkbtn = document.createElement("div");
+    sec2Div2.appendChild(mkwrapper);
+    sec2Div2.appendChild(mkbtn);
+    let slideWrapper = sec2Div2.children[0]; //slider wrapper
+    let slideBtn = sec2Div2.children[1];//slider hiddenbtn
+    slideBtn.setAttribute("class", "slideBtn")
+    for (let s = 0; s < 3; s++) {
+      let mkSdiv = document.createElement("div");
+      mkSdiv.setAttribute("class", "slide-ele");
+      slideWrapper.appendChild(mkSdiv);
+    }
+    let sec2slider = [...slideWrapper.children];//slider
+    for (let e = 0; e < sec2slider.length; e++) {
+      let mkdiv2 = document.createElement("div");
+      sec2slider[e].appendChild(mkdiv2);
+    }
+    sec2slider[0].classList.add("active");
+    let fakeBtn = sec2slider[0].children[0]; //slider fakebtn
+    fakeBtn.textContent = "Click!"
+    for (let q = 1; q < 3; q++) {
+      let mksdiv1 = document.createElement("div");
+      let mksdiv2 = document.createElement("div");
+      let slideDiv = sec2slider[q].children[0];
+      slideDiv.appendChild(mksdiv1);
+      slideDiv.appendChild(mksdiv2);
+    }
+    sec2slider[1].children[0].children[0].textContent = "if all you have a hammer," //slider 2 con text1
+    sec2slider[1].children[0].children[1].textContent = "everything looks like a nail" //slider 2 con text2
+    sec2slider[2].children[0].children[0].textContent = "가진것이 망치뿐이면,"//slider 3 con text1
+    sec2slider[2].children[0].children[1].textContent = "모든 것이 못으로 보인다."//slider 3 con text2
+
+    //스타일링
+    // Common
+    let container = (ele, w = "auto", h = "auto", bg = null) => {
+      ele.style.width = w;
+      ele.style.height = h;
+      ele.style.background = bg;
+    } //container function
+
+    let flexSet = (ele, direc, justify, align) => {
+      ele.style.display = "flex";
+      ele.style.flexDirection = direc;
+      ele.style.justifyContent = justify;
+      ele.style.alignItems = align;
+    }//flexset function
+
+    let posiSet = (ele, position, t = null, r = null, b = null, l = null, z = null) => {
+      ele.style.position = position;
+      ele.style.top = t;
+      ele.style.right = r;
+      ele.style.bottom = b;
+      ele.style.left = l;
+      ele.style.zIndex = z;
+    }//positionset function
+
+    let font = (ele, size, weight, family) => {
+      ele.style.fontSize = size;
+      ele.style.fontWeight = weight;
+      ele.style.fontFamily = family;
+    }//fontset function
+
+    let interSet = (ele, o, z, t) => {
+      ele.style.opacity = o;
+      ele.style.zIndex = z;
+      ele.style.transform = t;
+    }//interection function
+
+    let reset = (ele) => {
+      ele.style.margin = "0";
+      ele.style.padding = "0";
+      ele.style.boxSizing = "border-box";
+    }//reset function
+
+
+    //  color
+    let mainCol = "rgba(186,201,143,1)"//maincolor
+    let subCol = "rgba(255,255,255,1)"//subcolor
+
+    // fontfamliy
+    let notoSans = "Noto Sans KR, sans-serif";//font notosans
+    let Gowun = "Gowun Batang,serif";//font gowunbatang
+
+
+    // 요소 스타일링
+    // body
+    reset(body);
+    body.style.overflowX = "hidden";
+
+    // root
+    container(root, "100vw", "100vh");
+
+    // section
+    // sec1
+    container(sec1, "auto", "23vh");
+    flexSet(sec1, "row", "space-between", "center");
+    posiSet(sec1, "relrative", null, null, null, null, "5");
+    sec1.style.padding = "0 13vw";
+    sec1.style.color = mainCol;
+    // sec1 container set end
+
+    font(sec1Div1h2, "5vw", "400", notoSans);
+    sec1Div1h2.style.paddingTop = "3vw";
+    sec1Div1h2.style.letterSpacing = "3.3vw";
+    // sec1div1h2(slider) set end
+
+    posiSet(sec1Div2, "relative", "7vw", null, null, null, "5");
+    container(sec1Div2, "10.2vw", "10.2vw");
+    sec1Div2.style.opacity = "1";
+    sec1Div2.style.background = "url(img/circle.svg) no-repeat center";
+    sec1Div2.style.backgroundSize = "cover";
+    // rotate animation
+    sec1Div2.animate([
+      { transform: "rotate(0deg)" },
+      { transform: "rotate(360deg)" }
+    ], {
+      duration: 15000,
+      iterations: Infinity
+    })
+    // sec1div2(circle) set end
+
+    // sec2
+    flexSet(sec2, "row", "space-between", "flex-start");
+    // sec2 container set end
+
+    container(sec2Div1, "13vw");
+    flexSet(sec2Div1, "column", "flex-start", "center");
+    sec2Div1.style.position = "relative";
+    sec2Div1.style.color = mainCol;
+    container(sec2Div1bar, "2px", "74vh", "rgba(186,186,186,1)");//sidebar
+    font(sec2Div1index, "1.8vw", "100", notoSans);//sidespan(slide interact)
+    sec2Div1bar.style.marginBottom = "2vw";
+    // updown repeat animation
+    sec2Div1index.animate([
+      { transform: "translateY(-.5vw)" },
+      { transform: "translateY(.5vw)" },
+      { transform: "translateY(-.5vw)" }
+    ], {
+      duration: 1200,
+      iterations: Infinity
+    })
+    // sec2div1(sidebar) set end
+
+    container(sec2Div2, "87.4vw");
+    flexSet(sec2Div2, "row", "center", "center");
+    sec2Div2.style.position = "relative";
+    sec2Div2.style.overflow = "hidden";
+    // sec2div2(slide) container set end
+
+    container(slideWrapper, "inherit", "89.9vh");
+    container(slideBtn, "26vw", "11.3vw");
+    posiSet(slideBtn, "absolute", null, null, null, null, "3");
+    // slider containerset end
+
+    slideBtn.style.display = "none";
+    setTimeout(() => {
+      slideBtn.style.display = "block";
+    }, 1800);
+    // fake btn setTimeout
+
+    container(fakeBtn, "6vw", "6vw", subCol);
+    flexSet(fakeBtn, "row", "center", "center");
+    fakeBtn.style.position = "absolute";
+    fakeBtn.style.borderRadius = "50%";
+    font(fakeBtn, "1.2vw", "100", notoSans);
+    fakeBtn.style.color = mainCol;
+    fakeBtn.style.transition = "ease 0.5s"
+    fakeBtn.animate([
+      { left: "-30%", transform: "rotate(0deg)" },
+      { left: "46%", transform: "rotate(360deg) scale(1.3)" }
+    ], {
+      duration: 1800,
+      fill: "forwards"
+    })
+    //fake btn animation
+    // fake btn end
+
+    for (let h = 0; h < sec2slider.length; h++) {
+      container(sec2slider[h], "inherit", "inherit");
+      posiSet(sec2slider[h], "absolute");
+      flexSet(sec2slider[h], "column", "center", "center");
+      interSet(sec2slider[h], "0", "0", "scale(1.4)");
+      sec2slider[h].style.transition = "all 0.5s ease-in-out";
+      sec2slider[0].style.background = mainCol;
+      sec2slider[1].style.background = `url(img/slider_img1.png) no-repeat center`
+      sec2slider[2].style.background = `url(img/slider_img2.png) no-repeat center`
+      sec2slider[h].style.backgroundSize = "cover";
+      //slide setting
+
+      for (let m = 1; m < 3; m++) {
+        font(sec2slider[m], "1.1vw", null, Gowun);
+        sec2slider[m].style.color = subCol;
+        if (sec2slider[h].classList.contains('active')) {
+          interSet(sec2slider[h], "1", "1", "none");
+        }//class contain active
+        let sliderChild = sec2slider[m].children[0];
+        flexSet(sliderChild, "column", "center", "center");
+        sliderChild.children[0].style.marginBottom = '1vw';
+      }//slide con text
+
+    }
+    // slide end
+
+    // slider
+    let active = "active"; //class name
+    let firstSlide = document.querySelector(".slide-ele"); // slide
+    let sliderBtn = document.querySelector(".slideBtn"); //slide fakebtn
+    let count = 0;//count
+    let countarr = ["Again", "English", "Korea"]; // index Text arr
+
+    function slider() {
+      const currentSlide = document.querySelector(`.${active}`); // hasclass active ele
+      if (currentSlide) {
+        // if exist
+        currentSlide.classList.remove(active);
+        interSet(currentSlide, "0", "0", "none");
+
+        // pagecount
+        count++
+        if (count > 2) {
+          count = 0;
+        }
+        sec2Div1index.textContent = countarr[count];
+
+        const nextSlide = currentSlide.nextElementSibling; // has active ele nextSibling
+        if (nextSlide) { // if exist
+          nextSlide.classList.add(active);
+          interSet(nextSlide, "1", "1", "scale(1.4)");
+        } else {
+          firstSlide.classList.add(active);
+          interSet(firstSlide, "1", "1", "scale(1)");
+        }
+      } else {
+        firstSlide.classList.add(active);
+      }
+    }
+
+    function init() {
+      sliderBtn.addEventListener("click", slider);//callback
+      firstSlide.classList.add(active);
+    }//slider initialization
+
+    init();
+
+    //sec2 end
+  </script>
+</body>
+
+</html>

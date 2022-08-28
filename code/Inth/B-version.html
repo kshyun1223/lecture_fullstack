@@ -1,0 +1,405 @@
+<!--  게임 설명 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	캐릭터와 적의 이름, 공격력(Striking Power), HP(Health Point)가 랜덤으로 만들어지는 게임입니다. 먼저 UserPick 버트을 눌러서 캐릭터를 생성한다음에, Attack을 눌러서 피가 먼저 깎이는 쪽이 지는 룰입니다. 게이머는 HP를 50씩 두번 올릴 수 있고, 컴퓨터는 게이머보다 HP가 150이 더 붙습니다. 
+다른 버튼을 누르면 신납니다! 
+-->
+
+<!-- 제작 컨셉은 아래와 같습니다.
+
+영웅과 몬스터의 이름 및 능력치는 랜덤으로 설정한다.
+
+Reset을 누르면 게임이 초기화 된다.
+
+스탯은 공격력과 체력으로 나뉘어져 있고, 한번 공격할 때마다 게이머와 컴퓨터가 각각 공격력만큼 상대방 체력을 소모 시킨다.
+
+컴퓨터는 기본 체력에 + 150이 무조건 증가하고, 게이머는 게임 중 두 번 체력을 100을 올리는 스킬을 쓸 수 있다.
+
+피가 0 이하로 떨어지면 다음 턴에서 누가 이겼는지 알려주는 창을 띄우게 된다.
+
+먼저 위와 같이 구조를 만든 후, 컨셉 순서대로 작업을 하였습니다.
+
+pick 부분에서는 Math 랜덤 함수로 준비된 배열에서 무작위로 정보를 꺼내오는 작업
+
+다시 클릭하면 모든 설정이 초기화 되게 하는 작업 if 문
+
+공격부분에서는 랜덤으로 주어진 정보를 num 타입으로 변환하여 ‘체력 - 공격력’으로 연산(while 문)
+
+엔딩을 위해서 게이머와 컴퓨터 중 먼저 체력이 0 밑으로 떨어질 때 끝나게 만듦(if 문)
+
+컴퓨터와 게이머의 운 차이를 줄이기 위해 컴퓨터에게는 기초 체력을 , 게이머에게는 원할 때 사용할 수 있는 체력 회복 스킬을 부여. 다만 체력 300 이상 턴에서는 사용할 수 없고, 두 번 사용하지 못하게 막아놓음.
+
+비주얼이 조금 심심해서 인터넷에서 돌아다니는 이미지들로 꾸밈
+
+게이머를 위해서 몰래 살짝 장난 좀 쳐봤음 -->
+
+<!-- 조금 더 복잡하게는, 1:1이 아니라 단체전도 만들 수 있을 것 같긴 한데, 아직 더 공부가 필요하다고 생각됩니다.   -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 800px;
+        height: 900px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      body > main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-image: url(img/back.jpg);
+        border: 1px solid red;
+      }
+      #topBox {
+        width: 90%;
+        height: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+      }
+      #enemy {
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        flex-direction: column;
+        border-radius: 25px;
+      }
+      #bossAtt {
+        width: 90%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: violet;
+        margin-top: 2%;
+      }
+      #userAtt {
+        width: 90%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: violet;
+        margin-top: 2%;
+      }
+      #bossHp {
+        width: 90%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+        margin-bottom: 2%;
+      }
+
+      #bossName {
+        width: 90%;
+        height: 60%;
+        display: flex;
+        justify-content: start;
+        font-size: 34px;
+        align-items: center;
+        margin: 1%;
+        background-image: url(./img/diablo.jpg);
+        color: white;
+      }
+
+      #bottomBox {
+        width: 90%;
+        height: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        flex-direction: column;
+      }
+      #cardBox {
+        width: 90%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 25px;
+      }
+      #user {
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #userName {
+        width: 90%;
+        height: 900%;
+        font-size: 30px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        margin: 1%;
+        background-image: url(img/user.png);
+        background-size: 500px;
+      }
+      #userHp {
+        width: 90%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+        margin-bottom: 1%;
+      }
+      #clickBox {
+        width: 90%;
+        height: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50px;
+      }
+      #userPick {
+        width: 20%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(100, 149, 237, 0.8);
+        margin: 5%;
+        text-align: center;
+        border-radius: 15px;
+      }
+
+      #attack {
+        width: 20%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(100, 149, 237, 0.8);
+        margin: 5%;
+        border-radius: 15px;
+      }
+      #recovery {
+        width: 20%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(100, 149, 237, 0.8);
+        margin: 5%;
+        text-align: center;
+        border-radius: 15px;
+      }
+
+      #hack {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        font-size: 30px;
+        background-color: lightgrey;
+        opacity: 0.1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 700px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      -->
+      <div id="hack">What?</div>
+      <!-- 정해져 있는 적 -->
+      <section id="topBox">
+        <div id="enemy">
+          <div id="bossAtt">Striking Power</div>
+          <div id="bossName">Monster Name</div>
+          <div id="bossHp">Health Point</div>
+        </div>
+      </section>
+      <!-- 학생 -->
+      <section id="bottomBox">
+        <!-- 선택된 유저, cardBox와 clickBox를 나눔-->
+        <article id="cardBox">
+          <div id="user">
+            <div id="userAtt">Striking Power</div>
+            <div id="userName">You're Name</div>
+            <div id="userHp">Health Point</div>
+          </div>
+        </article>
+
+        <article id="clickBox">
+          <!-- 랜덤 유저, 몬스터 선택 -->
+          <div id="userPick">UserPick<br />(Reset)</div>
+          <!-- 공격  -->
+          <div id="attack">Attack</div>
+          <!-- 체력 회복 --->
+          <div id="recovery">Recovery<br />(Health Up)</div>
+        </article>
+      </section>
+    </main>
+    <script>
+      let List = [
+        "강예훈",
+        "김성현",
+        "류주완",
+        "마근원",
+        "문예찬",
+        "박종인",
+        "박재형",
+        "송형주",
+        "양상희",
+        "원두진",
+        "유민호",
+        "이상호",
+        "이소영",
+        "이은수",
+        "정동욱",
+        "정윤환",
+        "정정원",
+        "지영빈",
+        "한용준",
+        "황초영",
+        "김근수",
+        "김승현",
+        "김지애",
+        "전형민",
+        "정연주",
+        "이아연",
+        "최화연",
+        "한가람",
+      ];
+
+      console.dir(document.getElementById("userPick"));
+
+      //주인공 고르기 &&&&&&&&&&&&&&&&&&&&
+      let userPick1 = document.getElementById("userPick");
+      let userName1 = document.getElementById("userName");
+      let userAtt1 = document.getElementById("userAtt");
+      let userHp1 = document.getElementById("userHp");
+      let attack1 = document.getElementById("attack");
+
+      // 공격하기 &&&&&&&&&&&&&&&&&&&&&&
+      let bossName1 = document.getElementById("bossName");
+      let bossHp1 = document.getElementById("bossHp");
+      let bossAtt1 = document.getElementById("bossAtt");
+      let boss = 0;
+      // 공격하기 &&&&&&&&&&&&&&&&&&&&&&&&&
+      // 체력이 0 밑으로 떨어지면 끝남.
+      attack1.addEventListener("click", att);
+      function att() {
+        if (parseInt(userHp1.textContent) <= 0) {
+          alert("you're lose");
+        } else if (parseInt(bossHp1.textContent) <= 0) {
+          alert("You're win");
+        } else {
+          while (
+            parseInt(userHp1.textContent) > 0 ||
+            parseInt(bossHp1.textContent) > 0
+          ) {
+            bossHp1.textContent = bossHp1.textContent - userAtt1.textContent;
+            userHp1.textContent = userHp1.textContent - bossAtt1.textContent;
+            break;
+          }
+        }
+      }
+      // }
+      // }
+      let reset = true;
+      // 주인공 고르기 &&&&&&&&&&&&&&&&&&&&&&
+      userPick1.addEventListener("click", choice);
+
+      function choice() {
+        if (reset === true) {
+          reset = false;
+          // 학생을 랜덤하게 선택해 줌
+          userName1.innerText = "영웅 " + List[Math.floor(Math.random() * 28)];
+          // 학생 공격력 부여
+          userAtt1.innerText = Math.floor(Math.random() * 101);
+          // 학생 HP 부여
+          userHp1.innerText = Math.floor(Math.random() * 501);
+
+          // 보스 랜덤하게 선택해줌
+          bossName1.innerText =
+            List[Math.floor(Math.random() * 28)] + " 몬스터";
+          // 보스 공격력 부여
+          bossAtt1.innerText = Math.floor(Math.random() * 101);
+          // 보스 HP 부여
+          bossHp1.innerText = Math.floor(Math.random() * 501 + parseInt(150));
+        } else {
+          reset = true;
+          // 학생 프로필 리셋
+          userAtt1.innerText = "Striking Power";
+          userName1.innerText = "User Name";
+          userHp1.innerText = "Health Point";
+          // 몬스터 프로필 리셋
+          bossAtt1.innerText = "Striking Power";
+          bossName1.innerText = "User Name";
+          bossHp1.innerText = "Health Point";
+        }
+      }
+      // HP 100씩 두 번 채워줌(클릭 두 번 가능)
+      let recovery1 = document.getElementById("recovery");
+      recovery1.addEventListener("click", hpUp);
+
+      count = 2;
+      function hpUp() {
+        while (parseInt(300) > parseInt(userHp1.innerText)) {
+          if (count !== 0) {
+            userHp1.innerText = parseInt(userHp1.innerText) + parseInt(50);
+            count -= 1;
+            break;
+          } else {
+            alert("물약 없다!");
+            break;
+          }
+        }
+      }
+
+      // 심심하면 눌러보라고 무한 루프 걸어놨음
+      let hack1 = document.getElementById("hack");
+      hack1.addEventListener("click", boomb);
+      function boomb() {
+        hack1.style.backgroundImage = " url(img/boomb.jpg";
+        hack1.style.transform = "scale(6) rotate(1440deg)";
+        hack1.style.transition = "all ease 2s 0s";
+        hack1.style.opacity = "1";
+        hack1.style.right = "500px";
+        hack1.style.left = "350px";
+        hack1.textContent = "Easter Egg";
+        setTimeout(function () {
+          let s = 1;
+          while (s > 0) {
+            alert("무한 알림이니 강제 종료 바랍니다^^!");
+          }
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

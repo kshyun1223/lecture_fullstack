@@ -20,12 +20,12 @@
       body.style.boxSizing = 'border-box';
     };
 
-    /* body */
+    // body
     const body = document.body;
     browserReset();
 
-    /* body > root */
-    const root = document.createElement('root');
+    // body > root
+    const root = document.createElement('div');
     widthHeightSetting(root, "100vw", "100vh");
     flexSetting(root,"column");
     body.appendChild(root);

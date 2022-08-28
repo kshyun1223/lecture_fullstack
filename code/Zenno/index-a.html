@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+
+</body>
+
+<script>
+
+  /* function */
+
+  /* function ( flexSetting ) */
+  function flexSetting(element,display, justifyContent, alignItems) {
+    element.style.display = display;  
+    element.style.justifyContent = justifyContent;
+    element.style.alignItems = alignItems;
+  }
+
+  /* function ( resetSetting ) */
+  function resetSetting(element, margin, padding, boxSizing) {
+    element.style.margin = margin;
+    element.style.padding = padding;
+    element.style.boxSizing = boxSizing;
+  }
+
+  /* function ( widthHeight ) */
+  function widthHeight(element, width, height) {
+    element.style.width = width;
+    element.style.height = height;
+  }
+
+  /* function ( fontSizeWeight ) */
+  function fontSizeWeightColor(element, fontSize, fontWeight, color) {
+    element.style.fontSize = fontSize;
+    element.style.fontWeight = fontWeight;
+    element.style.color = color;
+  }
+
+  /* body */
+  const body = window.document.body;
+  console.log(body);
+  // console.dir(body);
+
+  /* body style */
+  resetSetting(body, '0', '0', 'border-box');
+  // body.style.margin = '0';
+  // body.style.padding = '0';
+  // body.style.boxSizing = 'border-box';
+
+
+  /* #root */
+  const root = document.createElement('div');
+
+  document.body.appendChild(root);
+  root.setAttribute('id', 'root');
+
+  console.log(root);
+
+  /* #root style */
+  widthHeight(root, '100vw', '100vh');
+  // root.style.width = '100vw';
+  // root.style.height = '100vh';
+
+  
+  /* #page-one */
+  const pageOne = document.createElement('div');
+
+  root.appendChild(pageOne);
+  pageOne.setAttribute('id', 'page-one');
+
+  console.log(pageOne);
+
+  /* #page-one style */
+  flexSetting(pageOne,'flex', 'center', 'center')
+  // pageOne.style.display = 'flex';
+  // pageOne.style.justifyContent = 'center';
+  // pageOne.style.alignItems = 'center';
+
+  widthHeight(pageOne, 'inherit', 'inherit');
+  // pageOne.style.width = 'inherit';
+  // pageOne.style.height = 'inherit';
+
+  pageOne.style.position = 'absolute';
+
+  /* page-one > button */
+  let button = document.createElement('button');
+
+  pageOne.appendChild(button);
+  button.setAttribute('class', 'button');
+
+  console.log(button);
+
+  /* page-one > button > click(textnode) */
+  let click = document.createTextNode('click');
+
+  button.appendChild(click);
+
+  console.log(click);
+
+  /* button style */
+  widthHeight(button, '73px', '73px');
+  // button.style.width = '73px';
+  // button.style.height = '73px';
+
+  fontSizeWeightColor(button, '24px', '400', '#fff');
+  // button.style.fontSize = '24px';
+  // button.style.fontWeight = '400';
+  // button.style.color = '#fff';
+
+  button.style.backgroundColor = '#333';
+  button.style.border = 'none';
+  button.style.borderRadius = '93.5px';
+
+  // button.style.lineHeight = '29px';
+  // button.style.fontFamily = 'Inter';
+  // button.style.fontStyle = 'normal';
+
+
+  /* page-two */
+  const pageTwo = document.createElement('div');
+
+  root.appendChild(pageTwo);
+  pageTwo.setAttribute('id', 'page-two');
+
+  console.log(pageTwo);
+
+  /* page-two > p */
+  let pageTwoTagP = document.createElement('p');
+
+  pageTwo.appendChild(pageTwoTagP);
+  
+  console.log(pageTwoTagP);
+
+  /* page-two > p > textnode */
+  let pageTwoTagP_textNode = document.createTextNode('If all you have a hammer, everything looks like a nail');
+
+  pageTwoTagP.appendChild(pageTwoTagP_textNode);
+  // console.log(pageTwoTagP_textNode);
+
+  /* #page-two style */
+  flexSetting(pageTwo,'none', 'center', 'center')
+  // pageTwo.style.display = 'none';
+  // pageTwo.style.justifyContent = 'center';
+  // pageTwo.style.alignItems = 'center';
+
+  widthHeight(pageTwo, 'inherit', 'inherit');
+  // pageTwo.style.width = 'inherit';
+  // pageTwo.style.height = 'inherit';
+
+  fontSizeWeightColor(pageTwo, '32px', '400', '#333');
+  // pageTwo.style.fontSize = '32px';
+  // pageTwo.style.fontWeight = '400';
+  // pageTwo.style.color = '#333';
+  
+  pageTwo.style.position = 'absolute';
+
+  // pageTwo.style.lineHeight = '39px';
+  // pageTwo.style.fontFamily = 'Inter';
+  // pageTwo.style.fontStyle = 'normal';
+
+
+  /* page-three */
+  const pageThree = document.createElement('div');
+
+  root.appendChild(pageThree);
+  pageThree.setAttribute('id', 'page-three');
+
+  console.log(pageThree);
+
+  /* page-three > p */
+  let pageThreeTagP = document.createElement('p');
+
+  pageThree.appendChild(pageThreeTagP);
+
+  console.log(pageThreeTagP);
+
+  /* page-three > p > textnode */
+  let pageThreeTagP_textNode = document.createTextNode('가진 것이 망치뿐이면, 모든 것이 못으로 보인다.');
+
+  pageThreeTagP.appendChild(pageThreeTagP_textNode);
+  // console.log(pageThreeTagP_textNode);
+
+  /* #page-three style */
+  flexSetting(pageThree,'none', 'center', 'center')
+  // pageThree.style.display = 'none';
+  // pageThree.style.justifyContent = 'center';
+  // pageThree.style.alignItems = 'center';
+
+  widthHeight(pageThree, 'inherit', 'inherit');
+  // pageThree.style.width = 'inherit';
+  // pageThree.style.height = 'inherit';
+
+  fontSizeWeightColor(pageThree, '32px', '400', '#333');
+  // pageThree.style.fontSize = '32px';
+  // pageThree.style.fontWeight = '400';
+  // pageThree.style.color = '#333';
+
+  pageThree.style.position = 'absolute';
+
+  // pageThree.style.lineHeight = '39px';
+  // pageThree.style.fontFamily = 'Inter';
+  // pageThree.style.fontStyle = 'normal';
+
+
+  /* pageSwitch */
+  let pageSwitch = 'page_1';
+  // pageSwitch 에 문자열 'page_1' 대입
+
+  if(pageSwitch === 'page_1') {
+    // 만약 변수 pageSwitch 와 'page_1' 이 엄격하게 동일하면 { } 실행
+    button.addEventListener('click', function( ){
+      // 변수 button 을 클릭하면 { } 실행
+      pageSwitch = 'page_2';
+      // 변수 pageSwitch 를 'page_2' 로 값을 변경
+      pageOne.style.display = 'none';
+      pageTwo.style.display = 'flex';
+  
+      pageTwoTagP.addEventListener('click', function( ){
+        // 변수 pageTwoTagP 를 클릭하면 { } 실행
+        if(pageSwitch === 'page_2') {
+          // 만약 변수 pageSwitch 와 'page_2' 이 엄격하게 동일하면 { } 실행
+          pageSwitch = 'page_3';
+          // 변수 pageSwitch 를 'page_3' 로 값을 변경
+          pageTwo.style.display = 'none';
+          pageThree.style.display = 'flex';
+
+          pageThreeTagP.addEventListener('click', function( ){
+            // 변수 pageThreeTagP 를 글릭하면 { } 실행
+            if(pageSwitch === 'page_3') {
+              // 만약 변수 pageSwitch 와 'page_3' 이 엄격하게 동일하면 { } 실행
+              pageSwitch = 'page_1';
+              // 변수 pageSwitch 를 'page_1' 로 값을 변경
+              pageThree.style.display = 'none';
+              pageOne.style.display = 'flex';
+            }            
+          });
+
+        }
+      });
+    
+    });
+  }
+
+
+
+</script>
+
+</html>

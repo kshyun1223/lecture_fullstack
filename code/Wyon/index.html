@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>    
+    // console.dir(document.body)
+
+    // 먼저 sequence가 #1, #2,#3 으로 나뉨에 따라,
+    // 전체 메인페이지를 <div id="root"> 설정 후
+    // 사이즈를 실행 중인 페이지의 사이즈와 동일하도록 width:100vw, height:100vh 값으로 셋팅했습니다.
+
+    // 전체 메인페이지 div #root 값을 주고, document에 apppend 하였다.
+    let root = document.createElement('div');
+    document.body.appendChild(root);
+    root.id = "root";
+    document.body.style.mrargin = "0px";
+    
+    //console.dir(root);
+
+    // sequence-1 (div - p - 내용)
+    // 먼저 div를 append하고, p태그도 자식으로 append한 다음 text요소를 넣어주었다.
+    let circleButton = document.createElement('div');
+    let circlePtag = document.createElement('p')
+    let click = document.createTextNode('click');
+    root.appendChild(circleButton);
+    circleButton.appendChild(circlePtag)
+    circlePtag.appendChild(click);
+    
+    //console.dir(circleButton)
+    
+    // sequence-2 (div - p - 내용)
+    // 먼저 div를 append하고, p태그도 자식으로 append한 다음 text요소를 넣어주었다.
+    let englishPage= document.createElement('div');
+    let englishPagePtag = document.createElement('p');
+    let englishPtagContents = document.createTextNode('if all you have a hammer, everything looks like a nail');
+    root.appendChild(englishPage);
+    englishPage.appendChild(englishPagePtag);
+    englishPagePtag.appendChild(englishPtagContents);
+
+    
+    
+    // sequence-3 (div - p - 내용)
+    // 먼저 div를 append하고, p태그도 자식으로 append한 다음 text요소를 넣어주었다.
+    let koreanPage = document.createElement('div');
+    let koreanPagePtag = document.createElement('p')
+    let koreanPagePtagContents = document.createTextNode('가진것이 망치뿐이면, 모든 것이 못으로 보인다.');
+    root.appendChild(koreanPage);
+    koreanPage.appendChild(koreanPagePtag)
+    koreanPagePtag.appendChild(koreanPagePtagContents);
+    
+    
+    // width, height 함수 선언
+    function size(element,width,height) {
+      element.style.width = width
+      element.style.height = height
+    }
+    
+    // display 값 함수 선언
+    function display(element,display){
+      element.style.display = display
+    }
+
+    // flex -> center 값 함수 선언
+    function center(element) {
+      element.style.justifyContent = "center";
+      element.style.alignItems = "center";
+    }
+
+    // position = absolute 함수 선언
+    function position(element){
+      element.style.position="absolute";
+    }
+    
+    // 함수 실행 - #root 전체페이지의 사이즈와, flex값을 주고 자식요소들을 가운데로 만든다.
+    size(root,"100vw","100vh")
+    display(root,"flex")
+    center(root)
+    
+
+    // 함수실행 - position = absolute 로 각각의 div들을 센터로 적용시킨다.
+    position(circleButton);
+    position(englishPage);
+    position(koreanPage);
+
+    // 함수실행 - sequence-1의 동그란 클릭버튼 모양과 위치값 세팅    
+    display(circleButton,"flex");
+    center(circleButton)
+    size(circleButton,"100px","100px");
+
+    // 함수실행 - 각각의 값이 겹쳐서 가운데에 보이므로, 일단 보이지 않게 none으로 세팅해준다.
+    display(englishPage,"none");
+    display(koreanPage,"none")
+
+    // sequence-1의 동그란 클릭버튼 circlebutton 스타일링
+    circleButton.style.color = "white";
+    circleButton.style.borderRadius = "100%";
+    circleButton.style.fontSize = "25px"
+    circleButton.style.backgroundColor = "black";
+
+      
+    // circlebutton mouseover 행동값을 함수로 적용
+    function circleButtonMouseover(){
+      circleButton.style.width = "105px";
+      circleButton.style.height = "105px";
+      circleButton.style.boxShadow = "0px 0px 32px 0px rgb(255 190 0 / 69%)";
+      circleButton.style.cursor = "pointer";
+      circleButton.style.backgroundColor = "orange";
+    }
+
+    // circlebutton mouseout 행동값 함수로 적용
+    function circleButtonMouseout(){
+      circleButton.style.width = "100px";
+      circleButton.style.height = "100px";
+      circleButton.style.boxShadow = "none"
+      circleButton.style.backgroundColor = "black";
+
+    }
+
+    // addEventListener 함수 적용 - 안에 함수 내용은 위에 선언한 함수를 데리고와서 실행
+    circleButton.addEventListener('mouseover',circleButtonMouseover);
+    circleButton.addEventListener('mouseout',circleButtonMouseout);
+    
+
+
+    // addEverntListener mouseover의 함수를  -> font bold가 되는 함수 선언
+    function mouseoverFontBold(element){
+      element.addEventListener('mouseover',function(){
+      element.style.cursor = "pointer";
+      element.style.fontWeight = "bold";
+      })
+    }
+
+      // addEverntListener mouseover의 함수를  -> fond bold 원래대로 되는 함수 선언
+    function mouseOut (element){
+      element.addEventListener('mouseout',function(){
+      element.style.fontWeight = "";
+      })
+    }
+
+    // addEventListener 함수 실행
+    mouseoverFontBold(englishPagePtag);
+    mouseOut(englishPagePtag);
+
+    mouseoverFontBold(koreanPagePtag);
+    mouseOut(koreanPagePtag);
+
+
+// click에따라 바뀌는 조건문 
+// if문을 실행해서 가운데 sequence-1의 display 값이 flex일때, 
+// click이벤트를 실행하면, sequence-1의 display값이 none이 되서 보이지 않고,
+// sequence-2의 display: none으로 설정됐던 것이 다시 flex로 변경되어 나타나게 된다.
+// 클릭되면서, 배경색은 동그란버튼의 색과 같은 오렌지 색으로 변경된다.
+
+// 위에 결과값이 실행되면 다시 if문을 실행시켜 sequence-2 의 display 값이 flex일때, 
+// click이벤트를 실행하면, sequence-2의 display값이 none이 되서 보이지 않고,
+// sequence-3의 display: none으로 설정됐던 것이 다시 flex로 변경되어 나타나게 된다.
+// 클릭되면서, 배경색은 원래대로 하얀색으로 변경된다.
+
+// 위에 결과값이 실행되면 다시 if문을 실행시켜 sequence-2 의 display 값이 flex일때, 
+// click이벤트를 실행하면, sequence-3의 display값이 none이 되서 보이지 않고,
+// sequence-1의 display: none으로 설정됐던 것이 다시 flex로 변경되어 나타나게 된다.
+
+
+// 그럼 결과값이 다시 처음에 if문의 조건인 sequence-1의 display 값이 flex일떄가 되어서 if문이 계속 반복되어 실행되게 된다.
+
+
+if(circleButton.style.display === "flex"){
+  circleButton.addEventListener('click',function(){
+    display(circleButton,"none");
+    display(englishPage,"flex");
+    document.body.style.backgroundColor = "orange"
+    englishPage.style.color = "white"
+    if(englishPage.style.display === "flex"){
+      englishPagePtag.addEventListener('click',function(){
+        display(englishPage,"none");
+        display(koreanPage,"flex");
+        document.body.style.backgroundColor = "white"
+        if(koreanPage.style.display === "flex"){
+          koreanPagePtag.addEventListener('click',function(){
+            display(koreanPage,"none");
+            display(circleButton,"flex");
+          })
+        }
+      })
+    } 
+  }) 
+} 
+  </script>
+</body>
+</html>

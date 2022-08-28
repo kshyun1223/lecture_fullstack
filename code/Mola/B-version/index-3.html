@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0; margin: 0; box-sizing: border-box;}
+  </style>
+</head>
+<body>
+  <script>
+    // 구현하고자 하는것 
+    // 1.pokemon 배열의 각 이름에 맞는 사각형 div를 만든뒤 브라우저의 가운데 정렬
+    // 2.각 사각형의 배경색은 pokemonType의 속성에 맞게 풀은 green 화염은 red  단단한 발톱은 grey 물은 blue 로 적용 
+    // 3.사각형을 클릭하면 사각형이 전체화면으로 커지며 해당 포켓몬의 도감정보가(이름 이미지 속성 타입 등의 정보) 나오는 인터렉션  
+    //  4.돌아가기 아이콘을 클릭하면 이전화면으로 돌아간다 
+
+    //포켓몬 이름
+    let pokemon = ["이상해씨","이상해풀","이상해꽃","파이리","리자드","리자몽","메가리자몽","꼬부기","어니부기","거북왕"]
+    // console.log(pokemon.length)
+
+    //포켓몬 타입
+    let pokemonType = ["풀","풀","풀","화염","화염","화염","단단한발톱","물","물","물"]
+    // console.log(pokemonType.length)
+    // console.log(pokemonType.indexOf("단단한발톱"));
+
+    //포켓몬 카테고리
+    let pokemonCat=["씨앗포켓몬","씨앗포켓몬","씨앗포켓몬","도롱뇽포켓몬","화염포켓몬","화염포켓몬","화염포켓몬","꼬마거북포켓몬","거북포켓몬","껍질포켓몬"]
+    // console.log(pokemonCat.length)
+
+    //body의 flex 셋팅
+    document.body.style.width="100vw";
+    document.body.style.height="100vh";
+    document.body.style.display="flex";
+    document.body.style.justifyContent="center";
+    document.body.style.alignItems="center";
+    document.body.style.flexWrap="wrap";
+
+
+    //1. 사각형  pokemon.length개 만들기 
+    for (let i=0; i<pokemon.length; i++) {
+
+    const pokemonDiv = document.createElement("div");
+    document.body.appendChild(pokemonDiv);
+    
+    pokemonDiv.textContent=pokemon[i];
+    pokemonDiv.style.width="200px";
+    pokemonDiv.style.color="white";
+    pokemonDiv.style.height="200px";
+    pokemonDiv.style.backgroundColor="#ddd";
+    pokemonDiv.style.margin="10px";
+    pokemonDiv.style.display="flex";
+    pokemonDiv.style.justifyContent="center";
+    pokemonDiv.style.alignItems="center";
+    
+
+
+
+    //2. 사각형에 적힌 포켓몬의 타입에 맞는 색깔로 배경색 변경하기 
+
+    if (pokemonType[i] === "풀") {
+        pokemonDiv.style.backgroundColor = "forestgreen";
+      } if (pokemonType[i] === "화염") {
+        pokemonDiv.style.backgroundColor = "tomato";
+      } if (pokemonType[i] === "단단한발톱") {
+        pokemonDiv.style.backgroundColor = "slategrey";
+      } if (pokemonType[i] === "물") {
+        pokemonDiv.style.backgroundColor = "steelblue";
+      }
+    }
+
+    // 3.사각형을 클릭하면 사각형이 전체화면으로 커지며 해당 포켓몬의 도감정보가(이름 이미지 속성 타입 등의 정보) 나오는 인터렉션  
+    //- 뒤집는 애니메이션 
+
+    const divs = document.querySelectorAll("body > div");
+    
+    console.log(divs);
+    
+    for (let i=0; i<divs.length; i++) {
+      divs[i].addEventListener("click", function() {
+        divs[i].style.transition=".5s";
+        divs[i].style.position="absolute";
+        divs[i].style.width="100vw";
+        divs[i].style.height="100vh";
+        divs[i].textContent = pokemonCat[i] + " 타입: " + pokemonType[i];
+        divs[i].style.fontWeight="bold"
+
+        let nameTag = document.createElement("p");        
+      })
+    }
+    
+    
+    // 4.돌아가기 아이콘을 클릭하면 이전화면으로 돌아간다 
+    
+
+  </script>
+</body>
+</html>

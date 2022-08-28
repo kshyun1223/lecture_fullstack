@@ -35,7 +35,7 @@
     const body = document.querySelector("body");
 
     /* root */
-    const root = document.createElement('div');
+    const root = document.createElement('root');
     widthHeightSetting(root, "100vw", "100vh"); //사이즈
     flexSetting(root,"column"); //플렉스
     body.appendChild(root);

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //console.log(document);
+    let body = window.document.body;
+    //console.log(body);
+    let newDiv = document.createElement('div');
+    body.appendChild(newDiv);
+    //console.log(body);
+    let root = body.children[1];
+    console.log(root);
+    root.id = "root";
+    //console.log(root);
+    let click = "click";
+    let twoTxt = "if all you have a hammer, everything looks like a nail";
+    let threeTxt = "가진것이 망치뿐이면, 모든 것이 못으로 보인다.";
+
+    for(let i =0; i < 3; i++) {
+      let neoDiv = document.createElement('div');
+      let creDiv = document.createElement('div');      
+      root.appendChild(neoDiv);
+      root.children[i].appendChild(creDiv);      
+    }
+
+    for(let i=0; i < root.children.length; i++) {
+      let neoDiv = document.createElement('div');
+      root.children[i].children[0].appendChild(neoDiv);      
+    }   
+    root.children[0].children[0].children[0].innerHTML = click;        
+    root.children[1].children[0].children[0].innerHTML = twoTxt;        
+    root.children[2].children[0].children[0].innerHTML = threeTxt;        
+    
+    //console.log(root);
+
+    let rootStyle = {
+      div : root,
+      width : "100vw",
+      height : "100vh",      
+    }
+   let rootChidrenStyle =  {      
+      width : "100vw",
+      height : "100vh",        
+      flexDirection: "row",
+      flexWrap: "nowrap",
+      alignContent: "center",
+      justifyContent: "center",
+      alignItems: "center"
+    }
+
+    let centreDivOne =  {
+      div : root.children[0].children[0],
+      width : "10vw" ,
+      height : "10vw" ,
+      backgroundColor : "black",
+      color : "white",
+      borderRadius : "110px",
+      cursor : "pointer",
+      display : "flex",
+      flexDirection : "row",
+      flexWrap: "nowrap",
+      alignContent: "center",
+      justifyContent: "center",
+      alignItems: "center",
+      fontSize: "4.1vw"
+    }
+
+    styleArr = [rootStyle, centreDivOne];
+
+    function cssStyle(cssDiv) {
+    let cssKey = Object.keys(cssDiv);
+    let cssValue = Object.values(cssDiv);
+    for (let i = 0; i < cssValue.length; i++) {
+      if (i === 0) {
+        continue;
+      } else {
+        cssValue[0].style[cssKey[i]] = cssValue[i];
+      }
+    }
+  }
+  for (let i=0; i< styleArr.length; i++) {
+    cssStyle(styleArr[i]);
+  }
+
+  function childrenStyle(stDiv) {
+    let cssKey = Object.keys(stDiv);
+    let cssValue = Object.values(stDiv);
+
+    //let stKey = Object.keys(chilDiv);
+    //let stValue = Object.values(chilDiv);
+
+    for(let i = 0; i < root.children.length; i++) {
+      for(let a = 0; a < cssValue.length; a++) {
+        root.children[i].style[cssKey[a]] = cssValue[a];
+      }
+      if(i === 0) {
+        root.children[i].style.display = "flex";
+      } else {
+        root.children[i].style.display = "none";
+      }
+    }
+  } 
+  childrenStyle(rootChidrenStyle); 
+
+  let onoff = [true, false, false];  
+
+  root.children[0].children[0].addEventListener("click", function() {
+    let num = 1;
+    let fadeOut = setInterval(function() {
+      if(onoff[0] === true) {
+        root.children[0].style.opacity = num;        
+        num = num -0.1;
+        if(num < 0) {
+            clearInterval(fadeOut);
+            root.children[0].style.display = "none";
+            root.children[1].style.display = "flex";
+            root.children[1].style.opacity = "1";
+            num = 0;
+            console.log(num);
+            onoff[0] = false;
+            onoff[1] = true;
+            console.log(onoff[0]);
+            console.log(onoff[1]);
+            console.log(onoff[2]);
+          }
+        }
+    },100);
+  });
+  
+  root.children[0].children[0].addEventListener("mouseover", function() {
+    root.children[0].children[0].style.backgroundColor = "white";
+    root.children[0].children[0].style.color = "black";    
+  });
+
+  root.children[0].children[0].addEventListener("mouseout", function() {
+    root.children[0].children[0].style.backgroundColor = "black";
+    root.children[0].children[0].style.color = "white";    
+  });
+  
+  root.children[1].addEventListener("click", function() {
+    let num = 1;
+    let fadeOut = setInterval(function() {
+      if(onoff[1] === true) {
+        root.children[1].style.opacity = num;
+        num = num - 0.1;
+        if(num < 0) {
+          clearInterval(fadeOut);
+          root.children[1].style.display = "none";
+          root.children[2].style.display = "flex";
+          root.children[2].style.opacity = "1";
+          num = 0;
+          console.log(num);
+          onoff[1] = false;
+          onoff[2] = true;
+          console.log(onoff[0]);
+          console.log(onoff[1]);
+          console.log(onoff[2]);
+        }
+      }
+    }, 100);
+  });
+
+  root.children[2].addEventListener("click", function() {
+    let num = 1;
+    let fadeOut = setInterval(function() {
+      if(onoff[2] === true) {
+        root.children[2].style.opacity = num;
+        num = num - 0.1;
+        if(num < 0) {
+          clearInterval(fadeOut);
+          root.children[2].style.display = "none";
+          root.children[0].style.display = "flex";
+          root.children[0].style.opacity = "1";
+          num = 0;
+          console.log(num);
+          onoff[2] = false;
+          onoff[0] = true;
+          console.log(onoff[0]);
+          console.log(onoff[1]);
+          console.log(onoff[2]);
+        }
+      }
+    }, 100);
+  });
+
+  </script>
+</body>
+</html>

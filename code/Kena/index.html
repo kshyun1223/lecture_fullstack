@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <div>click</div>
+    </div>
+
+    <script>
+      //root css
+      root = document.getElementById("root");
+      console.log(root);
+      root.style.width = "100vw";
+      root.style.height = " 600px";
+      root.style.display = "flex";
+      root.style.flexDirection = "column-reverse";
+      root.style.flexWrap = "nowrap";
+      root.style.alignContent = "center";
+      root.style.justifyContent = "space-around";
+
+      //div1 css
+      div1 = document.body.children[0].children[0];
+      console.dir(div1);
+      div1.style.width = "100px";
+      div1.style.height = "100px";
+      div1.style.backgroundColor = "black";
+      div1.style.color = "white";
+      div1.style.margin = " 0 auto";
+      div1.style.textAlign = "center";
+      div1.style.padding = "60px 25px 0px 25px";
+      div1.style.borderRadius = "50%";
+      div1.style.fontSize = "30px";
+
+      //div1 hover
+      div1.addEventListener("mouseover", function (event) {
+        event.target.style.color = "yellow";
+      });
+
+      div1.addEventListener("mouseout", function (event) {
+        event.target.style.color = "white";
+      });
+
+      //div1 클릭이벤트
+      let newdiv = document.createElement("div");
+      let newtext = document.createTextNode(
+        "if all you have a hammer, everything looks like a nail"
+      );
+      div1.addEventListener("click", function () {
+        div1.remove();
+        newdiv.appendChild(newtext);
+        root.appendChild(newdiv);
+        newdiv.style.margin = "0 auto";
+        newdiv.style.padding = "250px 10px 10px 10px";
+        newdiv.style.textAlign = "center";
+        newdiv.style.backgroundColor = "green";
+        newdiv.style.width = "400px";
+        newdiv.style.height = "400px";
+        newdiv.style.color = "white";
+        newdiv.style.zIndex = "1";
+        newdiv.style.boxShadow = "10px 5px 5px gray";
+      });
+      //newdiv 클릭이벤트
+      newdiv.addEventListener("click", function () {
+        newdiv.remove();
+        let newdiv2 = document.createElement("div");
+        let newtext2 = document.createTextNode(
+          "가진것이 망치뿐이면, 모든 것이 못으로 보인다."
+        );
+        newdiv2.style.margin = "0 auto";
+        newdiv2.style.padding = "250px 10px 10px 10px";
+        newdiv2.style.textAlign = "center";
+        newdiv2.style.backgroundColor = "green";
+        newdiv2.style.width = "400px";
+        newdiv2.style.color = "white";
+        newdiv2.style.height = "400px";
+        newdiv2.style.boxShadow = "10px 5px 5px gray";
+        newdiv2.appendChild(newtext2);
+        newdiv.style.zIndex = "2";
+        root.appendChild(newdiv2);
+        newdiv2.style.margin = "0 auto";
+      });
+    </script>
+  </body>
+</html>

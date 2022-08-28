@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // 최상위 요소 #root 선언, 스타일링
+    let root = document.getElementById('root');
+    console.dir(root);
+
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+
+    // 버튼 동적 생성, 스타일링
+    let button = document.createElement('button');
+    
+    button.style.width = "100px";
+    button.style.height = "100px";
+    button.style.borderRadius = "50px";
+    button.style.border = "none";
+    button.style.backgroundColor = "#333";
+    button.style.color = "#ffff";
+    button.textContent = "click";
+    button.style.fontSize = "1.5rem";
+    button.style.cursor = "pointer";
+    button.style.display = "inline-block";
+
+    root.appendChild(button);
+    console.dir(button);
+
+    // 스토리 컨텐츠 배열 생성
+    // 배열에서 순서대로 컨텐츠를 조회해서 <p>태그 동적 생성 
+    // 배열에 값이 추가되면 자동으로 요소도 추가 생성됨
+    let storyContents = ["if all you have a hammer, everything looks like a nail",
+    "가진것이 망치뿐이면, 모든 것이 못으로 보인다."];  
+    let story = null;
+
+    for(i = 0; i < storyContents.length; i++) {
+      story = document.createElement('p');
+      story.textContent = storyContents[i];
+      story.style.display = "none";
+      root.appendChild(story);
+    }
+    
+    // console.log(root.children.length);
+
+    // 텍스트를 표시하는 사용자 정의 함수 
+    // 이벤트 타입(클릭, 휠 등)과 타겟을 매개변수로 입력 받아 실행
+    function showText(element, eventType) {
+      // 입력받은 변수의 데이터 타입 검사 (분기처리 : 콘솔 경고창 표시)
+      if(typeof(element) === "object" && typeof(eventType) === "string") {
+        element.addEventListener(eventType, function(evnet) {
+          // console.log(event);
+          // 반복문을 사용해서 #root 의 자식 요소들을 순서대로 조회
+          for(i = 0; i < root.children.length; i++) {
+            // i번째 요소를 숨기고 i+1 번째 요소를 보이도록 실행
+            if(root.children[i].style.display === "inline-block") {
+              if(i < root.children.length-1) {
+                root.children[i].style.display = "none";
+                root.children[i+1].style.display = "inline-block";
+                break;
+              } else if(i = root.children.length-1) {
+                // 마지막 자식요소 차례가 되면 i+1을 표시하지 않고 다시 0번 요소인 버튼을 표시
+                root.children[i].style.display = "none";
+                root.children[0].style.display = "inline-block";
+                break;
+              } else {
+                console.log("표시할 데이터가 없습니다.")
+              }
+            } else {
+              console.log("디스플레이 스타일을 확인하세요.")
+            }
+          }
+        });
+      } else {
+        console.log("변수 타입을 확인해주세요.")
+      }
+    }
+    // 함수 호출
+    showText(root, 'click');
+  </script>
+</body>
+</html>

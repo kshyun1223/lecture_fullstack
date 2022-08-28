@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      console.dir(document.body);
+      let bodys = document.body;
+      bodys.style.margin = "0";
+      bodys.style.padding = "0";
+      bodys.style.boxSizing = "border-box";
+      bodys.style.width = "100vw";
+      bodys.style.height = "100vh";
+      bodys.style.display = "flex";
+      bodys.style.justifyContent = "center";
+      bodys.style.alignItems = "center";
+
+      let setSectionTag = document.createElement("section");
+
+      setSectionTag.style.width = "100vw";
+      setSectionTag.style.height = "100vh";
+      setSectionTag.style.display = "flex";
+      setSectionTag.style.justifyContent = "center";
+      setSectionTag.style.alignItems = "center";
+
+      document.body.appendChild(setSectionTag);
+
+      let setDivTag = document.createElement("div");
+      setDivTag.id = "circle";
+      setDivTag.textContent = "click";
+      setDivTag.style.color = "white";
+      setDivTag.style.backgroundColor = "black";
+      setDivTag.style.fontSize = "25px";
+      setDivTag.style.borderRadius = "93.5px";
+      setDivTag.style.width = "73px";
+      setDivTag.style.height = "73px";
+      setDivTag.style.display = "flex";
+      setDivTag.style.justifyContent = "center";
+      setDivTag.style.alignItems = "center";
+
+      setSectionTag.appendChild(setDivTag);
+
+      black = 0;
+      setDivTag.addEventListener("click", dis);
+      function dis() {
+        if (black === 0) {
+          black = 1;
+          setDivTag.style.borderRadius = "0";
+          setDivTag.style.width = "100vw";
+          setDivTag.style.height = "100vh";
+          setDivTag.textContent =
+            "if all you have a hammer,everything looks like a nail";
+          setDivTag.style.backgroundColor = "green";
+          setDivTag.style.color = "black";
+          setDivTag.style.transition = "all ease 3s 0s";
+        } else if (black === 1) {
+          black = 2;
+          setDivTag.textContent =
+            "가진 것이 망치뿐이면, 모든 것이 못으로 보인다.";
+          setDivTag.style.backgroundColor = "grey";
+          setDivTag.style.transition = "all ease 3s 0s";
+        } else if (black === 2) {
+          // 그냥 추가로 더 넣은 것
+          black = 3;
+          setDivTag.textContent = "click";
+          setDivTag.style.borderRadius = "93.5px";
+          setDivTag.style.width = "73px";
+          setDivTag.style.height = "73px";
+          setDivTag.style.backgroundColor = "black";
+          setDivTag.style.color = "salmon";
+          setDivTag.style.transform = "scale(5)";
+          setDivTag.style.transition = "all ease 3s 0s";
+          bodys.style.backgroundColor = "salmon";
+        } else {
+          black = 0;
+          setDivTag.textContent = "click";
+          setDivTag.style.borderRadius = "93.5px";
+          setDivTag.style.width = "73px";
+          setDivTag.style.height = "73px";
+          setDivTag.style.backgroundColor = "black";
+          setDivTag.style.color = "white";
+          setDivTag.style.transform = "scale(1)";
+          setDivTag.style.transition = "all ease 1s 0s";
+          bodys.style.backgroundColor = "white";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 함수
+    // 너비 높이 함수
+    function widthAndHeight(element, width, height){
+      element.style.width = width;
+      element.style.height = height;
+    }
+    // flex setting 함수
+    function flexSetting(element, js, ai){
+      element.style.display = 'flex';
+      element.style.justifyContent = js;
+      element.style.alignItems = ai;
+    }
+    // Sequence text position 함수
+    let position = (element, bottom, left) => {
+      element.style.position = 'absolute';
+      element.style.bottom = bottom;
+      element.style.left = left;
+    }
+
+
+    // body 변수 선언
+    let body = window.document.body;
+    body.style.margin = 0;
+    body.style.padding = 0;
+    body.style.boxSizing = 'border-size';
+
+    // root div 생성
+    let rootDiv = document.createElement('div');
+    rootDiv.id = 'root'
+    body.append(rootDiv)
+    widthAndHeight(rootDiv, '100vw', '100vh');
+    
+    // SequenceBox div 생성
+    let sequenceBox = document.createElement('div');
+    rootDiv.append(sequenceBox);
+    widthAndHeight(sequenceBox, '100vw', '100vh');
+    flexSetting(sequenceBox, 'center', 'center');
+
+    // click! botton 생성
+    let clickButton = document.createElement('button');
+    clickButton.textContent = 'click!';
+    sequenceBox.append(clickButton)
+    widthAndHeight(clickButton, '5vw', '5vw');
+    clickButton.style.borderRadius = '100%';
+    clickButton.style.color = 'white';
+    clickButton.style.backgroundColor = 'black';
+    clickButton.style.fontSize = '1rem';
+    clickButton.style.border = 'none';
+
+    // sequencetext div 생성
+    let sequenceText = document.createElement('div');
+    sequenceText.textContent = '#1 Sequence'
+    sequenceBox.append(sequenceText)
+    position(sequenceText, '95vh', '90vw');
+    
+
+    // 이벤트 생성
+    // let arrText = ['if all you have a hammer, everything looks like a nail', '가진것이 망치뿐이면, 모든 것이 못으로 보인다.']
+    // clickButton.addEventListener('click', () => {
+    //   clickButton.style.display = 'none';
+    //   sequenceText.style.display = 'none';
+    //   let count = 0;
+    //   for(let i = 0; i < arrText.length; i++){
+    //     let newText = document.createElement('div');
+    //     let newSequenceText = document.createElement('div')
+    //     if(newText.addEventListener('click', () => {
+          
+    //     }))
+    //     sequenceBox.append(newText);
+    //     sequenceBox.append(newSequenceText);
+    //     newText.textContent = arrText[i];
+    //     newText.style.position = 'relative';
+    //     newText.style.bottom = '47vh';
+    //     newText.style.left = '40vw';
+    //     newSequenceText.textContent = '#' + (i+2) + ' Sequence';
+    //   }
+    // })
+
+
+    // click 이벤트 발생
+    // click button이 있는 처음 화면과 click button을 누른 후에 발생하는 '처음 화면' 두 가지를 만듦.
+    let arrText = ['if all you have a hammer, everything looks like a nail', '가진것이 망치뿐이면, 모든 것이 못으로 보인다.']
+    clickButton.addEventListener('click', () => {
+      clickButton.style.display = 'none';
+      sequenceText.style.display = 'none';
+      let count = 0;
+      let newText = document.createElement('div');
+      let newSequenceText = document.createElement('div')
+      sequenceBox.append(newText);
+      sequenceBox.append(newSequenceText);
+      newText.textContent = arrText[count];
+      position(newSequenceText, '95vh', '90vw');
+      newSequenceText.textContent = '#' + (count+2) + ' Sequence';
+      // 새로 만들어진 newText를 click함으로 발생하는 이벤트를 추가로 생성함.
+      // click 횟수에 따라서 count의 수를 증가시킴
+      // arrText[count]를 통해 click한 횟수에 따른 배열의 아이템을 추출함.
+      newText.addEventListener('click', () => {
+        if(arrText[count+1] !== '' 
+          && arrText[count+1] !== null 
+          && arrText[count+1] !== undefined 
+          && typeof arrText[count+1] !== 'number'){
+          count++;
+          sequenceBox.append(newSequenceText);
+          newText.textContent = arrText[count];
+          position(newSequenceText, '95vh', '90vw');
+          newSequenceText.textContent = '#' + (count+2) + ' Sequence';
+        } else {
+          // prompt를 이용하여 사용자가 arrText에 직접 추가 내용을 생성.
+          // arrText 배열에 더이상 내용물이 없으면 처음 화면이 나타나도록 명령.
+          let newArrText = prompt('추가하실 내용을 입력해주세요', '');
+          if(newArrText !== '' 
+            && newArrText !== null 
+            && newArrText !==undefined 
+            && typeof newArrText !== 'number' 
+            && typeof newArrText === "string"){
+            arrText[count+1] = newArrText;
+          } else {
+            alert('처음으로 돌아갑니다');
+            newText.style.display = 'none';
+            newSequenceText.style.display = 'none';
+            sequenceBox.append(clickButton);
+            flexSetting(clickButton, 'center', 'center');
+            sequenceBox.append(sequenceText);
+            sequenceText.style.display = 'flex';
+          }
+        }
+      })
+    })
+  </script>
+</body>
+</html>

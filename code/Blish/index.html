@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body> 
+    <script>
+      document.querySelector("body").id = "root";
+      /*바디에 id값 부여*/
+      
+      /*const button = document.createElement('button');
+      const text = document.createTextNode('click');
+      button.appendChild(text);
+      body.appendChild(button);
+      document.querySelector("button").id = "clickButtton"*/
+      /*태그 생성 실패작! 왜 안됐는지 물어보기!
+
+      document.querySelector("body").id = "root";
+      /*바디에 id값 부여*/
+
+      const button = document.createElement('button');
+      button.appendChild(document.createTextNode('click'));
+      document.getElementById("root").appendChild(button);      
+      document.querySelector("button").id = "button";
+
+
+      const div1 = document.createElement('div');
+      div1.appendChild(document.createTextNode('if all you have a hammer, everything looks like a nail'));
+      document.getElementById("root").appendChild(div1);
+      div1.id = "english"
+      
+      const div2 = document.createElement('div');
+      div2.appendChild(document.createTextNode('가진것이 망치뿐이면, 모든 것이 못으로 보인다.'));
+      document.getElementById("root").appendChild(div2);
+      div2.id = "korean"
+
+      /*태그 생성 성공 코드 (딥다이브 참고했음)*/
+
+      
+      console.log(document.getElementById("root"));
+      let bodySet=document.getElementById("root");
+      /*바디의 요소 정보 Get*/
+      bodySet.style.margin = 0;
+      bodySet.style.padding = 0;
+      bodySet.style.boxSizing = "borderBox";
+      bodySet.style.width = "100vw";
+      bodySet.style.height = "100vh";
+      bodySet.style.display = "flex";
+      bodySet.style.justifyContent = "center";
+      bodySet.style.alignItems = "center";
+      /*<body> 스타일링*/
+
+      
+
+      console.log(document.querySelector("#button"));
+      let clickButton = document.querySelector("#button");
+      /*<button>의 요소정보 get*/
+
+      clickButton.style.backgroundColor = "#333"
+      clickButton.style.width = "52px";
+      clickButton.style.height = "52px";
+      clickButton.style.borderRadius = "50%";
+      clickButton.style.color = "#fff"
+      clickButton.style.position = "absolute";
+      /*<button>스타일링*/
+
+      console.log(document.getElementById("english"));
+      let englishTag =document.getElementById("english");
+      englishTag.style.position = "absolute";
+      englishTag.style.visibility = "hidden";
+      /*<div id = english> 태그 스타일링*/
+
+      console.log(document.getElementById("korean"));
+      let koreanTag = document.getElementById("korean");
+      koreanTag.style.position = "absolute";
+      koreanTag.style.display = "none";
+      /*<div id = korean> 태그 스타일링*/
+
+
+      let isSwitch = true;
+        /*순환을 위한 스위치변수 선언 true 설정 부여*/
+
+
+      clickButton.addEventListener("click",function(){
+        /*첫번째 클릭 이벤트*/
+        if(isSwitch === true){
+
+          isSwitch = false;
+          englishTag.style.visibility = "visible";
+          clickButton.style.visibility = "hidden";
+          /*클릭했을때 isSwitch 가 참이면 flase로 설정값을 바꾸고 영문태그를 보이게, 버튼태그를 숨기도록 설정*/
+          englishTag.addEventListener("click",function(){
+            /*두 번째 클릭 이벤트*/
+            
+            if(isSwitch === false){
+              
+              isSwitch = true;
+              englishTag.style.visibility = "hidden";
+              koreanTag.style.display = "flex";
+              /*스위치가 false 이면 true값으로 변경, 영문태그 숨기고 한국어 태그 보이도록 설정*/
+              koreanTag.addEventListener("click",function(){
+              /*세 번째 클릭 이번트*/
+                if(isSwitch=== true){
+                  koreanTag.style.display = "none";
+                  clickButton.style.visibility = "visible";                  
+                } /*스위치 값이 트루면 한국어 태그 숨기고, 버튼 태그 보이도록 설정*/
+                /*다시 스위치값이 트루이기 때문에 첫번째 클릭 이벤트 다시 실행 가능 상태!*/
+              })              
+            }
+          })
+        }
+      })
+
+
+
+    </script>
+  
+</body>
+</html>

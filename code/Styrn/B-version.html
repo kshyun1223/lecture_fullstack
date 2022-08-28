@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body></body>
+  <script>
+    const pokemonArr = [
+      "Bulbasaur",
+      "Ivysaur",
+      "Charmander",
+      "Charmeleon",
+      "Charizard",
+      "Squirtle",
+      "Wartortle",
+      "Blastoise",
+      "Caterpie",
+      "Metapod",
+      "Butterfree",
+      "Weedle",
+      "Kakuna",
+      "Beedrill",
+    ];
+
+    function createTag(tag) {
+      if (typeof tag !== "string") {
+        return console.error("문자열 타입이 아닙니다.");
+      }
+
+      return document.createElement(tag);
+    } // tag를 생성하는 함수
+
+    function widthAndHeight(el, width, height) {
+      el.style.width = width;
+      el.style.height = height;
+    } // width height 설정 함수
+
+    function flexSetting(el, dir = "row") {
+      el.style.display = "flex";
+      el.style.justifyContent = "center";
+      el.style.alignItems = "center";
+      el.style.flexDirection = dir;
+    } // flex 설정 함수
+
+    function initText(el, textArray) {
+      textArray.push(...textArray);
+      for (let i = 0; i < textArray.length; i++) {
+        el.innerText += `${textArray[i]}\u00a0\u00a0`;
+      }
+    } // 요소에 텍스트 넣어주는 함수
+
+    function marqueeText(count, element, direction) {
+      if (count > element.scrollWidth / 2) {
+        // element 컨텐츠 width 값 나누기 / 2
+        element.style.transform = `translate3d(0, 0, 0)`;
+        count = 0;
+      }
+      element.style.transform = `translate3d(${direction * count}px, 0, 0)`;
+
+      return count;
+    } // 텍스트 요소를 transform으로 이동해주는 함수
+
+    function animate() {
+      count1++;
+      count2++;
+
+      count1 = marqueeText(count1, cover, -1);
+      count2 = marqueeText(count2, cover1, 1);
+
+      window.requestAnimationFrame(animate);
+    } // requestAnimationFrame는 animate를 반복해서 호출 계속 반복 실행
+
+    function coverStyle(el, ju = "flex-start") {
+      el.style.backgroundColor = "pink";
+      el.style.fontFamily = "Silkscreen, cursive";
+      el.style.padding = "1vh 0";
+      el.style.whiteSpace = "nowrap";
+      el.style.margin = "0";
+      el.style.display = "flex";
+      el.parentElement.style.justifyContent = ju;
+      el.parentElement.style.display = "flex";
+    } // style 값을 셋팅해 주는 함수
+
+    const body = document.body;
+    body.style.margin = "0";
+    body.style.padding = "0";
+    body.style.boxSizing = "border-box";
+    body.style.overflowX = "hidden";
+    widthAndHeight(body, "100vw", "auto");
+
+    const root = createTag("div");
+    root.id = "root";
+    body.appendChild(root);
+    widthAndHeight(root, "100%", "auto");
+
+    // div 태그 생성 및 id 추가와 body 태그에 자식으로 넣어주기
+
+    const cover = createTag("div").appendChild(createTag("p"));
+    root.appendChild(cover.parentElement);
+    const text = createTag("p");
+    text.textContent = "포켓몬 월드";
+    text.style.textAlign = "center";
+    root.appendChild(text);
+
+    // div 안에 자식으로 p 태그 생성   body 자식으로  p 태그 생성
+
+    const cover1 = createTag("div").appendChild(createTag("p"));
+    root.appendChild(cover1.parentElement);
+
+    const seciton = createTag("seciton").appendChild(createTag("div"));
+
+    // section 태그 안에 div 자식 태그 생성
+
+    widthAndHeight(seciton.parentElement, "100vw", "100vh");
+    body.appendChild(seciton.parentElement);
+    flexSetting(seciton.parentElement);
+    flexSetting(seciton);
+    seciton.style.background = "linear-gradient(to bottom, red, white)";
+    seciton.style.color = "white";
+    seciton.style.borderRadius = "50%";
+    seciton.textContent = "click";
+    seciton.style.cursor = "pointer";
+    seciton.parentElement.style.position = "relative";
+    widthAndHeight(seciton, "100px", "100px");
+
+    coverStyle(cover);
+    coverStyle(cover1, "flex-end");
+
+    widthAndHeight(cover.parentElement, "100%");
+
+    let count1 = 0;
+    let count2 = 0;
+    let count3 = 0;
+    // transform x 값을 위한 변수
+
+    initText(cover, pokemonArr);
+    initText(cover1, pokemonArr);
+
+    // 함수 실행
+
+    const set = new Set(pokemonArr);
+    const newPokemonArr = [...set];
+    // 배열 중복을 제거하고 newPokemonArr 변수에 담기 ...은  안에 담겨 있는 배열을 풀어주는 문법  ex) [1,2,3] 1,2,3으로
+
+    function scrollHandler() {
+      count1 += 15;
+    }
+
+    window.addEventListener("scroll", scrollHandler);
+    // 스크롤 이벤트가 일어나면 scrollHandler함수 실행하고 count1에 15증가
+
+    animate(); // 함수 실행
+
+    seciton.addEventListener("click", (e) => {
+      count3 += 1;
+      let tag = createTag("span");
+      tag.style.position = "absolute";
+      tag.style.top =
+        String(
+          Math.floor(Math.random() * seciton.parentElement.scrollWidth + 1)
+        ) + "px";
+
+      tag.style.left =
+        String(
+          Math.floor(Math.random() * seciton.parentElement.scrollWidth + 1)
+        ) + "px";
+
+      if (count3 > newPokemonArr.length) {
+        count3 = 0;
+      }
+
+      console.log(count3);
+
+      tag.textContent = newPokemonArr[count3 - 1];
+      seciton.parentElement.appendChild(tag);
+    });
+
+    // div 태그 클릭시 이벤트 리스너로 함수 실행
+
+    // 움직이는 텍스트는 codepen에 코드를 보고 그대로 사용 했습니다.https://codepen.io/rudtjd2548/pen/wvpgqwY
+  </script>
+</html>

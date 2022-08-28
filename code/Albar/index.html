@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript-test</title>
+  </head>
+  <body>
+    <script>
+      /// 평가 기본사항을 자바스크립트로 완성한 후 다양한 함수를 만들어보았고, 함수의 특성에 따라 객체로 나누어보았습니다
+      /// 이후엔 간단한 인터렉션 (버튼에 마우스를 올리면 버튼이 돌아가는 등)을 구현해보았고 setInterval과 setTimeout을 사용하여 버튼이 혼자 움직이거나 자동으로 배경화면의 색깔이 바뀌는 기능을 만들어봤습니다
+      /// 그 다음은 버튼을 누를때마다 글자가 바뀌는것이 아니라 나만의 무언가를 만들어보고싶어 포켓몬스터들을 담은 박스들이 나타나도록 했습니다
+      /// 순서 (버튼을 누르면 포켓몬스터들이 나온다 -> 포켓몬스터가 나온 뒤 한번 더 클릭하면 텍스트가 나온다 -> 텍스트가 나온 뒤 한번 더 클릭하면 초기 상태로 돌아간다)
+      /// monsterBox <- 포켓몬 아이템들이 담겨진 박스 monsterItem <- 포켓몬 요소를 담은 아이템 monsterItemTop,Middle,Bottom <- 아이템의 상단, 중단, 하단요소
+
+      // 문서의 body를 식별
+      let body = document.body;
+
+      // level (현재 단계를 파악하고 다음 단계로 넘어가기위한 변수)
+      let level = 0;
+
+      // text가 담겨져있는 배열
+      let textArray = [
+        "click",
+        "if all you have a hammer, everything looks like a nail",
+        "가진것이 망치뿐이면, 망치로 모든 것을 구할 수 있다.",
+      ];
+
+      // 각종 color 값이 담겨져있는 배열, backgroundColor를 랜덤으로 돌리기 위해 만들었다
+      let colorArray = [
+        "salmon",
+        "lightgray",
+        "lightcoral",
+        "gray",
+        "blanchedalmond",
+        "darkseagreen",
+        "mediumspringgreen",
+      ];
+
+      // 몬스터들의 이름이 담겨져있는 배열
+      let monsterName = [
+        "구구",
+        "피죤",
+        "꼬렛",
+        "아보",
+        "고지",
+        "삐삐",
+        "픽시",
+        "푸린",
+        "주뱃",
+        "골뱃",
+        "콘팡",
+        "나옹",
+        "골덕",
+        "망키",
+        "가디",
+        "윈디",
+        "후딘",
+        "야돈",
+        "코일",
+        "두두",
+        "쥬쥬",
+        "셀러",
+        "팬텀",
+        "크랩",
+        "붐볼",
+        "나시",
+        "럭키",
+        "캥카",
+        "콘치",
+        "투구",
+        "썬더",
+        "미뇽",
+        "신뇽",
+        "뮤츠",
+        "랜턴",
+        "피츄",
+        "전룡",
+        "마릴",
+        "두코",
+        "우파",
+        "누오",
+        "안농",
+        "피콘",
+        "쏘콘",
+        "블루",
+        "핫삼",
+        "링곰",
+        "총어",
+        "델빌",
+        "헬가",
+        "실쿤",
+        "둔타",
+        "폭타",
+        "톱치",
+        "쟝고",
+        "솔록",
+        "메깅",
+        "릴링",
+        "치렁",
+        "앱솔",
+        "마자",
+        "쉘곤",
+        "메탕",
+        "비퀸",
+        "핑복",
+        "샤비",
+        "몽나",
+        "단굴",
+        "휠구",
+        "엘풍",
+        "아켄",
+        "듀란",
+        "벰크",
+        "메더",
+        "워글",
+        "판짱",
+        "슈쁘",
+        "음뱃",
+        "음번",
+        "후파",
+        "멜탄",
+        "우르",
+        "탄동",
+      ];
+
+      // 몬스터들의 이미지들이 담겨져있는 배열
+      let monsterImage = [
+        "https://mblogthumb-phinf.pstatic.net/MjAxOTEyMjNfNzMg/MDAxNTc3MDk3MDk2OTU1.kqWgIdO7ybfCOEMy3ffPJYqjSgtFzCGfqbB5A97nDb0g.ZHbLOrdfFeDhGBxXX1gH-uQcgzBuvS-dFK5h7u5UOSog.JPEG.hanee218/1577097096381.jpg?type=w800",
+        "https://mblogthumb-phinf.pstatic.net/MjAxOTEyMjNfNzMg/MDAxNTc3MDk3MDk2OTU1.kqWgIdO7ybfCOEMy3ffPJYqjSgtFzCGfqbB5A97nDb0g.ZHbLOrdfFeDhGBxXX1gH-uQcgzBuvS-dFK5h7u5UOSog.JPEG.hanee218/1577097096381.jpg?type=w800",
+        "https://pbs.twimg.com/media/FNzs60xUcAYCZ33.jpg:small",
+        "https://mblogthumb-phinf.pstatic.net/20160106_156/grayspjh_3_1452053637225J6XDw_PNG/abo_2.png?type=w2",
+        "https://mblogthumb-phinf.pstatic.net/MjAyMDAzMThfOTAg/MDAxNTg0NDk2OTU4MjE1.QOT_4hcexkoCnLUSrfanKV2ouiCKNzawmtAcyE0fm8kg.ySaVM-YtIxmO73MWS1Ulj8hm5sWly5B-j91MvQTjp7sg.JPEG.jurong25/1584496957473.jpg?type=w800",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4TRNNz3Sr2OezY-TsDLTDFt-tAqHCZ9tPg6bqj2vcvIoX5yQ-FwEODK19fPezLfBD9Lg&usqp=CAU",
+        "https://mblogthumb-phinf.pstatic.net/20150114_95/jjongho_1421242360971V8FdI_JPEG/naver_com_20150114_222444.jpg?type=w2",
+        "https://w.namu.la/s/799cc2ec018675e79efedb50c0750cd1a74e8bf79466c1eab9caec6ec59dd4681ed4deb364f7d3f5147e31d6ee0fa0f7ef42e9ea90b55370e87283e0faf2e553c89cd56f05a660ad63c05467ac6c4042ad0c8fbf0fda9637518d3fa3cee31cf6",
+      ];
+
+      // 요소를 만들고 width와 height, flex 등 기본적인 값을 설정하는 함수가 모여있는 객체
+      let defaultSet = {
+        // 새로운 HTML 요소를 생성하는 함수 매개변수는 (원하는 html 타입,만들 요소의 개수, 부모 html 요소)이다
+        elementCreate: function (element, number, parent) {
+          if (typeof element !== "string" || typeof number !== "number") {
+            console.log("first arg need string, second arg need number");
+          }
+          for (let i = 0; i < number; i++) {
+            let newElement = document.createElement(element);
+            parent.appendChild(newElement);
+          }
+        },
+
+        // 요소의 width와 height 값을 설정하는 함수
+        widthAndHeight: function (element, width, height) {
+          if (typeof width !== "string" || typeof height !== "string") {
+            console.log("second, third args need string");
+          }
+          element.style.width = width;
+          element.style.height = height;
+        },
+
+        // flex 스타일을 설정하는 함수
+        flexSetting: function (element, justify, align) {
+          element.style.display = "flex";
+          element.style.justifyContent = justify;
+          element.style.alignItems = align;
+        },
+        // body margin, padding 초기화 함수
+        reset: function () {
+          body.style.margin = "0";
+          body.style.padding = "0";
+          body.style.boxSizing = "border-box";
+          body.style.userSelect = "none";
+          body.style.transition = "0.5s";
+        },
+      };
+
+      // bgColor나 fontSetting 등 스타일링 기능을 하는 함수들이 모여있는 객체
+      let styling = {
+        // display를 설정하는 함수
+
+        displaySetting: function (element, display) {
+          element.style.display = display;
+        },
+
+        // background-color를 설정하는 함수
+        bgColorStyling: function (element, color) {
+          element.style.backgroundColor = color;
+        },
+
+        // textContent를 설정하는 함수
+        textContentSetting: function (element, text) {
+          element.textContent = text;
+        },
+
+        // 폰트의 color와 size를 설정하는 함수
+        fontSetting: function (element, color, size) {
+          element.style.color = color;
+          element.style.fontSize = size;
+        },
+
+        // border-radius를 설정하는 함수
+        borderRadius: function (element, radius) {
+          element.style.borderRadius = radius;
+        },
+
+        // 투명도를 설정하는 함수
+        opacitySetting: function (element, number) {
+          element.style.opacity = number;
+        },
+
+        // pointerEvent를 설정하는 함수 (중복 클릭 방지를 위함)
+        pointerEventSetting: function (element, event) {
+          element.style.pointerEvents = event;
+        },
+
+        // trasnform을 설정하는 함수
+        transformSetting: function (element, transform) {
+          element.style.transform = transform;
+        },
+      };
+
+      // 사용자의 입력에 따라 다음 단계로 넘어갈때 변하는 값들을 함수로 묶고, 함수들을 객체로 모아두었다
+      let levelSetting = {
+        // 1단계, 버튼 클릭시 일어나는 이벤트
+        levelOne: function () {
+          styling.displaySetting(button, "none");
+          styling.displaySetting(monsterBox, "flex");
+          clearInterval(buttonMoveX);
+          clearInterval(buttonMoveY);
+        },
+
+        // 2단계, 몬스터 박스를 클릭하면 일어나는 이벤트
+        levelTwo: function () {
+          defaultSet.widthAndHeight(button, "1000px", "100px");
+          styling.displaySetting(button, "flex");
+          styling.bgColorStyling(button, "white");
+          styling.fontSetting(button, "black", "2rem");
+          styling.borderRadius(button, "0px");
+          styling.textContentSetting(button, textArray[2]);
+          clearInterval(buttonMoveX);
+          clearInterval(buttonMoveY);
+        },
+
+        // 다시 초기상태로 돌아가는 함수
+        resetLevel: function () {
+          elementSetting.buttonSet();
+        },
+      };
+
+      // 요소의 기본값을 함수에 묶고 객체로 모아두었다
+      let elementSetting = {
+        // body의 기본값
+        bodySet: function () {
+          defaultSet.reset();
+          defaultSet.widthAndHeight(body, "100vw", "100vh");
+          defaultSet.flexSetting(body, "center", "center");
+          body.style.fontFamily = "Jua, sans-serif";
+        },
+
+        // root의 기본값
+        rootSet: function () {
+          defaultSet.widthAndHeight(root, "100%", "100%");
+          defaultSet.flexSetting(root, "center", "center");
+          root.style.transition = "0.5s";
+        },
+
+        // button의 기본값
+        buttonSet: function () {
+          defaultSet.widthAndHeight(button, "100px", "100px");
+          defaultSet.flexSetting(button, "center", "center");
+          styling.bgColorStyling(button, "#333");
+          styling.textContentSetting(button, textArray[0]);
+          styling.fontSetting(button, "white", "2rem");
+          styling.borderRadius(button, "80px");
+          button.style.transition = "0.5s";
+          button.style.cursor = "pointer";
+          buttonMoveX = setInterval(() => {
+            styling.transformSetting(
+              button,
+              `translateX(${getRandom(300, -300)}px)`
+            );
+          }, 2000);
+
+          buttonMoveY = setInterval(() => {
+            styling.transformSetting(
+              button,
+              `translateY(${getRandom(300, -300)}px)`
+            );
+          }, 2500);
+        },
+
+        // monsterBox의 기본값
+        monsterBoxSet: function () {
+          defaultSet.flexSetting(monsterBox, "center", "center");
+          defaultSet.widthAndHeight(monsterBox, "100%", "65%");
+          styling.displaySetting(monsterBox, "none");
+          styling.opacitySetting(monsterBox, "0%");
+          monsterBox.style.transition = "0.5s";
+          monsterBox.style.gap = "50px";
+          monsterBox.style.overflow = "hidden";
+        },
+
+        // monsterItem의 기본값
+        monsterItemSet: function () {
+          for (let i = 0; i < monsterItem.length; i++) {
+            defaultSet.widthAndHeight(monsterItem[i], "400px", "80%");
+            defaultSet.flexSetting(monsterItem[i], "center", "center");
+            monsterItem[i].style.transition = "0.5s";
+            monsterItem[i].style.flexDirection = "column";
+            monsterItem[i].style.flexShrink = 0;
+            monsterItem[i].style.gap = "30px";
+            monsterItem[i].style.cursor = "pointer";
+            let itemMoveX = setInterval(() => {
+              styling.transformSetting(
+                monsterItem[i],
+                `translateX(${-move()}px)`
+              );
+            }, 10);
+          }
+        },
+
+        // 몬스터 아이템의 상단 요소 설정
+        monsterItemTopSetting: function () {
+          for (let i = 0; i < monsterItemTopArray.length; i++) {
+            defaultSet.widthAndHeight(monsterItemTopArray[i], "300px", "60px");
+            defaultSet.flexSetting(monsterItemTopArray[i], "center", "center");
+            styling.textContentSetting(
+              monsterItemTopArray[i],
+              `${i}번째 포켓몬`
+            );
+            styling.fontSetting(monsterItemTopArray[i], "black", "2rem");
+          }
+        },
+
+        // 몬스터 아이템의 중단 요소 설정
+        monsterItemMiddleSetting: function () {
+          for (let i = 0; i < monsterItemMiddleArray.length; i++) {
+            defaultSet.widthAndHeight(
+              monsterItemMiddleArray[i],
+              "100%",
+              "250px"
+            );
+            defaultSet.flexSetting(
+              monsterItemMiddleArray[i],
+              "center",
+              "center"
+            );
+            monsterItemMiddleArray[i].src = monsterImage[i];
+            monsterItemMiddleArray[i].style.backgroundSize = "cover";
+          }
+        },
+
+        // 몬스터 아이템의 하단 요소 설정
+        monsterItemBottomSetting: function () {
+          for (let i = 0; i < monsterItemBottomArray.length; i++) {
+            defaultSet.widthAndHeight(
+              monsterItemBottomArray[i],
+              "300px",
+              "80px"
+            );
+            defaultSet.flexSetting(
+              monsterItemBottomArray[i],
+              "center",
+              "center"
+            );
+            styling.textContentSetting(
+              monsterItemBottomArray[i],
+              monsterName[i]
+            );
+            styling.fontSetting(monsterItemBottomArray[i], "black", "3rem");
+          }
+        },
+      };
+
+      // 랜덤 값을 설정하기 위한 함수 (최소, 최대값을 매개변수로 받는다)
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      // translate 초기값 설정
+      let count = -17500;
+
+      // 포켓몬 상단 HTML요소를 담기위한 배열
+      let monsterItemTopArray = [];
+
+      // 포켓몬 중단 HTML요소를 담기위한 배열
+      let monsterItemMiddleArray = [];
+
+      // 포켓몬 하단 HTML요소를 담기위한 배열
+      let monsterItemBottomArray = [];
+
+      // translate 값을 더하기위한 재귀함수 (move라는 함수가 move를 또 실행시킴[무한반복], count값을 무한으로 올려 포켓몬 아이템을 이동시켜준다)
+      function move() {
+        count += 0.005;
+        return count;
+        move();
+      }
+
+      elementSetting.bodySet();
+
+      // body의 자식으로 root를 추가한다
+      defaultSet.elementCreate("div", 1, body);
+      let root = body.children[1];
+
+      // root의 기본 스타일 세팅
+      elementSetting.rootSet();
+
+      // root 자식으로 div를 추가한다
+      defaultSet.elementCreate("div", 1, root);
+      let button = body.children[1].children[0];
+
+      // button의 기본 스타일 세팅
+      elementSetting.buttonSet();
+
+      // root 자식으로 section을 추가한다
+      defaultSet.elementCreate("section", 1, root);
+      let monsterBox = body.children[1].children[1];
+
+      // monsterBox의 기본 스타일 세팅
+      elementSetting.monsterBoxSet();
+
+      // 100개의 몬스터 아이템 박스를 만든다
+      defaultSet.elementCreate("div", 84, monsterBox);
+      let monsterItem = monsterBox.children;
+
+      // monsterItem의 기본 스타일 세팅
+      elementSetting.monsterItemSet();
+
+      // 몬스터 아이템안에 상단, 중단, 하단 ele 요소를 만드는 for문
+      for (let i = 0; i < monsterItem.length; i++) {
+        defaultSet.elementCreate("div", 1, monsterItem[i]);
+        monsterItemTopArray.push(monsterItem[i].children[0]);
+
+        // monsterItemTop의 기본 스타일 세팅
+        elementSetting.monsterItemTopSetting();
+
+        defaultSet.elementCreate("img", 1, monsterItem[i]);
+        monsterItemMiddleArray.push(monsterItem[i].children[1]);
+
+        // monsterItemMiddle의 기본 스타일 세팅
+        elementSetting.monsterItemMiddleSetting();
+
+        defaultSet.elementCreate("div", 1, monsterItem[i]);
+        monsterItemBottomArray.push(monsterItem[i].children[2]);
+
+        // monsterItemBottom의 기본 스타일 세팅
+        elementSetting.monsterItemBottomSetting();
+      }
+
+      // 버튼에 마우스가 올라가면 실행되는 이벤트
+      button.addEventListener("mouseover", function () {
+        styling.bgColorStyling(button, "lightgreen");
+        styling.transformSetting(button, "rotate(360deg)");
+        clearInterval(buttonMoveX);
+        clearInterval(buttonMoveY);
+      });
+
+      // 버튼에서 마우스가 나가면 실행되는 이벤트
+      button.addEventListener("mouseout", function () {
+        styling.bgColorStyling(button, "#222");
+        styling.transformSetting(button, "rotate(0deg)");
+
+        // 버튼의 위치가 랜덤으로 바뀐다 setInterval사용
+        buttonMoveX = setInterval(() => {
+          styling.transformSetting(
+            button,
+            `translateX(${getRandom(300, -300)}px)`
+          );
+        }, 2000);
+
+        // 버튼의 위치가 랜덤으로 바뀐다 setInterval사용
+        buttonMoveY = setInterval(() => {
+          styling.transformSetting(
+            button,
+            `translateY(${getRandom(300, -300)}px)`
+          );
+        }, 2500);
+      });
+
+      // 몬스터 아이템에 마우스를 올리거나 나가면 일어나는 이벤트
+      for (let i = 0; i < monsterItem.length; i++) {
+        monsterItem[i].addEventListener("mouseover", function () {
+          styling.bgColorStyling(monsterItem[i], "rgba(200,200,500,80%)");
+        });
+
+        monsterItem[i].addEventListener("mouseout", function () {
+          styling.bgColorStyling(monsterItem[i], "unset");
+        });
+      }
+
+      // 클릭 이벤트, 변수 level과 if문을 사용했다, level의 상태에 따라 다른 실행결과를 보여준다
+      body.addEventListener("click", function (event) {
+        // 이벤트 타겟이 button이고 level의 값이 0이라면 버튼이 사라지고 1초뒤에 몬스터 박스가 나온다
+        if (event.target === button && level === 0) {
+          styling.opacitySetting(button, "0%");
+          styling.pointerEventSetting(button, "none");
+          body.style.backgroundColor = "white";
+          count = -17500;
+
+          setTimeout(() => {
+            styling.opacitySetting(monsterBox, "100%");
+            levelSetting.levelOne();
+            level = 1;
+          }, 1000);
+          return;
+        }
+
+        // level이 1이라면 몬스터 박스가 사라지고 한글이 나온다
+        if (
+          event.target === monsterBox ||
+          level === 1 ||
+          event.target === monsterItem
+        ) {
+          styling.opacitySetting(monsterBox, "0%");
+          styling.pointerEventSetting(body, "none");
+
+          setTimeout(() => {
+            levelSetting.levelTwo();
+            styling.displaySetting(monsterBox, "none");
+            styling.opacitySetting(button, "100%");
+            styling.pointerEventSetting(body, "unset");
+            level = 2;
+          }, 1000);
+
+          return;
+        }
+
+        // level이 2라면 한글이 사라지고 1초뒤에 다시 버튼이 나온다
+        if (level === 2) {
+          styling.opacitySetting(button, "0%");
+          styling.pointerEventSetting(body, "none");
+          setTimeout(() => {
+            styling.opacitySetting(button, "100%");
+            levelSetting.resetLevel();
+            styling.pointerEventSetting(button, "unset");
+            styling.pointerEventSetting(body, "unset");
+            level = 0;
+          }, 1000);
+
+          return;
+        }
+      });
+
+      // 백그라운드 컬러가 2초마다 바뀐다
+      let backgroundChange = setInterval(() => {
+        body.style.backgroundColor =
+          colorArray[Math.floor(Math.random() * colorArray.length)];
+      }, 2000);
+    </script>
+  </body>
+</html>

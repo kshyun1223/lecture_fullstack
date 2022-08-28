@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 
+  ? 효과 구상
+  #1 클릭으로 변경 (시놉1에서 시놉2)(훈련 과정 중에 익히는 것 활용)
+  
+  #2 시간 지나면 변경 (시놉2에서 시놉3)(구글링)
+  
+  #3 브라우저 상단에서 추가 문자열이 떨어지며 
+  '가진것이 망치뿐이면, 모든 것이 못으로 보인다.'이 반으로 갈라지는 효과 (시놉3에서 시놉1), (구글링)
+  
+  ? 작업 순서
+  1. 자바스크립트로 body안에 2개의 children생성 
+  2. 각각의 시놉에 간단한 if문으로 addEventListener “click” 입력
+  3. 세개의 시놉을 click function으로 구동 확인
+  4. 시간 지나면 변경 (시놉2에서 시놉3)
+  5. 브라우저 상단에서 추가 문자열이 떨어지며'가진것이 망치뿐이면, 모든 것이 못으로 보인다.'이 반으로 갈라지는 효과 (시놉3에서 시놉1)
+  6. 기존에 작성된 각각의 if문을 묶는 과정
+  7. 스타일링 실시
+  8. 최종 검수
+  
+  ? 변경점
+  변경점 - (시놉3에서 시놉1)
+  > 시놉3에서 마우스를 따라가는 객체를 만들고 마우스가 '가진것이 망치뿐이면, 모든 것이 못으로 보인다.’에 올라가면 시놉1으로 넘어가는 변경점
+  변경점 -  (시놉2에서 시놉3)
+  > if else 활용으로 해당 부분 제외
+  -->
+
+</head>
+<body id="root">
+  
+</body>
+<script>
+  // /////////////////widthAndHeight, flexSetting 팔레트
+  function widthAndHeight(element, width, height){
+    element.style.width = width;
+    element.style.height = height;
+  }
+  function flexSetting(element, direction = "row"){
+    if(typeof direction === "string"){
+      element.style.display = "flex";
+        element.style.justifyContent = "center";
+        element.style.alignItems = "center";
+        element.style.flexDirection = direction;
+    }
+  }
+  
+  
+  const hack = document.createElement("div");
+  hack.innerHTML = "click";
+  root.appendChild(hack);
+  const inHack = root.appendChild(hack);
+  const body = document.body;
+  // console.log(hack);
+  // console.dir(inHack);
+  // console.log(outHack);
+  // console.log(body);
+
+  // /////////////////컬러, 보더, 백그라운드 컬러 값 세트
+  inHack.style.backgroundColor = "#444";
+  inHack.style.color = "#111"
+  inHack.style.borderRadius = "50%"
+
+  // /////////////////플랙스, 너비, 높이 값 세트
+  widthAndHeight(body, "100vw", "100vh");
+  flexSetting(body, "column-reverse");
+
+  widthAndHeight(hack, "50px", "50px");
+  flexSetting(hack, "column");
+  // console.dir(hack);
+
+  // /////////////////"click" 시놉1~시놉2~시놉3
+  // 각각 if function으로 구동되는지 확인 후 else로 묶음
+  hack.addEventListener("click", function(){
+    if(hack.innerHTML === 'click'){
+      hack.innerHTML = 'if all you have a hammer, everything looks like a nail';
+      widthAndHeight(hack, "500px", "39px");
+      hack.style.color = "#111";
+      hack.style.backgroundColor = "#fff";
+      outHack.innerText = [];
+      outHack.style.backgroundColor = "#fff";
+      outHack.style.color = 0;
+      
+    } else {
+        hack.innerHTML = '가진것이 망치뿐이면, 모든 것이 못으로 보인다.';
+        widthAndHeight(hack, "340px", "39px");
+        hack.style.color = "#111";
+        hack.style.backgroundColor = "#fff";
+        outHack.innerText = [];
+        outHack.style.backgroundColor = "#fff";
+        outHack.style.color = 0;
+      }});
+  // /////////////////"mouseover" 시놉3~시놉1
+    hack.addEventListener("mouseover", function(){
+      if(hack.innerHTML === '가진것이 망치뿐이면, 모든 것이 못으로 보인다.'){
+        hack.innerHTML = 'click';
+        inHack.style.backgroundColor = "#444";
+        inHack.style.color = "#111"
+        inHack.style.borderRadius = "50%"
+        widthAndHeight(hack, "50px", "50px");}
+        });
+  // /////////////////"mousemove" 시놉3~시놉1
+    const outHack = document.createElement("article");
+    const outHackBaby = root.appendChild(outHack);
+    document.addEventListener("mousemove", (e) => {
+      if(hack.innerHTML === '가진것이 망치뿐이면, 모든 것이 못으로 보인다.'){
+        console.log(e.pageX)
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        outHack.style.left = e.pageX +"px";
+        outHack.style.top = e.pageY +"px";
+        outHack.innerText = "귀요미";
+        outHack.style.fontSize = "15px";
+        outHack.style.backgroundColor = "yellow";
+        outHack.style.color = "#111"
+        outHack.style.borderRadius = "50%"
+        outHack.style.zIndex = 3;
+        outHack.style.position = "absolute";
+        widthAndHeight(outHack, "50px", "50px");
+        flexSetting(outHack, "column");
+        }
+      });
+        // console.log(outHack)
+        // console.dir(document.body)
+  // /////////////////위치를 찾아서 값을 주려고 하였으나 다른 방안으로 실시 
+  console.dir(hack.getBoundingClientRect());
+  
+  
+</script>
+</html>

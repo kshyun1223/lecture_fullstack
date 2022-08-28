@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const body = document.body;
+
+    for(i=0;i<2;i++){
+      let createDiv = document.createElement('div');
+      body.prepend(createDiv);
+    }
+    
+    const click = document.body.children[0];
+    console.log(click);
+    const text = document.body.children[1];
+    console.log(text);
+
+    //스타일링
+    body.style.margin = '0px';
+    body.style.border = '0px';
+    body.style.boxSizing = 'borderBox';
+    body.style.width = '100vw';
+    body.style.height = '100vh';
+    body.style.display = 'flex';
+    body.style.justifyContent = 'center';
+    body.style.alignItems = 'center';
+    body.style.overflow = 'hidden'
+
+    click.style.width = '72px';
+    click.style.height = '72px';
+    click.style.borderRadius = '36px';
+    click.style.backgroundColor = '#333';
+    click.style.display = 'flex';
+    click.style.justifyContent = 'center';
+    click.style.alignItems = 'center';
+    click.textContent = 'click';
+    click.style.color = 'white';
+    click.style.fontSize = '24px';
+    click.style.position = 'relative';
+
+    text.style.fontSize = '32px';
+    //스타일링
+
+    let textfile = [
+      'if all you have a hammer, everything looks like a nail',
+      '가진것이 망치뿐이면, 모든 것이 못으로 보인다.'
+  ] // 텍스트
+    
+    let sw = 1;//스위치값
+    click.addEventListener('click',function(){
+      if(sw === 1){
+        let a = 0;
+        let move = setInterval(()=>{
+          click.style.top = a + 'vh';
+          a = a+1;
+          if(a>=60){
+            clearInterval(move);
+            click.style.top = '0px';
+            click.style.display = 'none';
+            let e = 0;
+            let typing = setInterval(()=>{
+              text.textContent = textfile[0].substr(0,e);
+              e++;
+              if(e>textfile[0].length){
+                clearInterval(typing);
+                sw = 2;
+              }
+            },60)
+          }
+        }
+        ,20)
+      }
+    })//#1 sequence => #2 sequence
+
+    text.addEventListener('click',function(){
+      if(sw === 2){
+        sw = 0; // 애니메이션 실행중에 다른 이벤트 진행 못하게 sw=0을 줌.
+        let c = 32;
+        let textSize1 = setInterval(()=>{
+          text.style.fontSize = c + 'px';
+          c = c - 1;
+          if(c<=10){
+            clearInterval(textSize1);
+            text.textContent = textfile[1];
+            let d = 10;
+            let textSize2 = setInterval(()=>{
+              text.style.fontSize = d +'px';
+              d = d+1;
+              if(d>=32){
+                clearInterval(textSize2);
+                sw = 3;
+              } 
+            },50)
+          }
+        },50)
+      } //#2 sequence => #3 sequence
+      
+      else if(sw === 3){
+        text.textContent ='';
+        click.style.opacity = 0;
+        click.style.display ='flex';
+        let b = 0;
+        let makeclick = setInterval(()=>{
+          click.style.opacity = b;
+          b = b+0.03;
+          if(b>=1){
+            clearInterval(makeclick);
+            sw = 1;
+          }
+        },50)
+      }
+    })//#3 sequence => #1 sequence
+  </script>
+</body>
+</html>

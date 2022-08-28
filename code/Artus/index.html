@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+
+  <script>
+    let body =  document.body;
+    // console.log(body);
+    body.id = 'root';
+    // body에 id 'root' 달아줌 
+
+    body.style.width = "100vw";
+    body.style.height = "100vh";
+    body.style.display = "flex";
+    body.style.justifyContent = "center";
+    body.style.alignItems = "center";
+    // body에 style 넣어줌. 
+
+
+    let setDivTag = document.createElement('div');
+    body.appendChild(setDivTag);
+    console.log(setDivTag);
+    
+    // body에 자식으로 div태그  넣어줌, body>div:nth-child(1)
+
+
+    let buttonText = ['click'];
+    // click 텍스트 배열로 저장 
+    let setButtonTag = document.createElement('button');
+    setButtonTag.id = 'setButton';
+    setButtonTag.textContent = buttonText;
+    setDivTag.appendChild(setButtonTag);
+    // button 태그 만들고 id 'setButton'으로 만듬. div 자식으로 넣어 줌, body>div:nth-child(1)> button
+
+
+
+    let setDivTag2 = document.createElement('div');
+    body.appendChild(setDivTag2);
+    console.log(setDivTag2);
+    setDivTag2.style.height = "100px";
+    // body에 자식으로 div2 넣어줌, body>div:nth-child(2);
+
+    
+    let enText = ['if you have a hammer, everything looks like a nail'];
+    // 영어 글씨 배열로 저장
+
+
+    let setSpanTag = document.createElement('span');
+    setDivTag2.appendChild(setSpanTag);
+    setSpanTag.textContent = enText;
+    setSpanTag.style.display = 'none';
+    console.log(setSpanTag);
+    // span태그 div2 자식으로 만들고 enText 글씨 넣어줌. 초기 셋팅은 글씨 안나오게 설정함. body>div:nth-child(2)>span
+
+    
+    
+
+    let setDivTag3 = document.createElement('div');
+    body.appendChild(setDivTag3);
+    setDivTag2.style.height = "100px";
+    console.log(setDivTag3);
+    
+
+    let koText = ['가진것이 망치뿐이면, 모든 것이 못으로 보인다.'];
+    // 한글 배열로 저장
+    
+    let setSpanTag2 = document.createElement('span');
+    setSpanTag2.id = 'span2';
+    setDivTag3.appendChild(setSpanTag2);
+    setSpanTag2.textContent = koText;
+    setSpanTag2.style.display = 'none';
+    // span2태그 div3 자식으로 만들고 koText 글씨 넣어줌. 초기 셋팅은 글씨 안나오게 설정함. body>div:nth-child(3)>span
+
+
+    
+
+    // setButtonTag.style.width ="100px";
+    // setButtonTag.style.height = "100px";
+    // setButtonTag.style.borderRadius = "50%";
+    // setButtonTag.style.backgroundColor = "pink";
+    // button태그에 스타일 넣어줌
+
+    function cssButton (){
+      setButtonTag.style.width ="100px";
+      setButtonTag.style.height = "100px";
+      setButtonTag.style.borderRadius = "50%";
+      setButtonTag.style.backgroundColor = "pink";
+    }
+
+    cssButton();
+    // button 태그 스타일 함수로 묶어봄. 
+    
+  
+
+
+
+    setButtonTag.addEventListener('click', function(){
+      setButtonTag.style.display = 'none'; 
+
+      setTimeout(function(){ 
+        // setDivTag.textContent = enText;
+        setSpanTag.style.display = 'block';
+      }, 1000);
+
+
+    });
+    // setTimeout 사용하여 버튼 클릭하면 버튼 사라지고 1초 뒤에 영어 나타나게 함
+
+
+      
+    document.body.children[2].addEventListener('click', function(){
+
+      document.body.children[2].children[0].textContent = ' ';
+
+      setTimeout(function(){
+
+        setSpanTag2.style.display = 'block';
+        
+        
+      }, 1000)
+      
+      console.log(event);
+
+      
+    
+    });
+
+    
+
+    // 클릭하면 영어 사라지고 setTimeout 사용하여 1초 뒤에 한글 나타나게 함
+    // div 들이 계속 겹쳐서 나타나서 일단 body부터 자식들 하나씩 지정해서 가져옴. 
+
+
+  // console.dir(document.body);
+  // console.dir(document.body.children[2].children[0]);
+
+
+  document.body.children[3].addEventListener('click', function(){
+
+  setSpanTag2.style.display = 'none';
+
+    setTimeout(function(){
+
+    setButtonTag.style.display = 'block'; 
+  
+  
+    }, 1000)
+
+
+
+});
+
+// 클릭하면 한글 사라지고 setTimeout 사용하여 1초 뒤에 버튼 나타나게 함
+// div 들이 계속 겹쳐서 나타나서 일단 body부터 자식들 하나씩 지정해서 가져옴.
+
+    
+  
+
+
+  </script>
+</body>
+</html>

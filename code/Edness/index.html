@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{box-sizing: border-box; margin:0; padding:0;}
+    body{overflow: hidden; width:100vw;height:100vh;}
+  </style>
+</head>
+<body>
+
+  <script>
+    
+    //let eng =["if all you have a hammer, everything looks like a nail"];
+    let eng = "if all you have a hammer, everything looks like a nail";
+    let kor = "가진것이 망치뿐이면, 모든 것이 못으로 보인다";
+
+    let flexSet = (element,direction,justify,align) => {
+      element.style.display="flex";
+      element.style.flexDirection=direction;
+      element.style.justifyContent=justify;
+      element.style.alignItems=align;
+    }
+    flexSet(document.body,'row','center','center');
+
+
+    // 버튼 스타일
+    let button = document.createElement('button');
+    button.style.position="absolute";
+    button.style.zIndex="2";
+    button.style.width="100px";
+    button.style.height="100px";
+    button.style.borderRadius="50%";
+    button.style.backgroundColor="#39AC73";
+    button.style.border="1px #2F8E53";
+    button.style.fontSize="25px";
+    button.style.color="white";
+    button.textContent="Click";
+    button.style.cursor="pointer";
+    
+    document.body.appendChild(button);
+
+
+    //메인화면(버튼 클릭했을때 메인화면 생성)
+    let mainBox = document.createElement('div');
+    flexSet(mainBox,'row','center','center');
+    mainBox.style.position="absolute";
+    mainBox.style.width="100px";
+    mainBox.style.height="100px";
+    mainBox.style.borderRadius="50%";
+    mainBox.style.zIndex="1";
+    mainBox.style.color="white";
+    mainBox.style.fontSize="2rem";
+    
+    document.body.appendChild(mainBox);
+
+    //영어 글씨나오는 부분 부모 Body 화면에 저장하고 opacity로 숨김
+    let engBox = document.createElement('div');
+    
+    engBox.style.opacity = -1;
+    document.body.appendChild(engBox);
+    engBox.style.position="static";
+    engBox.style.width = "maxContnet";
+    engBox.style.height = "maxContnet";
+    //engBox.style.backgroundColor = "blue";
+    engBox.style.padding ="10px";
+    flexSet(engBox,'row','center','center');
+
+
+    // 버튼 클릭시 이벤트 ==> 버튼 사라짐
+    let buttonEvent = true;
+    button.addEventListener("click",function(){
+        if(buttonEvent !== true){
+          target.disabled = true;
+        }
+        button.style.opacity = 0;
+        button.style.transition = "1s";
+        //buttonEvent = false;
+        mainBox.style.background="#39AC73";
+        button.disabled = true;//버튼 비활
+        // 버튼 클릭시 화면 애니메이션
+        let count = 0;
+        let buttonClick = setInterval(function(){
+          if(count === 120){
+            mainBox.style.borderRadius=0;
+            mainBox.style.transition="1s";
+            clearInterval(buttonClick);
+          }else{
+          button.disabled = false;  
+          mainBox.style.width=count+"vw";
+          mainBox.style.height=count+"vh";
+          
+          count++;
+          }
+        });
+        setTimeout(function(){ //버튼 이벤트 발생후 1초뒤 글자표시 함수 실행
+          stringView();//글씨 
+          
+        },500);
+      
+    });
+    
+    // 글자 나타나게 하기
+    // 반복문으로 영어 한글자씩 배열에 넣음
+    console.dir(eng);
+    let engString = [];
+    let engStringCount = 0;
+    for(let i=0;i<eng.length;i++){
+      engString[engStringCount] = eng[i];
+      engStringCount++;
+    }console.log(engString);
+    
+    //배열을 반복문사용해서 span에 넣고 engBox안에 자식요소로 넣음
+    function stringView(){
+      let engCount = 0;
+      let stringView = setInterval(function(event){
+        if(engCount === engString.length){
+          clearInterval(stringView);
+          randomText();
+          
+        }else{
+          let engSpan = document.createElement("div");
+          engSpan.textContent = engString[engCount];
+          
+          if(engSpan.textContent===" "){ 
+            engSpan.style.width="10px";
+          }
+          engBox.appendChild(engSpan);
+          
+          engCount++;
+        }
+      },100);
+      //숨겨있던 engBox 표시
+      engBoxView();
+    }
+
+    function engBoxView(){ //engBox 표시
+      engBox.style.zIndex="3";
+      engBox.style.opacity="1";
+      engBox.style.color="white";
+      engBox.style.fontSize="2em";
+      //engBox.style.cursor="pointer";
+    }
+    
+
+//텍스트 랜덤 이동
+
+let randomEvent = true;
+  function randomText(){
+    engBox.addEventListener('mouseover',function(e){
+      console.log(this);
+      console.log(e.target);
+      for(let i=0; i<engBox.childElementCount; i++){
+
+
+        // 마우스오버 ==> 랜덤으로 포지션 이동
+            let top = Math.floor(Math.random()*1000);
+            let bottom = Math.floor(Math.random()*1000);
+            let left = Math.floor(Math.random()*1500);
+            let right = Math.floor(Math.random()*1000); 
+
+            if(randomEvent===true){
+              engBox.children[i].style.position = "absolute";
+              engBox.children[i].style.top = top+"px";
+              //engBox.children[i].style.bottom = bottom+"px";
+              engBox.children[i].style.left = left+"px";
+              engBox.children[i].style.right = right+"px";
+              engBox.children[i].style.transition="all 1s";
+              engBox.children[i].style.opacity = 0.3;
+              flexSet(engBox.children[i],'row','center','cetner');
+              engBox.children[i].style.width="20px";
+              engBox.children[i].style.height="20px";
+              
+            }
+
+          }
+          //박스 크기 설정 engBox
+          engBox.style.width="100vw";
+          engBox.style.height="100vh";
+          document.body.addEventListener('click',function(){
+            randomEvent=false;
+            engBox.style.opacity=0;
+            engBox.style.transition= "opacity 1s";
+            korBoxView();
+          });
+          
+    });
+    
+    
+  }
+    
+  //한글 글씨 박스 생성
+let korBox = document.createElement('div');
+korBox.id='korBox';
+korBox.style.position="absolute";
+korBox.style.width="maxContent";
+korBox.style.height="maxContent";
+//korBox.style.backgroundColor="gray";
+korBox.style.zIndex=-1;
+korBox.style.fontSize='2em';
+korBox.style.color="white";
+korBox.textContent = kor;
+
+
+document.body.appendChild(korBox);
+
+
+
+function korBoxView(){
+  korBox.style.zIndex=10;
+}
+
+
+console.dir(document.querySelector("#korBox"));
+
+let korBox1 = document.querySelector("#korBox");
+
+// 클릭시 한글 글씨 사라지고 버튼 다시 생성
+korBox1.addEventListener('click',function(){
+  console.log(1);
+  korBox1.style.opacity=0;
+  korBox1.style.transition="all 0.5s";
+
+  mainBox.style.borderRadius="50%";
+  mainBox.style.width="100px";
+  mainBox.style.height="100px";
+  mainBox.style.opacity=0;
+  button.style.zIndex=10;
+  button.style.opacity=1;
+  buttonEvent=true;
+});
+
+  
+    
+    
+  </script>
+</body>
+</html>
