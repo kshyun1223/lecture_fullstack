@@ -156,12 +156,10 @@ body.appendChild(merong); //할당
 ### 배열과 반복문
 ```javascript
 let colorSet = ["salmon","black","chocolate","cadetblue","cornflowerblue", "pink"]; 
-// 우항의 배열을 좌항의 변수 colorSet에 대입했다 
-// 변수 colorSet은 특정 배열을 가리키고있다 
-console.log(colorSet); 
-// console.log() 기능을 이용해 위 코드를 검사 </script> <script> 
-let a; 
-// 변수 a를 선언(declraation)했다 
-a = document.getElementById("root"); // getElementById 메서드로 document 객체에 root라는 id를 가진 하위요소를 호출해서 좌항의 변수 a에 대입했다 
-for(let index = 0; index < colorSet.length; index = index + 1) { a.children[index].style.backgroundColor = colorSet[index]; } console.log(na[na.length-1])
+
+let a = document.getElementById("root"); 
+
+for(let index = 0; index < colorSet.length; index = index + 1) {
+  a.children[index].style.backgroundColor = colorSet[index]; 
+}
 ```
