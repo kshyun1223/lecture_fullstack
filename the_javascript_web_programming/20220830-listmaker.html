@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Document</title>
+</head>
+<body> 
+<div id="root"></div> 
+<script> 
+window.addEventListener("load", () => { 
+  // 목표 #root 요소에 자식으로 <ul> 컨테이너를, 
+  // <ul> 컨테이너 자식으로 <li> 태그 여러개를 
+  // 동적으로 생성하려고 한다.
+function listMaker(parentElement, containerName, itemName, itemsCount) { let container = document.createElement(containerName); 
+  // 함수가 시작되자마자 <ul> 태그를 생성한다. 아직 부모태그의 자식으로 붙이지 않았다. 
+  // 여러개를 만들기 위해서는 원하는 만큼의 반복 실행이 필요하다. 
+  // 예제에서는 열번을 만들 예정이다. 
+  let item = document.createElement(itemName); 
+  // item 변수는 <li> 태그를 만드는 것이고 반복문 때문에 '열개'가 만들어진다. 
+  item.textContent = i + 1; 
+  // 간단하게 li 태그에 텍스트로 인덱스를 활용, 내용을 넣었다. 
+  container.appendChild(item); 
+  // <ul> 태그의 자식으로 덧붙였다. 위에서 만들어진 <li> 태그가 이곳에서 덧붙여진다. 
+  // 이것을 반복문 만큼 진행된다. 
+  } 
+  // 최종적으로 반복문 때문에 <ul> 태그는 열개의 <li>태그를 자식으로 두게 되었다. 
+parentElement.appendChild(container);
+// 하지만 붙여질 위치가 정해지지 않았기 때문에 <ul>태그도 자식으로서 식별자 root의 
+// 자식태그로 붙여진다. 
+} const root = document.getElementById("root"); listMaker(root, "ul", "li", 10);
+}); 
+</script>
+</body>
+</html>
