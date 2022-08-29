@@ -54,6 +54,15 @@ for(let i = 1; i < x; i++) { // x=반복 조건
 }
 ```
 
+```javascript
+let colorSet = ["salmon","black","chocolate","cadetblue","cornflowerblue", "pink"]; // 색상 목록
+
+let a = document.getElementById("root"); // 부모 요소를 호출
+for(let index = 0; index < colorSet.length; index = index + 1) {
+  a.children[index].style.backgroundColor = colorSet[index]; // 자식 요소들에 목록에 따라 색상을 부여
+}
+```
+
 ### if문
 ```javascript
 if(/* 조건식 */) {{ 
@@ -67,16 +76,6 @@ if(/* 조건식 */) {{
 ```javascript
 while(/* 조건식 */) {
   /* 조건식이 true인 동안 실행할 내용 */
-}
-```
-
-### 배열과 반복문
-```javascript
-let colorSet = ["salmon","black","chocolate","cadetblue","cornflowerblue", "pink"]; // 색상 목록
-
-let a = document.getElementById("root"); // 부모 요소를 호출
-for(let index = 0; index < colorSet.length; index = index + 1) {
-  a.children[index].style.backgroundColor = colorSet[index]; // 자식 요소들에 목록에 따라 색상을 부여
 }
 ```
 
