@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
 <body> 
-    <div id="root"></div> 
-    <div id="another"></div>
+  <div id="root"></div> 
+  <div id="another"></div>
 </body>
 <script> 
-  const root document.getElementById("root"); const another = document.getElementById("another");
-  function elementStyling(element, stylePropsfor (const key in styleProps) { element. style [key] = styleProps [key]; } } element textContent = textContent;, textContent}"") {width: "100vw", height: "100px" const rootStyle { backgroundColor: "#333",
-
+  const root = document.getElementById("root"); 
+  const another = document.getElementById("another");
+  function elementStyling(element, styleProps, textContent = "") {
+    for (const key in styleProps) { 
+      element.style[key] = styleProps [key]; 
+    } 
+    element.textContent = textContent;
+  }  
+  const rootStyle = { 
+    backgroundColor: "#333",
+    width: "100vw", 
+    height: "100px"
+  }
   const rootText = "this is awesome!";
+
   elementStyling(root, rootStyle, rootText);
-  elementStyling (another, { backgroundColor "salmon", width: "100vw", height: "200px", color: "#ccc" }, "wow textContent!")
+  // ----------------------------
+  elementStyling (another, { 
+    backgroundColor : "salmon", 
+    width: "100vw", 
+    height: "200px", 
+    color: "#ccc" 
+  }, "wow textContent!")
 </script>
 </html>

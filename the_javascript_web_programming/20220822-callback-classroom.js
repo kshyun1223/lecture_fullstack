@@ -3,6 +3,8 @@ function a() {
   return "hello"; 
 }
 
+console.log(a());
+
 /* 매개변수의 타입을 검사하는 함수 */
 function b(text, callback) {
   if(typeof text === "string" && typeof callback === "function") {

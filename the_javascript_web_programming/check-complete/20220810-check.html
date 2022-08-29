@@ -8,7 +8,7 @@
   <style>
     #root > section {
       width: inherit;
-      height: 100vh;
+      height: 10vh;
       border: 1px solid #000;
     }
     #root > section:nth-child(1) {
@@ -37,20 +37,14 @@
     <section></section>
   </div>
   <script>
-    // 배열
-    let colorSet = ["salmon","black","chocolate","cadetblue", "cornflowerblue"];
-
     let a;
     a = document.getElementById("root");
 
-    // 객체
-    let count = 0;
-
     console.dir(a);//검사를 하지 않으면
-
     let widthValue = 100;
     let b = widthValue + 10; // 이 부분이 불가능하다. 덧셈이 되는지 안되는지 모르니까
     widthValue = b;
+    console.dir(b); // 110
     a.style.width = widthValue + "px";
   </script>
 

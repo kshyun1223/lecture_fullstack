@@ -38,45 +38,49 @@
   //   ol.appendChild(li);
   // });
 
-  // map 방식 -> 어렵네 ㅠㅠ
-  digimon.map(x => )
+  // map 방식 -> 이걸 됐다고 해야되나...
+  // let forEach = digimon.forEach(function(element) {
+  //   const li = document.createElement("li");
+  //   ol.appendChild(li);
+  // });
+  // digimon.map(x => forEach);
 
-
-
-
-
-
+  // concat 방식
+  // 아몰랑 나중에 할래;;;
 
   
 
   /* Q_2 백엔드 요청 */ 
   // 디지몬 문자열 마다 "님" 이라는 단어를 붙여 가공하세요.
-  
+  // 재사용성을 고려하여 "님"이라는 리터럴을 변수화 ㅋㅋ
+  let title
+  title = "님"
+
   // 일단 쪼개서 시험 -> 가능 ㅇㅇ
-  // console.log(digimon[0] = digimon[0] + "님");
+  // console.log(digimon[0] = digimon[0] + title);
   
   // for 방식 -> 가능 ㅇㅇ
   // for(i = 0; i < digimon.length; i++) {
-  //   console.log(digimon[i] = digimon[i] + "님");
+  //   console.log(digimon[i] = digimon[i] + title);
   // }
 
   // forEach 방식 -> 가능 ㅇㅇ
-  // digimon.forEach(element => console.log(element + "님"));
+  // digimon.forEach(element => console.log(element + title));
 
-  // for + concat 방식 -> 어렵네 ㅠㅠ
-  // for(i = 0; i < digimon.length; i++) {
-  //   console.log(memory.concat("님"));
-  // }
+  // map 방식 -> 이걸 됐다고 해야되나...
+  // let forEach = digimon.forEach(element => console.log(element + title));
+  // digimon.map(x => forEach);
 
-  // forEach + concat 방식 -> 어렵네 ㅠㅠ
-  // 나중에...
+  // concat 방식
+  // 아몰랑 나중에 할래 ;;;
 
-
+  
 
   /* concat 작성법 참고 */
   // let one="java";
   // let two="script";
   // let all = one.concat(two);
-  // console.log(all); -> javascript
+  // console.log(one.concat(two));
+  // console.log("java".concat("script"));
 </script>  
 </html>
