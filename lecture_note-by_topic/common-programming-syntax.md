@@ -94,14 +94,18 @@ hairService('댕댕이'); // 어서오세요 댕댕이 고객님
 
 ### 함수의 출구 역할을 하는 return(반환)
 ```javascript
-function a() {
-  return "hello"; 
+function minus (a, b) {
+  return a - b;
 }
-console.log(a()); // hello
+
+function sum (firstNumber, secondNumber) {
+  return firstNumber + secondNumber;
+}
+
+console.log(sum(10, minus(20,5))); // 10+20-5=25
 ```
-- 함수는 반환을 통해 다른 데이터로 바뀐다: 반환이 없으면 실행만 하고 종료된다
-  - 반환이 없을 수도 있다: 목적이 실행일 때
-  - 반환이 반드시 필요할 때가 있다: 목적이 가공된 값일 때
+- 반환(return)을 지정하지 않으면 다른 코드에서 값으로 사용할 수 없다
+- 실행만이 목적이라면 반환을 지정하지 않을 수도 있다
 
 ### 함수가 제대로 실행되지 않는 경우
 - ReferenceError: 존재하지 않는 변수를 참조했을 때 나타나는 에러
