@@ -38,11 +38,14 @@
     //----------------------------
     const box = document.getElementById("box");
     function setCarousel() {
-      for(i = 0; i < domInit.slideItem.length; i++) {
+      for(i = 0; i < domInit.slideNumber.length; i++) {
         
         let carousel = document.createElement('div');
-        domStyling.size(carousel, "200px", "400px");
-        domStyling.flexBox(carousel, "flex", "center", "center", "column");
+        carousel.style.width = "200px";
+        carousel.style.height = "400px";
+        carousel.style.desplay = "flex";
+        carousel.style.align-items = "center";
+        "center", "column");
         
         box.innerHTML = `
           <div>
