@@ -21,7 +21,7 @@
         let mouseX = event.pageX;
         let mouseY = event.pageY;
         let calcX = -(mouseX / 20);
-        let calcY = -(mouseY/ 20);
+        let calcY = -(mouseY / 20);
         log.style.transform = `translate(${calcX}px, ${calcY}px)`;
         let windowPosition = window.innerWidth;
         let percent = parseInt((mouseX / windowPosition) * imageCount);

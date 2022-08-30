@@ -1,7 +1,7 @@
 /*
   ? 코드 설계
   * "hello"라는 문자열을 가리키고 있는 변수 globalData와
-  * 함수 example()의 실행부에 초기화된 문자열 "bye"를 가리키고 있는 변수 localData 주요
+  * 함수 example()의 실행부에 초기화된 문자열 "bye"를 가리키고 있는 변수 localData
   * example() 함수는 console.log()를 두번 실행하는 간단한 명령을 담고 있다.
   * 하나의 실행은 변수 globalData가 가리키고 있는 데이터를 기록에 남기는 실행을 하고
   * 다른 하나의 실행은 localData라는 실행을 하고 있다. localData가 가리키고 있는 문자열 "bye"를 출력한다.

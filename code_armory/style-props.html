@@ -6,19 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-<body> 
+<body>
+  <h2>방식 1</h2> 
   <div id="root"></div> 
+  <h2>방식 2</h2> 
   <div id="another"></div>
 </body>
 <script> 
+  /* 방식 1 : 리터럴...? */
   const root = document.getElementById("root"); 
-  const another = document.getElementById("another");
-  function elementStyling(element, styleProps, textContent = "") {
-    for (const key in styleProps) { 
-      element.style[key] = styleProps [key]; 
-    } 
-    element.textContent = textContent;
-  }  
   const rootStyle = { 
     backgroundColor: "#333",
     width: "100vw", 
@@ -27,7 +23,17 @@
   const rootText = "this is awesome!";
 
   elementStyling(root, rootStyle, rootText);
-  // ----------------------------
+  
+  /* 방식 2 : 함수 */
+  const another = document.getElementById("another");
+
+  function elementStyling(element, styleProps, textContent = "") {
+    for (const key in styleProps) { 
+      element.style[key] = styleProps [key]; 
+    } 
+    element.textContent = textContent;
+  }
+
   elementStyling (another, { 
     backgroundColor : "salmon", 
     width: "100vw", 

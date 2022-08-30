@@ -9,11 +9,13 @@
 <body>
   <div id="root"></div>
     <script>
-      const makeTag(parent, tagName, html) => { 
-        document.createElement(tagName); const tag.innerHTML == html;
+      const makeTag = (parent, tagName, html) => { 
+        const tag = document.createElement(tagName); 
+        tag.innerHTML = html;
         parent.appendChild(tag);
       }
-      const root = document.getElementById('root'); makeTag(root, "div", "<p>children</p>"); 
+      const root = document.getElementById('root'); 
+      makeTag(root, "div", "<p>children</p>"); 
     </script>
   </body>
 </html>
