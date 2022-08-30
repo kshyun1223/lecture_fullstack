@@ -39,10 +39,19 @@
     const box = document.getElementById("box");
     function setCarousel() {
       for(i = 0; i < domInit.slideItem.length; i++) {
+        
         let carousel = document.createElement('div');
         domStyling.size(carousel, "200px", "400px");
         domStyling.flexBox(carousel, "flex", "center", "center", "column");
-        box.appendChild(carousel);
+        
+        box.innerHTML = `
+          <div>
+           <div style="width: 200px; height: 200px; background-color: rgb(250, 235, 120);"></div>
+           <div style="width: 200px; height: 50px;"></div>
+           <div></div>
+          </div>
+        `
+        appendChild(carousel);
       }
     }
     setCarousel();
