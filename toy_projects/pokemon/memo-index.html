@@ -9,21 +9,6 @@
 <body>
   <div id="root"></div>
   <script>
-    const api = function (number) {
-    const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/`+number;
-    const request = new XMLHttpRequest();
-      request.open("GET", _BASIC_URL);
-      request.responseType = "json";
-      request.send();
-      request.addEventListener('load', () => {
-        const _POKEMON_API = request.response;
-        console.dir(_POKEMON_API.name);
-      }); 
-    }
-    api(125);
-    
-
-      
     /* domStyling 객체: 스타일 관련 메소드 모음*/
     const domStyling = {
       margin : function(element, margin = '0') {
@@ -70,7 +55,7 @@
       root : document.getElementById('root'),
       slideItem : ['포켓몬', '포켓몬', '포켓몬', '포켓몬', '포켓몬'],
       text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus natoque sed orci, ac eget arcu, velturpis sem. Consequat diam mauriselit diam habitant proin nisi, auguelectus. Laoreet quam ut tristiquecursus ipsum. Proin mauris nisiinteger quam vitae aliquam.",
-      slideNumber : ["No.1","No.2","No.3","No.4","No.5"]
+      slideNumber : ["1","2","3","4","5"]
     }
 
     console.log(domInit.root);
@@ -147,16 +132,30 @@
 
     function carouselContent() {
       for(i = 0; i < domInit.slideItem.length; i++) {
+        const api = function (number) {
+          const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/`+ number;
+          const request = new XMLHttpRequest();
+            request.open("GET", _BASIC_URL);
+            request.responseType = "json";
+            request.send();
+            request.addEventListener('load', () => {
+              const _POKEMON_API = request.response;
+              let name = _POKEMON_API.name;
+          return title.textContent = name;
+            }); 
+        }
         let card = document.createElement('div');
         let title = document.createElement('div');
         let text = document.createElement('div');
         domStyling.size(card, "200px", "200px");
         card.style.backgroundColor = colorList[i];
-        domStyling.text(card, domInit.slideNumber[i]);
+        domStyling.text(card, domInit.slideNumber[i]); //번호
         domStyling.size(title, "200px", "50px");
-        domStyling.text(title, domInit.slideItem[i]);
+        // domStyling.text(title, domInit.slideItem[i]); //이름
+        let number = slideNumber[i];
+        domStyling.text(title, api(number)); //이름
         domStyling.size(text, "200px", "150px");
-        domStyling.text(text, domInit.text);
+        domStyling.text(text, domInit.text); //설명
         carousels[i].appendChild(card);
         carousels[i].appendChild(title);
         carousels[i].appendChild(text);
