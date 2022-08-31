@@ -8,22 +8,32 @@
 </head>
 <body> 
 <div id="root"></div> 
-<script> 
-// function declration 
-function addElement(tagName, props, parent = document.body, childrenNode = "") { 
-  if(typeof (props) === "object" && typeof(tagName) === "string") { let element = document.createElement(tagName); element.innerHTML = childrenNode; 
-  for(const cssValue in props) { console.log(`검사하기, 동작하는 스타일링 프로퍼티 : ${cssValue}`); 
-  if(cssValue === "id") { 
-    element.id = props[cssValue]; 
-  } element.style[cssValue] = props[cssValue]; 
-  } 
-  parent.appendChild(element); 
-  } 
-} 
-// indentifier 
-const root = document.getElementById('root'); 
-// function call 
-addElement("section", {id:"practics", width:"100vw", height:"100vh", backgroundColor:"#333"}, root, "hello");
-</script>
+  <script> 
+    // function declration 
+    function addElement(tagName, props, parent = document.body, childrenNode = "") { 
+      if(typeof (props) === "object" && typeof(tagName) === "string") {    
+        let element = document.createElement(tagName); 
+        element.innerHTML = childrenNode; 
+        for(const cssValue in props) { 
+          console.log(`검사하기, 동작하는 스타일링 프로퍼티 : ${cssValue}`); 
+          if(cssValue === "id") { 
+            element.id = props[cssValue]; 
+          } else {
+            element.style[cssValue] = props[cssValue]; 
+          } 
+        } 
+        parent.appendChild(element); 
+      } 
+    }
+    // indentifier 
+    const root = document.getElementById('root'); 
+    // function call 
+    addElement("section", {
+      id:"practics", 
+      width:"100vw", 
+      height:"100vh", 
+      backgroundColor:"#333"
+    }, root, "hello");
+  </script>
 </body>
 </html>

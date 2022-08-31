@@ -3,7 +3,7 @@
 const x = 5
 const y = 19
 const z = 7
-if(x+y+z%3 < 10){
+if(x+y+z%3 < 10){ // 평균을 구해서
   console.log('under') // 10 미만이면 under를 출력하고
 } else {
   console.log('over') // 10 이상이면 over를 출력한다
@@ -27,7 +27,7 @@ const three = function(){
       third() // third를 한번 더 하고
     } else { // 만약 third가 first 혹은 second와 다르다면
       inputData.push(first, second, third); // inputData에 세 변수를 추가
-      console.log(inputData);
+      // console.log(inputData);
     }
   }
 }
@@ -38,18 +38,48 @@ three();
 
 /* b. 객체 objectData의 property인 key, "first", "second", "third"에 주문 a를 통해 얻은 데이터를 각각의 키(key)의 값으로 삽입(insert)하시오. */
 
-function value(first, second, third) {
-  this.first = first;
-  this.second = second;
-  this.third = third;
+// function value(first, second, third) {
+//   this.first = first;
+//   this.second = second;
+//   this.third = third;
+// }
+
+// const objectData = [];
+// objectData.push(new value(inputData[0], inputData[1], inputData[2]))
+// console.log(objectData);
+
+
+
+/* c. objectData에 담긴 세 개의 난수 중 중앙값에 해당하는 값을 출력하시오 */
+// 순서대로 정렬했을 때 중앙에 위치하는 값
+// 값이 짝수개면 중앙의 두 값의 평균
+// const sort = function(){
+//   inputData.sort()
+  console.log(inputData)
+// }
+
+function median(array) {
+  array = array.sort((a, b) => a - b);
+  if (array.length %2 != 0) {
+    if (array.length > 1) {
+      array.pop();
+      array.shift();
+    }
+    return array[0];
+  } else {
+    if(array.length > 2) {
+      array.pop();
+      array.shift();
+    }
+    return (array[0] + array[1]) / 2;
+  }
 }
-
-const objectData = [];
-objectData.push(new value(inputData[0], inputData[1], inputData[2]))
-console.dir(objectData);
+median(inputData);
+console.log(median(inputData));
 
 
 
+ 
 /* 3개가 아니라 4개라면? */
 /* 1에서 20까지가 아니라 1에서 10000까지라면? */
 // 자동화는 넘 어렵당 ㅠㅠ 나중에...
