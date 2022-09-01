@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module">
+    const root = document.getElementById("root");
+    root.style.width = "100px";    
+    root.style.height = "100px";
+    root.style.backgroundColor = "pink";
+    // console.dir(root.style);
+
+    const dom = [];
+
+    const ulli = function(){
+      dom.unshift("<ul>");
+
+      for(let i = 0; i < 5; i++) {
+        dom.push(`<li>hello-${i+1}</li>`);
+      }
+
+      dom.push("</ul>");
+
+      console.log(dom.join(''));
+
+      root.innerHTML = dom.join("");
+    }
+
+    ulli();
+  </script>
+</body>
+</html>
