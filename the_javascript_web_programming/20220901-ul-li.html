@@ -26,15 +26,11 @@
 
     const ulli = function(){
       dom.unshift("<ul>");
-
-      for(let i = 0; i < 5; i++) {
-        dom.push(`<li>hello-${i+1}</li>`);
-      }
-
+        for(let i = 0; i < 5; i++) {
+          dom.push(`<li>hello-${i+1}</li>`);
+        }
       dom.push("</ul>");
-
-      console.log(dom.join(''));
-
+      // console.log(dom.join(''));
       root.innerHTML = dom.join("");
     }
 
