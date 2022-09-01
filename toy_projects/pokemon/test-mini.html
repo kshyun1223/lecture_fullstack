@@ -25,11 +25,11 @@
     /* 변수 모음 */
     const domInit = {
       root : document.getElementById('root'),
-      slideNumber : [1, 2, 3, 4, 5]
+      slideNumber : [1, 2, 3, 4, 5] // 일단 id 대신 이걸로 해보자
     }
     let colorList = ["#FFB6C1", "#FAEB78", "#46B4B4", "#AAEBAA", "#87CEFA"];
     
-    /* setCarousel 함수 */
+    /* setCarousel 함수 : 컨테이너 생성 */
     const box = document.getElementById("box");
     function setCarousel() {
       for(i = 0; i < domInit.slideNumber.length; i++) {
@@ -41,52 +41,58 @@
         carousel.style.justifyContent = "center";
         carousel.style.border = "1px solid black"
         box.appendChild(carousel);
+        carousel.setAttribute('id','NO.'+[i+1]); //NO.1 NO.2...
       }
     }
     setCarousel();
+    const carousels = document.querySelectorAll('#box > div');
+    console.dir(carousels);
 
-    /* setContents 함수 */
-    const setContents = function(){
-      for(i = 0; i < domInit.slideNumber.length; i++) {
-        /* Pokemon API */
-        const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/` + number;
-        const request = new XMLHttpRequest();
-          request.open("GET", _BASIC_URL);
-          request.responseType = "json";
-          request.send();
-          request.addEventListener('load', () => {
-            const _POKEMON_API = request.response;
-            let name = _POKEMON_API.name;
-            console.dir(name); // 이상해씨
-            let imgFront = _POKEMON_API.sprites.front_default
-            console.dir(imgFront); // 앞모습
-            let imgBack = _POKEMON_API.sprites.back_default
-            console.dir(imgBack); // 뒷모습
-            let typeOne = _POKEMON_API.types[0].type.name;
-            console.dir(typeOne); // 풀
-            // let typeTwo = _POKEMON_API.types[1].type.name;
-            // console.dir(typeTwo); // 독
-            let abilityOne = _POKEMON_API.abilities[0].ability.name;
-            console.dir(abilityOne); // 심록
-            let abilityTwo = _POKEMON_API.abilities[1].ability.name; 
-            console.dir(abilityTwo); // 엽록소
-            carousel.innerHTML = `
-              <div>
-                <div style="width: 200px; height: 200px; background-color: rgb(250, 235, 120);">
-                  NO.1
-                </div>
-                <div style="width: 200px; height: 50px; background-color: rgb(250, 235, 220);">
-                  이름
-                </div>
-                <div style="width: 200px; height: 150px; background-color: rgb(250, 235, 320);">
-                  설명
-                </div>
-              </div>
-            `
-          });
-      }
+    /* Pokemon API */
+    // 일단 다섯개 다 하지 말고 하나만 연동해보자 ㅠㅠ
+    // API에서 얻어온 값 반환하는 거랑 캐로셀에 넣어주는 거랑 별도로 해보자
+    // 받아와서 일단 객체로 만들어야 되나...?
+
+    const pokeApi = function(number){ // API에서 얻어온 값 반환
+      const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/` + number;
+      const request = new XMLHttpRequest();
+        request.open("GET", _BASIC_URL);
+        request.responseType = "json";
+        request.send();
+        request.addEventListener('load', () => {
+          const _POKEMON_API = request.response;
+          let name = _POKEMON_API.name;
+          console.dir(name); // 이상해씨
+          let imgFront = _POKEMON_API.sprites.front_default
+          console.dir(imgFront); // 앞모습
+          let imgBack = _POKEMON_API.sprites.back_default
+          console.dir(imgBack); // 뒷모습
+          let typeOne = _POKEMON_API.types[0].type.name;
+          console.dir(typeOne); // 풀
+          // let typeTwo = _POKEMON_API.types[1].type.name;
+          // console.dir(typeTwo); // 독
+          let abilityOne = _POKEMON_API.abilities[0].ability.name;
+          console.dir(abilityOne); // 심록
+          let abilityTwo = _POKEMON_API.abilities[1].ability.name; 
+          console.dir(abilityTwo); // 엽록소
+        });
     }
+    pokeApi(1);
+
+/* 캐로셀 내용 HTML 코드 */
+/* carousel.innerHTML = `
+    <div>
+      <div style="width: 200px; height: 200px; background-color: rgb(250, 235, 120);">
+        NO.${[imgFront]}
+      </div>
+      <div style="width: 200px; height: 50px; background-color: rgb(250, 235, 220);">
+        ${[name]}
+      </div>
+      <div style="width: 200px; height: 150px; background-color: rgb(250, 235, 320);">
+        ${[typeOne]} ${[abilityOne]} ${[abilityTwo]}
+      </div>
+    </div>
+  ` */
   </script>
 </body>
 </html>
-
