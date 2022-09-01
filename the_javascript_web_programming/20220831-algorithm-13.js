@@ -58,6 +58,7 @@ three();
   console.log(inputData)
 // }
 
+//* 화살표함수 위주로 살펴보기
 function median(array) {
   array = array.sort((a, b) => a - b);
   if (array.length %2 != 0) {
