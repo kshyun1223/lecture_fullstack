@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF8">
+  <meta httpequiv="XUACompatible" content="IE=edge">
+  <meta name="viewport" content="width=devicewidth, initialscale=1.0">
+  <title>Document</title>
+  <script type="module" src="./main.js" defer></script>
+</head>
+<body>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+  </style>
+
+  <div id="root">
+    <header>
+      <ul>
+        <li>shop</li>
+        <li>about</li>
+        <li>contact</li>
+        <li>account</li>
+        <li>search</li>
+        <li>bag</li>
+      </ul>
+        <style>
+          header > ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+          }
+        </style>
+
+      <hr>
+    </header>
+    <main>
+      <style>
+        main {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      </style>
+
+      <!-- * 1열 -->
+      <section> 
+        <style>
+          section {
+            margin-left: 5vmax;
+          }
+        </style>
+
+        <!-- * 썸네일 상 -->
+        <div class="thumnail"> 
+          <style>
+            section > div {
+              display: flex;
+              width: 40vmin;
+              height: 25vmin;
+              border: 1px solid black;
+            }
+          </style>
+          <div> <!-- 왼쪽 -->
+            <img alt="사진">
+          </div>
+          <section> <!-- 오른쪽 -->
+            <h1>제목</h1>
+            <div>●</div>
+            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quaerat voluptas autem quis a vero optio obcaecati ipsum! Cupiditate quam nesciunt ea, quasi illo iure vero voluptatibus exercitationem. Culpa, quia.</div>
+            <div>●</div>
+            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quaerat voluptas autem quis a vero optio obcaecati ipsum! Cupiditate quam nesciunt ea, quasi illo iure vero voluptatibus exercitationem. Culpa, quia.</div>
+          </section>
+        </div>
+
+        <!-- * 썸네일 중 -->
+        <div class="thumnaill"> 
+          <adide> <!-- 왼쪽 -->
+            <img alt="사진">
+          </adide>
+          <section> <!-- 오른쪽 -->
+            <h1>제목</h1>
+            <div>●</div>
+            <div>첫째줄</div>
+            <div>●</div>
+            <div>둘째줄</div>
+          </section>
+        </div>
+
+        <!-- * 썸네일 하 -->
+        <div class="thumnaill"> 
+          <div> <!-- 왼쪽 -->
+            <img alt="사진">
+          </div>
+          <section> <!-- 오른쪽 -->
+            <h1>제목</h1>
+            <div>●</div>
+            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quaerat voluptas autem quis a vero optio obcaecati ipsum! Cupiditate quam nesciunt ea, quasi illo iure vero voluptatibus exercitationem. Culpa, quia.</div>
+            <div>●</div>
+            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quaerat voluptas autem quis a vero optio obcaecati ipsum! Cupiditate quam nesciunt ea, quasi illo iure vero voluptatibus exercitationem. Culpa, quia.</div>
+          </section>
+        </div>
+      </section>
+          
+      <!-- * 2열 -->
+      <nav> 
+        <style>
+          nav {
+            width:10vmax;
+            display: flex;
+            justify-content: center;
+          }
+        </style>
+        <div>▶</div>   
+      </nav>
+
+      <!-- * 3열 -->
+      <aside>
+        <div class="thumnaill"> 
+          <div> <!-- 왼쪽 -->
+            <img alt="사진">
+          </div>
+          <section> <!-- 오른쪽 -->
+            <h1>제목</h1>
+            <div>●</div>
+            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quaerat voluptas autem quis a vero optio obcaecati ipsum! Cupiditate quam nesciunt ea, quasi illo iure vero voluptatibus exercitationem. Culpa, quia.</div>
+            <div>●</div>
+            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quaerat voluptas autem quis a vero optio obcaecati ipsum! Cupiditate quam nesciunt ea, quasi illo iure vero voluptatibus exercitationem. Culpa, quia.</div>
+          </section>
+        </div>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>

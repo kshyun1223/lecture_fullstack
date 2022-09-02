@@ -9,14 +9,14 @@
 <body>
   <script>
   const pokeAPI = function(number){ // API에서 얻어온 값 반환
-    const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/` + number;
+    const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/`/*  + number */;
     const request = new XMLHttpRequest();
       request.open("GET", _BASIC_URL);
       request.responseType = "json";
       request.send();
       request.addEventListener('load', () => {
         const _POKEMON_API = request.response;
-        let name = _POKEMON_API.name;
+        /* let name = _POKEMON_API.name;
         console.log(name); // 이상해씨
 
         let imgFront = _POKEMON_API.sprites.front_default
@@ -36,10 +36,11 @@
 
 
         let abilityTwo = _POKEMON_API.abilities[1].ability.name; 
-        console.log(abilityTwo); // 엽록소
+        console.log(abilityTwo); // 엽록소 */
+        console.log(_POKEMON_API);
       });
     }
-    pokeAPI(1);
+    pokeAPI();
   </script>
 </body>
 </html>
