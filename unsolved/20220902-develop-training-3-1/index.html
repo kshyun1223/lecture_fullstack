@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./main.js" type="module" defer></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+
+    domInt = {
+      root: document.getElementById('root'),
+      header: document.createElement('header'),
+      ul: document.createElement('ul'),
+      main: document.createElement('main'),
+
+      sectionLeft: document.createElement('section'),
+      sectionRight: document.createElement('section'),
+
+      eventDiv: document.createElement('div'),
+      hr: document.createElement('hr'),
+    }
+
+    // domInts = {
+    //   root: {
+    //     header: {
+    //       ul: {
+    //         li:{}
+    //       }
+    //     },
+    //     main: {
+    //       sectionLeft:{},
+    //       eventDiv:{
+    //         button:{}
+    //       },
+    //       sectionRight:{}
+    //     }
+    //   }
+    // }
+
+    
+    domStyle = {
+      flexSet: function(element, justify, flexDir, align){
+        element.style.display = 'flex',
+        element.style.justifyContent = justify,
+        element.style.flexDirection = flexDir,
+        element.style.alignItems = align
+      },
+      size: function(element, width, height){
+        element.style.width = width,
+        element.style.height = height
+      },
+      border: function(element, border){
+        element.style.border = border
+      } 
+    }
+
+    //엘리먼트 제작함수
+    function elMaker(element, elementcount, parent){
+      for(let i=0; i<elementcount; i++){
+        let elem = document.createElement(element);
+        parent.appendChild(elem);
+      }
+    }
+    //엘리먼트+클래스 제작함수
+    function elMakerClass(element, elementcount, className, parent){
+      for(let i=0; i<elementcount; i++){
+        let elem = document.createElement(element);
+        parent.appendChild(elem);
+        elem.className = className;
+        let getclass = document.getElementsByTagName(className);
+      }
+    }
+    //엘리먼트+아이디 제작함수
+    function elMakerClass(element, elementcount, idName, parent){
+      for(let i=0; i<elementcount; i++){
+        let elem = document.createElement(element);
+        parent.appendChild(elem);
+        elem.id = idName;
+        let getid = document.getElementById(idName);
+      }
+    }
+
+    //root styling
+    domStyle.size(domInt.root, '100vw', '100vh');
+
+    //헤더파트
+    function header() {
+      domInt.root.appendChild(domInt.header);
+      domInt.header.appendChild(domInt.ul);
+      domInt.header.appendChild(domInt.hr);
+      for(let i = 0; i < 5; i++){
+        let li = document.createElement('li');
+        domInt.ul.appendChild(li);
+        li.textContent = 'menu';
+      }
+    }
+    header();
+
+    //헤더 스타일링
+    domStyle.flexSet(domInt.header, 'center', 'row', 'center');
+    domStyle.size(domInt.header, '100vw', '50px');
+
+    domStyle.flexSet(domInt.ul, 'center', 'row', 'center');
+    domStyle.size(domInt.ul, 'inherit', 'inherit');
+
+
+    //메인파트
+    function main(){
+      domInt.root.appendChild(domInt.main);
+      domInt.main.appendChild(domInt.sectionLeft);
+      domInt.main.appendChild(domInt.eventDiv);
+      domInt.main.appendChild(domInt.sectionRight);
+    }
+    main();
+
+    //메인-스타일링
+    domStyle.flexSet(domInt.main, 'center', 'row', 'center');
+    domStyle.size(domInt.main, '100vw', '100%');
+
+    //메인 내부 확인용 보더
+    let mainChild = domInt.main.children;
+    for(let i=0; i<mainChild.length; i++){
+      domStyle.border(mainChild[i], '1px solid grey');
+    }
+
+    //왼쪽 섹션
+    domStyle.flexSet(domInt.sectionLeft, 'center', 'column', 'center');
+    domStyle.size(domInt.sectionLeft, '70%', '100%');
+    
+    //섬네일 사진, 텍스트 컨텐츠
+    let picture = ['https://picsum.photos/200/300','https://picsum.photos/200/300','https://picsum.photos/200/300'];
+    let textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit a, eget fringilla est tellus. Amet, est semper pharetra nec luctus tempor mauris. Nisl arcu feugiat ac ultrices lectus. Gravida in amet mauris ut.';
+    let titleContent = 'consectetur adipiscing elit';
+    
+    //왼쪽섹션 - 첫번째 섬네일
+    elMakerClass('div', 1, 'thunmnails', domInt.sectionLeft);
+    // console.dir(domInt.sectionLeft.children);
+
+
+    //섬네일 컨텐츠
+    function thunmnailMaker(elemroot, picsrc){
+      const thunmnails = elemroot;
+      
+      domStyle.flexSet(thunmnails, 'center', 'row', 'center');
+      // console.log(thunmnails);
+      const thunmnailContainer = {
+      imgpart: document.createElement('div'),
+      textpart: document.createElement('div')
+      }
+      thunmnails.appendChild(thunmnailContainer.imgpart);
+      thunmnails.appendChild(thunmnailContainer.textpart);
+
+      domStyle.flexSet(thunmnailContainer.textpart, 'center', 'column', 'center');
+
+      //이미지
+      let img = document.createElement('img');
+      thunmnailContainer.imgpart.appendChild(img);
+      domStyle.size(img, '100%', 'auto');
+      img.src = picsrc;
+
+      //타이틀
+      let title = document.createElement('h1');
+      title.textContent = titleContent;
+      thunmnailContainer.textpart.appendChild(title);
+      
+      //텍스트 컨텐츠 컨테이너
+      let paramscontainer = document.createElement('div');
+      domStyle.flexSet(paramscontainer, 'center', 'column', 'center');
+      thunmnailContainer.textpart.appendChild(paramscontainer);
+
+      //텍스트컨텐츠 단락1 컨테이너 --> 개량하고 싶다~~~
+      let paramWrapOne = document.createElement('div');
+      domStyle.flexSet(paramWrapOne, 'center', 'row', 'center');
+      paramscontainer.appendChild(paramWrapOne);
+      
+      //텍스트 컨텐츠 - 단락1
+      let dot = document.createElement('div');
+      domStyle.size(dot, '10px', '5px');
+      dot.style.backgroundColor = 'grey';
+
+      let p = document.createElement('p');
+      p.textContent = textContent;
+
+      paramWrapOne.appendChild(dot);
+      paramWrapOne.appendChild(p);
+
+
+      //텍스트컨텐츠 단락2 컨테이너 --> 개량하고 싶다~~~
+      let paramWrapTwo = document.createElement('div');
+      domStyle.flexSet(paramWrapTwo, 'center', 'row', 'center');
+      paramscontainer.appendChild(paramWrapTwo);
+
+      //텍스트 컨텐츠 - 단락2
+      let dot2 = document.createElement('div');
+      domStyle.size(dot2, '10px', '5px');
+      dot2.style.backgroundColor = 'grey';
+
+      let p2 = document.createElement('p');
+      p2.textContent = textContent;
+
+      paramWrapTwo.appendChild(dot2);
+      paramWrapTwo.appendChild(p2);
+    }
+    thunmnailMaker(domInt.sectionLeft.children[0], picture[0]);
+
+
+    //왼쪽섹션 - 두번째 섬네일
+    elMakerClass('div', 1, 'thunmnailsTwo', domInt.sectionLeft);
+    thunmnailMaker(domInt.sectionLeft.children[1], picture[1]);
+
+    //왼쪽섹션 - 세번째 섬네일
+    elMakerClass('div', 1, 'thunmnailsThree', domInt.sectionLeft);
+    thunmnailMaker(domInt.sectionLeft.children[2], picture[2]);
+
+    //클릭이벤트 섹션
+    domStyle.flexSet(domInt.eventDiv, 'center', 'row', 'center');
+    domStyle.size(domInt.eventDiv, '10%', '100%');
+
+    //클릭 트리거
+    elMakerClass('span', 1, 'trigger', domInt.eventDiv);
+    trigger.textContent = '●';
+    
+    //오른쪽 섹션 
+    // domStyle.flexSet(domInt.sectionRight, 'center', 'column', 'center');
+    domStyle.size(domInt.sectionRight, '20%', '100%');
+    
+    elMakerClass('div', 1, 'thunmnailsRight', domInt.sectionRight);
+    thunmnailMaker(domInt.sectionRight.children[0], picture[2]);
+    domStyle.flexSet(thunmnailsRight, 'center', 'column', 'center');
+    
+
+    //클릭이벤트 --> 다른 방법도 생각해보자 
+    let change = true;
+    domInt.eventDiv.addEventListener('click', function(){
+      if(change === true){
+        change = false;
+        domInt.sectionRight.style.display = 'none';
+        domStyle.size(domInt.sectionLeft, '90%', '100%');
+      } else {
+        change = true;
+        domInt.sectionRight.style.display = 'flex';
+        domStyle.size(domInt.sectionLeft, '70%', '100%');
+      }
+    });
+
+    
+
+  </script>
+</body>
+</html>
