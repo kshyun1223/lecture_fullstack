@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pokedex</title>
+<style>
+  .hidden {
+    display: none;
+  }
+
+  .poke-card {
+    width: 100px;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid blue;
+  }
+</style>
+</head>
+<body>
+  <h1 id="main-header">Pokedex</h1>
+  <div id="main-container">
+  </div>
+  <script>
+const container = document.getElementById('main-container');
+const pokeNames = [];
+let loading = false;
+
+function getPokemon(callback) {
+
+    const xhr = new XMLHttpRequest();
+    const url = 'https://pokeapi.co/api/v2/pokemon/';
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const pokemon = JSON.parse(xhr.responseText);
+            container.innerHTML +=
+                pokemon.results
+                .map((poke, index) => {
+                    const pokeName = poke.name.replace(/\s/g, "");
+                    pokeNames.push(poke.name);
+                    return `
+                                    <div id="poke-${pokeName}" class="poke-card">
+                                    <div class='cardFront'>
+                                            <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${(index + 1).toString()}.png'></img>
+                                            <h4>${pokeName}</h4>
+                                    </div>
+                                    </div>
+                            `
+                }).join('');
+
+            callback();
+        }
+    }
+    xhr.open('GET', url, true);
+    xhr.send();
+}
+
+function addCardBack(pokeName, callback) {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const details = JSON.parse(xhr.responseText);
+            const pokeContainer = document.getElementById(`poke-${pokeName}`);
+            pokeContainer.innerHTML += `
+                            <div class='cardBack'>
+                                    <h4>${details.name}</h4>
+                                    <h4>${details.types[0].type.name}</h4>
+                            </div>
+                    `;
+            callback(pokeName);
+        }
+        loading = false;
+    }
+    loading = true;
+    xhr.open('GET', 'https://pokeapi.co/api/v2/pokemon/' + pokeName, true);
+    xhr.send();
+}
+
+function toggleCard(pokeName) {
+    const cardBack = document.querySelectorAll(`#poke-${pokeName} .cardBack`)[0];
+
+    if (!cardBack) {
+        // Prevent a second click from calling this function again before data is loaded
+        if (!loading) {
+            addCardBack(pokeName, (pokeName) => {
+                swapCards(pokeName);
+            });
+        }
+    } else {
+        swapCards(pokeName);
+    }
+}
+
+function swapCards(pokeName) {
+    const cardFront = document.querySelectorAll(`#poke-${pokeName} .cardFront`)[0];
+    const cardBack = document.querySelectorAll(`#poke-${pokeName} .cardBack`)[0];
+
+    if (cardFront.classList.contains('hidden')) {
+        cardFront.classList.remove('hidden');
+        cardBack.classList.add('hidden');
+    } else {
+        cardFront.classList.add('hidden');
+        cardBack.classList.remove('hidden');
+    }
+}
+
+getPokemon(() => {
+    pokeNames.forEach((pokeName) => {
+        const card = document.getElementById(`poke-${pokeName}`);
+        card.addEventListener('click', () => toggleCard(pokeName));
+    })
+});
+  </script>
+</body>
+</html>
+

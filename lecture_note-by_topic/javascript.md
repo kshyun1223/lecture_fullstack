@@ -17,22 +17,22 @@
 
 ### 식별자(identifier)
 - 어떠한 값을 돌려받아 반환하는 종류의 메서드는 이름에 get이나 select가 들어가 있다
-``` javascript
-/* getElementById: ID를 기준으로 접근 */
-document.getElementById("root");
+  ``` javascript
+  /* getElementById: ID를 기준으로 접근 */
+  document.getElementById("root");
 
-/* getElementsByTagName: 태그명을 기준으로 모두 수집하여 배열로 반환 */
-document.getElementsByTagName("li");
+  /* getElementsByTagName: 태그명을 기준으로 모두 수집하여 배열로 반환 */
+  document.getElementsByTagName("li");
 
-/* querySelector: 선택자를 query한다 -> CSS 선택자로 노드에 접근 */
-document.querySelector("#root > section");
+  /* querySelector: 선택자를 query한다 -> CSS 선택자로 노드에 접근 */
+  document.querySelector("#root > section");
 
-/* querySelectorAll: CSS 선택자로 노드에 접근하여 조건에 부합하는 모든 노드를 반환 */
-document.querySelectorAll("#root > ul > li");
+  /* querySelectorAll: CSS 선택자로 노드에 접근하여 조건에 부합하는 모든 노드를 반환 */
+  document.querySelectorAll("#root > ul > li");
 
-/* getElementsByClassName: 클래스를 기준으로 모두 수집하여 배열로 반환 */
-document.getElementsByClassName("class-attribute");
-```
+  /* getElementsByClassName: 클래스를 기준으로 모두 수집하여 배열로 반환 */
+  document.getElementsByClassName("class-attribute");
+  ```
 
 ### 속성(property)
 - 특정 노드의 내용에 접근하려면 `textContent` 속성으로 들어가야 한다
@@ -44,12 +44,12 @@ document.getElementsByClassName("class-attribute");
       root.appendChild(doojin); // 할당
     }
   ```
-- 배열이나 문자열의 길이에 접근하려면 `length` 속성으로 들어가야 한다
+- `length`: 배열이나 문자열의 길이에 접근하려면 `length` 속성으로 들어가야 한다
 
-- `innerHTML`
+- `innerHTML`: HTML 마크업 문자열로 간단히 DOM 조작이 가능하다
   - 엘리먼트 노드의 innerHTML 프로퍼티를 참조하면 엘리먼트 노드의 콘텐츠 영역(시작 태그와 종료 태그 사이)에 포함된 모든 HTML 마크업을 문자열로 반환한다
   - 여기에 문자열을 할당하면 문자열에 포함된 HTML 마크업이 파싱되어 엘리먼트 노드의 자식 노드로 DOM에 반영된다
-    - HTML 마크업 문자열로 간단히 DOM 조작이 가능하다
+    - 
 
 ## 내장(built-in) 메서드
 ### 값을 '변경'하거나 '설정'하는 종류의 메서드는 이름에 set이 들어가 있다

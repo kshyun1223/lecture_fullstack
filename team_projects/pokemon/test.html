@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // Pokemon API
+    const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/`;
+    const request = new XMLHttpRequest();
+      request.open("GET", _BASIC_URL);
+      request.responseType = "json";
+      request.send();
+      request.addEventListener('load', () => {
+        const _POKEMON_API = request.response;
+        console.log(_POKEMON_API);
+        console.log(_POKEMON_API.name);
+      });
+
+    // 문서 스타일링 메소드
+    const domStyling = {
+      size : function(element, widthValue, heightValue) {
+        element.style.width = widthValue;
+        element.style.height = heightValue;
+      },
+      color : function(element, color, backgroundColor) {
+        element.style.color = color;
+        element.style.backgroundColor = backgroundColor;
+      },
+      flexBox : function(element, display, justifyContent, alignItems, flexFlow) {
+        element.style.display = display;
+        element.style.justifyContent = justifyContent;
+        element.style.alignItems = alignItems;
+        element.style.flexFlow = flexFlow;        
+      },
+      font : function(element, fontFamily, fontSize) {
+        element.style.fontFamily = fontFamily;
+        element.style.fontSize = fontSize;
+      },
+      border : function(element, border, borderRadius) {
+        element.style.border = border;
+        element.style.borderRadius = borderRadius;
+      },
+      cursor : function(element, cursor) {
+        element.style.cursor = cursor;
+      },
+      text : function(element, textContent) {
+        element.textContent = textContent;
+      }
+    }
+
+    // 초기화
+    const domInit = {
+      root : document.getElementById('root'),
+      slideItem : ['포켓몬', '포켓몬', '포켓몬', '포켓몬', '포켓몬','포켓몬'],
+      text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus natoque sed orci, ac eget arcu, velturpis sem. Consequat diam mauriselit diam habitant proin nisi, auguelectus. Laoreet quam ut tristiquecursus ipsum. Proin mauris nisiinteger quam vitae aliquam.",
+      slideNumber : ["No.1","No.2","No.3","No.4","No.5","No.6"],
+      colorList : ["#FFB6C1", "#FAEB78", "#46B4B4", "#AAEBAA", "#87CEFA", "#87CE00"]
+    }
+
+    console.log(domInit.root);
+    console.log(domInit.slideItem);
+    
+    // root 스타일링
+    domStyling.size(domInit.root, "100vw", "100vh");
+    domStyling.flexBox(domInit.root, "flex", "center", "center");
+
+    // box 동적 생성, 스타일링
+    const box = document.createElement('div');
+    domInit.root.appendChild(box);
+    box.id = "box";
+
+    domStyling.size(box, "80vw", "50vh");
+    domStyling.flexBox(box, "flex", "center", "center");
+    // domStyling.border(box, "1px solid #333");
+    box.style.overflow = "hidden";
+
+    console.dir(box);
+
+    // slide 동적 생성, 스타일링
+    const slide = document.createElement('div');
+    box.appendChild(slide);
+    slide.id = "slide";
+
+    domStyling.size(slide, "80vw", "50vh");
+    domStyling.flexBox(slide, "flex", "left", "center", "nowrap");
+
+    // 캐러셀 동적 생성
+    function setCarousel() {
+      for(i = 0; i < domInit.slideItem.length; i++) {
+        carousel = document.createElement('div');
+        domStyling.size(carousel, box.clientWidth/5 + "px", box.style.height );
+        domStyling.flexBox(carousel, "flex", "center", "center", "column");
+        carousel.style.padding = "10px";
+        slide.appendChild(carousel);
+      }
+    }
+    setCarousel();
+    const carousels = document.querySelectorAll('#slide > div');
+    console.log(carousels);
+
+    // 캐러셀 컨텐츠 부분 
+    function carouselContent() {
+      for(i = 0; i < domInit.slideItem.length; i++) {
+        card = document.createElement('div');
+        title = document.createElement('div');
+        text = document.createElement('div');
+        domStyling.size(card, box.clientWidth/5 + "px", box.clientHeight/2 + "px");
+        card.style.backgroundColor = domInit.colorList[i];
+        domStyling.text(title, domInit.slideItem[i]);
+        domStyling.text(card, domInit.slideNumber[i]);
+        domStyling.size(title, box.clientWidth/5 + "px", box.clientHeight/10 + "px");
+        domStyling.text(title, domInit.slideItem[i]);
+        domStyling.size(text, box.clientWidth/5 + "px", box.clientHeight/4 + "px");
+        domStyling.text(text, domInit.text);
+        text.style.fontSize = "0.8rem";
+        carousels[i].appendChild(card);
+        carousels[i].appendChild(title);
+        carousels[i].appendChild(text);
+      }
+    }
+    carouselContent();
+
+    // 화살표 버튼 생성, 스타일링
+    const prevBtn = document.createElement('button');
+    const nextBtn = document.createElement("button"); 
+
+    function arrowStylingLeft(element) {
+      element.style.position = "absolute";
+      element.style.left = "5vh";
+      element.style.top = "25vw";
+      element.content = "";
+      element.style.width = "50px";
+      element.style.height = "50px";
+      element.style.border = "none";
+      element.style.backgroundColor = "#fff";
+      element.style.borderTop = "5px solid #333";
+      element.style.borderRight = "5px solid #333";
+      element.style.transform = "rotate(225deg)";
+    }
+    function arrowStylingRight(element) {
+      element.style.position = "absolute";
+      element.style.left = "155vh";
+      element.style.top = "25vw";
+      element.content = "";
+      element.style.width = "50px";
+      element.style.height = "50px";
+      element.style.border = "none";
+      element.style.backgroundColor = "#fff";
+      element.style.borderTop = "5px solid #333";
+      element.style.borderRight = "5px solid #333";
+      element.style.transform = "rotate(45deg)";
+    }
+
+    console.dir(prevBtn);
+    arrowStylingLeft(prevBtn);
+    arrowStylingRight(nextBtn);
+
+    domInit.root.appendChild(prevBtn);
+    domInit.root.appendChild(nextBtn);
+
+    // 클릭이벤트 
+    let counter = 1; 
+    const carouselSize = carousels[0].clientWidth;
+    
+    nextBtn.addEventListener('click', function(){
+      if(counter >= carousels.length-1) return;
+      slide.style.transition = "transform 0.4s ease-in-out";
+      counter = counter + 1;
+      slide.style.transform = 'translateX(' + (-carouselSize * counter) + 'px)';
+    });
+    
+    prevBtn.addEventListener('click', function(){
+      if(counter <= 0) return;
+      slide.style.transition = "transform 0.4s ease-in-out";
+      counter = counter - 1;
+      slide.style.transform = 'translateX(' + (-carouselSize * counter) + 'px)';
+    });
+
+    // 슬라이드 동작 (클릭 이벤트)
+    // console.log(carousels);
+    // const firstElement = carousels.shift();
+
+    // function slideNext() {
+    //   for(i = 0; i < domInit.slideItem.length; i++) {
+    //     carousels[i].style.transform = "translate(-270px)";
+    //     console.log("next");
+    //   }
+    // }
+    // function slidePrev() {
+    //   for(i = 0; i < domInit.slideItem.length; i++) {
+    //     carousels[i].style.transform = "translate(0px)";
+    //     console.log("previous")
+    //   }
+    // }
+
+    // function addEvent() {
+    //   prevBtn.addEventListener('click', slidePrev);
+    //   nextBtn.addEventListener('click', slideNext);
+    // }
+
+    // addEvent();
+  </script>
+</body>
+</html>
