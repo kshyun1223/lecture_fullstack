@@ -26,15 +26,21 @@
         let abilityTwo = _POKEMON_API.abilities[1].ability.name; 
         root.innerHTML = `
           <ul>
-            <li>${name}</li>
-            <li>imgFront</li>
+            <li>이름: ${name}</li>
+            <br>
+            <li>앞모습</li>
             <img src="${imgFront}" alt="${name} imgFront">
-            <li>imgBack</li>
+            <br>
+            <li>뒷모습</li>
             <img src="${imgBack}" alt="${name} imgBack">
-            <li>${typeOne}</li>
-            <li>${typeTwo}</li>
-            <li>${abilityOne}</li>
-            <li>${abilityTwo}</li>
+            <br>
+            <li>첫 번째 속성: ${typeOne}</li>
+            <br>
+            <li>두 번째 속성: ${typeTwo}</li>
+            <br>
+            <li>첫 번째 능력: ${abilityOne}</li>
+            <br>
+            <li>두 번째 능력: ${abilityTwo}</li>
           </ul>
         `
       });
