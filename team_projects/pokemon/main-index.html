@@ -69,7 +69,7 @@
 
     domStyling.size(container, "800px", "50vh");
     domStyling.flexBox(container, "flex", "center", "center", "nowrap");
-    domStyling.border(container, "1px solid #333");
+    domStyling.border(container, "1px solid pink");
     container.style.overflow = "hidden";
 
     // box 동적 생성, 스타일링
@@ -98,12 +98,14 @@
         //왼쪽 화살표
         moveArrowL.id = 'arrowL';
         moveArrowL.textContent = '<';
-        moveArrowL.style.left = '100px'; 
+        moveArrowL.style.left = '100px';
+        moveArrowL.style.color = 'lightblue'
 
         //오른쪽 화살표
         moveArrowR.id = 'arrowR';
         moveArrowR.textContent = '>';
         moveArrowR.style.right = '100px'; 
+        moveArrowR.style.color = 'lightblue'
 
     // 캐러셀 동적 생성
     let colorList = ["#FFB6C1", "#FAEB78", "#46B4B4", "#AAEBAA", "#87CEFA"];
@@ -113,6 +115,7 @@
         carousel = document.createElement('div');
         domStyling.size(carousel, "200px", "400px");
         domStyling.flexBox(carousel, "flex", "center", "center", "column");
+        domStyling.border(carousel, "1px solid pink");
         box.appendChild(carousel);
         carousel.id = 'carouselNo'+[i+1] //각각 식별할 수 있는 ID
       }
@@ -120,7 +123,9 @@
     setCarousel();
     console.dir(document.querySelectorAll('#box > div'));
 
-    // 속성별 색깔 객체 목록
+
+
+    // 속성별 색깔 목록
     const typeColor = {
       'normal' : 'C6C6A7',
       'fire' : 'F5AC78',
