@@ -20,6 +20,6 @@
 
 ### 상호작용 (interaction)
 - 입력(getting) -> 가공(setting) -> 처리(event) -> 출력
-- 대부분의 데이터 교류 API는 객체 방식을 채택하고 있다 (HTML, XML, JSON...)
+- 대부분의 데이터 교류(API)는 객체 방식을 채택하고 있다 (HTML, XML, JSON...)
   - HTML: XML 스타일로 데이터를 제공: container + item
   - JSON: js 객체 스타일로 데이터를 제공: 부모스코프 + 자식스코프
