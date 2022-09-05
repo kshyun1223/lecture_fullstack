@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Document</title>
+</head>
+<body> 
+<div id="root"></div> 
+  <script> 
+    // 엘리먼트 할당
+    const root = document.getElementById('root'); 
+
+    // 함수 선언
+    function addElement(tagName, props, parent = document.body, childrenNode = "") { 
+      if(typeof (props) === "object" && typeof(tagName) === "string") {    
+        let element = document.createElement(tagName); 
+        element.innerHTML = childrenNode; 
+        for(const cssValue in props) { 
+          console.log(`검사하기, 동작하는 스타일링 프로퍼티 : ${cssValue}`); 
+          if(cssValue === "id") { 
+            element.id = props[cssValue]; 
+          } else {
+            element.style[cssValue] = props[cssValue]; 
+          } 
+        } 
+        parent.appendChild(element); 
+      } 
+    }
+
+    // 스타일 속성값 할당
+    addElement(
+      // 매개변수 1: tagName
+      "section", 
+      
+      { // 매개변수 2: props
+        id:"practics", 
+        width:"100vw", 
+        height:"100vh", 
+        backgroundColor:"pink" 
+      }, 
+      
+      // 매개변수 3: parent
+      root, 
+
+      // 매개변수 4: childrenNode = ""
+      "hello" 
+    );
+  </script>
+</body>
+</html>
