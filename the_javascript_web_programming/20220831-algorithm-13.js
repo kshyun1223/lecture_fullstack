@@ -52,9 +52,9 @@ console.log(objectData);
 
 /* c. objectData에 담긴 세 개의 난수 중 중앙값에 해당하는 값을 출력하시오 */
 function median(array) {
-  array = array.sort((a, b) => a - b);
+  array = array.sort((a, b) => a - b); // 오름차순으로 정렬
   // console.log(array);
-  if (array.length %2 != 0) {
+  if (array.length %2 != 0) { // 배열의 길이가 홀수이면
     if (array.length > 1) {
       array.pop();
       array.shift();
