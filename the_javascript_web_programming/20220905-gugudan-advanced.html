@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- Advenced
+Q-3. 실수(소숫점이 있는 수)를 위의 조건에 처리 했을 때 소숫점 첫번째 자리까지만 출력되도록 처리하세요.
+Q-4. 음수(0보다 작은 수) 를 처리 했을 때 "절대값"이 출력되도록 처리하세요.
+Q-5. 수열의 합, 시그마 로직을 구현하세요. (에를 들어 1단의 총 합계 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 합계) 
+Q-6. HTML에 나타난 구구단 중 항목 하나를 클릭하면 '클릭된 요소'가 삭제되도록 처리하세요.
+Q-7. Q-6번 기능에 더해 삭제된 요소가 다섯번단위로 누적되면, 삭제된 요소의 결과값 총합을 경고창(alert())으로 보이게 조치하세요. -->
+<body>
+  <script>
+    /* 1. 구구단 한 단계 */
+    // 'dan' 단은 'limit' 번까지 있음
+    let oneLevel = function(dan, limit){
+      let resultArray = [];
+      for (let i = 1; i<= limit; i++) {
+        resultArray.push(dan*i);
+      }
+      return resultArray;
+    }
+    // console.log(oneLevel(9, 9));
+
+    /* 2. 구구단 여러 단계 */
+    // return? -> sum(10, minus(20,5)) = 10+(20-5)
+    // want = 몇단까지 원해?
+    // limit = 한 단계는 몇번까지 있지? & 매개변수는 중복되어도 문제없는듯 ㅇㅇ
+    let table = function(want, limit){
+      let resultObject = {} // 아 이거 생성자함수 써야되는뎅 ㅠㅠ
+      for(let i=0; i<want; i++){
+        console.log(oneLevel(i+1, limit))
+      }
+      return resultObject;
+    }
+    table(5, 7)
+
+    /* HTML 출력하는 함수 */
+
+
+  </script>
+</body>
+</html>

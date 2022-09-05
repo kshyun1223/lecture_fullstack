@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const nameArray = ['피카츄', '라이츄', '파이리', '꼬부기', '버터풀'];
+
+    const tagMake = (tagName, textNode) => `<${tagName}>${textNode}</${tagName}>`;
+    
+    const ulWrap = 
+      tagMake(
+        //tagName
+        'ul', 
+        //textNode
+        nameArray.map((value) => tagMake('li', value)).join('')
+      );
+  </script>
+</body>
+</html>

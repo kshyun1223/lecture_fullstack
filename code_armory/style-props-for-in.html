@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="another"></div>
+</body>
+<script> 
+  const another = document.getElementById("another");
+
+  function elementStyling(element, styleProps, textContent = "") {
+    // 1. 엘리먼트 + 스타일 속성
+    for (const key in styleProps) { //for in()
+      element.style[key] = styleProps [key]; 
+    } 
+    
+    // 2. 텍스트
+    element.textContent = textContent;
+  }
+
+  elementStyling (
+    another, // 매개변수 1: 엘리먼트
+
+    // 매개변수 2: 스타일 속성
+    { backgroundColor : "salmon", 
+      width: "100vw", 
+      height: "200px", 
+      color: "#ccc" }, 
+
+    "wow textContent!" // 매개변수 3: 텍스트
+    );
+</script>
+</html>

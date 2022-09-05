@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // 엘리먼트 할당
+    const domInit = {
+      root: document.getElementById("root")
+    } 
+
+    // 엘리먼트 속성값 선언
+    const domStyling = { 
+      size: function(element, widthValue, heightValue) {
+        element.style.width = widthValue;
+        element.style.height = heightValue;
+      },
+      bgColor: function(element, backgroundColor) { 
+        element.style.backgroundColor = backgroundColor;
+      }
+    }
+
+    // 엘리먼트 속성값 할당
+    domStyling.size(domInit.root, "100vw", "100vh"); // 매개변수: 엘리먼트, 너비, 높이
+    domStyling.bgColor(domInit.root, "#333"); // 매개변수: 엘리먼트, 배경색
+  </script>
+</body>
+</html>

@@ -9,7 +9,10 @@
 <body> 
 <div id="root"></div> 
   <script> 
-    // function declration 
+    // 엘리먼트 할당
+    const root = document.getElementById('root'); 
+
+    // 함수 선언
     function addElement(tagName, props, parent = document.body, childrenNode = "") { 
       if(typeof (props) === "object" && typeof(tagName) === "string") {    
         let element = document.createElement(tagName); 
@@ -25,15 +28,21 @@
         parent.appendChild(element); 
       } 
     }
-    // indentifier 
-    const root = document.getElementById('root'); 
-    // function call 
-    addElement("section", {
-      id:"practics", 
-      width:"100vw", 
-      height:"100vh", 
-      backgroundColor:"#333"
-    }, root, "hello");
+
+    // 스타일 속성값 할당
+    addElement(
+      "section", // 매개변수 1: tagName
+
+      // 매개변수 2: props
+      { id:"practics", 
+        width:"100vw", 
+        height:"100vh", 
+        backgroundColor:"pink" }, 
+        
+      root, // 매개변수 3: parent
+
+      "hello" // 매개변수 4: childrenNode = ""
+    );
   </script>
 </body>
 </html>

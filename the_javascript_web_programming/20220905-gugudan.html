@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // 2~9단이라는 제한에 현혹되지 말자
+    // 객체나 배열로 리턴이 되어야 한다
+    // x*y에서 각 항은 매개변수여야 한다
+    // LMS와 축구경기 정보 서비스에 관련된 알고리즘이다
+    // 마지막으로 모듈화까지
+
+    const multiplicationTable = function(level){ // html 구성
+      for(let i = 1; i < level+1; i++) {
+        let container = document.createElement('div');
+        counterX = i+1;
+        root.appendChild(container);
+        container.innerHTML = `
+          <h3>${i}단</h3>
+          <ul></ul>
+        `;
+
+        for(let j = 1; j <= 9; j++) { // 구구단
+          let li = document.createElement('li');
+          counterY = j+1;
+          li.textContent = i + ' * ' + j + ' = ' + (i*j);
+          container.querySelector('ul').appendChild(li);
+        }
+      }
+    }
+    multiplicationTable(7); // level = 단
+    let multiplyCounter 
+
+    // 곱셈 횟수
+    multiplyCounter = `${counterX}`*`${counterY}`;
+    console.log(multiplyCounter)
+
+    
+  </script>
+</body>
+</html>
