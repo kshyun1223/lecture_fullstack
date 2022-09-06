@@ -6,40 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<!-- "6번과 7번은 안드렸습니다. 해봐야겠죠?" -->
 <body>
   <script>
-    function googoodanCore(dan, limit) {
-  let stepCount = 0;
-  let resultArray = [];
-  // init
-  for (let i = 1; i <= limit; i++) {
-    let calc = dan * i;
-    // multyply
+    function googoodanCore(dan, limit) { // dan=몇단?, limit=한 단은 몇개?
+      // init
+      let stepCount = 0;
+      let resultArray = [];
 
-    if(Number.isInteger(calc) === false) {
-      calc = calc.toFixed(1);
+      // 곱하기 한개
+      for (let i = 1; i <= limit; i++) {
+        let calc = dan * i;
+
+        // 정수인지 검사
+        if(Number.isInteger(calc) === false) { // 주어진 값이 정수인지 판별
+          calc = calc.toFixed(1); // 소수점 이하 원하는 자릿수 버림
+        } 
+
+        // absolute value and max value
+        if(calc < 0 && i === limit) {
+          console.log(Math.abs(calc));
+        } 
+
+        resultArray.push(calc);
+        stepCount++;
+      }
+
+      // reduce, get Value
+      let reduceResult = resultArray.reduce(function(prev, curr) {
+        return parseFloat(prev) + parseFloat(curr);
+      }); 
+
+      console.log(`시그마 값 :${reduceResult}`); 
+      console.log(`총 ${stepCount}번 실행`);
+      return resultArray;
     }
-    // integer inspection
 
-    if(calc < 0 && i === limit) {
-      console.log(Math.abs(calc));
-    } 
-    // absolute value and max value
-
-    resultArray.push(calc);
-    stepCount++;
-  }
-  let reduceResult = resultArray.reduce(function(prev, curr) {
-    return parseFloat(prev) + parseFloat(curr);
-  });
-  // reduce, get Value
-
-  console.log(`시그마 값 :${reduceResult}`); 
-  console.log(`총 ${stepCount}번 실행`);
-  return resultArray;
-}
-
-console.log(googoodanCore(-3.2,9));
+    console.log(googoodanCore(-3.2,9));
+    
   </script>
 </body>
 </html>

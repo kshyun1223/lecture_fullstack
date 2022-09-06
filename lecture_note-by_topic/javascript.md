@@ -55,10 +55,11 @@
 
 ### addEventListener + 클릭 이벤트
 ```javascript
-button.addEventListener('click', function() {
-  /* 처리할 내용 */
+element.addEventListener("click", function() {
+  document.getElementById("demo").innerHTML = "Hello World"; // 처리할 내용
 });
 ```
+
 ### parstInt: 형변환
 ```javascript
 /* 숫자로 이루어진 문자열 */

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    // document identifier
+    const root = document.getElementById("root");
+    // root styling
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+    root.style.flexWrap = "wrap";
+    // get property list
+    const propertyList = [];
+    // access property list
+    for (const props in root) {
+      propertyList.push(props);
+    }
+    // filtering first character alphabet "O"
+    const alphabetCorrect = propertyList.filter(function (element) {
+      return element[0] === "o";
+    });
+    // constructor function setting
+    function TagList(element, index) {
+      this.id = index;
+      this.name = element;
+    }
+    // correct object setResult
+    const setResult = [];
+    let counter = 0;
+    alphabetCorrect.forEach(function (element, index) {
+      setResult.push(new TagList(element, index));
+      counter++;
+    })
+    console.log("---------------------------");
+    // element make and style, appending
+    function tagMaker(parentElement, tagName, array, counter) {
+      for (let i = 0; i < counter; i++) {
+        let element = document.createElement(tagName);
+        element.style.width = counter + "px";
+        element.style.height = counter + "px";
+        element.style.backgroundColor = `rgba(${counter},${counter},${counter})`;
+        element.style.margin = counter / counter + "px";
+        element.textContent = array[i].name;
+        parentElement.appendChild(element);
+      }
+    }
+    tagMaker(root, "div", setResult, counter);
+    root.addEventListener('click', function(event) {
+      event.target.style.backgroundColor = "cadetblue";
+    })
+  </script>
+</body>
+
+</html>

@@ -54,21 +54,25 @@ console.log(objectData);
 function median(array) {
   array = array.sort((a, b) => a - b); // 오름차순으로 정렬
   // console.log(array);
-  if (array.length %2 != 0) { // 배열의 길이가 홀수이면
-    if (array.length > 1) {
-      array.pop();
-      array.shift();
+  /* 1 */
+  if (array.length %2 != 0) { // 배열의 길이가 홀수이면서
+    if (array.length > 1) { // 배열의 길이가 1보다 크면
+      array.pop(); // 마지막 요소를 제거
+      array.shift(); // 첫번째 요소를 제거
     }
     return array[0];
-  } else {
-    if(array.length > 2) {
-      array.pop();
-      array.shift();
+  } 
+  /* 2 */
+  else {
+    if(array.length > 2) { // 배열의 길이가 2보다 크면
+      array.pop(); // 마지막 요소를 제거
+      array.shift(); // 첫번째 요소를 제거
     }
     return (array[0] + array[1]) / 2;
   }
 }
 console.log(median(inputData));
+
 
 
 

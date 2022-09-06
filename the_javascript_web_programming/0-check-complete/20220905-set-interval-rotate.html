@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root" style="width:100vw; height:100vh">
+    <section id="target"></section>
+  </div>
+  <script>
+    const targetSection = document.getElementById('target');
+    let size = 0;
+    targetSection.style.width = size+'px';
+    targetSection.style.height = `${size}px`;
+    targetSection.style.backgroundColor = 'cadetblue';
+    let rotateValue = 0;
+    targetSection.style.transform = `rotate(${rotateValue}deg)`;
+
+    let timer = setInterval(function(){
+      size++;
+      targetSection.style.width = size+'px';
+      targetSection.style.height = `${size}px`;
+
+      if(size === 1000) {
+        clearInterval(timer);
+
+        let rotateAnimation = setInterval(function() {
+          rotateValue++;
+        targetSection.style.transform = `rotate(${rotateValue}deg)`
+        if(rotateValue === 360) {
+          clearInterval(rotateAnimation);
+        }
+      }, 16);
+    }
+  }, 32);
+
+
+
+</script>
+</body>
+</html>

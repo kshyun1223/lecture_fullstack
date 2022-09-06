@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 부모를 갖지 않는 문서 객체를 하나 생성
+    const virtualElement = document.createDocumentFragment(); 
+
+    // 배열
+    const names = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀"];
+
+    // forEach: 각각 반복
+    names.forEach((value) => { 
+      // 섹션
+      const section = document.createElement('section');
+      
+      // 텍스트노드
+      const textNode = document.createTextNode(value);
+
+      // 섹션에 텍스트노드 할당
+      section.appendChild(textNode);
+
+      // virtualElement에 섹션 할당
+      virtualElement.appendChild(section);
+    });
+
+    // body에 virtualElement 할당
+    document.body.appendChild(virtualElement);
+  </script>
+</body>
+</html>

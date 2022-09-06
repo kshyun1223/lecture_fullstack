@@ -17,8 +17,8 @@
   <div id="root"></div>
   <script type="module">
     const root = document.getElementById("root");
-    root.style.width = "100px";    
-    root.style.height = "100px";
+    root.style.width = "auto";    
+    root.style.height = "auto";
     root.style.backgroundColor = "pink";
     console.dir(root.style);
 
@@ -26,21 +26,14 @@
 
     const dom = [];
     const elemInit = function(count, tagName, attribute, attributeValue, textNode){
-      for(i=0; i < count; i++){
+      for(let i = 0; i < count; i++){
         dom.push(`<${tagName} ${attribute}="${attributeValue}-${i+1}">${textNode}</${tagName}>`);
       };
       root.innerHTML = dom.join('');
+      console.log(count)
     }
-    elemInit("10", "<div>", "id", "test" + "피카츄");
+    elemInit('10', 'div', 'id', 'test', '피카츄');
     console.log(dom.join(''));
-
-    
-
-    
-
-    /* let test = seunghyun("section", "hello") + seunghyun("article") + seunghyun("nav", "나는 곰돌이얌");
-    // console.log(test);
-    root.innerHTML = test; // React DOM의 원리 */
   </script>
 </body>
 </html>

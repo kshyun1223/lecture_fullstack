@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module">
+    const root = document.getElementById("root");
+    root.style.width = "auto";    
+    root.style.height = "auto";
+    root.style.backgroundColor = "pink";
+    console.dir(root.style);
+
+
+
+    const dom = [];
+    const elemInit = function(count, tagName, attribute, attributeValue, textNode){
+      for(let i = 0; i < count; i++){
+        dom.push(`<${tagName} ${attribute}="${attributeValue}-${i+1}">${textNode}</${tagName}>`);
+      };
+      root.innerHTML = dom.join('');
+      console.log(count)
+    }
+    elemInit('10', 'div', 'id', 'test', '피카츄');
+    console.log(dom.join(''));
+  </script>
+</body>
+</html>
