@@ -18,12 +18,21 @@
    </div> 
    <script> 
      const root = document.getElementById("root"); 
+     
+     
+     
      const notArrayLi = document.querySelectorAll("ul > li"); 
-     console.log(Array.isArray(notArrayLi)); // array like object 
+     console.log(Array.isArray(notArrayLi)); // false <- array like object 
+    
+    
+    
      const liFrom = Array.from(document.querySelectorAll("ul > li")); 
-     console.log(Array.isArray(liFrom)); 
+     console.log(Array.isArray(liFrom)); // true
+   
+   
+   
      const liSpread = [...document.querySelectorAll("ul > li")]; 
-     console.log(Array.isArray(liSpread)); 
+     console.log(Array.isArray(liSpread)); // true
    </script> 
  </body> 
  </html>
