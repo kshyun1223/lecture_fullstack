@@ -1,10 +1,10 @@
 const scopeDebugging = { // 옆 중괄호가 객체의 스코프 시작부분
   whatThis: function(){
-    console.log(this);
+    console.log(this); // whatThis: [Function: whatThis]
   },
   //일반 함수 작성 방식으로 whatThis라는 메서드를 만들었다.
   arrowThis : () => {
-    console.log(this);
+    console.log(this); // arrowThis: [Function: arrowThis] 
   }
   // 화살표 함수 방식으로 arrowThis라는 메서드를 만들었다.
 } // 옆 중괄호가 객체의 스코프 끝부분

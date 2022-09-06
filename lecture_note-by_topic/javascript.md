@@ -130,6 +130,18 @@ elementStyling (another, {
 - 콘솔에 출력해서 무슨 값이 나오는지만 확인하면 간단하게 해결된다
 
 ### 화살표함수(arrow function)
+```javascript
+const scopeDebugging = {
+  whatThis: function(){
+    console.log(this); // whatThis: [Function: whatThis]
+  },
+  arrowThis : () => {
+    console.log(this); // arrowThis: [Function: arrowThis] 
+  }
+}
+console.log(scopeDebugging.whatThis());
+console.log(scopeDebugging.arrowThis());
+```
 - 화살표함수는 콜백함수 내부에서 this가 전역객체를 가리키는 문제를 해결하는 대안으로 유용하다
 - 화살표함수는 함수선언문으로 정의할 수 없고 함수표현식으로 정의해야 한다
 - 매개변수가 한개인 경우 소괄호를 생략할 수 있다
