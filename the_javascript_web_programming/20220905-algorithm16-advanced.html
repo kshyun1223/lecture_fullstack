@@ -14,7 +14,7 @@
       let stepCount = 0;
       let resultArray = [];
 
-      // 곱하기 한개
+      // 곱하기 한 개
       for (let i = 1; i <= limit; i++) {
         let calc = dan * i;
 
@@ -25,9 +25,8 @@
 
         // absolute value and max value
         if(calc < 0 && i === limit) {
-          console.log(Math.abs(calc));
+          console.log(Math.abs(calc)); // 주어진 값의 절대값을 반환
         } 
-
         resultArray.push(calc);
         stepCount++;
       }
