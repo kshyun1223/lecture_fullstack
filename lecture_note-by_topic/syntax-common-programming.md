@@ -155,3 +155,14 @@ countdown(10);
 - 브라우저 컴파일러에 함수가 로드된 후 직접 호출되는 함수이다
 - 함수 전체를 소괄호로 감싸는 방식으로 작성한다
 - 단 한번만 호출되며 다시 호출할 수 없다
+
+### 삼항연산자(ternary operator)
+```javascript
+let operandOne = 'test';
+let operandTwo = 4;
+let result = (operandOne.length === operandTwo) ? "hello" : "bye"; 
+// 만약 operandOne 값의 길이가 operandTwo와 같으면 "hello"를 출력하고, 그렇지 않을 경우 "bye"를 출력하라
+console.log(result); // hello
+```
+- if-else 구문과 같다
+- 객체 이름으로 사용된 operand는 "피연산자"라는 뜻이기도 하다

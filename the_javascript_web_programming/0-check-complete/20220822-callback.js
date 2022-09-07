@@ -9,13 +9,15 @@ let second = function() {
 function first(text, callbackTest) { // 두번째 매개변수는 콜백함수로 받았다
   if(typeof(text) === 'string') {
   console.log(text + '했지롱');
-  callbackTest(); // 고차함수: 함수가 함수를 호출한다
+  callbackTest();  // 매개변수
   return "반환했지롱";
   } else {
     console.log('콘솔 확인해');
   }
 }
 first('식사', second);
+
+// 고차함수: 함수가 함수를 호출한다는 뜻의 용어
 
 
 

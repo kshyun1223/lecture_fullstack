@@ -10,12 +10,14 @@
   <button id="trigger">click</button>
   <script>
     let trigger = document.querySelector('#trigger');
+
     function test() {
       alert("테스트함수지롱");
     }
+
     trigger.addEventListener("click", function() {
       alert("익명이지롱");
-      test();
+      test(); // 익명이지롱(이 함수) 안에서 테스트지롱(test 함수)를 호출했다 -> 콜백
     });
   </script>
 </body>
