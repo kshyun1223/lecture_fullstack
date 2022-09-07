@@ -34,7 +34,8 @@
       // reduce, get Value
       let reduceResult = resultArray.reduce(function(prev, curr) {
         return parseFloat(prev) + parseFloat(curr);
-      }); 
+      }); // 입력된 값을 실수로 반환한다
+      // 실수: 정수뿐만 아니라 소수도 포함한다는 뜻
 
       console.log(`시그마 값 :${reduceResult}`); 
       console.log(`총 ${stepCount}번 실행`);
