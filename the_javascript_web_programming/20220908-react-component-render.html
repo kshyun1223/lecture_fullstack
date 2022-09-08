@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 리액트 호출 -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- 바벨 호출-->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" data-type="module"> // 바벨 적용
+    const root = document.getElementById('root')
+    ReactDOM.render("hello", root);
+    
+    // 컴포넌트
+    function Test(){
+      return (
+        <header>
+          <ul>
+            <li>댕댕이</li>
+            <li>댕댕이</li>
+            <li>댕댕이</li>
+            <li>댕댕이</li>
+            <li>댕댕이</li>
+            <li>댕댕이</li>
+            <li>댕댕이</li>
+            <li>댕댕이</li>
+          </ul>
+        </header>
+      );
+    }
+
+    ReactDOM.render(<Test />, root);
+    console.dir(ReactDOM)
+  </script>
+</body>
+</html>
