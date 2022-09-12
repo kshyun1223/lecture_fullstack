@@ -48,6 +48,10 @@ let object = {
 object.keyOne; // valueOne
 ```
 
+### 스코프
+- 모든 식별자(변수, 함수 등)는 선언된 위치에 의해 다른 코드가 참조할 수 있는 유효 범위가 결정된다
+- 즉, 스코프는 식별자가 유효한 범위라고 할 수 있다
+
 ## 제어문
 ### for문
 ```javascript
@@ -73,6 +77,17 @@ if(/* 조건식 */) {{
   /* 조건식이 false면 실행할 내용 */
 }}
 ```
+
+### 삼항연산자(ternary operator)
+```javascript
+let operandOne = 'test';
+let operandTwo = 4;
+let result = (operandOne.length === operandTwo) ? "hello" : "bye"; 
+// 만약 operandOne 값의 길이가 operandTwo와 같으면 "hello"를 출력하고, 그렇지 않을 경우 "bye"를 출력하라
+console.log(result); // hello
+```
+- if-else 구문과 같다
+- 객체 이름으로 사용된 operand는 "피연산자"라는 뜻이기도 하다
 
 ### while문
 ```javascript
@@ -156,13 +171,3 @@ countdown(10);
 - 함수 전체를 소괄호로 감싸는 방식으로 작성한다
 - 단 한번만 호출되며 다시 호출할 수 없다
 
-### 삼항연산자(ternary operator)
-```javascript
-let operandOne = 'test';
-let operandTwo = 4;
-let result = (operandOne.length === operandTwo) ? "hello" : "bye"; 
-// 만약 operandOne 값의 길이가 operandTwo와 같으면 "hello"를 출력하고, 그렇지 않을 경우 "bye"를 출력하라
-console.log(result); // hello
-```
-- if-else 구문과 같다
-- 객체 이름으로 사용된 operand는 "피연산자"라는 뜻이기도 하다

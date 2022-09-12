@@ -117,8 +117,13 @@ elementStyling (another, {
 
 ### 구조분해할당(Destructuring assignment)
 - 배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 표현식
-  - `let second = ho.eunsoo.address.region.detail.second`
-  - `const {eunsoo:{address:{region:{detail:{second:variable}}}}} = ho;`
+```javascript
+// 일반적인 객체 할당 방식
+let second = ho.eunsoo.address.region.detail.second
+
+// 구조분해할당 방식
+const {eunsoo:{address:{region:{detail:{second:variable}}}}} = ho;
+```
 
 ### this 키워드
 ```javascript
