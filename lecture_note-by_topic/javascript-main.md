@@ -2,18 +2,13 @@
 ## 구성요소
 ### 자바스크립트
 - 자바스크립트 = ECMAScript + DOM + BOM
-    - 자바스크립트에 내장되어 있지만 서로 별개의 개념이므로 혼동하면 안된다
-- BOM과 DOM도 API다
-    - HTML과 CSS는 문서와 스타일링에 관한 API이다
+  - 자바스크립트에 내장되어 있지만 서로 별개의 개념이므로 혼동하면 안된다
 
 ### window 객체
 - 브라우저의 최상위 디렉토리에 있는 객체이다
 - BOM과 DOM은 window의 하위 객체이다
     - 브라우저 객체(BOM; Browser Object Model)
     - 문서 객체(DOM; Document Object Model)
-    - 사실은 window.document 와 같은 형태여야 하지만 적을 때는 생략할 수 있게 기능이 지원되는 것이다
-- window와 document라는 개념만 알면 나머지는 검색하는 것이 합리적이다
-- 자바스크립트 학습이라는 관점에서는 BOM이나 DOM을 능숙하게 제어할 수 있다면 원하는만큼 커스텀할 수 있다
 
 ### 식별자(identifier)
 - 어떠한 값을 돌려받아 반환하는 종류의 메서드는 이름에 get이나 select가 들어가 있다
@@ -98,23 +93,6 @@ function style(containerElement, operateColor, eventType){
 }
 ```
 
-### 함수로 스타일링(styleProps)
-```javascript
-function elementStyling(element, styleProps, textContent = "") {
-  for (const key in styleProps) { 
-    element.style[key] = styleProps [key]; 
-  } 
-  element.textContent = textContent;
-}
-
-elementStyling (another, { 
-  backgroundColor : "salmon", 
-  width: "100vw", 
-  height: "200px", 
-  color: "#ccc" 
-}, "wow textContent!")
-```
-
 ### 구조분해할당(Destructuring assignment)
 - 배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 표현식
 ```javascript
@@ -153,7 +131,6 @@ console.log(scopeDebugging.arrowThis());
 - 표현식 하나로만 구성된 경우에는 중괄호를 생략할 수 있다
   - 표현식: 값으로 평가될 수 있는 구문
 
-
 ### 템플릿 리터럴 - 표현식 삽입(expression interpolation)
 - 문자열 안에 표현식을 삽입하여 연산자보다 효율적으로 문자열을 조합할 수 있다
 - 방법: `${}`으로 표현식을 감싼다
@@ -167,3 +144,18 @@ console.log(scopeDebugging.arrowThis());
 ### 생성자함수(constructor function)에 의한 객체 생성
 - 객체 리터럴은 한번에 하나의 객체만 생성한다. 따라서 동일한 프로퍼티를 갖는 객체를 여러개 생성해야 하려면 각각 새로 작성해야 하기 때문에 비효율적이다.
 - 생성자함수에 의한 객체 생성은 마치 객체를 생성하기 위한 템플릿처럼 생성자함수를 사용하여 동일한 프로퍼티를 갖는 객체들을 간편하게 생성할 수 있다
+
+### DocumentFragment
+```javascript
+const virtualElement = document.createDocumentFragment(); 
+const names = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀"];
+
+names.forEach((value) => { 
+  const section = document.createElement('section');
+  const textNode = document.createTextNode(value);
+  section.appendChild(textNode);
+  virtualElement.appendChild(section); // virtualElement에 section을 할당
+});
+
+document.body.appendChild(virtualElement); // body에 virtualElement를 할당
+```
