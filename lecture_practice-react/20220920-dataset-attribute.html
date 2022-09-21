@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    ul {
+      list-style-type: none;
+    }
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #root > ul {
+      width:50%;
+      height: 50%;
+      background-color: #fff;
+    }
+    #root > ul > li {
+      width: 100%;
+      height: calc(100%/10);
+      text-align: center;
+    }
+    #root > ul > li:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li data-list-index="1">list-1</li>
+      <li data-list-index="2">list-2</li>
+      <li data-list-index="3">list-3</li>
+      <li data-list-index="4">list-4</li>
+      <li data-list-index="5">list-5</li>
+      <li data-list-index="6">list-6</li>
+      <li data-list-index="7">list-7</li>
+      <li data-list-index="8">list-8</li>
+      <li data-list-index="9">list-9</li>
+      <li data-list-index="10">list-10</li>
+    </ul>
+  </div>
+  <script>
+    // #root>ul>li*10
+    const root = document.getElementById('root');
+    const ul = root.children[0];
+    const liItems = ul.children;
+    let status = true;
+    ul.addEventListener('click', (e) => {
+      console.log(e.target.dataset.listIndex);
+      if(status){
+        e.target.style.backgroundColor = "cadetblue";
+        statud = false;
+      } else {
+        e.target.style.backgroundColor = "#fff";
+        status = true;
+      }
+    });
+  </script>
+</body>
+</html>
