@@ -3,7 +3,7 @@
 - [HTML, CSS, SCSS](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_practice-web_basic)
 - [javaScript](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_practice-javascript)
 - [Python](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_practice-python)
-- [React](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_practice-react)
+- [React.js](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_practice-reactjs)
 - [Node.js](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_practice-nodejs)
 
 ### 필기노트
