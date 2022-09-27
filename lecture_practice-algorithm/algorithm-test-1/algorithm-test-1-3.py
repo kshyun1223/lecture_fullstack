@@ -1,8 +1,15 @@
-# 입력 받기 
-txt = input('공백 5개 이상 문자열 입력: ') 
-# 1. 문자열 단어 수 세기 
-print('1. 문자열 단어 수 세기') 
+# -*- coding: utf8 -*- 
 
-print(len(txt.split(' '))) 
+# 주어진 문장 
+string = '“We will never be able to recognize opportunities if we first don’t recognize all that we have and all that we’ve been given.”'
 
-print('')
+# 띄어쓰기 세기
+def spacing():
+  return(len(string.split(' '))) 
+
+# 어포스트로피 세기
+def apostrophe():
+  return(string.count('’')) 
+
+# 단어 수 세기
+print(spacing()+apostrophe())
