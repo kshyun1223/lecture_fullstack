@@ -57,7 +57,10 @@
     거기서 끝나지 말고 오른쪽으로 한번 더 가게 해주세요 */
     
     // 프로미스 생성 
-    
+    let top = function(){
+      let state = true;
+      box.addEventListener('click', () => {
+        let moveTop = setInterval(() => {
       const promise = new Promise((resolve, reject) => { // Promise 함수의 콜백 함수 내부에서 비동기 처리를 수행한다. 
         if (/* 비동기 처리 성공 */) { 
           resolve('result'); 
@@ -67,7 +70,47 @@
       });
     
     /*
-     
+    let left = function(){
+      let state = true;
+      // box.addEventListener('click', () => {
+        let moveLeft = setInterval(() => {
+          console.log('interval start')
+          if (state === true) {
+            posValue.left++;
+            box.style.left = posValue.left + "px";
+            if (posValue.left === 500) {
+              clearInterval(moveLeft);
+              state = false;
+              posValue.left = 0;
+              box.style.left = posValue.left + "px";
+              posValue.top = 0;
+              box.style.top = posValue.top + "px";
+            } else {
+              state = true;
+            }
+          }
+        }, 1);
+      // })
+    }
+
+    
+          if (state === true) {
+            posValue.top++;
+            box.style.top = posValue.top + "px";
+            if (posValue.top === 500) {
+              left()
+              clearInterval(moveTop);
+              // state = false;
+              // posValue.top = 0;
+              // box.style.top = posValue.top + "px";
+            } else {
+              state = true;
+            }
+          }
+        }, 1);
+      })
+    }
+    top()
     */
 
     
