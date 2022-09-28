@@ -16,3 +16,7 @@ const main = `
   ${element.body}
   ${element.footer}
 `
+
+http.createServer((Request, response) => {
+  // response 메서드 : 문서를 찍어내는 역할
+})

@@ -20,22 +20,20 @@
     targetSection.style.transform = `rotate(${rotateValue}deg)`;
 
     let timer = setInterval(function(){
-      size++;
-      targetSection.style.width = size+'px';
-      targetSection.style.height = `${size}px`;
-
-      if(size === 1000) {
-        clearInterval(timer);
-
+      size++; // 사이즈를 계속 키운다
+      targetSection.style.width = size+'px'; // 폭도 키우고
+      targetSection.style.height = `${size}px`; // 높이도 키우고
+      if(size === 1000) { // 사이즈가 1000이 되면 
+        clearInterval(timer); // timer이라는 setInterval을 정지하고
         let rotateAnimation = setInterval(function() {
-          rotateValue++;
-        targetSection.style.transform = `rotate(${rotateValue}deg)`
-        if(rotateValue === 360) {
-          clearInterval(rotateAnimation);
-        }
-      }, 16);
-    }
-  }, 32);
+          rotateValue++; // 각도를 계속 키운다
+          targetSection.style.transform = `rotate(${rotateValue}deg)` // 각도를 계속 키운다
+          if(rotateValue === 360) { // 각도가 3600이 되면
+            clearInterval(rotateAnimation); // rotateAnimation이라는 setInterval을 정지
+          }
+        }, 16);
+      }
+    }, 32);
 
 
 
