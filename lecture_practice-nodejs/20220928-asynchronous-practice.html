@@ -54,49 +54,35 @@
 
     let left = function(){
       let state = true;
-      // box.addEventListener('click', () => {
         let moveLeft = setInterval(() => {
-          console.log('interval start')
           if (state === true) {
             posValue.left++;
             box.style.left = posValue.left + "px";
             if (posValue.left === 500) {
-              clearInterval(moveLeft);
               state = false;
               posValue.left = 0;
               box.style.left = posValue.left + "px";
               posValue.top = 0;
               box.style.top = posValue.top + "px";
-            } else {
-              state = true;
+              clearInterval(moveLeft);
             }
           }
         }, 1);
-      // })
     }
 
-    let asdf = function(){
-      let state = true;
-      box.addEventListener('click', () => {
-        let moveTop = setInterval(() => {
-          console.log('interval start')
-          if (state === true) {
-            posValue.top++;
-            box.style.top = posValue.top + "px";
-            if (posValue.top === 500) {
-              left()
-              clearInterval(moveTop);
-              // state = false;
-              // posValue.top = 0;
-              // box.style.top = posValue.top + "px";
-            } else {
-              state = true;
-            }
+    let state = true;
+    box.addEventListener('click', () => {
+      let moveTop = setInterval(() => {
+        if (state === true) {
+          posValue.top++;
+          box.style.top = posValue.top + "px";
+          if (posValue.top === 500) {
+            left()
+            clearInterval(moveTop);
           }
-        }, 1);
-      })
-    }
-    asdf()
+        }
+      }, 1);
+    })
 
     /* 요구사항
     아래로 내려가면 리셋되는데
