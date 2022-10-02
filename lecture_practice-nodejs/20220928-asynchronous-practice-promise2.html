@@ -50,7 +50,7 @@
 
 
     const right = () => {
-      let state = true;
+      let stateRight = true;
       const moveRight = setInterval(() => {
         if (state === true) {
           posValue.left++;
@@ -60,29 +60,33 @@
     }, 1);
 
     const down = () => {
+      let stateDown = true;
       box.addEventListener('click', () => {
         const moveDown = setInterval(() => {
           posValue.top++;
           box.style.top = posValue.top + "px";
         }
       },1);
-    })
+      if (posValue.top === 500){
+        stateDown=false
+      }
+    }
+    
     
     new Promise((resolve, reject) => {
-      if (posValue.top === 500){
-        resolve()
-      left()
-      clearInterval(moveDown);
+      resolve(){
+        left()
+        clearInterval(moveDown)
+      }
     }
   
-    if (posValue.left === 500) {
-      state = false;
-      posValue.left = 0;
-      box.style.left = posValue.left + "px";
-      posValue.top = 0;
-      box.style.top = posValue.top + "px";
-      clearInterval(moveRight);
-    }
+      .then(){
+        posValue.left = 0;
+        box.style.left = posValue.left + "px";
+        posValue.top = 0;
+        box.style.top = posValue.top + "px";
+        clearInterval(moveRight);
+      }
 
   </script>
 </body>
