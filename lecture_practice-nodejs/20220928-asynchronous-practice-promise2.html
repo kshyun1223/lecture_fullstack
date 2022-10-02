@@ -5,10 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Document</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    #root { width: 100vw; height: 100vh; background: #333; }
-    #box { width: 100px; height: 100px; background-color: #ccc; }
-    .flex-center { display: flex; justify-content: center; align-items: center; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background: #333;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+    }
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
@@ -19,48 +35,54 @@
     const dom = {
       root: document.getElementById('root'),
       box: document.getElementById('box'),
-    } 
-    const { box } = dom;
+    }
+    const {
+      box
+    } = dom;
     box.style.position = "absolute";
     box.style.top = "0px";
     box.style.left = "0px";
-    
-    const posValue = { top: 0, left: 0 }
 
-
-    const left = () => {
-      let state = true;
-        const moveLeft = setInterval(() => {
-          if (state === true) {
-            posValue.left++;
-            box.style.left = posValue.left + "px";
-            if (posValue.left === 500) {
-              state = false;
-              posValue.left = 0;
-              box.style.left = posValue.left + "px";
-              posValue.top = 0;
-              box.style.top = posValue.top + "px";
-              clearInterval(moveLeft);
-            }
-          }
-        }, 1);
+    const posValue = {
+      top: 0,
+      left: 0
     }
 
-    const resource = () => { 
-      let state = true;
-      box.addEventListener('click', () => {
-        const moveTop = setInterval(() => {
-          if (state === true) {
-            posValue.top++;
-            box.style.top = posValue.top + "px";
-            if (posValue.top === 500) {
-              left()
-              clearInterval(moveTop);
-            }
-          }
-        }, 1);
-      })
 
+    const right = () => {
+      let state = true;
+      const moveRight = setInterval(() => {
+        if (state === true) {
+          posValue.left++;
+          box.style.left = posValue.left + "px";
+        }
+      }
+    }, 1);
+
+    const down = () => {
+      box.addEventListener('click', () => {
+        const moveDown = setInterval(() => {
+          posValue.top++;
+          box.style.top = posValue.top + "px";
+        }
+      },1);
+    })
+    
+    new Promise((resolve, reject) => {
+      if (posValue.top === 500){
+        resolve()
+      left()
+      clearInterval(moveDown);
+    }
+  
+    if (posValue.left === 500) {
+      state = false;
+      posValue.left = 0;
+      box.style.left = posValue.left + "px";
+      posValue.top = 0;
+      box.style.top = posValue.top + "px";
+      clearInterval(moveRight);
+    }
 
   </script>
 </body>
