@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box; transition:0.3s;}
+      ul { list-style-type: none; }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul {
+      color: #ccc;
+      text-align: center;
+    }
+    ul>li {
+      width:300px;
+      height:50px;
+      border: 1px solid #555;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <ul id="menu-container">
+      <li class="menu-items" data-item-order="1">menu-1</li>
+      <li class="menu-items" data-item-order="2">menu-2</li>
+      <li class="menu-items" data-item-order="3">menu-3</li>
+      <li class="menu-items" data-item-order="4">menu-4</li>
+      <li class="menu-items" data-item-order="5">menu-5</li>
+      <li class="menu-items" data-item-order="6">menu-6</li>
+      <li class="menu-items" data-item-order="7">menu-7</li>
+      <li class="menu-items" data-item-order="8">menu-8</li>
+      <li class="menu-items" data-item-order="9">menu-9</li>
+      <li class="menu-items" data-item-order="10">menu-10</li>
+    </ul>
+  </div>
+
+  <script>
+    /*
+      선택한 요소 + 선택한 요소 나머지 처리
+      본 예제는 사용자 정의 속성 data-* 속성 노드를 활용해
+      이벤트가 일어난 요소를 간단히 스타일링 하는 방식에서 더 나아가
+      역으로 이벤트가 일어나지 않은 '나머지 요소들'은 어떻게 처리했는지 활용한 예제이다. 
+    */
+    const ul = document.getElementById('menu-container');
+
+    ul.addEventListener('click', (event) => {
+      // event 객체 검사하기
+      console.log(event.target);
+      console.dir(event.target.dataset);
+
+      let datasetValue = event.target.dataset.itemOrder;
+      for(let i = 0; i < ul.children.length; i++) {
+        if(ul.children[i].dataset.itemOrder !== datasetValue) {
+          ul.children[i].style.backgroundColor = "";
+        } 
+      }
+      /*
+        이벤트가 발생할 때마다 값이 참이 아닌 것에 대한 처리가 for()문으로 인해 일어난다.
+      */
+      event.target.style.backgroundColor = "cadetblue";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {scroll-behavior: smooth;}
+    ul {list-style-type: none; padding: 1vw;}
+    ul>li {height:3vh;}
+    a {color: aliceblue;}
+    a:link {text-decoration: none;}
+    a:visited {text-decoration: none;}
+    a:hover {background-color: coral;}
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+      overflow-x: hidden;
+    }
+    section {
+      width: 100vw;
+      height: 100vh;
+    }
+    section:nth-child(1) {background-color: #D97386;}
+    section:nth-child(2) {background-color: #202E40;}
+    section:nth-child(3) {background-color: #D9D0C5;}
+    section:nth-child(4) {background-color: #8C3D20;}
+    section:nth-child(5) {background-color: #D98E73;}
+    section:nth-child(6) {background-color: #BF9004;}
+    section:nth-child(7) {background-color: #8C5C03;}
+    section:nth-child(8) {background-color: #8C4E03;}
+    section:nth-child(9) {background-color: #D99F7E;}
+    section:nth-child(10) {background-color: #260101;}
+
+    #menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="menu">
+    <li><a href="#num-1">num-1</a></li>
+    <li><a href="#num-2">num-2</a></li>
+    <li><a href="#num-3">num-3</a></li>
+    <li><a href="#num-4">num-4</a></li>
+    <li><a href="#num-5">num-5</a></li>
+    <li><a href="#num-6">num-6</a></li>
+    <li><a href="#num-7">num-7</a></li>
+    <li><a href="#num-8">num-8</a></li>
+    <li><a href="#num-9">num-9</a></li>
+    <li><a href="#num-10">num-10</a></li>
+  </ul>
+
+  <section id="num-1"></section>
+  <section id="num-2"></section>
+  <section id="num-3"></section>
+  <section id="num-4"></section>
+  <section id="num-5"></section>
+  <section id="num-6"></section>
+  <section id="num-7"></section>
+  <section id="num-8"></section>
+  <section id="num-9"></section>
+  <section id="num-10"></section>
+
+  <script>
+    window.addEventListener('hashchange', function () {
+      // 이벤트를 직역하면 'hash' 값이 바뀔때 일어난다. 라는 뜻으로 해석 할 수 있다.
+      // 여기서 말하는 hash가 html에서는 id로 명칭이 바뀐다.
+      // id가 그러하듯 문서 내에서는 고유의 것 한개만 존재해야 한다.
+      const urlHash = window.location.href;
+      // window 객체 즉 BOM API에는 document 뿐만 아니라 location 이라는 객체가 형제로 존재한다.
+      let getValue = urlHash.substring(urlHash.indexOf("#") + 1, urlHash.length);
+      console.log("id value string :", getValue);
+    });
+  </script>
+
+</body>
+
+</html>
