@@ -36,6 +36,6 @@
 - 관계형
   - 오라클 데이터베이스
   - MySQL
-  - MariaDB: 오픈소스 진영에서 높은 점유율을 가지고 있던 MySQL이 오라클에 인수되자, MySQL의 일부 개발자들이 새롭게 개발했다
+  - MariaDB: MySQL이 오라클에 인수 된 이후에 MySQL의 일부 개발자들이 새롭게 개발한 RDBMS이다. MySQL과 유사한 사용환경을 제공한다.
 - noSQL
   - MongoDB: 문서형(Document) 방식을 채택하고 있다
