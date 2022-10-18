@@ -18,5 +18,5 @@ function handMade(test, callback){
   }
 }
 
-handMade("yo 나는 이렇게 말하지 ,", merongFunc);
-handMade("yo 나는 이렇게 말하지 ,", yahoFunc);
+handMade("댕댕이 ,", merongFunc);
+handMade("커여움 ,", yahoFunc);

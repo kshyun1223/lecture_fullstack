@@ -4,6 +4,7 @@ const memoData = "Always fo with your passions. Never ask yourself if it's reali
 
 function memoMaker(directoryName, fileName, data) {
   let combinePath ="./" + directoryName + fileName;
+  /* 메모장 파일 만들기 */
   console.time('메모장 파일 만들기');
   fs.writeFile(`${combinePath}.txt`, data, 'utf-8', (error) => {
     if(error === true){
@@ -11,7 +12,8 @@ function memoMaker(directoryName, fileName, data) {
     }
   });
   console.timeEnd('메모장 파일 만들기');
-  // 구분선 ----------------
+
+  /* JSON 파일 만들기 */
   console.time('JSON 파일 만들기');
   fs.writeFile(`${combinePath}.json`, JSON.stringify(data), 'utf-8',(error)=> {
     if(error === true) {
