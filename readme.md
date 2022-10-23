@@ -7,5 +7,5 @@
 - [Node.js](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_practice-nodejs)
 
 ### 필기노트
-- [일자별 노트](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_note-weekly_summary)
+- [일자별 노트](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_note-work-log)
 - [주제별 요약 정리](https://github.com/kshyun1223/lecture_fullstack/tree/master/lecture_note-by_topic)
