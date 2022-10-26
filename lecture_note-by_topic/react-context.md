@@ -9,7 +9,7 @@ const MyContext = React.createContext(defaultValue);
 
 ### Context.Provider
 ```javaScript
-<MyContext.Provider value={/* 어떤 값 */}>
+<MyContext.Provider value={/* 필수 */}>
 ```
 - value prop을 받아서 이 값을 하위에 있는 컴포넌트에게 전달한다
 - Provider 하위에 또 다른 Provider를 배치하는 것도 가능하며, 이 경우 하위 Provider의 값이 우선시된다
