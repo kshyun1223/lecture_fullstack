@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    npx tsc --init
+  },
+  "devDependencies": {
+    "ts-node":"^10.9.1"
+  }
+}
