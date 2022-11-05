@@ -32,3 +32,33 @@
   - 보통 distribute의 준말로, dist라는 디렉토리에 저장하는 것이 오랜 관습이다.
   - 경로를 판단하기 위해 path 모듈을 불러와 사용하는데, path 모듈이 지원하는 resolve()메서드를 통해 절대경로 방식으로 dist 디렉토리를 지정하는 편이다.상대개념으로 join() 메서드가 있다.
 - fileName 파일이름을 무엇으로 정할 것인지 지정해주는 키이며, 관습적으로는 file.bundle.js 혹은 배포용일 경우, file.min.js 과 같은 이름으로 빌드버전과 배포버전을 구분하는 방식을 채택한다.
+
+## 서비스 배포 과정
+1. DB
+2. build
+3. bundler
+4. distribute (dist)
+
+- 대규모 의존이 필요한 프로젝트의 경우 build와 distrubute 사이에 통신불량이 일어난다
+  - 이를 해결하기 위해 그 사이에 bundler가 들어간다
+  - 번들러의 역할 중 하나가 Automation이다
+
+- build 단계에서 중요한 개념
+  - React, Server, SCSS, TypeScript
+  - package.json으로 설정을 하고 이걸 가지고 build를 한다
+  - 여기서 스택을 결정하고 잘 작동하는지 검증하는 것이 1차 단계
+    - 기획과 잘 맞는지 확인한다
+  - 스택이 결정된 이후에는 변동사항이 없다
+    - Docker로 이미지를 저장해서 재사용한다
+    - 스택 결정 = 명세를 작성한다
+
+- build가 완료되면 거기서 기능을 덧붙이고 다시 검증하는 과정을 반복하는 게 개발이다
+
+- 배포
+```
+webpack
+├─ts
+├─tsx
+├─babel
+└─css
+```
