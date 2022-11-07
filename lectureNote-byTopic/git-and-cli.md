@@ -7,20 +7,19 @@
 - 커밋 메시지는 기록을 남기는 메모지 역할을 한다
   - 반드시 이슈별로 기록하는 습관을 들여야 한다
 
-### staging
-- `git reset HEAD` : 전체 파일의 스테이징을 취소
-- `git reset HEAD <파일 이름>` : 특정 파일의 스테이징을 취소
+### staging 되돌리기
+- `git reset <브랜치 이름>` : 전체 파일의 스테이징을 취소
+- `git reset <브랜치 이름> <파일 이름>` : 특정 파일의 스테이징을 취소
 
-### commit
+### commit 되돌리기
 - `git log` : 커밋 목록 확인
-- `git reset HEAD^` : 마지막 한개의 커밋을 취소하고 해당 파일들은 unstaged 상태로 변경
-  - `git reset HEAD~2` : 마지막 2개의 커밋에 위 명령을 적용
-  - `git reset --soft HEAD^` : 커밋을 취소하고 해당 파일들은 staged 상태로 변경
-  - `git reset --hard HEAD^` : 커밋을 취소하고 해당 파일들은 삭제
+- `git reset <브랜치 이름>~1` : 마지막 한개의 커밋을 취소하고 해당 파일들은 unstaged 상태로 변경
+- `git reset --soft <브랜치 이름>^` : 커밋을 취소하고 해당 파일들은 staged 상태로 변경
+- `git reset --hard <브랜치 이름>^` : 커밋을 취소하고 해당 파일들은 삭제
 - `git commit -amend` : 커밋 메시지를 변경
 
 ### push 되돌리기
-1. `git reset --hard HEAD^` 명령어로 커밋을 순차적으로 취소하거나, `git reset --hard <commit id>` 명령어로 특정 시점으로 되돌린다
+1. `git reset --hard <브랜치 이름>^` 명령어로 커밋을 순차적으로 취소하거나, `git reset --hard <commit id>` 명령어로 특정 시점으로 되돌린다
 2. `git push --force` 명령어로 수정된 커밋을 푸쉬하여 원격에 적용한다
 - 주의점: 둘 이상의 작업자가 있을 경우 원격에서는 롤백됐는데 로컬에서는 그대로 남아있어서 충돌이 일어날 수 있다
 
