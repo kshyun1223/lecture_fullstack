@@ -1,45 +1,30 @@
 # 타입스크립트
-## 개요
-### 타입스크립트의 장점
-``` typescript
-// math.ts
-function sum(a: number, b: number) {
-  return a + b;
-}
-sum('10', '20'); // Error: '10'은 number에 할당될 수 없습니다.
-```
-- 타입을 인식하여 타입 입력 실수로 인한 버그를 방지한다
+### 타입스크립트 특징
+- 타입을 지정하여 타입 입력 실수로 인한 버그를 방지한다
 - 해당 타입에 관련된 메서드를 자동완성으로 보여준다
 
 ### 타입
-- 자바스크립트가 지원하는 타입 : Boolean, Null, Undefined, Number, BigInt, String, Symbol, Object
-- 타입스크립트가 지원하는 타입 : Boolean, Null, Undefined, Number, String, Object, Array, Tuple, Enum, Any, Void, Never
+- 자바스크립트가 지원하는 타입 : Boolean, Null, Undefined, Number, **BigInt**, String, **Symbol**, Object
+- 타입스크립트가 지원하는 타입 : Boolean, Null, Undefined, Number, String, Object, **Array, Tuple, Enum, Any, Void, Never**
 
 ### 함수
-웹 애플리케이션을 구현할 때 자주 사용되는 함수는 타입스크립트로 크게 다음 3가지 타입을 정의할 수 있습니다.
+- 타입스크립트로 함수를 작성할 때 타입을 지정할 수 있는 부분
+  - 파라미터
+  - 리턴
+  - 함수의 구조
 
-함수의 파라미터(매개변수) 타입
-함수의 반환 타입
-함수의 구조 타입
-#함수의 기본적인 타입 선언
-타입스크립트의 함수 선언 방법을 이해하기 위해 먼저 간단한 자바스크립트 함수를 보겠습니다.
-
-function sum(a, b) {
+```typescript
+function sum (a: number, b: number): number {
   return a + b;
-}
-위 자바스크립트 함수에 타입을 부여하면 아래와 같습니다.
+} 
+// 파라미터와 리턴의 타입을 지정했다
+// 리턴에 특정 타입을 지정하고 싶지 않더라도 void라도 사용해야 한다
+```
 
-function sum(a: number, b: number): number {
-  return a + b;
-}
-기존 자바스크립트 함수의 선언 방식에서 매개변수와 함수의 반환 값에 타입을 추가하였습니다.
-
-TIP
-
-함수의 반환 값에 타입을 정하지 않을 때는 void라도 사용
-
-#함수의 인자
-타입스크립트에서는 함수의 인자를 모두 필수 값으로 간주합니다. 따라서, 함수의 매개변수를 설정하면 undefined나 null이라도 인자로 넘겨야하며 컴파일러에서 정의된 매개변수 값이 넘어 왔는지 확인합니다. 달리 말하면 정의된 매개변수 값만 받을 수 있고 추가로 인자를 받을 수 없다는 의미입니다.
+### 함수의 인자
+- 타입스크립트에서는 함수의 인자를 모두 필수 값으로 간주하여 컴파일러에서 정의된 매개변
+- 
+- 따라서, 함수의 매개변수를 설정하면 undefined나 null이라도 인자로 넘겨야하며 컴파일러에서 정의된 매개변수 값이 넘어 왔는지 확인합니다. 달리 말하면 정의된 매개변수 값만 받을 수 있고 추가로 인자를 받을 수 없다는 의미입니다.
 
 function sum(a: number, b: number): number {
   return a + b;
