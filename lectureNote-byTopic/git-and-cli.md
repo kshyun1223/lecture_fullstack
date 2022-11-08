@@ -1,4 +1,13 @@
 # Git
+### git config
+- 전체 config 확인 : `git config --list`
+- 설정
+  - `git config --global user.name "홍길동"`
+  - `git config --global user.email "support@webisfree.com"`
+- 삭제
+  - `git config --unset user.name`
+  - `git config --unset user.email`
+
 ### init
 - 프로젝트 폴더에 처음 깃을 설치: `git init` - `npm init`
 
@@ -6,22 +15,6 @@
 - staging - commit - push
 - 커밋 메시지는 기록을 남기는 메모지 역할을 한다
   - 반드시 이슈별로 기록하는 습관을 들여야 한다
-
-### staging 되돌리기
-- `git reset <브랜치 이름>` : 전체 파일의 스테이징을 취소
-- `git reset <브랜치 이름> <파일 이름>` : 특정 파일의 스테이징을 취소
-
-### commit 되돌리기
-- `git log` : 커밋 목록 확인
-- `git reset <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 unstaged 상태로 변경
-- `git reset --soft <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 staged 상태로 변경
-- `git reset --hard <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 삭제
-- `git commit -amend` : 커밋 메시지를 변경
-
-### push 되돌리기
-1. 원하는 브랜치를 pull 한 다음에 커밋을 되돌리는 것과 동일하게 되돌린다
-2. `git push --force` 명령어로 수정된 커밋을 푸쉬하여 원격에 적용한다
-- 주의점: 둘 이상의 작업자가 있을 경우 원격에서는 롤백됐는데 로컬에서는 그대로 남아있어서 충돌이 일어날 수 있다
 
 ### clone
 - `git clone <레포지토리 이름>`
@@ -47,7 +40,28 @@
 ### 예외 처리
 - `.gitignore`라는 파일을 프로젝트 최상단 폴더에 생성하고 그 안에 목록을 작성
 
+### staging 되돌리기
+- `git reset <브랜치 이름>` : 전체 파일의 스테이징을 취소
+- `git reset <브랜치 이름> <파일 이름>` : 특정 파일의 스테이징을 취소
 
+### commit 되돌리기
+- `git log` : 커밋 목록 확인
+- `git reset <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 unstaged 상태로 변경
+- `git reset --soft <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 staged 상태로 변경
+- `git reset --hard <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 삭제
+- `git commit -amend` : 커밋 메시지를 변경
+
+### push 되돌리기
+1. 원하는 브랜치를 pull 한 다음에 커밋을 되돌리는 것과 동일하게 되돌린다
+2. `git push --force` 명령어로 수정된 커밋을 푸쉬하여 원격에 적용한다
+- 주의점: 둘 이상의 작업자가 있을 경우 원격에서는 롤백됐는데 로컬에서는 그대로 남아있어서 충돌이 일어날 수 있다
+
+### 다른 아이디로 push 된 경우 되돌리기
+1. 원하는 브랜치를 pull 해온다
+2. `reset --soft`로 변경 내용을 스테이지로 되돌린다
+3. `push --force`로 push 취소를 확정한다
+4. 스테이지에 있던 내용들을 다시 푸쉬한다
+5. 만약 contributor 목록이 사라지지 않는다면 브랜치 이름을 다르게 바꿨다가 다시 원래대로 바꾼다
 
 # CLI
 ### 터미널 명령어
