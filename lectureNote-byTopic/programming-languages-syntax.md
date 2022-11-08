@@ -99,6 +99,14 @@ while(/* 조건식 */) {
 ## 함수의 구성요소
 ### 매개변수(parameter, 인자)
 ```javascript
+function example(parameter) {
+  console.log(parameter); // Output = foo
+}
+const argument = "foo";
+example(argument);
+```
+
+```javascript
 /* 선언 */
 function hairService(parameter){
   console.log('어서오세요' + parameter + '고객님');
