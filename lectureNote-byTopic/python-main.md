@@ -178,6 +178,3 @@ print(average(1,2,3))
 print(plus(1,2))
 print(pi)
 ```
-
-## pip
-### 
