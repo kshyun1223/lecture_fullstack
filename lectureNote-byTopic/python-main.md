@@ -59,6 +59,10 @@ print(a[2:5]) #llo
 #repeat
 print((a+'\n')-2) #두번 반복
 ```
+### 템플릿 스트링
+```python
+print('''"This is a {length} example."\n"good."\n"Here is a {ordinal} line."'''.format(length='multi-line', ordinal='second'))
+```
 
 ### 포맷팅
 - positional formatting: 위치를 지정하고 순서대로 값을 넣는 방법
