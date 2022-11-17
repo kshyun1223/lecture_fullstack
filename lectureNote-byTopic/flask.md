@@ -9,6 +9,7 @@ from flask import Flask
 # __name__ 변수는 메인 파일의 이름
 app = Flask(__name__)
 ```
+- 디버깅 모드 활성화: `set FLASK_DEBUG=1`
 - 서버 실행: `flask run`
 
 ### 라우팅
@@ -77,6 +78,21 @@ def login():
     # 아래의 코드는 요청이 GET 이거나, 인증정보가 잘못됐을때 실행된다.
     return render_template('login.html', error=error)
 ```
+
+### 쿼리스트링
+```python
+@app.route('/test')
+def test():
+    parameter_dict = request.args.to_dict()
+    if len(parameter_dict) == 0:
+        return 'No parameter'
+
+    parameters = ''
+    for key in parameter_dict.keys():
+        parameters += 'key: {}, value: {}\n'.format(key, request.args[key])
+    return parameters
+```
+
 
 ### view 메소드 (sqllite3 기준임)
 ```python
