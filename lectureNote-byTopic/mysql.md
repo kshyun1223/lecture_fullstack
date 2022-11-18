@@ -167,7 +167,8 @@ DELETE FROM users WHERE id = 2;
     * condition : column, 표현식, 상수 및 비교 연산자
     * ORDER BY : 질의 결과 정렬을 위한 옵션 {ASC=오름차순(디폴트), DESC= 내림차순}
     * LIMIT: 결과 개수를 제한
-* `LOOP 문`
+
+- LOOP문
 ```sql
 DELIMITER $$ -- 프로시저 생성 시작을 알림
 DROP PROCEDURE IF EXISTS loop_test $$ -- 프로시저가 만들어져 있다면 삭제하고 다시 만듬
@@ -191,3 +192,13 @@ DELIMITER ;-- 프로시저 생성 종료를 알림
 Call loo_test(10); -- 프로시저 실행
 ```
 
+- WITH문
+    - WITH문은 해당 요청이 실행되는 동안에만 유지된다
+```sql
+WITH temp_table AS (
+SELECT * FROM kosdak_000250_d WHERE day='2022-01-28' union all
+SELECT * FROM kosdak_003100_d WHERE day='2022-01-28' union all
+SELECT * FROM kosdak_005990_d WHERE day='2022-01-28' )
+SELECT  *  FROM  temp_table order by volume desc;
+```
+- 

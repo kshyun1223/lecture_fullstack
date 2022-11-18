@@ -59,21 +59,38 @@ print(a[2:5]) #llo
 #repeat
 print((a+'\n')-2) #두번 반복
 ```
-### 템플릿 스트링
-```python
-print('''"This is a {length} example."\n"good."\n"Here is a {ordinal} line."'''.format(length='multi-line', ordinal='second'))
-```
 
 ### 포맷팅
 - positional formatting: 위치를 지정하고 순서대로 값을 넣는 방법
 ```python
-print('to {}. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim apple veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. {} Duis aute irure dolor in {} reprehenderit apple computer in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui {} officia deserunt mollit anim id est laborum.'.format('egoing', 12, 'egoing', 'egoing'))
+print('Lorem ipsum dolor {} amet, consectetur {} elit, sed do eiusmod {} incididunt ut labore {} dolore magna aliqua.'.format('egoing', 12, 'egoing', 'egoing'))
 ```
 
 - named placeholder: 변수명을 지정하고 값을 넣는 방법
-  - `{age:d}`에서 d는 digit의 약자로 숫자를 의미. 이에 따라 값으로는 반드시 숫자가 들어가야 한다. 
 ```python
-print('to {name}. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim apple veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. {age:d} Duis aute irure dolor in {name} reprehenderit apple computer in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui {name} officia deserunt mollit anim id est laborum.'.format(name='egoing', age=12))
+print('''
+"This is a {length} example."
+"goooood."
+"Here is a {ordinal} line."
+'''.format(length='multi-line', ordinal='second'))
+```
+
+### 스트링 템플릿
+- /n
+```python
+print('"This is a {length} example."\n"good."\n"Here is a {ordinal} line."'.format(length='multi-line', ordinal='second'))
+```
+
+### f-string
+```python
+length='multi-line'
+ordinal='second'
+
+print(
+  f"This is a {length} example.\n"
+  f"gooooooooood.\n"
+  f"Here is a {ordinal} line.\n"
+)
 ```
 
 ### Boolean
@@ -181,4 +198,48 @@ from math import average, plus, pi
 print(average(1,2,3))
 print(plus(1,2))
 print(pi)
+```
+
+## SQL
+### 연결
+> 아마도 내장 모듈은 없는 것 같다. pymysql이 제일 나은듯.
+1. `connection.connect()`: 파이썬을 db서버에 접속시키는 메소드
+2. `cursor.cursor()` : fetch 동작을 관리하는 cursor 객체를 호출
+
+### 실행
+3. `cursor.execute()` : db서버에 쿼리문을 전달
+4. fetch 메소드 : db서버로부터 데이터를 받아온다 
+    - `cursor.fetchall()`
+    - `cursor.fetchone()`
+    - `cursor.fetchmany()`
+5. `connection.commit()` : db서버에 현재 트랜잭션을 커밋하라는 명령을 전달
+6. `connection.rollback()` : db서버에 현재 트랜잭션을 롤백하라는 명령을 전달
+    - 기본적으로 파이썬 커넥터는 자동으로 커밋되지 않기 때문에 InnoDB 같은 트랜잭션 저장 엔진에서 트랜잭션을 취소할 수 있다
+
+### cursor.executemany()
+- 요청
+```python
+data = [
+  ('Jane', date(2005, 2, 12)),
+  ('Joe', date(2006, 5, 23)),
+  ('John', date(2010, 10, 3)),
+]
+stmt = "INSERT INTO employees (first_name, hire_date) VALUES (%s, %s)"
+cursor.executemany(stmt, data)
+```
+
+- 결과
+```SQL
+INSERT INTO employees (first_name, hire_date)
+VALUES ('Jane', '2005-02-12'), ('Joe', '2006-05-23'), ('John', '2010-10-03')
+```
+
+- 이게 더 나은가...
+```python
+data = [
+    ("Monty Python Live at the Hollywood Bowl", 1982, 7.9),
+    ("Monty Python's The Meaning of Life", 1983, 7.5),
+    ("Monty Python's Life of Brian", 1979, 8.0),
+]
+cur.executemany("INSERT INTO movie VALUES(?, ?, ?)", data)
 ```
