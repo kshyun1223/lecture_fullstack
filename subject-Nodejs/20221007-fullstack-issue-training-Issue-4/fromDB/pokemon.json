@@ -1,0 +1,4527 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "koreaName": "이상해씨"
+  },
+  {
+    "id": 2,
+    "name": "Ivysaur",
+    "koreaName": "이상해풀"
+  },
+  {
+    "id": 3,
+    "name": "Venusaur",
+    "koreaName": "이상해꽃"
+  },
+  {
+    "id": 4,
+    "name": "Charmander",
+    "koreaName": "파이리"
+  },
+  {
+    "id": 5,
+    "name": "Charmeleon",
+    "koreaName": "리자드"
+  },
+  {
+    "id": 6,
+    "name": "Charizard",
+    "koreaName": "리자몽"
+  },
+  {
+    "id": 7,
+    "name": "Squirtle",
+    "koreaName": "꼬부기"
+  },
+  {
+    "id": 8,
+    "name": "Wartortle",
+    "koreaName": "어니부기"
+  },
+  {
+    "id": 9,
+    "name": "Blastoise",
+    "koreaName": "거북왕"
+  },
+  {
+    "id": 10,
+    "name": "Caterpie",
+    "koreaName": "캐터피"
+  },
+  {
+    "id": 11,
+    "name": "Metapod",
+    "koreaName": "단데기"
+  },
+  {
+    "id": 12,
+    "name": "Butterfree",
+    "koreaName": "버터플"
+  },
+  {
+    "id": 13,
+    "name": "Weedle",
+    "koreaName": "뿔충이"
+  },
+  {
+    "id": 14,
+    "name": "Kakuna",
+    "koreaName": "딱충이"
+  },
+  {
+    "id": 15,
+    "name": "Beedrill",
+    "koreaName": "독침붕"
+  },
+  {
+    "id": 16,
+    "name": "Pidgey",
+    "koreaName": "구구"
+  },
+  {
+    "id": 17,
+    "name": "Pidgeotto",
+    "koreaName": "피죤"
+  },
+  {
+    "id": 18,
+    "name": "Pidgeot",
+    "koreaName": "피죤투"
+  },
+  {
+    "id": 19,
+    "name": "Rattata",
+    "koreaName": "꼬렛"
+  },
+  {
+    "id": 20,
+    "name": "Raticate",
+    "koreaName": "레트라"
+  },
+  {
+    "id": 21,
+    "name": "Spearow",
+    "koreaName": "깨비참"
+  },
+  {
+    "id": 22,
+    "name": "Fearow",
+    "koreaName": "깨비드릴조"
+  },
+  {
+    "id": 23,
+    "name": "Ekans",
+    "koreaName": "아보"
+  },
+  {
+    "id": 24,
+    "name": "Arbok",
+    "koreaName": "아보크"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu",
+    "koreaName": "피카츄"
+  },
+  {
+    "id": 26,
+    "name": "Raichu",
+    "koreaName": "라이츄"
+  },
+  {
+    "id": 27,
+    "name": "Sandshrew",
+    "koreaName": "모래두지"
+  },
+  {
+    "id": 28,
+    "name": "Sandslash",
+    "koreaName": "고지"
+  },
+  {
+    "id": 29,
+    "name": "Nidoran♀",
+    "koreaName": "니드런♀"
+  },
+  {
+    "id": 30,
+    "name": "Nidorina",
+    "koreaName": "니드리나"
+  },
+  {
+    "id": 31,
+    "name": "Nidoqueen",
+    "koreaName": "니드퀸"
+  },
+  {
+    "id": 32,
+    "name": "Nidoran♂",
+    "koreaName": "니드런♂"
+  },
+  {
+    "id": 33,
+    "name": "Nidorino",
+    "koreaName": "니드리노"
+  },
+  {
+    "id": 34,
+    "name": "Nidoking",
+    "koreaName": "니드킹"
+  },
+  {
+    "id": 35,
+    "name": "Clefairy",
+    "koreaName": "삐삐"
+  },
+  {
+    "id": 36,
+    "name": "Clefable",
+    "koreaName": "픽시"
+  },
+  {
+    "id": 37,
+    "name": "Vulpix",
+    "koreaName": "식스테일"
+  },
+  {
+    "id": 38,
+    "name": "Ninetales",
+    "koreaName": "나인테일"
+  },
+  {
+    "id": 39,
+    "name": "Jigglypuff",
+    "koreaName": "푸린"
+  },
+  {
+    "id": 40,
+    "name": "Wigglytuff",
+    "koreaName": "푸크린"
+  },
+  {
+    "id": 41,
+    "name": "Zubat",
+    "koreaName": "주뱃"
+  },
+  {
+    "id": 42,
+    "name": "Golbat",
+    "koreaName": "골뱃"
+  },
+  {
+    "id": 43,
+    "name": "Oddish",
+    "koreaName": "뚜벅쵸"
+  },
+  {
+    "id": 44,
+    "name": "Gloom",
+    "koreaName": "냄새꼬"
+  },
+  {
+    "id": 45,
+    "name": "Vileplume",
+    "koreaName": "라플레시아"
+  },
+  {
+    "id": 46,
+    "name": "Paras",
+    "koreaName": "파라스"
+  },
+  {
+    "id": 47,
+    "name": "Parasect",
+    "koreaName": "파라섹트"
+  },
+  {
+    "id": 48,
+    "name": "Venonat",
+    "koreaName": "콘팡"
+  },
+  {
+    "id": 49,
+    "name": "Venomoth",
+    "koreaName": "도나리"
+  },
+  {
+    "id": 50,
+    "name": "Diglett",
+    "koreaName": "디그다"
+  },
+  {
+    "id": 51,
+    "name": "Dugtrio",
+    "koreaName": "닥트리오"
+  },
+  {
+    "id": 52,
+    "name": "Meowth",
+    "koreaName": "나옹"
+  },
+  {
+    "id": 53,
+    "name": "Persian",
+    "koreaName": "페르시온"
+  },
+  {
+    "id": 54,
+    "name": "Psyduck",
+    "koreaName": "고라파덕"
+  },
+  {
+    "id": 55,
+    "name": "Golduck",
+    "koreaName": "골덕"
+  },
+  {
+    "id": 56,
+    "name": "Mankey",
+    "koreaName": "망키"
+  },
+  {
+    "id": 57,
+    "name": "Primeape",
+    "koreaName": "성원숭"
+  },
+  {
+    "id": 58,
+    "name": "Growlithe",
+    "koreaName": "가디"
+  },
+  {
+    "id": 59,
+    "name": "Arcanine",
+    "koreaName": "윈디"
+  },
+  {
+    "id": 60,
+    "name": "Poliwag",
+    "koreaName": "발챙이"
+  },
+  {
+    "id": 61,
+    "name": "Poliwhirl",
+    "koreaName": "슈륙챙이"
+  },
+  {
+    "id": 62,
+    "name": "Poliwrath",
+    "koreaName": "강챙이"
+  },
+  {
+    "id": 63,
+    "name": "Abra",
+    "koreaName": "캐이시"
+  },
+  {
+    "id": 64,
+    "name": "Kadabra",
+    "koreaName": "윤겔라"
+  },
+  {
+    "id": 65,
+    "name": "Alakazam",
+    "koreaName": "후딘"
+  },
+  {
+    "id": 66,
+    "name": "Machop",
+    "koreaName": "알통몬"
+  },
+  {
+    "id": 67,
+    "name": "Machoke",
+    "koreaName": "근육몬"
+  },
+  {
+    "id": 68,
+    "name": "Machamp",
+    "koreaName": "괴력몬"
+  },
+  {
+    "id": 69,
+    "name": "Bellsprout",
+    "koreaName": "모다피"
+  },
+  {
+    "id": 70,
+    "name": "Weepinbell",
+    "koreaName": "우츠동"
+  },
+  {
+    "id": 71,
+    "name": "Victreebel",
+    "koreaName": "우츠보트"
+  },
+  {
+    "id": 72,
+    "name": "Tentacool",
+    "koreaName": "왕눈해"
+  },
+  {
+    "id": 73,
+    "name": "Tentacruel",
+    "koreaName": "독파리"
+  },
+  {
+    "id": 74,
+    "name": "Geodude",
+    "koreaName": "꼬마돌"
+  },
+  {
+    "id": 75,
+    "name": "Graveler",
+    "koreaName": "데구리"
+  },
+  {
+    "id": 76,
+    "name": "Golem",
+    "koreaName": "딱구리"
+  },
+  {
+    "id": 77,
+    "name": "Ponyta",
+    "koreaName": "포니타"
+  },
+  {
+    "id": 78,
+    "name": "Rapidash",
+    "koreaName": "날쌩마"
+  },
+  {
+    "id": 79,
+    "name": "Slowpoke",
+    "koreaName": "야돈"
+  },
+  {
+    "id": 80,
+    "name": "Slowbro",
+    "koreaName": "야도란"
+  },
+  {
+    "id": 81,
+    "name": "Magnemite",
+    "koreaName": "코일"
+  },
+  {
+    "id": 82,
+    "name": "Magneton",
+    "koreaName": "레어코일"
+  },
+  {
+    "id": 83,
+    "name": "Farfetch’d",
+    "koreaName": "파오리"
+  },
+  {
+    "id": 84,
+    "name": "Doduo",
+    "koreaName": "두두"
+  },
+  {
+    "id": 85,
+    "name": "Dodrio",
+    "koreaName": "두트리오"
+  },
+  {
+    "id": 86,
+    "name": "Seel",
+    "koreaName": "쥬쥬"
+  },
+  {
+    "id": 87,
+    "name": "Dewgong",
+    "koreaName": "쥬레곤"
+  },
+  {
+    "id": 88,
+    "name": "Grimer",
+    "koreaName": "질퍽이"
+  },
+  {
+    "id": 89,
+    "name": "Muk",
+    "koreaName": "질뻐기"
+  },
+  {
+    "id": 90,
+    "name": "Shellder",
+    "koreaName": "셀러"
+  },
+  {
+    "id": 91,
+    "name": "Cloyster",
+    "koreaName": "파르셀"
+  },
+  {
+    "id": 92,
+    "name": "Gastly",
+    "koreaName": "고오스"
+  },
+  {
+    "id": 93,
+    "name": "Haunter",
+    "koreaName": "고우스트"
+  },
+  {
+    "id": 94,
+    "name": "Gengar",
+    "koreaName": "팬텀"
+  },
+  {
+    "id": 95,
+    "name": "Onix",
+    "koreaName": "롱스톤"
+  },
+  {
+    "id": 96,
+    "name": "Drowzee",
+    "koreaName": "슬리프"
+  },
+  {
+    "id": 97,
+    "name": "Hypno",
+    "koreaName": "슬리퍼"
+  },
+  {
+    "id": 98,
+    "name": "Krabby",
+    "koreaName": "크랩"
+  },
+  {
+    "id": 99,
+    "name": "Kingler",
+    "koreaName": "킹크랩"
+  },
+  {
+    "id": 100,
+    "name": "Voltorb",
+    "koreaName": "찌리리공"
+  },
+  {
+    "id": 101,
+    "name": "Electrode",
+    "koreaName": "붐볼"
+  },
+  {
+    "id": 102,
+    "name": "Exeggcute",
+    "koreaName": "아라리"
+  },
+  {
+    "id": 103,
+    "name": "Exeggutor",
+    "koreaName": "나시"
+  },
+  {
+    "id": 104,
+    "name": "Cubone",
+    "koreaName": "탕구리"
+  },
+  {
+    "id": 105,
+    "name": "Marowak",
+    "koreaName": "텅구리"
+  },
+  {
+    "id": 106,
+    "name": "Hitmonlee",
+    "koreaName": "시라소몬"
+  },
+  {
+    "id": 107,
+    "name": "Hitmonchan",
+    "koreaName": "홍수몬"
+  },
+  {
+    "id": 108,
+    "name": "Lickitung",
+    "koreaName": "내루미"
+  },
+  {
+    "id": 109,
+    "name": "Koffing",
+    "koreaName": "또가스"
+  },
+  {
+    "id": 110,
+    "name": "Weezing",
+    "koreaName": "또도가스"
+  },
+  {
+    "id": 111,
+    "name": "Rhyhorn",
+    "koreaName": "뿔카노"
+  },
+  {
+    "id": 112,
+    "name": "Rhydon",
+    "koreaName": "코뿌리"
+  },
+  {
+    "id": 113,
+    "name": "Chansey",
+    "koreaName": "럭키"
+  },
+  {
+    "id": 114,
+    "name": "Tangela",
+    "koreaName": "덩쿠리"
+  },
+  {
+    "id": 115,
+    "name": "Kangaskhan",
+    "koreaName": "캥카"
+  },
+  {
+    "id": 116,
+    "name": "Horsea",
+    "koreaName": "쏘드라"
+  },
+  {
+    "id": 117,
+    "name": "Seadra",
+    "koreaName": "시드라"
+  },
+  {
+    "id": 118,
+    "name": "Goldeen",
+    "koreaName": "콘치"
+  },
+  {
+    "id": 119,
+    "name": "Seaking",
+    "koreaName": "왕콘치"
+  },
+  {
+    "id": 120,
+    "name": "Staryu",
+    "koreaName": "별가사리"
+  },
+  {
+    "id": 121,
+    "name": "Starmie",
+    "koreaName": "아쿠스타"
+  },
+  {
+    "id": 122,
+    "name": "Mr. Mime",
+    "koreaName": "마임맨"
+  },
+  {
+    "id": 123,
+    "name": "Scyther",
+    "koreaName": "스라크"
+  },
+  {
+    "id": 124,
+    "name": "Jynx",
+    "koreaName": "루주라"
+  },
+  {
+    "id": 125,
+    "name": "Electabuzz",
+    "koreaName": "에레브"
+  },
+  {
+    "id": 126,
+    "name": "Magmar",
+    "koreaName": "마그마"
+  },
+  {
+    "id": 127,
+    "name": "Pinsir",
+    "koreaName": "쁘사이저"
+  },
+  {
+    "id": 128,
+    "name": "Tauros",
+    "koreaName": "켄타로스"
+  },
+  {
+    "id": 129,
+    "name": "Magikarp",
+    "koreaName": "잉어킹"
+  },
+  {
+    "id": 130,
+    "name": "Gyarados",
+    "koreaName": "갸라도스"
+  },
+  {
+    "id": 131,
+    "name": "Lapras",
+    "koreaName": "라프라스"
+  },
+  {
+    "id": 132,
+    "name": "Ditto",
+    "koreaName": "메타몽"
+  },
+  {
+    "id": 133,
+    "name": "Eevee",
+    "koreaName": "이브이"
+  },
+  {
+    "id": 134,
+    "name": "Vaporeon",
+    "koreaName": "샤미드"
+  },
+  {
+    "id": 135,
+    "name": "Jolteon",
+    "koreaName": "쥬피썬더"
+  },
+  {
+    "id": 136,
+    "name": "Flareon",
+    "koreaName": "부스터"
+  },
+  {
+    "id": 137,
+    "name": "Porygon",
+    "koreaName": "폴리곤"
+  },
+  {
+    "id": 138,
+    "name": "Omanyte",
+    "koreaName": "암나이트"
+  },
+  {
+    "id": 139,
+    "name": "Omastar",
+    "koreaName": "암스타"
+  },
+  {
+    "id": 140,
+    "name": "Kabuto",
+    "koreaName": "투구"
+  },
+  {
+    "id": 141,
+    "name": "Kabutops",
+    "koreaName": "투구푸스"
+  },
+  {
+    "id": 142,
+    "name": "Aerodactyl",
+    "koreaName": "프테라"
+  },
+  {
+    "id": 143,
+    "name": "Snorlax",
+    "koreaName": "잠만보"
+  },
+  {
+    "id": 144,
+    "name": "Articuno",
+    "koreaName": "프리져"
+  },
+  {
+    "id": 145,
+    "name": "Zapdos",
+    "koreaName": "썬더"
+  },
+  {
+    "id": 146,
+    "name": "Moltres",
+    "koreaName": "파이어"
+  },
+  {
+    "id": 147,
+    "name": "Dratini",
+    "koreaName": "미뇽"
+  },
+  {
+    "id": 148,
+    "name": "Dragonair",
+    "koreaName": "신뇽"
+  },
+  {
+    "id": 149,
+    "name": "Dragonite",
+    "koreaName": "망나뇽"
+  },
+  {
+    "id": 150,
+    "name": "Mewtwo",
+    "koreaName": "뮤츠"
+  },
+  {
+    "id": 151,
+    "name": "Mew",
+    "koreaName": "뮤"
+  },
+  {
+    "id": 152,
+    "name": "Chikorita",
+    "koreaName": "치코리타"
+  },
+  {
+    "id": 153,
+    "name": "Bayleef",
+    "koreaName": "베이리프"
+  },
+  {
+    "id": 154,
+    "name": "Meganium",
+    "koreaName": "메가니움"
+  },
+  {
+    "id": 155,
+    "name": "Cyndaquil",
+    "koreaName": "브케인"
+  },
+  {
+    "id": 156,
+    "name": "Quilava",
+    "koreaName": "마그케인"
+  },
+  {
+    "id": 157,
+    "name": "Typhlosion",
+    "koreaName": "블레이범"
+  },
+  {
+    "id": 158,
+    "name": "Totodile",
+    "koreaName": "리아코"
+  },
+  {
+    "id": 159,
+    "name": "Croconaw",
+    "koreaName": "엘리게이"
+  },
+  {
+    "id": 160,
+    "name": "Feraligatr",
+    "koreaName": "장크로다일"
+  },
+  {
+    "id": 161,
+    "name": "Sentret",
+    "koreaName": "꼬리선"
+  },
+  {
+    "id": 162,
+    "name": "Furret",
+    "koreaName": "다꼬리"
+  },
+  {
+    "id": 163,
+    "name": "Hoothoot",
+    "koreaName": "부우부"
+  },
+  {
+    "id": 164,
+    "name": "Noctowl",
+    "koreaName": "야부엉"
+  },
+  {
+    "id": 165,
+    "name": "Ledyba",
+    "koreaName": "레디바"
+  },
+  {
+    "id": 166,
+    "name": "Ledian",
+    "koreaName": "레디안"
+  },
+  {
+    "id": 167,
+    "name": "Spinarak",
+    "koreaName": "페이검"
+  },
+  {
+    "id": 168,
+    "name": "Ariados",
+    "koreaName": "아리아도스"
+  },
+  {
+    "id": 169,
+    "name": "Crobat",
+    "koreaName": "크로뱃"
+  },
+  {
+    "id": 170,
+    "name": "Chinchou",
+    "koreaName": "초라기"
+  },
+  {
+    "id": 171,
+    "name": "Lanturn",
+    "koreaName": "랜턴"
+  },
+  {
+    "id": 172,
+    "name": "Pichu",
+    "koreaName": "피츄"
+  },
+  {
+    "id": 173,
+    "name": "Cleffa",
+    "koreaName": "삐"
+  },
+  {
+    "id": 174,
+    "name": "Igglybuff",
+    "koreaName": "푸푸린"
+  },
+  {
+    "id": 175,
+    "name": "Togepi",
+    "koreaName": "토게피"
+  },
+  {
+    "id": 176,
+    "name": "Togetic",
+    "koreaName": "토게틱"
+  },
+  {
+    "id": 177,
+    "name": "Natu",
+    "koreaName": "네이티"
+  },
+  {
+    "id": 178,
+    "name": "Xatu",
+    "koreaName": "네이티오"
+  },
+  {
+    "id": 179,
+    "name": "Mareep",
+    "koreaName": "메리프"
+  },
+  {
+    "id": 180,
+    "name": "Flaaffy",
+    "koreaName": "보송송"
+  },
+  {
+    "id": 181,
+    "name": "Ampharos",
+    "koreaName": "전룡"
+  },
+  {
+    "id": 182,
+    "name": "Bellossom",
+    "koreaName": "아르코"
+  },
+  {
+    "id": 183,
+    "name": "Marill",
+    "koreaName": "마릴"
+  },
+  {
+    "id": 184,
+    "name": "Azumarill",
+    "koreaName": "마릴리"
+  },
+  {
+    "id": 185,
+    "name": "Sudowoodo",
+    "koreaName": "꼬지모"
+  },
+  {
+    "id": 186,
+    "name": "Politoed",
+    "koreaName": "왕구리"
+  },
+  {
+    "id": 187,
+    "name": "Hoppip",
+    "koreaName": "통통코"
+  },
+  {
+    "id": 188,
+    "name": "Skiploom",
+    "koreaName": "두코"
+  },
+  {
+    "id": 189,
+    "name": "Jumpluff",
+    "koreaName": "솜솜코"
+  },
+  {
+    "id": 190,
+    "name": "Aipom",
+    "koreaName": "에이팜"
+  },
+  {
+    "id": 191,
+    "name": "Sunkern",
+    "koreaName": "해너츠"
+  },
+  {
+    "id": 192,
+    "name": "Sunflora",
+    "koreaName": "해루미"
+  },
+  {
+    "id": 193,
+    "name": "Yanma",
+    "koreaName": "왕자리"
+  },
+  {
+    "id": 194,
+    "name": "Wooper",
+    "koreaName": "우파"
+  },
+  {
+    "id": 195,
+    "name": "Quagsire",
+    "koreaName": "누오"
+  },
+  {
+    "id": 196,
+    "name": "Espeon",
+    "koreaName": "에브이"
+  },
+  {
+    "id": 197,
+    "name": "Umbreon",
+    "koreaName": "블래키"
+  },
+  {
+    "id": 198,
+    "name": "Murkrow",
+    "koreaName": "니로우"
+  },
+  {
+    "id": 199,
+    "name": "Slowking",
+    "koreaName": "야도킹"
+  },
+  {
+    "id": 200,
+    "name": "Misdreavus",
+    "koreaName": "무우마"
+  },
+  {
+    "id": 201,
+    "name": "Unown",
+    "koreaName": "안농"
+  },
+  {
+    "id": 202,
+    "name": "Wobbuffet",
+    "koreaName": "마자용"
+  },
+  {
+    "id": 203,
+    "name": "Girafarig",
+    "koreaName": "키링키"
+  },
+  {
+    "id": 204,
+    "name": "Pineco",
+    "koreaName": "피콘"
+  },
+  {
+    "id": 205,
+    "name": "Forretress",
+    "koreaName": "쏘콘"
+  },
+  {
+    "id": 206,
+    "name": "Dunsparce",
+    "koreaName": "노고치"
+  },
+  {
+    "id": 207,
+    "name": "Gligar",
+    "koreaName": "글라이거"
+  },
+  {
+    "id": 208,
+    "name": "Steelix",
+    "koreaName": "강철톤"
+  },
+  {
+    "id": 209,
+    "name": "Snubbull",
+    "koreaName": "블루"
+  },
+  {
+    "id": 210,
+    "name": "Granbull",
+    "koreaName": "그랑블루"
+  },
+  {
+    "id": 211,
+    "name": "Qwilfish",
+    "koreaName": "침바루"
+  },
+  {
+    "id": 212,
+    "name": "Scizor",
+    "koreaName": "핫삼"
+  },
+  {
+    "id": 213,
+    "name": "Shuckle",
+    "koreaName": "단단지"
+  },
+  {
+    "id": 214,
+    "name": "Heracross",
+    "koreaName": "헤라크로스"
+  },
+  {
+    "id": 215,
+    "name": "Sneasel",
+    "koreaName": "포푸니"
+  },
+  {
+    "id": 216,
+    "name": "Teddiursa",
+    "koreaName": "깜지곰"
+  },
+  {
+    "id": 217,
+    "name": "Ursaring",
+    "koreaName": "링곰"
+  },
+  {
+    "id": 218,
+    "name": "Slugma",
+    "koreaName": "마그마그"
+  },
+  {
+    "id": 219,
+    "name": "Magcargo",
+    "koreaName": "마그카르고"
+  },
+  {
+    "id": 220,
+    "name": "Swinub",
+    "koreaName": "꾸꾸리"
+  },
+  {
+    "id": 221,
+    "name": "Piloswine",
+    "koreaName": "메꾸리"
+  },
+  {
+    "id": 222,
+    "name": "Corsola",
+    "koreaName": "코산호"
+  },
+  {
+    "id": 223,
+    "name": "Remoraid",
+    "koreaName": "총어"
+  },
+  {
+    "id": 224,
+    "name": "Octillery",
+    "koreaName": "대포무노"
+  },
+  {
+    "id": 225,
+    "name": "Delibird",
+    "koreaName": "딜리버드"
+  },
+  {
+    "id": 226,
+    "name": "Mantine",
+    "koreaName": "만타인"
+  },
+  {
+    "id": 227,
+    "name": "Skarmory",
+    "koreaName": "무장조"
+  },
+  {
+    "id": 228,
+    "name": "Houndour",
+    "koreaName": "델빌"
+  },
+  {
+    "id": 229,
+    "name": "Houndoom",
+    "koreaName": "헬가"
+  },
+  {
+    "id": 230,
+    "name": "Kingdra",
+    "koreaName": "킹드라"
+  },
+  {
+    "id": 231,
+    "name": "Phanpy",
+    "koreaName": "코코리"
+  },
+  {
+    "id": 232,
+    "name": "Donphan",
+    "koreaName": "코리갑"
+  },
+  {
+    "id": 233,
+    "name": "Porygon2",
+    "koreaName": "폴리곤2"
+  },
+  {
+    "id": 234,
+    "name": "Stantler",
+    "koreaName": "노라키"
+  },
+  {
+    "id": 235,
+    "name": "Smeargle",
+    "koreaName": "루브도"
+  },
+  {
+    "id": 236,
+    "name": "Tyrogue",
+    "koreaName": "배루키"
+  },
+  {
+    "id": 237,
+    "name": "Hitmontop",
+    "koreaName": "카포에라"
+  },
+  {
+    "id": 238,
+    "name": "Smoochum",
+    "koreaName": "뽀뽀라"
+  },
+  {
+    "id": 239,
+    "name": "Elekid",
+    "koreaName": "에레키드"
+  },
+  {
+    "id": 240,
+    "name": "Magby",
+    "koreaName": "마그비"
+  },
+  {
+    "id": 241,
+    "name": "Miltank",
+    "koreaName": "밀탱크"
+  },
+  {
+    "id": 242,
+    "name": "Blissey",
+    "koreaName": "해피너스"
+  },
+  {
+    "id": 243,
+    "name": "Raikou",
+    "koreaName": "라이코"
+  },
+  {
+    "id": 244,
+    "name": "Entei",
+    "koreaName": "앤테이"
+  },
+  {
+    "id": 245,
+    "name": "Suicune",
+    "koreaName": "스이쿤"
+  },
+  {
+    "id": 246,
+    "name": "Larvitar",
+    "koreaName": "애버라스"
+  },
+  {
+    "id": 247,
+    "name": "Pupitar",
+    "koreaName": "데기라스"
+  },
+  {
+    "id": 248,
+    "name": "Tyranitar",
+    "koreaName": "마기라스"
+  },
+  {
+    "id": 249,
+    "name": "Lugia",
+    "koreaName": "루기아"
+  },
+  {
+    "id": 250,
+    "name": "Ho-Oh",
+    "koreaName": "칠색조"
+  },
+  {
+    "id": 251,
+    "name": "Celebi",
+    "koreaName": "세레비"
+  },
+  {
+    "id": 252,
+    "name": "Treecko",
+    "koreaName": "나무지기"
+  },
+  {
+    "id": 253,
+    "name": "Grovyle",
+    "koreaName": "나무돌이"
+  },
+  {
+    "id": 254,
+    "name": "Sceptile",
+    "koreaName": "나무킹"
+  },
+  {
+    "id": 255,
+    "name": "Torchic",
+    "koreaName": "아차모"
+  },
+  {
+    "id": 256,
+    "name": "Combusken",
+    "koreaName": "영치코"
+  },
+  {
+    "id": 257,
+    "name": "Blaziken",
+    "koreaName": "번치코"
+  },
+  {
+    "id": 258,
+    "name": "Mudkip",
+    "koreaName": "물짱이"
+  },
+  {
+    "id": 259,
+    "name": "Marshtomp",
+    "koreaName": "늪짱이"
+  },
+  {
+    "id": 260,
+    "name": "Swampert",
+    "koreaName": "대짱이"
+  },
+  {
+    "id": 261,
+    "name": "Poochyena",
+    "koreaName": "포챠나"
+  },
+  {
+    "id": 262,
+    "name": "Mightyena",
+    "koreaName": "그라에나"
+  },
+  {
+    "id": 263,
+    "name": "Zigzagoon",
+    "koreaName": "지그제구리"
+  },
+  {
+    "id": 264,
+    "name": "Linoone",
+    "koreaName": "직구리"
+  },
+  {
+    "id": 265,
+    "name": "Wurmple",
+    "koreaName": "개무소"
+  },
+  {
+    "id": 266,
+    "name": "Silcoon",
+    "koreaName": "실쿤"
+  },
+  {
+    "id": 267,
+    "name": "Beautifly",
+    "koreaName": "뷰티플라이"
+  },
+  {
+    "id": 268,
+    "name": "Cascoon",
+    "koreaName": "카스쿤"
+  },
+  {
+    "id": 269,
+    "name": "Dustox",
+    "koreaName": "독케일"
+  },
+  {
+    "id": 270,
+    "name": "Lotad",
+    "koreaName": "연꽃몬"
+  },
+  {
+    "id": 271,
+    "name": "Lombre",
+    "koreaName": "로토스"
+  },
+  {
+    "id": 272,
+    "name": "Ludicolo",
+    "koreaName": "로파파"
+  },
+  {
+    "id": 273,
+    "name": "Seedot",
+    "koreaName": "도토링"
+  },
+  {
+    "id": 274,
+    "name": "Nuzleaf",
+    "koreaName": "잎새코"
+  },
+  {
+    "id": 275,
+    "name": "Shiftry",
+    "koreaName": "다탱구"
+  },
+  {
+    "id": 276,
+    "name": "Taillow",
+    "koreaName": "테일로"
+  },
+  {
+    "id": 277,
+    "name": "Swellow",
+    "koreaName": "스왈로"
+  },
+  {
+    "id": 278,
+    "name": "Wingull",
+    "koreaName": "갈모매"
+  },
+  {
+    "id": 279,
+    "name": "Pelipper",
+    "koreaName": "패리퍼"
+  },
+  {
+    "id": 280,
+    "name": "Ralts",
+    "koreaName": "랄토스"
+  },
+  {
+    "id": 281,
+    "name": "Kirlia",
+    "koreaName": "킬리아"
+  },
+  {
+    "id": 282,
+    "name": "Gardevoir",
+    "koreaName": "가디안"
+  },
+  {
+    "id": 283,
+    "name": "Surskit",
+    "koreaName": "비구술"
+  },
+  {
+    "id": 284,
+    "name": "Masquerain",
+    "koreaName": "비나방"
+  },
+  {
+    "id": 285,
+    "name": "Shroomish",
+    "koreaName": "버섯꼬"
+  },
+  {
+    "id": 286,
+    "name": "Breloom",
+    "koreaName": "버섯모"
+  },
+  {
+    "id": 287,
+    "name": "Slakoth",
+    "koreaName": "게을로"
+  },
+  {
+    "id": 288,
+    "name": "Vigoroth",
+    "koreaName": "발바로"
+  },
+  {
+    "id": 289,
+    "name": "Slaking",
+    "koreaName": "게을킹"
+  },
+  {
+    "id": 290,
+    "name": "Nincada",
+    "koreaName": "토중몬"
+  },
+  {
+    "id": 291,
+    "name": "Ninjask",
+    "koreaName": "아이스크"
+  },
+  {
+    "id": 292,
+    "name": "Shedinja",
+    "koreaName": "껍질몬"
+  },
+  {
+    "id": 293,
+    "name": "Whismur",
+    "koreaName": "소곤룡"
+  },
+  {
+    "id": 294,
+    "name": "Loudred",
+    "koreaName": "노공룡"
+  },
+  {
+    "id": 295,
+    "name": "Exploud",
+    "koreaName": "폭음룡"
+  },
+  {
+    "id": 296,
+    "name": "Makuhita",
+    "koreaName": "마크탕"
+  },
+  {
+    "id": 297,
+    "name": "Hariyama",
+    "koreaName": "하리뭉"
+  },
+  {
+    "id": 298,
+    "name": "Azurill",
+    "koreaName": "루리리"
+  },
+  {
+    "id": 299,
+    "name": "Nosepass",
+    "koreaName": "코코파스"
+  },
+  {
+    "id": 300,
+    "name": "Skitty",
+    "koreaName": "에나비"
+  },
+  {
+    "id": 301,
+    "name": "Delcatty",
+    "koreaName": "델케티"
+  },
+  {
+    "id": 302,
+    "name": "Sableye",
+    "koreaName": "깜까미"
+  },
+  {
+    "id": 303,
+    "name": "Mawile",
+    "koreaName": "입치트"
+  },
+  {
+    "id": 304,
+    "name": "Aron",
+    "koreaName": "가보리"
+  },
+  {
+    "id": 305,
+    "name": "Lairon",
+    "koreaName": "갱도라"
+  },
+  {
+    "id": 306,
+    "name": "Aggron",
+    "koreaName": "보스로라"
+  },
+  {
+    "id": 307,
+    "name": "Meditite",
+    "koreaName": "요가랑"
+  },
+  {
+    "id": 308,
+    "name": "Medicham",
+    "koreaName": "요가램"
+  },
+  {
+    "id": 309,
+    "name": "Electrike",
+    "koreaName": "썬더라이"
+  },
+  {
+    "id": 310,
+    "name": "Manectric",
+    "koreaName": "썬더볼트"
+  },
+  {
+    "id": 311,
+    "name": "Plusle",
+    "koreaName": "플러시"
+  },
+  {
+    "id": 312,
+    "name": "Minun",
+    "koreaName": "마이농"
+  },
+  {
+    "id": 313,
+    "name": "Volbeat",
+    "koreaName": "볼비트"
+  },
+  {
+    "id": 314,
+    "name": "Illumise",
+    "koreaName": "네오비트"
+  },
+  {
+    "id": 315,
+    "name": "Roselia",
+    "koreaName": "로젤리아"
+  },
+  {
+    "id": 316,
+    "name": "Gulpin",
+    "koreaName": "꼴깍몬"
+  },
+  {
+    "id": 317,
+    "name": "Swalot",
+    "koreaName": "꿀꺽몬"
+  },
+  {
+    "id": 318,
+    "name": "Carvanha",
+    "koreaName": "샤프니아"
+  },
+  {
+    "id": 319,
+    "name": "Sharpedo",
+    "koreaName": "샤크니아"
+  },
+  {
+    "id": 320,
+    "name": "Wailmer",
+    "koreaName": "고래왕자"
+  },
+  {
+    "id": 321,
+    "name": "Wailord",
+    "koreaName": "고래왕"
+  },
+  {
+    "id": 322,
+    "name": "Numel",
+    "koreaName": "둔타"
+  },
+  {
+    "id": 323,
+    "name": "Camerupt",
+    "koreaName": "폭타"
+  },
+  {
+    "id": 324,
+    "name": "Torkoal",
+    "koreaName": "코터스"
+  },
+  {
+    "id": 325,
+    "name": "Spoink",
+    "koreaName": "피그점프"
+  },
+  {
+    "id": 326,
+    "name": "Grumpig",
+    "koreaName": "피그킹"
+  },
+  {
+    "id": 327,
+    "name": "Spinda",
+    "koreaName": "얼루기"
+  },
+  {
+    "id": 328,
+    "name": "Trapinch",
+    "koreaName": "톱치"
+  },
+  {
+    "id": 329,
+    "name": "Vibrava",
+    "koreaName": "비브라바"
+  },
+  {
+    "id": 330,
+    "name": "Flygon",
+    "koreaName": "플라이곤"
+  },
+  {
+    "id": 331,
+    "name": "Cacnea",
+    "koreaName": "선인왕"
+  },
+  {
+    "id": 332,
+    "name": "Cacturne",
+    "koreaName": "밤선인"
+  },
+  {
+    "id": 333,
+    "name": "Swablu",
+    "koreaName": "파비코"
+  },
+  {
+    "id": 334,
+    "name": "Altaria",
+    "koreaName": "파비코리"
+  },
+  {
+    "id": 335,
+    "name": "Zangoose",
+    "koreaName": "쟝고"
+  },
+  {
+    "id": 336,
+    "name": "Seviper",
+    "koreaName": "세비퍼"
+  },
+  {
+    "id": 337,
+    "name": "Lunatone",
+    "koreaName": "루나톤"
+  },
+  {
+    "id": 338,
+    "name": "Solrock",
+    "koreaName": "솔록"
+  },
+  {
+    "id": 339,
+    "name": "Barboach",
+    "koreaName": "미꾸리"
+  },
+  {
+    "id": 340,
+    "name": "Whiscash",
+    "koreaName": "메깅"
+  },
+  {
+    "id": 341,
+    "name": "Corphish",
+    "koreaName": "가재군"
+  },
+  {
+    "id": 342,
+    "name": "Crawdaunt",
+    "koreaName": "가재장군"
+  },
+  {
+    "id": 343,
+    "name": "Baltoy",
+    "koreaName": "오뚝군"
+  },
+  {
+    "id": 344,
+    "name": "Claydol",
+    "koreaName": "점토도리"
+  },
+  {
+    "id": 345,
+    "name": "Lileep",
+    "koreaName": "릴링"
+  },
+  {
+    "id": 346,
+    "name": "Cradily",
+    "koreaName": "릴리요"
+  },
+  {
+    "id": 347,
+    "name": "Anorith",
+    "koreaName": "아노딥스"
+  },
+  {
+    "id": 348,
+    "name": "Armaldo",
+    "koreaName": "아말도"
+  },
+  {
+    "id": 349,
+    "name": "Feebas",
+    "koreaName": "빈티나"
+  },
+  {
+    "id": 350,
+    "name": "Milotic",
+    "koreaName": "밀로틱"
+  },
+  {
+    "id": 351,
+    "name": "Castform",
+    "koreaName": "캐스퐁"
+  },
+  {
+    "id": 352,
+    "name": "Kecleon",
+    "koreaName": "켈리몬"
+  },
+  {
+    "id": 353,
+    "name": "Shuppet",
+    "koreaName": "어둠대신"
+  },
+  {
+    "id": 354,
+    "name": "Banette",
+    "koreaName": "다크펫"
+  },
+  {
+    "id": 355,
+    "name": "Duskull",
+    "koreaName": "해골몽"
+  },
+  {
+    "id": 356,
+    "name": "Dusclops",
+    "koreaName": "미라몽"
+  },
+  {
+    "id": 357,
+    "name": "Tropius",
+    "koreaName": "트로피우스"
+  },
+  {
+    "id": 358,
+    "name": "Chimecho",
+    "koreaName": "치렁"
+  },
+  {
+    "id": 359,
+    "name": "Absol",
+    "koreaName": "앱솔"
+  },
+  {
+    "id": 360,
+    "name": "Wynaut",
+    "koreaName": "마자"
+  },
+  {
+    "id": 361,
+    "name": "Snorunt",
+    "koreaName": "눈꼬마"
+  },
+  {
+    "id": 362,
+    "name": "Glalie",
+    "koreaName": "얼음귀신"
+  },
+  {
+    "id": 363,
+    "name": "Spheal",
+    "koreaName": "대굴레오"
+  },
+  {
+    "id": 364,
+    "name": "Sealeo",
+    "koreaName": "씨레오"
+  },
+  {
+    "id": 365,
+    "name": "Walrein",
+    "koreaName": "씨카이저"
+  },
+  {
+    "id": 366,
+    "name": "Clamperl",
+    "koreaName": "진주몽"
+  },
+  {
+    "id": 367,
+    "name": "Huntail",
+    "koreaName": "헌테일"
+  },
+  {
+    "id": 368,
+    "name": "Gorebyss",
+    "koreaName": "분홍장이"
+  },
+  {
+    "id": 369,
+    "name": "Relicanth",
+    "koreaName": "시라칸"
+  },
+  {
+    "id": 370,
+    "name": "Luvdisc",
+    "koreaName": "사랑동이"
+  },
+  {
+    "id": 371,
+    "name": "Bagon",
+    "koreaName": "아공이"
+  },
+  {
+    "id": 372,
+    "name": "Shelgon",
+    "koreaName": "쉘곤"
+  },
+  {
+    "id": 373,
+    "name": "Salamence",
+    "koreaName": "보만다"
+  },
+  {
+    "id": 374,
+    "name": "Beldum",
+    "koreaName": "메탕"
+  },
+  {
+    "id": 375,
+    "name": "Metang",
+    "koreaName": "메탕구"
+  },
+  {
+    "id": 376,
+    "name": "Metagross",
+    "koreaName": "메타그로스"
+  },
+  {
+    "id": 377,
+    "name": "Regirock",
+    "koreaName": "레지락"
+  },
+  {
+    "id": 378,
+    "name": "Regice",
+    "koreaName": "레지아이스"
+  },
+  {
+    "id": 379,
+    "name": "Registeel",
+    "koreaName": "레지스틸"
+  },
+  {
+    "id": 380,
+    "name": "Latias",
+    "koreaName": "라티아스"
+  },
+  {
+    "id": 381,
+    "name": "Latios",
+    "koreaName": "라티오스"
+  },
+  {
+    "id": 382,
+    "name": "Kyogre",
+    "koreaName": "가이오가"
+  },
+  {
+    "id": 383,
+    "name": "Groudon",
+    "koreaName": "그란돈"
+  },
+  {
+    "id": 384,
+    "name": "Rayquaza",
+    "koreaName": "레쿠쟈"
+  },
+  {
+    "id": 385,
+    "name": "Jirachi",
+    "koreaName": "지라치"
+  },
+  {
+    "id": 386,
+    "name": "Deoxys",
+    "koreaName": "테오키스"
+  },
+  {
+    "id": 387,
+    "name": "Turtwig",
+    "koreaName": "모부기"
+  },
+  {
+    "id": 388,
+    "name": "Grotle",
+    "koreaName": "수풀부기"
+  },
+  {
+    "id": 389,
+    "name": "Torterra",
+    "koreaName": "토대부기"
+  },
+  {
+    "id": 390,
+    "name": "Chimchar",
+    "koreaName": "불꽃숭이"
+  },
+  {
+    "id": 391,
+    "name": "Monferno",
+    "koreaName": "파이숭이"
+  },
+  {
+    "id": 392,
+    "name": "Infernape",
+    "koreaName": "초염몽"
+  },
+  {
+    "id": 393,
+    "name": "Piplup",
+    "koreaName": "팽도리"
+  },
+  {
+    "id": 394,
+    "name": "Prinplup",
+    "koreaName": "팽태자"
+  },
+  {
+    "id": 395,
+    "name": "Empoleon",
+    "koreaName": "엠페르트"
+  },
+  {
+    "id": 396,
+    "name": "Starly",
+    "koreaName": "찌르꼬"
+  },
+  {
+    "id": 397,
+    "name": "Staravia",
+    "koreaName": "찌르버드"
+  },
+  {
+    "id": 398,
+    "name": "Staraptor",
+    "koreaName": "찌르호크"
+  },
+  {
+    "id": 399,
+    "name": "Bidoof",
+    "koreaName": "비버니"
+  },
+  {
+    "id": 400,
+    "name": "Bibarel",
+    "koreaName": "비버통"
+  },
+  {
+    "id": 401,
+    "name": "Kricketot",
+    "koreaName": "귀뚤뚜기"
+  },
+  {
+    "id": 402,
+    "name": "Kricketune",
+    "koreaName": "귀뚤톡크"
+  },
+  {
+    "id": 403,
+    "name": "Shinx",
+    "koreaName": "꼬링크"
+  },
+  {
+    "id": 404,
+    "name": "Luxio",
+    "koreaName": "럭시오"
+  },
+  {
+    "id": 405,
+    "name": "Luxray",
+    "koreaName": "렌트라"
+  },
+  {
+    "id": 406,
+    "name": "Budew",
+    "koreaName": "꼬몽울"
+  },
+  {
+    "id": 407,
+    "name": "Roserade",
+    "koreaName": "로즈레이드"
+  },
+  {
+    "id": 408,
+    "name": "Cranidos",
+    "koreaName": "두개도스"
+  },
+  {
+    "id": 409,
+    "name": "Rampardos",
+    "koreaName": "램펄드"
+  },
+  {
+    "id": 410,
+    "name": "Shieldon",
+    "koreaName": "방패톱스"
+  },
+  {
+    "id": 411,
+    "name": "Bastiodon",
+    "koreaName": "바리톱스"
+  },
+  {
+    "id": 412,
+    "name": "Burmy",
+    "koreaName": "도롱충이"
+  },
+  {
+    "id": 413,
+    "name": "Wormadam",
+    "koreaName": "도롱마담"
+  },
+  {
+    "id": 414,
+    "name": "Mothim",
+    "koreaName": "나메일"
+  },
+  {
+    "id": 415,
+    "name": "Combee",
+    "koreaName": "세꿀버리"
+  },
+  {
+    "id": 416,
+    "name": "Vespiquen",
+    "koreaName": "비퀸"
+  },
+  {
+    "id": 417,
+    "name": "Pachirisu",
+    "koreaName": "파치리스"
+  },
+  {
+    "id": 418,
+    "name": "Buizel",
+    "koreaName": "브이젤"
+  },
+  {
+    "id": 419,
+    "name": "Floatzel",
+    "koreaName": "플로젤"
+  },
+  {
+    "id": 420,
+    "name": "Cherubi",
+    "koreaName": "체리버"
+  },
+  {
+    "id": 421,
+    "name": "Cherrim",
+    "koreaName": "체리꼬"
+  },
+  {
+    "id": 422,
+    "name": "Shellos",
+    "koreaName": "깝질무"
+  },
+  {
+    "id": 423,
+    "name": "Gastrodon",
+    "koreaName": "트리토돈"
+  },
+  {
+    "id": 424,
+    "name": "Ambipom",
+    "koreaName": "겟핸보숭"
+  },
+  {
+    "id": 425,
+    "name": "Drifloon",
+    "koreaName": "흔들풍손"
+  },
+  {
+    "id": 426,
+    "name": "Drifblim",
+    "koreaName": "둥실라이드"
+  },
+  {
+    "id": 427,
+    "name": "Buneary",
+    "koreaName": "이어롤"
+  },
+  {
+    "id": 428,
+    "name": "Lopunny",
+    "koreaName": "이어롭"
+  },
+  {
+    "id": 429,
+    "name": "Mismagius",
+    "koreaName": "무우마직"
+  },
+  {
+    "id": 430,
+    "name": "Honchkrow",
+    "koreaName": "돈크로우"
+  },
+  {
+    "id": 431,
+    "name": "Glameow",
+    "koreaName": "나옹마"
+  },
+  {
+    "id": 432,
+    "name": "Purugly",
+    "koreaName": "몬냥이"
+  },
+  {
+    "id": 433,
+    "name": "Chingling",
+    "koreaName": "랑딸랑"
+  },
+  {
+    "id": 434,
+    "name": "Stunky",
+    "koreaName": "스컹뿡"
+  },
+  {
+    "id": 435,
+    "name": "Skuntank",
+    "koreaName": "스컹탱크"
+  },
+  {
+    "id": 436,
+    "name": "Bronzor",
+    "koreaName": "동미러"
+  },
+  {
+    "id": 437,
+    "name": "Bronzong",
+    "koreaName": "동탁군"
+  },
+  {
+    "id": 438,
+    "name": "Bonsly",
+    "koreaName": "꼬지지"
+  },
+  {
+    "id": 439,
+    "name": "Mime Jr.",
+    "koreaName": "흉내내"
+  },
+  {
+    "id": 440,
+    "name": "Happiny",
+    "koreaName": "핑복"
+  },
+  {
+    "id": 441,
+    "name": "Chatot",
+    "koreaName": "페라페"
+  },
+  {
+    "id": 442,
+    "name": "Spiritomb",
+    "koreaName": "화강돌"
+  },
+  {
+    "id": 443,
+    "name": "Gible",
+    "koreaName": "딥상어동"
+  },
+  {
+    "id": 444,
+    "name": "Gabite",
+    "koreaName": "한바이트"
+  },
+  {
+    "id": 445,
+    "name": "Garchomp",
+    "koreaName": "한카리아스"
+  },
+  {
+    "id": 446,
+    "name": "Munchlax",
+    "koreaName": "먹고자"
+  },
+  {
+    "id": 447,
+    "name": "Riolu",
+    "koreaName": "리오르"
+  },
+  {
+    "id": 448,
+    "name": "Lucario",
+    "koreaName": "루카리오"
+  },
+  {
+    "id": 449,
+    "name": "Hippopotas",
+    "koreaName": "히포포타스"
+  },
+  {
+    "id": 450,
+    "name": "Hippowdon",
+    "koreaName": "하마돈"
+  },
+  {
+    "id": 451,
+    "name": "Skorupi",
+    "koreaName": "스콜피"
+  },
+  {
+    "id": 452,
+    "name": "Drapion",
+    "koreaName": "드래피온"
+  },
+  {
+    "id": 453,
+    "name": "Croagunk",
+    "koreaName": "삐딱구리"
+  },
+  {
+    "id": 454,
+    "name": "Toxicroak",
+    "koreaName": "독개굴"
+  },
+  {
+    "id": 455,
+    "name": "Carnivine",
+    "koreaName": "무스틈니"
+  },
+  {
+    "id": 456,
+    "name": "Finneon",
+    "koreaName": "형광어"
+  },
+  {
+    "id": 457,
+    "name": "Lumineon",
+    "koreaName": "네오라이트"
+  },
+  {
+    "id": 458,
+    "name": "Mantyke",
+    "koreaName": "타만타"
+  },
+  {
+    "id": 459,
+    "name": "Snover",
+    "koreaName": "눈쓰개"
+  },
+  {
+    "id": 460,
+    "name": "Abomasnow",
+    "koreaName": "눈설왕"
+  },
+  {
+    "id": 461,
+    "name": "Weavile",
+    "koreaName": "포푸니라"
+  },
+  {
+    "id": 462,
+    "name": "Magnezone",
+    "koreaName": "자포코일"
+  },
+  {
+    "id": 463,
+    "name": "Lickilicky",
+    "koreaName": "내룸벨트"
+  },
+  {
+    "id": 464,
+    "name": "Rhyperior",
+    "koreaName": "거대코뿌리"
+  },
+  {
+    "id": 465,
+    "name": "Tangrowth",
+    "koreaName": "덩쿠림보"
+  },
+  {
+    "id": 466,
+    "name": "Electivire",
+    "koreaName": "에레키블"
+  },
+  {
+    "id": 467,
+    "name": "Magmortar",
+    "koreaName": "마그마번"
+  },
+  {
+    "id": 468,
+    "name": "Togekiss",
+    "koreaName": "토게키스"
+  },
+  {
+    "id": 469,
+    "name": "Yanmega",
+    "koreaName": "메가자리"
+  },
+  {
+    "id": 470,
+    "name": "Leafeon",
+    "koreaName": "리피아"
+  },
+  {
+    "id": 471,
+    "name": "Glaceon",
+    "koreaName": "글레이시아"
+  },
+  {
+    "id": 472,
+    "name": "Gliscor",
+    "koreaName": "글라이온"
+  },
+  {
+    "id": 473,
+    "name": "Mamoswine",
+    "koreaName": "맘모꾸리"
+  },
+  {
+    "id": 474,
+    "name": "Porygon-Z",
+    "koreaName": "폴리곤Z"
+  },
+  {
+    "id": 475,
+    "name": "Gallade",
+    "koreaName": "엘레이드"
+  },
+  {
+    "id": 476,
+    "name": "Probopass",
+    "koreaName": "대코파스"
+  },
+  {
+    "id": 477,
+    "name": "Dusknoir",
+    "koreaName": "야느와르몽"
+  },
+  {
+    "id": 478,
+    "name": "Froslass",
+    "koreaName": "눈여아"
+  },
+  {
+    "id": 479,
+    "name": "Rotom",
+    "koreaName": "로토무"
+  },
+  {
+    "id": 480,
+    "name": "Uxie",
+    "koreaName": "유크시"
+  },
+  {
+    "id": 481,
+    "name": "Mesprit",
+    "koreaName": "엠라이트"
+  },
+  {
+    "id": 482,
+    "name": "Azelf",
+    "koreaName": "아그놈"
+  },
+  {
+    "id": 483,
+    "name": "Dialga",
+    "koreaName": "디아루가"
+  },
+  {
+    "id": 484,
+    "name": "Palkia",
+    "koreaName": "펄기아"
+  },
+  {
+    "id": 485,
+    "name": "Heatran",
+    "koreaName": "히드런"
+  },
+  {
+    "id": 486,
+    "name": "Regigigas",
+    "koreaName": "레지기가스"
+  },
+  {
+    "id": 487,
+    "name": "Giratina",
+    "koreaName": "기라티나"
+  },
+  {
+    "id": 488,
+    "name": "Cresselia",
+    "koreaName": "크레세리아"
+  },
+  {
+    "id": 489,
+    "name": "Phione",
+    "koreaName": "피오네"
+  },
+  {
+    "id": 490,
+    "name": "Manaphy",
+    "koreaName": "마나피"
+  },
+  {
+    "id": 491,
+    "name": "Darkrai",
+    "koreaName": "다크라이"
+  },
+  {
+    "id": 492,
+    "name": "Shaymin",
+    "koreaName": "쉐이미"
+  },
+  {
+    "id": 493,
+    "name": "Arceus",
+    "koreaName": "아르세우스"
+  },
+  {
+    "id": 494,
+    "name": "Victini",
+    "koreaName": "비크티니"
+  },
+  {
+    "id": 495,
+    "name": "Snivy",
+    "koreaName": "주리비얀"
+  },
+  {
+    "id": 496,
+    "name": "Servine",
+    "koreaName": "샤비"
+  },
+  {
+    "id": 497,
+    "name": "Serperior",
+    "koreaName": "샤로다"
+  },
+  {
+    "id": 498,
+    "name": "Tepig",
+    "koreaName": "뚜꾸리"
+  },
+  {
+    "id": 499,
+    "name": "Pignite",
+    "koreaName": "차오꿀"
+  },
+  {
+    "id": 500,
+    "name": "Emboar",
+    "koreaName": "염무왕"
+  },
+  {
+    "id": 501,
+    "name": "Oshawott",
+    "koreaName": "수댕이"
+  },
+  {
+    "id": 502,
+    "name": "Dewott",
+    "koreaName": "쌍검자비"
+  },
+  {
+    "id": 503,
+    "name": "Samurott",
+    "koreaName": "대검귀"
+  },
+  {
+    "id": 504,
+    "name": "Patrat",
+    "koreaName": "보르쥐"
+  },
+  {
+    "id": 505,
+    "name": "Watchog",
+    "koreaName": "보르그"
+  },
+  {
+    "id": 506,
+    "name": "Lillipup",
+    "koreaName": "요테리"
+  },
+  {
+    "id": 507,
+    "name": "Herdier",
+    "koreaName": "하데리어"
+  },
+  {
+    "id": 508,
+    "name": "Stoutland",
+    "koreaName": "바랜드"
+  },
+  {
+    "id": 509,
+    "name": "Purrloin",
+    "koreaName": "쌔비냥"
+  },
+  {
+    "id": 510,
+    "name": "Liepard",
+    "koreaName": "레파르다스"
+  },
+  {
+    "id": 511,
+    "name": "Pansage",
+    "koreaName": "야나프"
+  },
+  {
+    "id": 512,
+    "name": "Simisage",
+    "koreaName": "야나키"
+  },
+  {
+    "id": 513,
+    "name": "Pansear",
+    "koreaName": "바오프"
+  },
+  {
+    "id": 514,
+    "name": "Simisear",
+    "koreaName": "바오키"
+  },
+  {
+    "id": 515,
+    "name": "Panpour",
+    "koreaName": "앗차프"
+  },
+  {
+    "id": 516,
+    "name": "Simipour",
+    "koreaName": "앗차키"
+  },
+  {
+    "id": 517,
+    "name": "Munna",
+    "koreaName": "몽나"
+  },
+  {
+    "id": 518,
+    "name": "Musharna",
+    "koreaName": "몽얌나"
+  },
+  {
+    "id": 519,
+    "name": "Pidove",
+    "koreaName": "콩둘기"
+  },
+  {
+    "id": 520,
+    "name": "Tranquill",
+    "koreaName": "유토브"
+  },
+  {
+    "id": 521,
+    "name": "Unfezant",
+    "koreaName": "켄호로우"
+  },
+  {
+    "id": 522,
+    "name": "Blitzle",
+    "koreaName": "줄뮤마"
+  },
+  {
+    "id": 523,
+    "name": "Zebstrika",
+    "koreaName": "제브라이카"
+  },
+  {
+    "id": 524,
+    "name": "Roggenrola",
+    "koreaName": "단굴"
+  },
+  {
+    "id": 525,
+    "name": "Boldore",
+    "koreaName": "암트르"
+  },
+  {
+    "id": 526,
+    "name": "Gigalith",
+    "koreaName": "기가이어스"
+  },
+  {
+    "id": 527,
+    "name": "Woobat",
+    "koreaName": "또르박쥐"
+  },
+  {
+    "id": 528,
+    "name": "Swoobat",
+    "koreaName": "맘박쥐"
+  },
+  {
+    "id": 529,
+    "name": "Drilbur",
+    "koreaName": "두더류"
+  },
+  {
+    "id": 530,
+    "name": "Excadrill",
+    "koreaName": "몰드류"
+  },
+  {
+    "id": 531,
+    "name": "Audino",
+    "koreaName": "다부니"
+  },
+  {
+    "id": 532,
+    "name": "Timburr",
+    "koreaName": "으랏차"
+  },
+  {
+    "id": 533,
+    "name": "Gurdurr",
+    "koreaName": "토쇠골"
+  },
+  {
+    "id": 534,
+    "name": "Conkeldurr",
+    "koreaName": "노보청"
+  },
+  {
+    "id": 535,
+    "name": "Tympole",
+    "koreaName": "동챙이"
+  },
+  {
+    "id": 536,
+    "name": "Palpitoad",
+    "koreaName": "두까비"
+  },
+  {
+    "id": 537,
+    "name": "Seismitoad",
+    "koreaName": "두빅굴"
+  },
+  {
+    "id": 538,
+    "name": "Throh",
+    "koreaName": "던지미"
+  },
+  {
+    "id": 539,
+    "name": "Sawk",
+    "koreaName": "타격귀"
+  },
+  {
+    "id": 540,
+    "name": "Sewaddle",
+    "koreaName": "두르보"
+  },
+  {
+    "id": 541,
+    "name": "Swadloon",
+    "koreaName": "두르쿤"
+  },
+  {
+    "id": 542,
+    "name": "Leavanny",
+    "koreaName": "모아머"
+  },
+  {
+    "id": 543,
+    "name": "Venipede",
+    "koreaName": "마디네"
+  },
+  {
+    "id": 544,
+    "name": "Whirlipede",
+    "koreaName": "휠구"
+  },
+  {
+    "id": 545,
+    "name": "Scolipede",
+    "koreaName": "펜드라"
+  },
+  {
+    "id": 546,
+    "name": "Cottonee",
+    "koreaName": "소미안"
+  },
+  {
+    "id": 547,
+    "name": "Whimsicott",
+    "koreaName": "엘풍"
+  },
+  {
+    "id": 548,
+    "name": "Petilil",
+    "koreaName": "치릴리"
+  },
+  {
+    "id": 549,
+    "name": "Lilligant",
+    "koreaName": "드레디어"
+  },
+  {
+    "id": 550,
+    "name": "Basculin",
+    "koreaName": "배쓰나이"
+  },
+  {
+    "id": 551,
+    "name": "Sandile",
+    "koreaName": "깜눈크"
+  },
+  {
+    "id": 552,
+    "name": "Krokorok",
+    "koreaName": "악비르"
+  },
+  {
+    "id": 553,
+    "name": "Krookodile",
+    "koreaName": "악비아르"
+  },
+  {
+    "id": 554,
+    "name": "Darumaka",
+    "koreaName": "달막화"
+  },
+  {
+    "id": 555,
+    "name": "Darmanitan",
+    "koreaName": "불비달마"
+  },
+  {
+    "id": 556,
+    "name": "Maractus",
+    "koreaName": "마라카치"
+  },
+  {
+    "id": 557,
+    "name": "Dwebble",
+    "koreaName": "돌살이"
+  },
+  {
+    "id": 558,
+    "name": "Crustle",
+    "koreaName": "암팰리스"
+  },
+  {
+    "id": 559,
+    "name": "Scraggy",
+    "koreaName": "곤율랭"
+  },
+  {
+    "id": 560,
+    "name": "Scrafty",
+    "koreaName": "곤율거니"
+  },
+  {
+    "id": 561,
+    "name": "Sigilyph",
+    "koreaName": "심보러"
+  },
+  {
+    "id": 562,
+    "name": "Yamask",
+    "koreaName": "데스마스"
+  },
+  {
+    "id": 563,
+    "name": "Cofagrigus",
+    "koreaName": "데스니칸"
+  },
+  {
+    "id": 564,
+    "name": "Tirtouga",
+    "koreaName": "프로토가"
+  },
+  {
+    "id": 565,
+    "name": "Carracosta",
+    "koreaName": "늑골라"
+  },
+  {
+    "id": 566,
+    "name": "Archen",
+    "koreaName": "아켄"
+  },
+  {
+    "id": 567,
+    "name": "Archeops",
+    "koreaName": "아케오스"
+  },
+  {
+    "id": 568,
+    "name": "Trubbish",
+    "koreaName": "깨봉이"
+  },
+  {
+    "id": 569,
+    "name": "Garbodor",
+    "koreaName": "더스트나"
+  },
+  {
+    "id": 570,
+    "name": "Zorua",
+    "koreaName": "조로아"
+  },
+  {
+    "id": 571,
+    "name": "Zoroark",
+    "koreaName": "조로아크"
+  },
+  {
+    "id": 572,
+    "name": "Minccino",
+    "koreaName": "치라미"
+  },
+  {
+    "id": 573,
+    "name": "Cinccino",
+    "koreaName": "치라치노"
+  },
+  {
+    "id": 574,
+    "name": "Gothita",
+    "koreaName": "고디탱"
+  },
+  {
+    "id": 575,
+    "name": "Gothorita",
+    "koreaName": "고디보미"
+  },
+  {
+    "id": 576,
+    "name": "Gothitelle",
+    "koreaName": "고디모아젤"
+  },
+  {
+    "id": 577,
+    "name": "Solosis",
+    "koreaName": "유니란"
+  },
+  {
+    "id": 578,
+    "name": "Duosion",
+    "koreaName": "듀란"
+  },
+  {
+    "id": 579,
+    "name": "Reuniclus",
+    "koreaName": "란쿨루스"
+  },
+  {
+    "id": 580,
+    "name": "Ducklett",
+    "koreaName": "꼬지보리"
+  },
+  {
+    "id": 581,
+    "name": "Swanna",
+    "koreaName": "스완나"
+  },
+  {
+    "id": 582,
+    "name": "Vanillite",
+    "koreaName": "바닐프티"
+  },
+  {
+    "id": 583,
+    "name": "Vanillish",
+    "koreaName": "바닐리치"
+  },
+  {
+    "id": 584,
+    "name": "Vanilluxe",
+    "koreaName": "배바닐라"
+  },
+  {
+    "id": 585,
+    "name": "Deerling",
+    "koreaName": "사철록"
+  },
+  {
+    "id": 586,
+    "name": "Sawsbuck",
+    "koreaName": "바라철록"
+  },
+  {
+    "id": 587,
+    "name": "Emolga",
+    "koreaName": "에몽가"
+  },
+  {
+    "id": 588,
+    "name": "Karrablast",
+    "koreaName": "딱정곤"
+  },
+  {
+    "id": 589,
+    "name": "Escavalier",
+    "koreaName": "슈바르고"
+  },
+  {
+    "id": 590,
+    "name": "Foongus",
+    "koreaName": "깜놀버슬"
+  },
+  {
+    "id": 591,
+    "name": "Amoonguss",
+    "koreaName": "뽀록나"
+  },
+  {
+    "id": 592,
+    "name": "Frillish",
+    "koreaName": "탱그릴"
+  },
+  {
+    "id": 593,
+    "name": "Jellicent",
+    "koreaName": "탱탱겔"
+  },
+  {
+    "id": 594,
+    "name": "Alomomola",
+    "koreaName": "맘복치"
+  },
+  {
+    "id": 595,
+    "name": "Joltik",
+    "koreaName": "파쪼옥"
+  },
+  {
+    "id": 596,
+    "name": "Galvantula",
+    "koreaName": "전툴라"
+  },
+  {
+    "id": 597,
+    "name": "Ferroseed",
+    "koreaName": "철시드"
+  },
+  {
+    "id": 598,
+    "name": "Ferrothorn",
+    "koreaName": "너트령"
+  },
+  {
+    "id": 599,
+    "name": "Klink",
+    "koreaName": "기어르"
+  },
+  {
+    "id": 600,
+    "name": "Klang",
+    "koreaName": "기기어르"
+  },
+  {
+    "id": 601,
+    "name": "Klinklang",
+    "koreaName": "기기기어르"
+  },
+  {
+    "id": 602,
+    "name": "Tynamo",
+    "koreaName": "저리어"
+  },
+  {
+    "id": 603,
+    "name": "Eelektrik",
+    "koreaName": "저리릴"
+  },
+  {
+    "id": 604,
+    "name": "Eelektross",
+    "koreaName": "저리더프"
+  },
+  {
+    "id": 605,
+    "name": "Elgyem",
+    "koreaName": "리그레"
+  },
+  {
+    "id": 606,
+    "name": "Beheeyem",
+    "koreaName": "벰크"
+  },
+  {
+    "id": 607,
+    "name": "Litwick",
+    "koreaName": "불켜미"
+  },
+  {
+    "id": 608,
+    "name": "Lampent",
+    "koreaName": "램프라"
+  },
+  {
+    "id": 609,
+    "name": "Chandelure",
+    "koreaName": "샹델라"
+  },
+  {
+    "id": 610,
+    "name": "Axew",
+    "koreaName": "터검니"
+  },
+  {
+    "id": 611,
+    "name": "Fraxure",
+    "koreaName": "액슨도"
+  },
+  {
+    "id": 612,
+    "name": "Haxorus",
+    "koreaName": "액스라이즈"
+  },
+  {
+    "id": 613,
+    "name": "Cubchoo",
+    "koreaName": "코고미"
+  },
+  {
+    "id": 614,
+    "name": "Beartic",
+    "koreaName": "툰베어"
+  },
+  {
+    "id": 615,
+    "name": "Cryogonal",
+    "koreaName": "프리지오"
+  },
+  {
+    "id": 616,
+    "name": "Shelmet",
+    "koreaName": "쪼마리"
+  },
+  {
+    "id": 617,
+    "name": "Accelgor",
+    "koreaName": "어지리더"
+  },
+  {
+    "id": 618,
+    "name": "Stunfisk",
+    "koreaName": "메더"
+  },
+  {
+    "id": 619,
+    "name": "Mienfoo",
+    "koreaName": "비조푸"
+  },
+  {
+    "id": 620,
+    "name": "Mienshao",
+    "koreaName": "비조도"
+  },
+  {
+    "id": 621,
+    "name": "Druddigon",
+    "koreaName": "크리만"
+  },
+  {
+    "id": 622,
+    "name": "Golett",
+    "koreaName": "골비람"
+  },
+  {
+    "id": 623,
+    "name": "Golurk",
+    "koreaName": "골루그"
+  },
+  {
+    "id": 624,
+    "name": "Pawniard",
+    "koreaName": "자망칼"
+  },
+  {
+    "id": 625,
+    "name": "Bisharp",
+    "koreaName": "절각참"
+  },
+  {
+    "id": 626,
+    "name": "Bouffalant",
+    "koreaName": "버프론"
+  },
+  {
+    "id": 627,
+    "name": "Rufflet",
+    "koreaName": "수리둥보"
+  },
+  {
+    "id": 628,
+    "name": "Braviary",
+    "koreaName": "워글"
+  },
+  {
+    "id": 629,
+    "name": "Vullaby",
+    "koreaName": "벌차이"
+  },
+  {
+    "id": 630,
+    "name": "Mandibuzz",
+    "koreaName": "버랜지나"
+  },
+  {
+    "id": 631,
+    "name": "Heatmor",
+    "koreaName": "앤티골"
+  },
+  {
+    "id": 632,
+    "name": "Durant",
+    "koreaName": "아이앤트"
+  },
+  {
+    "id": 633,
+    "name": "Deino",
+    "koreaName": "모노두"
+  },
+  {
+    "id": 634,
+    "name": "Zweilous",
+    "koreaName": "디헤드"
+  },
+  {
+    "id": 635,
+    "name": "Hydreigon",
+    "koreaName": "삼삼드래"
+  },
+  {
+    "id": 636,
+    "name": "Larvesta",
+    "koreaName": "활화르바"
+  },
+  {
+    "id": 637,
+    "name": "Volcarona",
+    "koreaName": "불카모스"
+  },
+  {
+    "id": 638,
+    "name": "Cobalion",
+    "koreaName": "코바르온"
+  },
+  {
+    "id": 639,
+    "name": "Terrakion",
+    "koreaName": "테라키온"
+  },
+  {
+    "id": 640,
+    "name": "Virizion",
+    "koreaName": "비리디온"
+  },
+  {
+    "id": 641,
+    "name": "Tornadus",
+    "koreaName": "토네로스"
+  },
+  {
+    "id": 642,
+    "name": "Thundurus",
+    "koreaName": "볼트로스"
+  },
+  {
+    "id": 643,
+    "name": "Reshiram",
+    "koreaName": "레시라무"
+  },
+  {
+    "id": 644,
+    "name": "Zekrom",
+    "koreaName": "제크로무"
+  },
+  {
+    "id": 645,
+    "name": "Landorus",
+    "koreaName": "랜드로스"
+  },
+  {
+    "id": 646,
+    "name": "Kyurem",
+    "koreaName": "큐레무"
+  },
+  {
+    "id": 647,
+    "name": "Keldeo",
+    "koreaName": "케르디오"
+  },
+  {
+    "id": 648,
+    "name": "Meloetta",
+    "koreaName": "메로엣타"
+  },
+  {
+    "id": 649,
+    "name": "Genesect",
+    "koreaName": "게노세크트"
+  },
+  {
+    "id": 650,
+    "name": "Chespin",
+    "koreaName": "도치마론"
+  },
+  {
+    "id": 651,
+    "name": "Quilladin",
+    "koreaName": "도치보구"
+  },
+  {
+    "id": 652,
+    "name": "Chesnaught",
+    "koreaName": "브리가론"
+  },
+  {
+    "id": 653,
+    "name": "Fennekin",
+    "koreaName": "푸호꼬"
+  },
+  {
+    "id": 654,
+    "name": "Braixen",
+    "koreaName": "테르나"
+  },
+  {
+    "id": 655,
+    "name": "Delphox",
+    "koreaName": "마폭시"
+  },
+  {
+    "id": 656,
+    "name": "Froakie",
+    "koreaName": "개구마르"
+  },
+  {
+    "id": 657,
+    "name": "Frogadier",
+    "koreaName": "개굴반장"
+  },
+  {
+    "id": 658,
+    "name": "Greninja",
+    "koreaName": "개굴닌자"
+  },
+  {
+    "id": 659,
+    "name": "Bunnelby",
+    "koreaName": "파르빗"
+  },
+  {
+    "id": 660,
+    "name": "Diggersby",
+    "koreaName": "파르토"
+  },
+  {
+    "id": 661,
+    "name": "Fletchling",
+    "koreaName": "화살꼬빈"
+  },
+  {
+    "id": 662,
+    "name": "Fletchinder",
+    "koreaName": "불화살빈"
+  },
+  {
+    "id": 663,
+    "name": "Talonflame",
+    "koreaName": "파이어로"
+  },
+  {
+    "id": 664,
+    "name": "Scatterbug",
+    "koreaName": "분이벌레"
+  },
+  {
+    "id": 665,
+    "name": "Spewpa",
+    "koreaName": "분떠도리"
+  },
+  {
+    "id": 666,
+    "name": "Vivillon",
+    "koreaName": "비비용"
+  },
+  {
+    "id": 667,
+    "name": "Litleo",
+    "koreaName": "레오꼬"
+  },
+  {
+    "id": 668,
+    "name": "Pyroar",
+    "koreaName": "화염레오"
+  },
+  {
+    "id": 669,
+    "name": "Flabebe",
+    "koreaName": "플라베베"
+  },
+  {
+    "id": 670,
+    "name": "Floette",
+    "koreaName": "플라엣테"
+  },
+  {
+    "id": 671,
+    "name": "Florges",
+    "koreaName": "플라제스"
+  },
+  {
+    "id": 672,
+    "name": "Skiddo",
+    "koreaName": "메이클"
+  },
+  {
+    "id": 673,
+    "name": "Gogoat",
+    "koreaName": "고고트"
+  },
+  {
+    "id": 674,
+    "name": "Pancham",
+    "koreaName": "판짱"
+  },
+  {
+    "id": 675,
+    "name": "Pangoro",
+    "koreaName": "부란다"
+  },
+  {
+    "id": 676,
+    "name": "Furfrou",
+    "koreaName": "트리미앙"
+  },
+  {
+    "id": 677,
+    "name": "Espurr",
+    "koreaName": "냐스퍼"
+  },
+  {
+    "id": 678,
+    "name": "Meowstic",
+    "koreaName": "냐오닉스"
+  },
+  {
+    "id": 679,
+    "name": "Honedge",
+    "koreaName": "단칼빙"
+  },
+  {
+    "id": 680,
+    "name": "Doublade",
+    "koreaName": "쌍검킬"
+  },
+  {
+    "id": 681,
+    "name": "Aegislash",
+    "koreaName": "킬가르도"
+  },
+  {
+    "id": 682,
+    "name": "Spritzee",
+    "koreaName": "슈쁘"
+  },
+  {
+    "id": 683,
+    "name": "Aromatisse",
+    "koreaName": "프레프티르"
+  },
+  {
+    "id": 684,
+    "name": "Swirlix",
+    "koreaName": "나룸퍼프"
+  },
+  {
+    "id": 685,
+    "name": "Slurpuff",
+    "koreaName": "나루림"
+  },
+  {
+    "id": 686,
+    "name": "Inkay",
+    "koreaName": "오케이징"
+  },
+  {
+    "id": 687,
+    "name": "Malamar",
+    "koreaName": "칼라마네로"
+  },
+  {
+    "id": 688,
+    "name": "Binacle",
+    "koreaName": "거북손손"
+  },
+  {
+    "id": 689,
+    "name": "Barbaracle",
+    "koreaName": "거북손데스"
+  },
+  {
+    "id": 690,
+    "name": "Skrelp",
+    "koreaName": "수레기"
+  },
+  {
+    "id": 691,
+    "name": "Dragalge",
+    "koreaName": "드래캄"
+  },
+  {
+    "id": 692,
+    "name": "Clauncher",
+    "koreaName": "완철포"
+  },
+  {
+    "id": 693,
+    "name": "Clawitzer",
+    "koreaName": "블로스터"
+  },
+  {
+    "id": 694,
+    "name": "Helioptile",
+    "koreaName": "목도리키텔"
+  },
+  {
+    "id": 695,
+    "name": "Heliolisk",
+    "koreaName": "일레도리자드"
+  },
+  {
+    "id": 696,
+    "name": "Tyrunt",
+    "koreaName": "티고라스"
+  },
+  {
+    "id": 697,
+    "name": "Tyrantrum",
+    "koreaName": "견고라스"
+  },
+  {
+    "id": 698,
+    "name": "Amaura",
+    "koreaName": "아마루스"
+  },
+  {
+    "id": 699,
+    "name": "Aurorus",
+    "koreaName": "아마루르가"
+  },
+  {
+    "id": 700,
+    "name": "Sylveon",
+    "koreaName": "님피아"
+  },
+  {
+    "id": 701,
+    "name": "Hawlucha",
+    "koreaName": "루차불"
+  },
+  {
+    "id": 702,
+    "name": "Dedenne",
+    "koreaName": "데덴네"
+  },
+  {
+    "id": 703,
+    "name": "Carbink",
+    "koreaName": "멜리시"
+  },
+  {
+    "id": 704,
+    "name": "Goomy",
+    "koreaName": "미끄메라"
+  },
+  {
+    "id": 705,
+    "name": "Sliggoo",
+    "koreaName": "미끄네일"
+  },
+  {
+    "id": 706,
+    "name": "Goodra",
+    "koreaName": "미끄래곤 "
+  },
+  {
+    "id": 707,
+    "name": "Klefki",
+    "koreaName": "클레피"
+  },
+  {
+    "id": 708,
+    "name": "Phantump",
+    "koreaName": "나목령"
+  },
+  {
+    "id": 709,
+    "name": "Trevenant",
+    "koreaName": "대로트"
+  },
+  {
+    "id": 710,
+    "name": "Pumpkaboo",
+    "koreaName": "호바귀"
+  },
+  {
+    "id": 711,
+    "name": "Gourgeist",
+    "koreaName": "펌킨인"
+  },
+  {
+    "id": 712,
+    "name": "Bergmite",
+    "koreaName": "꽁어름"
+  },
+  {
+    "id": 713,
+    "name": "Avalugg",
+    "koreaName": "크레베이스"
+  },
+  {
+    "id": 714,
+    "name": "Noibat",
+    "koreaName": "음뱃"
+  },
+  {
+    "id": 715,
+    "name": "Noivern",
+    "koreaName": "음번"
+  },
+  {
+    "id": 716,
+    "name": "Xerneas",
+    "koreaName": "제르네아스"
+  },
+  {
+    "id": 717,
+    "name": "Yveltal",
+    "koreaName": "이벨타르"
+  },
+  {
+    "id": 718,
+    "name": "Zygarde",
+    "koreaName": "지가르데"
+  },
+  {
+    "id": 719,
+    "name": "Diancie",
+    "koreaName": "디안시"
+  },
+  {
+    "id": 720,
+    "name": "Hoopa",
+    "koreaName": "후파"
+  },
+  {
+    "id": 721,
+    "name": "Volcanion",
+    "koreaName": "볼케니온"
+  },
+  {
+    "id": 722,
+    "name": "Rowlet",
+    "koreaName": "나몰빼미"
+  },
+  {
+    "id": 723,
+    "name": "Dartrix",
+    "koreaName": "빼미스로우"
+  },
+  {
+    "id": 724,
+    "name": "Decidueye",
+    "koreaName": "모크나이퍼"
+  },
+  {
+    "id": 725,
+    "name": "Litten",
+    "koreaName": "냐오불"
+  },
+  {
+    "id": 726,
+    "name": "Torracat",
+    "koreaName": "냐오히트"
+  },
+  {
+    "id": 727,
+    "name": "Incineroar",
+    "koreaName": "어흥염"
+  },
+  {
+    "id": 728,
+    "name": "Popplio",
+    "koreaName": "누리공"
+  },
+  {
+    "id": 729,
+    "name": "Brionne",
+    "koreaName": "키요공"
+  },
+  {
+    "id": 730,
+    "name": "Primarina",
+    "koreaName": "누리레느"
+  },
+  {
+    "id": 731,
+    "name": "Pikipek",
+    "koreaName": "콕코구리"
+  },
+  {
+    "id": 732,
+    "name": "Trumbeak",
+    "koreaName": "크라파"
+  },
+  {
+    "id": 733,
+    "name": "Toucannon",
+    "koreaName": "왕큰부리"
+  },
+  {
+    "id": 734,
+    "name": "Yungoos",
+    "koreaName": "영구스"
+  },
+  {
+    "id": 735,
+    "name": "Gumshoos",
+    "koreaName": "형사구스"
+  },
+  {
+    "id": 736,
+    "name": "Grubbin",
+    "koreaName": "턱지충이"
+  },
+  {
+    "id": 737,
+    "name": "Charjabug",
+    "koreaName": "전지충이"
+  },
+  {
+    "id": 738,
+    "name": "Vikavolt",
+    "koreaName": "투구뿌논"
+  },
+  {
+    "id": 739,
+    "name": "Crabrawler",
+    "koreaName": "오기지게"
+  },
+  {
+    "id": 740,
+    "name": "Crabominable",
+    "koreaName": "모단단게"
+  },
+  {
+    "id": 741,
+    "name": "Oricorio",
+    "koreaName": "춤추새"
+  },
+  {
+    "id": 742,
+    "name": "Cutiefly",
+    "koreaName": "에블리"
+  },
+  {
+    "id": 743,
+    "name": "Ribombee",
+    "koreaName": "에리본"
+  },
+  {
+    "id": 744,
+    "name": "Rockruff",
+    "koreaName": "암멍이"
+  },
+  {
+    "id": 745,
+    "name": "Lycanroc",
+    "koreaName": "루가루암"
+  },
+  {
+    "id": 746,
+    "name": "Wishiwashi",
+    "koreaName": "약어리"
+  },
+  {
+    "id": 747,
+    "name": "Mareanie",
+    "koreaName": "시마사리"
+  },
+  {
+    "id": 748,
+    "name": "Toxapex",
+    "koreaName": "더시마사리"
+  },
+  {
+    "id": 749,
+    "name": "Mudbray",
+    "koreaName": "머드나기"
+  },
+  {
+    "id": 750,
+    "name": "Mudsdale",
+    "koreaName": "만마드"
+  },
+  {
+    "id": 751,
+    "name": "Dewpider",
+    "koreaName": "물거미"
+  },
+  {
+    "id": 752,
+    "name": "Araquanid",
+    "koreaName": "깨비물거미"
+  },
+  {
+    "id": 753,
+    "name": "Fomantis",
+    "koreaName": "짜랑랑"
+  },
+  {
+    "id": 754,
+    "name": "Lurantis",
+    "koreaName": "라란티스"
+  },
+  {
+    "id": 755,
+    "name": "Morelull",
+    "koreaName": "자마슈"
+  },
+  {
+    "id": 756,
+    "name": "Shiinotic",
+    "koreaName": "마셰이드"
+  },
+  {
+    "id": 757,
+    "name": "Salandit",
+    "koreaName": "야도뇽"
+  },
+  {
+    "id": 758,
+    "name": "Salazzle",
+    "koreaName": "염뉴트"
+  },
+  {
+    "id": 759,
+    "name": "Stufful",
+    "koreaName": "포곰곰"
+  },
+  {
+    "id": 760,
+    "name": "Bewear",
+    "koreaName": "이븐곰"
+  },
+  {
+    "id": 761,
+    "name": "Bounsweet",
+    "koreaName": "달콤아"
+  },
+  {
+    "id": 762,
+    "name": "Steenee",
+    "koreaName": "달무리나"
+  },
+  {
+    "id": 763,
+    "name": "Tsareena",
+    "koreaName": "달코퀸"
+  },
+  {
+    "id": 764,
+    "name": "Comfey",
+    "koreaName": "큐아링"
+  },
+  {
+    "id": 765,
+    "name": "Oranguru",
+    "koreaName": "하랑우탄"
+  },
+  {
+    "id": 766,
+    "name": "Passimian",
+    "koreaName": "내던숭이"
+  },
+  {
+    "id": 767,
+    "name": "Wimpod",
+    "koreaName": "꼬시레"
+  },
+  {
+    "id": 768,
+    "name": "Golisopod",
+    "koreaName": "갑주무사"
+  },
+  {
+    "id": 769,
+    "name": "Sandygast",
+    "koreaName": "모래꿍"
+  },
+  {
+    "id": 770,
+    "name": "Palossand",
+    "koreaName": "모래성이당"
+  },
+  {
+    "id": 771,
+    "name": "Pyukumuku",
+    "koreaName": "해무기"
+  },
+  {
+    "id": 772,
+    "name": "Type: Null",
+    "koreaName": "타입:널"
+  },
+  {
+    "id": 773,
+    "name": "Silvally",
+    "koreaName": "실버디"
+  },
+  {
+    "id": 774,
+    "name": "Minior",
+    "koreaName": "메테노"
+  },
+  {
+    "id": 775,
+    "name": "Komala",
+    "koreaName": "자말라"
+  },
+  {
+    "id": 776,
+    "name": "Turtonator",
+    "koreaName": "폭거북스"
+  },
+  {
+    "id": 777,
+    "name": "Togedemaru",
+    "koreaName": "토게데마루"
+  },
+  {
+    "id": 778,
+    "name": "Mimikyu",
+    "koreaName": "따라큐"
+  },
+  {
+    "id": 779,
+    "name": "Bruxish",
+    "koreaName": "치갈기"
+  },
+  {
+    "id": 780,
+    "name": "Drampa",
+    "koreaName": "할비롱"
+  },
+  {
+    "id": 781,
+    "name": "Dhelmise",
+    "koreaName": "타타륜"
+  },
+  {
+    "id": 782,
+    "name": "Jangmo-o",
+    "koreaName": "짜랑꼬"
+  },
+  {
+    "id": 783,
+    "name": "Hakamo-o",
+    "koreaName": "짜랑고우"
+  },
+  {
+    "id": 784,
+    "name": "Kommo-o",
+    "koreaName": "짜랑고우거"
+  },
+  {
+    "id": 785,
+    "name": "Tapu Koko",
+    "koreaName": "카푸꼬꼬꼭"
+  },
+  {
+    "id": 786,
+    "name": "Tapu Lele",
+    "koreaName": "카푸나비나"
+  },
+  {
+    "id": 787,
+    "name": "Tapu Bulu",
+    "koreaName": "카푸브루루"
+  },
+  {
+    "id": 788,
+    "name": "Tapu Fini",
+    "koreaName": "카푸느지느"
+  },
+  {
+    "id": 789,
+    "name": "Cosmog",
+    "koreaName": "코스모그"
+  },
+  {
+    "id": 790,
+    "name": "Cosmoem",
+    "koreaName": "코스모움"
+  },
+  {
+    "id": 791,
+    "name": "Solgaleo",
+    "koreaName": "솔가레오"
+  },
+  {
+    "id": 792,
+    "name": "Lunala",
+    "koreaName": "루나아라"
+  },
+  {
+    "id": 793,
+    "name": "Nihilego",
+    "koreaName": "텅비드"
+  },
+  {
+    "id": 794,
+    "name": "Buzzwole",
+    "koreaName": "매시붕"
+  },
+  {
+    "id": 795,
+    "name": "Pheromosa",
+    "koreaName": "페로코체"
+  },
+  {
+    "id": 796,
+    "name": "Xurkitree",
+    "koreaName": "전수목"
+  },
+  {
+    "id": 797,
+    "name": "Celesteela",
+    "koreaName": "철화구야"
+  },
+  {
+    "id": 798,
+    "name": "Kartana",
+    "koreaName": "종이신도"
+  },
+  {
+    "id": 799,
+    "name": "Guzzlord",
+    "koreaName": "악식킹"
+  },
+  {
+    "id": 800,
+    "name": "Necrozma",
+    "koreaName": "네크로즈마"
+  },
+  {
+    "id": 801,
+    "name": "Magearna",
+    "koreaName": "마기아나"
+  },
+  {
+    "id": 802,
+    "name": "Marshadow",
+    "koreaName": "마샤도"
+  },
+  {
+    "id": 803,
+    "name": "Poipole",
+    "koreaName": "베베놈"
+  },
+  {
+    "id": 804,
+    "name": "Naganadel",
+    "koreaName": "아고용"
+  },
+  {
+    "id": 805,
+    "name": "Stakataka",
+    "koreaName": "차곡차곡"
+  },
+  {
+    "id": 806,
+    "name": "Blacephalon",
+    "koreaName": "두파팡"
+  },
+  {
+    "id": 807,
+    "name": "Zeraora",
+    "koreaName": "제라오라"
+  },
+  {
+    "id": 808,
+    "name": "Meltan",
+    "koreaName": "멜탄"
+  },
+  {
+    "id": 809,
+    "name": "Melmetal",
+    "koreaName": "멜메탈"
+  },
+  {
+    "id": 810,
+    "name": "Grookey",
+    "koreaName": "흥나숭"
+  },
+  {
+    "id": 811,
+    "name": "Thwackey",
+    "koreaName": "채키몽"
+  },
+  {
+    "id": 812,
+    "name": "Rillaboom",
+    "koreaName": "고릴타"
+  },
+  {
+    "id": 813,
+    "name": "Scorbunny",
+    "koreaName": "염버니"
+  },
+  {
+    "id": 814,
+    "name": "Raboot",
+    "koreaName": "래비풋"
+  },
+  {
+    "id": 815,
+    "name": "Cinderace",
+    "koreaName": "에이스번"
+  },
+  {
+    "id": 816,
+    "name": "Sobble",
+    "koreaName": "울머기"
+  },
+  {
+    "id": 817,
+    "name": "Drizzile",
+    "koreaName": "누겔레온"
+  },
+  {
+    "id": 818,
+    "name": "Inteleon",
+    "koreaName": "인텔리레온"
+  },
+  {
+    "id": 819,
+    "name": "Skwovet",
+    "koreaName": "탐리스"
+  },
+  {
+    "id": 820,
+    "name": "Greedent",
+    "koreaName": "요씽리스"
+  },
+  {
+    "id": 821,
+    "name": "Rookidee",
+    "koreaName": "파라꼬"
+  },
+  {
+    "id": 822,
+    "name": "Corvisquire",
+    "koreaName": "파크로우"
+  },
+  {
+    "id": 823,
+    "name": "Corviknight",
+    "koreaName": "아머까오"
+  },
+  {
+    "id": 824,
+    "name": "Blipbug",
+    "koreaName": "두루지벌레"
+  },
+  {
+    "id": 825,
+    "name": "Dottler",
+    "koreaName": "레돔벌레"
+  },
+  {
+    "id": 826,
+    "name": "Orbeetle",
+    "koreaName": "이올브"
+  },
+  {
+    "id": 827,
+    "name": "Nickit",
+    "koreaName": "훔처우"
+  },
+  {
+    "id": 828,
+    "name": "Thievul",
+    "koreaName": "폭슬라이"
+  },
+  {
+    "id": 829,
+    "name": "Gossifleur",
+    "koreaName": "꼬모카"
+  },
+  {
+    "id": 830,
+    "name": "Eldegoss",
+    "koreaName": "백솜모카"
+  },
+  {
+    "id": 831,
+    "name": "Wooloo",
+    "koreaName": "우르"
+  },
+  {
+    "id": 832,
+    "name": "Dubwool",
+    "koreaName": "배우르"
+  },
+  {
+    "id": 833,
+    "name": "Chewtle",
+    "koreaName": "깨물부기"
+  },
+  {
+    "id": 834,
+    "name": "Drednaw",
+    "koreaName": "갈가부기"
+  },
+  {
+    "id": 835,
+    "name": "Yamper",
+    "koreaName": "멍파치"
+  },
+  {
+    "id": 836,
+    "name": "Boltund",
+    "koreaName": "펄스멍"
+  },
+  {
+    "id": 837,
+    "name": "Rolycoly",
+    "koreaName": "탄동"
+  },
+  {
+    "id": 838,
+    "name": "Carkol",
+    "koreaName": "탄차곤"
+  },
+  {
+    "id": 839,
+    "name": "Coalossal",
+    "koreaName": "석탄산"
+  },
+  {
+    "id": 840,
+    "name": "Applin",
+    "koreaName": "과사삭벌레"
+  },
+  {
+    "id": 841,
+    "name": "Flapple",
+    "koreaName": "애프룡"
+  },
+  {
+    "id": 842,
+    "name": "Appletun",
+    "koreaName": "단지래플"
+  },
+  {
+    "id": 843,
+    "name": "Silicobra",
+    "koreaName": "모래뱀"
+  },
+  {
+    "id": 844,
+    "name": "Sandaconda",
+    "koreaName": "사다이사"
+  },
+  {
+    "id": 845,
+    "name": "Cramorant",
+    "koreaName": "윽우지"
+  },
+  {
+    "id": 846,
+    "name": "Arrokuda",
+    "koreaName": "찌로꼬치"
+  },
+  {
+    "id": 847,
+    "name": "Barraskewda",
+    "koreaName": "꼬치조"
+  },
+  {
+    "id": 848,
+    "name": "Toxel",
+    "koreaName": "일레즌"
+  },
+  {
+    "id": 849,
+    "name": "Toxtricity",
+    "koreaName": "스트린더"
+  },
+  {
+    "id": 850,
+    "name": "Sizzlipede",
+    "koreaName": "태우지네"
+  },
+  {
+    "id": 851,
+    "name": "Centiskorch",
+    "koreaName": "다태우지네"
+  },
+  {
+    "id": 852,
+    "name": "Clobbopus",
+    "koreaName": "때때무노"
+  },
+  {
+    "id": 853,
+    "name": "Grapploct",
+    "koreaName": "케오퍼스"
+  },
+  {
+    "id": 854,
+    "name": "Sinistea",
+    "koreaName": "데인차"
+  },
+  {
+    "id": 855,
+    "name": "Polteageist",
+    "koreaName": "포트데스"
+  },
+  {
+    "id": 856,
+    "name": "Hatenna",
+    "koreaName": "몸지브림"
+  },
+  {
+    "id": 857,
+    "name": "Hattrem",
+    "koreaName": "손지브림"
+  },
+  {
+    "id": 858,
+    "name": "Hatterene",
+    "koreaName": "브리무음"
+  },
+  {
+    "id": 859,
+    "name": "Impidimp",
+    "koreaName": "메롱꿍"
+  },
+  {
+    "id": 860,
+    "name": "Morgrem",
+    "koreaName": "쏘겨모"
+  },
+  {
+    "id": 861,
+    "name": "Grimmsnarl",
+    "koreaName": "오롱털"
+  },
+  {
+    "id": 862,
+    "name": "Obstagoon",
+    "koreaName": "가로막구리"
+  },
+  {
+    "id": 863,
+    "name": "Perrserker",
+    "koreaName": "나이킹"
+  },
+  {
+    "id": 864,
+    "name": "Cursola",
+    "koreaName": "산호르곤"
+  },
+  {
+    "id": 865,
+    "name": "Sirfetch'd",
+    "koreaName": "창파나이트"
+  },
+  {
+    "id": 866,
+    "name": "Mr. Rime",
+    "koreaName": "마임꽁꽁"
+  },
+  {
+    "id": 867,
+    "name": "Runerigus",
+    "koreaName": "데스판"
+  },
+  {
+    "id": 868,
+    "name": "Milcery",
+    "koreaName": "마빌크"
+  },
+  {
+    "id": 869,
+    "name": "Alcremie",
+    "koreaName": "마휘핑"
+  },
+  {
+    "id": 870,
+    "name": "Falinks",
+    "koreaName": "대여르"
+  },
+  {
+    "id": 871,
+    "name": "Pincurchin",
+    "koreaName": "찌르성게"
+  },
+  {
+    "id": 872,
+    "name": "Snom",
+    "koreaName": "누니머기"
+  },
+  {
+    "id": 873,
+    "name": "Frosmoth",
+    "koreaName": "모스노우"
+  },
+  {
+    "id": 874,
+    "name": "Stonjourner",
+    "koreaName": "돌헨진"
+  },
+  {
+    "id": 875,
+    "name": "Eiscue",
+    "koreaName": "빙큐보"
+  },
+  {
+    "id": 876,
+    "name": "Indeedee",
+    "koreaName": "에써르"
+  },
+  {
+    "id": 877,
+    "name": "Morpeko",
+    "koreaName": "모르페코"
+  },
+  {
+    "id": 878,
+    "name": "Cufant",
+    "koreaName": "끼리동"
+  },
+  {
+    "id": 879,
+    "name": "Copperajah",
+    "koreaName": "대왕끼리동"
+  },
+  {
+    "id": 880,
+    "name": "Dracozolt",
+    "koreaName": "파치래곤"
+  },
+  {
+    "id": 881,
+    "name": "Arctozolt",
+    "koreaName": "파치르돈"
+  },
+  {
+    "id": 882,
+    "name": "Dracovish",
+    "koreaName": "어래곤"
+  },
+  {
+    "id": 883,
+    "name": "Arctovish",
+    "koreaName": "어치르돈"
+  },
+  {
+    "id": 884,
+    "name": "Duraludon",
+    "koreaName": "두랄루돈"
+  },
+  {
+    "id": 885,
+    "name": "Dreepy",
+    "koreaName": "드라꼰"
+  },
+  {
+    "id": 886,
+    "name": "Drakloak",
+    "koreaName": "드래런치"
+  },
+  {
+    "id": 887,
+    "name": "Dragapult",
+    "koreaName": "드래펄트"
+  },
+  {
+    "id": 888,
+    "name": "Zacian",
+    "koreaName": "자시안"
+  },
+  {
+    "id": 889,
+    "name": "Zamazenta",
+    "koreaName": "자마젠타"
+  },
+  {
+    "id": 890,
+    "name": "Eternatus",
+    "koreaName": "무한다이노"
+  },
+  {
+    "id": 891,
+    "name": "Kubfu",
+    "koreaName": "치고마"
+  },
+  {
+    "id": 892,
+    "name": "Urshifu",
+    "koreaName": "우라오스"
+  },
+  {
+    "id": 893,
+    "name": "Zarude",
+    "koreaName": "자루도"
+  },
+  {
+    "id": 894,
+    "name": "Regieleki",
+    "koreaName": "레지에레키"
+  },
+  {
+    "id": 895,
+    "name": "Regidrago",
+    "koreaName": "레지드래고"
+  },
+  {
+    "id": 896,
+    "name": "Glastrier",
+    "koreaName": "블리자포스"
+  },
+  {
+    "id": 897,
+    "name": "Spectrier",
+    "koreaName": "레이스포스"
+  },
+  {
+    "id": 898,
+    "name": "Calyrex",
+    "koreaName": "버드렉스"
+  },
+  {
+    "id": 899,
+    "name": "Wyrdeer",
+    "koreaName": "신비록"
+  },
+  {
+    "id": 900,
+    "name": "Kleavor",
+    "koreaName": "사마자르"
+  },
+  {
+    "id": 901,
+    "name": "Ursaluna",
+    "koreaName": "다투곰"
+  },
+  {
+    "id": 902,
+    "name": "Basculegion",
+    "koreaName": "대쓰여너"
+  },
+  {
+    "id": 903,
+    "name": "Sneasler",
+    "koreaName": "포푸니크"
+  },
+  {
+    "id": 904,
+    "name": "Overqwil",
+    "koreaName": "장침바루"
+  },
+  {
+    "id": 905,
+    "name": "Enamorus",
+    "koreaName": "러브로스"
+  }
+]
