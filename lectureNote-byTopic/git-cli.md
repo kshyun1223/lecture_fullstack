@@ -49,7 +49,7 @@
 - `git reset <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 unstaged 상태로 변경
 - `git reset --soft <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 staged 상태로 변경
 - `git reset --hard <브랜치 이름>~1` : 커밋을 취소하고 해당 파일들은 삭제
-- `git commit -amend` : 커밋 메시지를 변경
+- `git commit --amend -m <원하는 메시지>` : 가장 최근 커밋 메시지를 변경
 
 ### push 되돌리기
 1. 원하는 브랜치를 pull 한 다음에 커밋을 되돌린다

@@ -43,6 +43,7 @@ with app.test_request_context():
 ```
 
 ### http 메소드
+- 한꺼번에 작성
 ```python
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -51,8 +52,8 @@ def login():
     else:
         return show_the_login_form()
 ```
-- 한꺼번에 작성
 
+- 각각 따로 작성
 ```python
 @app.get('/login')
 def login_get():
@@ -62,7 +63,6 @@ def login_get():
 def login_post():
     return do_the_login()
 ```
-- 각각 따로 작성
 
 ### request 메소드
 ```python
