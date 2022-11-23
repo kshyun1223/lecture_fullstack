@@ -14,13 +14,13 @@
 │
 ├─ 앱 폴더 : startapp에 입력한 이름
 │   └─ migrations/: 모듈 관련 폴더
-│   ├─ __init__.py: 모듈 관련 파일
-│   ├─ admin.py: 관리자가 접속하면 보이는 화면. 내장돼 있음.
-│   ├─ app.py: 프로젝트에 앱을 등록하는 기능
-│   ├─ models.py: DB 관련 파일
-│   ├─ tests.py: 테스트를 위한 파일
-│   ├─ views.py: 화면 구성을 위한 파일
-│   └─ urls.py: 앱 url 설정
+│       ├─ __init__.py: 모듈 관련 파일
+│       ├─ admin.py: 관리자가 접속하면 보이는 화면. 내장돼 있음.
+│       ├─ app.py: 프로젝트에 앱을 등록하는 기능
+│       ├─ models.py: DB 관련 파일
+│       ├─ tests.py: 테스트를 위한 파일
+│       ├─ views.py: 화면 구성을 위한 파일
+│       └─ urls.py: 앱 url 설정
 │
 └─ 앱 폴더
     ├─ urls.py
