@@ -528,3 +528,24 @@ http.createServer(async (req, res) => {
     console.log('8085번 포트에서 서버 대기 중입니다!');
   });
 ```
+
+## 패키지 매니저
+### NPM
+- 명세 파일 생성: `npm init`
+```JSON
+{
+  "name": "", // 패키지 이름
+  "version": "0.0.1", // 버전
+  "main": "index.js", // 가장 마지막으로 exports 하며 프로그램의 진입점이 되는 실행파일
+  "scripts": {
+    "start": "node index.js", // npm start: 개발 모드로 패키지를 실행
+    "build": "", // npm run build: 패키지를 배포 형태로 빌드
+    "test": "", // npm test: 테스트 코드를 실행
+  },
+  "license": "" // 라이선스 종류
+}
+```
+
+- 패키지 설치: `npm install --save ${package name}` (--save는 생략 가능)
+- devDependency로 설치: `npm install --save-dev ${package name}` (혹은 `-D`)
+
