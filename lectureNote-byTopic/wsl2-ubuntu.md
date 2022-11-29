@@ -43,3 +43,8 @@ sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
 
 sudo apt -y install fonts-unfonts-core fonts-unfonts-extra fonts-nanum fonts-nanum-coding fonts-nanum-eco fonts-nanum-extra fonts-noto-cjk
 ```
+
+## 사용법
+### 페이지 스크롤
+- 라인 단위: **ctrl** + shift + up / down
+- 페이지 단위: **ctrl** + shift + page up / page down
