@@ -23,11 +23,14 @@
 - 생성
   - `git branch` : 버전을 병렬 처리
   - `git branch <브랜치이름>` : 다른 버전의 줄기 생성
-  - `git checkout` : 브랜치 전환
+  - `git checkout <브랜치이름>` : 브랜치 전환
+
+- 병합
+  - `git merge <브랜치이름>`
 
 - 삭제
   - 로컬 브랜치 삭제: `git branch -d <삭제할 브랜치 이름>`
-  - 원격 브랜치 삭제: `git push origin <삭제할 브랜치 이름>`
+  - 원격 브랜치 삭제: `git push origin -d <삭제할 브랜치 이름>`
 
 - 조회
   - git graph 플러그인으로 브랜치를 시각화해서 볼 수 있다
