@@ -40,6 +40,12 @@
 - 조회: `git branch -r (원격 브랜치 이름)`
 - 가져오기: `git branch -t origin/(원격 브랜치 이름)`
 
+### 터미널로 원격 브랜치 이름 변경하기
+- 원격 브랜치의 이름은 직접 변경할 수는 없기 때문에 다음의 과정을 거친다
+1. 로컬 브랜치 이름 변경하기: `git branch -m <oldbranch> <newbranch>`
+2. 원격의 기존 브랜치 삭제하기: `git push origin :<oldbranch>`
+3. 새로운 브랜치 원격에 반영하기: `git push origin <newbranch>`
+
 ### 예외 처리
 - `.gitignore`라는 파일을 프로젝트 최상단 폴더에 생성하고 그 안에 목록을 작성
 
