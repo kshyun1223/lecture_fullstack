@@ -1,6 +1,8 @@
 # Git
+## 시작하기
 ### git config
-- 전체 config 확인 : `git config --list`
+- 전체 config 확인
+  - `git config --list`
 - 설정
   - `git config --global user.name "홍길동"`
   - `git config --global user.email "support@webisfree.com"`
@@ -19,6 +21,10 @@
 ### clone
 - `git clone <레포지토리 이름>`
 
+### 예외 처리
+- `.gitignore`라는 파일을 프로젝트 최상단 폴더에 생성하고 그 안에 목록을 작성
+
+## 브랜치
 ### git branch
 - 생성
   - `git branch` : 버전을 병렬 처리
@@ -46,9 +52,6 @@
 2. 원격의 기존 브랜치 삭제하기: `git push origin :<oldbranch>`
 3. 새로운 브랜치 원격에 반영하기: `git push origin <newbranch>`
 
-### 예외 처리
-- `.gitignore`라는 파일을 프로젝트 최상단 폴더에 생성하고 그 안에 목록을 작성
-
 ### staging 되돌리기
 - `git reset <브랜치 이름>` : 전체 파일의 스테이징을 취소
 - `git reset <브랜치 이름> <파일 이름>` : 특정 파일의 스테이징을 취소
@@ -71,6 +74,11 @@
 3. `git push --force`로 push 취소를 확정한다
 4. 스테이지에 있던 내용들을 다시 푸시한다
 5. 만약 contributor 목록이 사라지지 않는다면 브랜치 이름을 다르게 바꿨다가 다시 원래대로 바꾼다
+
+### 기존의 브랜치를 유지하면서 새 저장소에 옮기는 방법
+1. `git clone --mirror <기존 저장소 주소>`
+2. `git remote set-url --push origin <새 저장소 주소>`
+3. `git push --mirror`
 
 # CLI
 ### 터미널 명령어
