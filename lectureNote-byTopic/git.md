@@ -79,14 +79,3 @@
 1. `git clone --mirror <기존 저장소 주소>`
 2. `git remote set-url --push origin <새 저장소 주소>`
 3. `git push --mirror`
-
-# CLI
-### 터미널 명령어
-- `cd ./${하위폴더 이름}`: 현재 폴더에서 해당 하위폴더로 이동
-- `cd ../`: 현재 폴더의 상위폴더로 이동
-- `tree`: 현재 폴더를 기준으로 폴더 트리를 출력
-  - `/f`: 파일 목록을 포함해서 출력하는 옵션
-  - `> ${파일명.txt}`: 조회 결과를 파일로 저장하는 옵션
-  - (예시) `C:\Users\wowcbj>tree d:\ /f > outtext.txt`
-
-
