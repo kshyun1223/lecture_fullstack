@@ -3,12 +3,16 @@
 ### git config
 - 전체 config 확인
   - `git config --list`
+  - 
 - 설정
   - `git config --global user.name "홍길동"`
   - `git config --global user.email "support@webisfree.com"`
+  - 
 - 삭제
   - `git config --unset user.name`
   - `git config --unset user.email`
+
+- 새로운 컴퓨터에서 깃을 사용하려면 git config뿐만 아니라 윈도우 자격증명관리자도 새로 설정해야 한다
 
 ### init
 - 프로젝트 폴더에 처음 깃을 설치: `git init` - `npm init`
