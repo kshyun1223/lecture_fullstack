@@ -14,16 +14,76 @@
   - main.ts : 엔트리 파일
   - app.module.ts : 앱 모듈을 정의하는 파일
 
-## 모듈
-### 개요
+## module
+### 기본 개념
 - 기능과 역할을 분리 하면서 컨트롤러와 서비스의 생명주기를 관리하고 필요한 정보를 제공한다
-- 기존에 프로젝트를 생성하면 루트 모듈만이 존재한다
-- 추가 모듈 생성: `nest g module <모듈명>`
+- 처음 프로젝트를 생성하면 루트 모듈만이 존재한다. 이후 하위 모듈을 추가해가며 개발을 한다
+- 모듈에는 controller와 provider(서비스)가 필요하다
+- controller : MVC에서의 컨트롤러다
+- service : 비즈니스 로직이 들어있는 부분
 
-### 구조
-- 생성된 모듈에 controller, service, entity, repository 등의 요소를 넣어주면 된다
-- controller : 들어오는 요청을 수신하고 응답을 반환한다 (라우터의 모음?)
-  - handler : 컨트롤러 모듈 안에 들어있는 각각의 라우터
-- service : 
-- entity : 
-- repository : 
+### 새로운 모듈을 만드는 순서
+1. `nest g module <모듈명> --no-spec` 명령어로 모듈을 만들면 루트 모듈에도 자동으로 호출 된다
+```typescript
+/* example.module.ts */
+@Module({})
+export class ExampleModule {}
+```
+
+```typescript
+/* app.module.ts */
+@Module({
+  imports: [ExampleModule] // 추가
+})
+```
+
+2. `nest g controller <모듈명> --no-spec` 명령어로 컨트롤러를 만들면 1에서 만든 모듈에도 자동으로 컨트롤러가 주입된다
+```typescript
+/* example.controller.ts */
+@Controller('example')
+export class ExampleController {}
+```
+
+```typescript
+/* example.module.ts */
+@Module({
+  controllers: [ExampleController] // 추가
+})
+```
+
+3. `nest g service <모듈명> --no-spec` 명령어로 서비스를 생성하면 1의 모듈 에도 자동으로 서비스가 주입된다
+```typescript
+/* example.service.ts */
+@Injectable()
+export class ExampleService {}
+```
+
+```typescript
+/* example.module.ts */
+@Module({
+  controllers: [ExampleController],
+  providers: [ExampleService] // 추가
+})
+```
+
+4. 생성자를 사용하여 컨트롤러에 서비스 프로바이더를 주입한다
+```typescript
+@Controller('example')
+export class ExampleController {
+  exampleService : ExampleService // 추가
+
+  constructor(exampleService : ExampleService){ // 추가
+    this.exampleService = exampleService // 추가
+  }
+}
+```
+
+5. 루트 모듈에 서비스 프로바이더를 주입한다
+```typescript
+@Module({
+  imports: [BoardsModule],
+  providers: [BoardsService] // 추가
+})
+export class AppModule {}
+```
+
