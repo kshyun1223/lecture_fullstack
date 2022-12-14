@@ -81,9 +81,21 @@ export class ExampleController {
 5. 루트 모듈에 서비스 프로바이더를 주입한다
 ```typescript
 @Module({
-  imports: [BoardsModule],
-  providers: [BoardsService] // 추가
+  imports: [ExampleModule],
+  providers: [ExampleService] // 추가
 })
 export class AppModule {}
+```
+
+6. 서비스에 비즈니스 로직 작성
+```typescript
+@Injectable()
+export class ExampleService {
+  private exampleText = '이것은 예시입니다';
+
+  getExample() {
+      return this.exampleText;
+  }
+}
 ```
 
