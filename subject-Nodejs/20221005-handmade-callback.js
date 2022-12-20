@@ -10,13 +10,14 @@ function merongFunc(param){
   }
 }
 
-function handMade(test, callback){
-  if(typeof(test) === "string" && typeof callback === "function"){
-    console.log(typeof test);
-    console.log(typeof callback);
-    console.log(callback(test));
+/* 콜백을 사용하여 개선 */
+function handMade(arg, callback){
+  // if(typeof(test) === "string" && typeof callback === "function"){
+    // console.log(typeof test);
+    // console.log(typeof callback);
+    console.log(callback(arg));
   }
-}
+// }
 
-handMade("댕댕이 ,", merongFunc);
-handMade("커여움 ,", yahoFunc);
+handMade("메롱, ", merongFunc);
+handMade("야호, ", yahoFunc);
